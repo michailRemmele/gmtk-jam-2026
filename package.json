@@ -1,0 +1,54 @@
+{
+  "name": "gmtk-jam-2026",
+  "version": "0.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "env NODE_ENV=development webpack-dev-server",
+    "start:workbench": "npx dacha-workbench",
+    "lint": "eslint .",
+    "build": "env NODE_ENV=production webpack"
+  },
+  "dependencies": {
+    "antd": "5.27.3",
+    "dacha": "0.18.3",
+    "dacha-workbench": "0.0.38-alpha.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@emotion/react": "11.11.0",
+    "@emotion/styled": "11.11.0",
+    "@eslint/js": "9.31.0",
+    "@types/react": "18.3.2",
+    "@types/react-dom": "18.3.0",
+    "@types/webpack-env": "1.18.8",
+    "@typescript-eslint/parser": "8.37.0",
+    "clean-webpack-plugin": "4.0.0",
+    "copy-webpack-plugin": "11.0.0",
+    "css-loader": "6.10.0",
+    "eslint": "9.31.0",
+    "eslint-config-prettier": "10.1.5",
+    "eslint-plugin-import": "2.32.0",
+    "globals": "16.3.0",
+    "html-webpack-plugin": "5.5.3",
+    "prettier": "3.6.2",
+    "style-loader": "3.3.4",
+    "ts-loader": "9.5.2",
+    "typescript": "5.8.3",
+    "typescript-eslint": "8.37.0",
+    "webpack": "5.88.1",
+    "webpack-cli": "5.1.4",
+    "webpack-dev-server": "4.15.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michailRemmele/gmtk-jam-2026.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michailRemmele/gmtk-jam-2026/issues"
+  },
+  "homepage": "https://github.com/michailRemmele/gmtk-jam-2026#readme"
+}

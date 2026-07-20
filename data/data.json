@@ -1,0 +1,2042 @@
+{
+  "scenes": [
+    {
+      "id": "8aa8d080-b995-4892-b718-829dd717612c",
+      "name": "Main Menu",
+      "actors": [
+        {
+          "id": "f8bfbc69-901f-4ebb-abdf-186f90b64e0a",
+          "name": "Sound",
+          "components": [
+            {
+              "name": "AudioSource",
+              "config": {
+                "src": "audio/menu-music.mp3",
+                "volume": 1,
+                "looped": true,
+                "autoplay": true,
+                "group": "music"
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "cd85bb20-d3c0-42e1-840b-d5dc5f09daef",
+      "name": "Level 1",
+      "actors": [
+        {
+          "id": "8147327a-114d-490e-a8a9-9f2d9a11c888",
+          "name": "Background",
+          "components": [
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 960,
+                "height": 480,
+                "slice": 1,
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "background",
+                "fit": "stretch",
+                "blending": "normal",
+                "color": "rgb(202,226,230)",
+                "opacity": 1,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "disabled": false
+              }
+            },
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -256.00000000000006,
+                "offsetY": 31.999999999999943,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "5bdc94ae-2af3-48b8-8f20-6637174b6594",
+          "name": "Player",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -154,
+                "offsetY": 25,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "RigidBody",
+              "config": {
+                "type": "kinematic",
+                "disabled": false,
+                "restitution": 0,
+                "friction": 0.6,
+                "oneWay": false
+              }
+            },
+            {
+              "name": "Collider",
+              "config": {
+                "type": "capsule",
+                "radius": 6,
+                "layer": "1ab9b58e-e535-4bcc-b393-85c6b32ef694",
+                "height": 6,
+                "debugColor": "rgb(0,8,255)",
+                "offsetX": 0,
+                "offsetY": 0,
+                "disabled": false
+              }
+            },
+            {
+              "name": "KeyboardControl",
+              "config": {
+                "inputEventBindings": [
+                  {
+                    "id": "0a8a3a91-5f51-43fa-b074-38d6fe4c6f64",
+                    "key": "KeyA",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "Movement",
+                    "attrs": [
+                      {
+                        "id": "be9e797d-c9f7-4864-bc92-e9018f0b2e64",
+                        "name": "angle",
+                        "type": "number",
+                        "value": 180
+                      }
+                    ]
+                  },
+                  {
+                    "id": "eade1fe5-b361-40d6-bc5d-37730afbf0b3",
+                    "key": "KeyD",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "Movement",
+                    "attrs": [
+                      {
+                        "id": "6bfc4283-5f89-474a-877b-8aaa756cd6e4",
+                        "name": "angle",
+                        "type": "string",
+                        "value": "0"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "d8ca42e5-1501-463e-ad2d-e136c231718c",
+                    "key": "Space",
+                    "pressed": true,
+                    "keepEmit": false,
+                    "eventType": "MovementJump",
+                    "attrs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Movement",
+              "config": {
+                "speed": 100
+              }
+            },
+            {
+              "name": "ViewDirection",
+              "config": {
+                "x": 0,
+                "y": 0
+              }
+            },
+            {
+              "name": "Weapon",
+              "config": {
+                "type": "melee",
+                "cooldown": 1,
+                "damage": 1,
+                "range": 16
+              }
+            },
+            {
+              "name": "MouseControl",
+              "config": {
+                "inputEventBindings": [
+                  {
+                    "id": "e9eb1f82-0404-40d5-9230-7e9fdf7d5332",
+                    "event": "mousemove",
+                    "eventType": "RayCastInput",
+                    "attrs": []
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Team",
+              "config": {
+                "index": 0
+              }
+            },
+            {
+              "name": "Behaviors",
+              "config": {
+                "list": [
+                  {
+                    "id": "f48ad90f-4c3f-47b4-aa9c-89ea44b96858",
+                    "name": "ControlStickBehavior",
+                    "options": {}
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Shape",
+              "config": {
+                "type": "roundRectangle",
+                "strokeWidth": 0,
+                "strokeColor": "#fff",
+                "strokeAlignment": 0.5,
+                "fill": "rgb(200,26,26)",
+                "pixelLine": false,
+                "sortingLayer": "units",
+                "blending": "normal",
+                "opacity": 1,
+                "disabled": false,
+                "radius": 8,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "sizeX": 12,
+                "sizeY": 18
+              }
+            },
+            {
+              "name": "CharacterBody",
+              "config": {
+                "upDirectionX": 0,
+                "upDirectionY": -1,
+                "skinWidth": 0.1,
+                "maxSlopeAngle": 45,
+                "maxSlides": 4,
+                "groundProbeDistance": 0.5,
+                "disabled": false,
+                "motionMode": "surface",
+                "maxRecoveries": 3,
+                "groundSnapDistance": 2
+              }
+            },
+            {
+              "name": "Interpolation",
+              "config": {
+                "mode": "interpolate",
+                "snapThreshold": 0,
+                "disabled": false
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "a067ab21-5153-4130-b1b9-a8c9c4424c3c",
+          "name": "Main Camera",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Camera",
+              "config": {
+                "zoom": 1,
+                "current": true
+              }
+            },
+            {
+              "name": "Behaviors",
+              "config": {
+                "list": [
+                  {
+                    "id": "f9e8e789-528c-41d7-b7cd-c11399f1c7a2",
+                    "name": "CameraBehavior",
+                    "options": {}
+                  }
+                ]
+              }
+            },
+            {
+              "name": "LevelInfo",
+              "config": {
+                "exampleField": "",
+                "index": 0
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "4e0782a2-f446-4121-a68e-1b7cbf6747a9",
+          "name": "Platform 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 135.65293857704705,
+                "offsetY": 18.325446170479324,
+                "rotation": -35,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Collider",
+              "config": {
+                "type": "box",
+                "sizeX": 320,
+                "sizeY": 16,
+                "layer": "default",
+                "offsetX": 0,
+                "offsetY": 0,
+                "debugColor": "#4DFFB8",
+                "disabled": false
+              }
+            },
+            {
+              "name": "RigidBody",
+              "config": {
+                "type": "static",
+                "mass": 1,
+                "gravityScale": 0,
+                "linearDamping": 0,
+                "disabled": false,
+                "restitution": 0,
+                "friction": 0.6,
+                "oneWay": false
+              }
+            },
+            {
+              "name": "Shape",
+              "config": {
+                "type": "rectangle",
+                "strokeWidth": 0,
+                "strokeColor": "#fff",
+                "strokeAlignment": 0.5,
+                "fill": "rgb(71,27,0)",
+                "pixelLine": false,
+                "sortingLayer": "decorations",
+                "blending": "normal",
+                "opacity": 1,
+                "disabled": false,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "sizeX": 320,
+                "sizeY": 16
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "34953863-7ce0-4013-905a-71279fb40698",
+          "name": "Platform 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -302,
+                "offsetY": 9,
+                "rotation": 35,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Collider",
+              "config": {
+                "type": "box",
+                "sizeX": 120,
+                "sizeY": 16,
+                "layer": "default",
+                "offsetX": 0,
+                "offsetY": 0,
+                "debugColor": "#4DFFB8",
+                "disabled": false
+              }
+            },
+            {
+              "name": "RigidBody",
+              "config": {
+                "type": "static",
+                "mass": 1,
+                "gravityScale": 0,
+                "linearDamping": 0,
+                "disabled": false,
+                "restitution": 0,
+                "friction": 0.6,
+                "oneWay": false
+              }
+            },
+            {
+              "name": "Shape",
+              "config": {
+                "type": "rectangle",
+                "strokeWidth": 0,
+                "strokeColor": "#fff",
+                "strokeAlignment": 0.5,
+                "fill": "rgb(71,27,0)",
+                "pixelLine": false,
+                "sortingLayer": "decorations",
+                "blending": "normal",
+                "opacity": 1,
+                "disabled": false,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "sizeX": 120,
+                "sizeY": 16
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "4d122bde-a3cd-45ac-b8e3-c8db599ec033",
+          "name": "Platform 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -397,
+                "offsetY": -24,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Collider",
+              "config": {
+                "type": "box",
+                "sizeX": 100,
+                "sizeY": 16,
+                "layer": "default",
+                "offsetX": 0,
+                "offsetY": 0,
+                "debugColor": "#4DFFB8",
+                "disabled": false
+              }
+            },
+            {
+              "name": "RigidBody",
+              "config": {
+                "type": "static",
+                "mass": 1,
+                "gravityScale": 0,
+                "linearDamping": 0,
+                "disabled": false,
+                "restitution": 0,
+                "friction": 0.6,
+                "oneWay": false
+              }
+            },
+            {
+              "name": "Shape",
+              "config": {
+                "type": "rectangle",
+                "strokeWidth": 0,
+                "strokeColor": "#fff",
+                "strokeAlignment": 0.5,
+                "fill": "rgb(71,27,0)",
+                "pixelLine": false,
+                "sortingLayer": "decorations",
+                "blending": "normal",
+                "opacity": 1,
+                "disabled": false,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "sizeX": 100,
+                "sizeY": 16
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "49e0acd1-82c5-4259-be79-a227675b39eb",
+          "name": "Platform 6",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -430,
+                "offsetY": -39.99999999999994,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Collider",
+              "config": {
+                "type": "box",
+                "sizeX": 100,
+                "sizeY": 16,
+                "layer": "default",
+                "offsetX": 0,
+                "offsetY": 0,
+                "debugColor": "#4DFFB8",
+                "disabled": false
+              }
+            },
+            {
+              "name": "RigidBody",
+              "config": {
+                "type": "static",
+                "mass": 1,
+                "gravityScale": 0,
+                "linearDamping": 0,
+                "disabled": false,
+                "restitution": 0,
+                "friction": 0.6,
+                "oneWay": false
+              }
+            },
+            {
+              "name": "Shape",
+              "config": {
+                "type": "rectangle",
+                "strokeWidth": 0,
+                "strokeColor": "#fff",
+                "strokeAlignment": 0.5,
+                "fill": "rgb(71,27,0)",
+                "pixelLine": false,
+                "sortingLayer": "decorations",
+                "blending": "normal",
+                "opacity": 1,
+                "disabled": false,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "sizeX": 100,
+                "sizeY": 16
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "b0f3e1e8-9db6-4541-b06f-e513a9d39af7",
+          "name": "Platform 7",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -462,
+                "offsetY": -56,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Collider",
+              "config": {
+                "type": "box",
+                "sizeX": 100,
+                "sizeY": 16,
+                "layer": "default",
+                "offsetX": 0,
+                "offsetY": 0,
+                "debugColor": "#4DFFB8",
+                "disabled": false
+              }
+            },
+            {
+              "name": "RigidBody",
+              "config": {
+                "type": "static",
+                "mass": 1,
+                "gravityScale": 0,
+                "linearDamping": 0,
+                "disabled": false,
+                "restitution": 0,
+                "friction": 0.6,
+                "oneWay": false
+              }
+            },
+            {
+              "name": "Shape",
+              "config": {
+                "type": "rectangle",
+                "strokeWidth": 0,
+                "strokeColor": "#fff",
+                "strokeAlignment": 0.5,
+                "fill": "rgb(71,27,0)",
+                "pixelLine": false,
+                "sortingLayer": "decorations",
+                "blending": "normal",
+                "opacity": 1,
+                "disabled": false,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "sizeX": 100,
+                "sizeY": 16
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "24d9d758-fe00-45cc-904f-f6a6602ed0d2",
+          "name": "Box 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -8.000000000000014,
+                "offsetY": -56,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Collider",
+              "config": {
+                "type": "box",
+                "sizeX": 16,
+                "sizeY": 16,
+                "layer": "0c558a83-d403-490b-abfe-ab7a59c78851",
+                "offsetX": 0,
+                "offsetY": 0,
+                "disabled": false,
+                "debugColor": "#4DFFB8"
+              }
+            },
+            {
+              "name": "RigidBody",
+              "config": {
+                "type": "dynamic",
+                "mass": 1,
+                "gravityScale": 1,
+                "linearDamping": 0,
+                "disabled": false,
+                "restitution": 0,
+                "friction": 0.6,
+                "oneWay": false,
+                "angularDamping": 0,
+                "lockRotation": false
+              }
+            },
+            {
+              "name": "Shape",
+              "config": {
+                "type": "rectangle",
+                "strokeWidth": 0,
+                "strokeColor": "#fff",
+                "strokeAlignment": 0.5,
+                "fill": "rgb(39,33,231)",
+                "pixelLine": false,
+                "sortingLayer": "units",
+                "blending": "normal",
+                "opacity": 1,
+                "disabled": false,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "sizeX": 16,
+                "sizeY": 16
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "f6db6700-d909-4ff7-b7f2-5f636ad92622",
+          "name": "Box 7",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -104,
+                "offsetY": -72,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Collider",
+              "config": {
+                "type": "box",
+                "sizeX": 16,
+                "sizeY": 16,
+                "layer": "0c558a83-d403-490b-abfe-ab7a59c78851",
+                "offsetX": 0,
+                "offsetY": 0,
+                "debugColor": "#4DFFB8",
+                "disabled": false
+              }
+            },
+            {
+              "name": "RigidBody",
+              "config": {
+                "type": "dynamic",
+                "mass": 1,
+                "gravityScale": 1,
+                "linearDamping": 0,
+                "disabled": false,
+                "restitution": 0,
+                "friction": 0.6,
+                "oneWay": false,
+                "angularDamping": 0,
+                "lockRotation": false
+              }
+            },
+            {
+              "name": "Shape",
+              "config": {
+                "type": "rectangle",
+                "strokeWidth": 0,
+                "strokeColor": "#fff",
+                "strokeAlignment": 0.5,
+                "fill": "rgb(231,33,224)",
+                "pixelLine": false,
+                "sortingLayer": "units",
+                "blending": "normal",
+                "opacity": 1,
+                "disabled": false,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "sizeX": 16,
+                "sizeY": 16
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "5a7828c5-a566-4908-92f8-645fef3d3553",
+          "templateId": "5d0588f5-6ca1-45b9-b8fd-d411f72983dc",
+          "name": "Platform Thin",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -96,
+                "offsetY": 18,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "cc693de4-4a30-44be-9147-200a10434ba1",
+          "templateId": "5d0588f5-6ca1-45b9-b8fd-d411f72983dc",
+          "name": "Platform Thin 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -32,
+                "offsetY": 2,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "a523bfc9-df5a-4061-94d5-17588b4ea1e4",
+          "templateId": "5d0588f5-6ca1-45b9-b8fd-d411f72983dc",
+          "name": "Platform Thin 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -96,
+                "offsetY": -13.999999999999986,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "a467ea6a-75c6-427a-8126-a5abf20ff975",
+          "name": "Platform 8",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -176,
+                "offsetY": 40.00000000000006,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Collider",
+              "config": {
+                "type": "box",
+                "layer": "default",
+                "sizeY": 16,
+                "sizeX": 640,
+                "offsetX": 0,
+                "offsetY": 0,
+                "debugColor": "#4DFFB8",
+                "disabled": false
+              }
+            },
+            {
+              "name": "RigidBody",
+              "config": {
+                "type": "static",
+                "mass": 1,
+                "gravityScale": 0,
+                "linearDamping": 0,
+                "disabled": false,
+                "oneWay": false,
+                "restitution": 0,
+                "friction": 0.6
+              }
+            },
+            {
+              "name": "Shape",
+              "config": {
+                "type": "rectangle",
+                "strokeWidth": 0,
+                "strokeColor": "#fff",
+                "strokeAlignment": 0.5,
+                "fill": "rgb(71,27,0)",
+                "pixelLine": false,
+                "sortingLayer": "decorations",
+                "blending": "normal",
+                "opacity": 1,
+                "disabled": false,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "sizeX": 640,
+                "sizeY": 16
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3ead3a3f-eacc-47fb-bdf7-db678482571f",
+          "templateId": "5d0588f5-6ca1-45b9-b8fd-d411f72983dc",
+          "name": "PlatformThin 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -31.999999999999986,
+                "offsetY": -30,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "fb9cb1c6-331c-4d5a-8f81-7e10aca146c1",
+          "templateId": "5d0588f5-6ca1-45b9-b8fd-d411f72983dc",
+          "name": "PlatformThin 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -96,
+                "offsetY": -46,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "c93cfbaf-d2c0-4eae-9018-97c1efb6ca7d",
+          "templateId": "3375b1c1-1495-4e62-9837-4c57890d6a75",
+          "name": "Finish",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -488,
+                "offsetY": -72,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "abf6f0dd-a66b-418f-8102-5b82b6217383",
+      "name": "Level 2",
+      "actors": [
+        {
+          "id": "feba083d-7d75-4a48-931a-519214c6f91c",
+          "name": "Background",
+          "components": [
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 320,
+                "height": 320,
+                "slice": 1,
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "background",
+                "fit": "stretch",
+                "blending": "normal",
+                "color": "#004e14",
+                "opacity": 1,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "disabled": false
+              }
+            },
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "476751fc-7830-4020-8ffd-9f383f0ce591",
+          "name": "Player",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "RigidBody",
+              "config": {
+                "type": "kinematic",
+                "disabled": false,
+                "restitution": 0,
+                "friction": 0.6,
+                "oneWay": false
+              }
+            },
+            {
+              "name": "Collider",
+              "config": {
+                "type": "circle",
+                "offsetX": 0,
+                "offsetY": 0,
+                "layer": "default",
+                "radius": 8,
+                "debugColor": "#4DFFB8",
+                "disabled": false
+              }
+            },
+            {
+              "name": "KeyboardControl",
+              "config": {
+                "inputEventBindings": [
+                  {
+                    "id": "0a8a3a91-5f51-43fa-b074-38d6fe4c6f64",
+                    "key": "KeyA",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "Movement",
+                    "attrs": [
+                      {
+                        "id": "be9e797d-c9f7-4864-bc92-e9018f0b2e64",
+                        "name": "angle",
+                        "type": "number",
+                        "value": 180
+                      }
+                    ]
+                  },
+                  {
+                    "id": "eade1fe5-b361-40d6-bc5d-37730afbf0b3",
+                    "key": "KeyD",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "Movement",
+                    "attrs": [
+                      {
+                        "id": "6bfc4283-5f89-474a-877b-8aaa756cd6e4",
+                        "name": "angle",
+                        "type": "string",
+                        "value": "0"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "d8ca42e5-1501-463e-ad2d-e136c231718c",
+                    "key": "KeyW",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "Movement",
+                    "attrs": [
+                      {
+                        "id": "16f909ea-2fc1-47e2-b13a-3c69c570d187",
+                        "name": "angle",
+                        "type": "number",
+                        "value": 270
+                      }
+                    ]
+                  },
+                  {
+                    "id": "a170ea13-a03f-456d-b18c-e4188875e39b",
+                    "key": "KeyS",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "Movement",
+                    "attrs": [
+                      {
+                        "id": "354ba004-e6c8-4303-9fd1-15cf3e9ccdd8",
+                        "name": "angle",
+                        "type": "number",
+                        "value": 90
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Movement",
+              "config": {
+                "speed": 100
+              }
+            },
+            {
+              "name": "ViewDirection",
+              "config": {
+                "x": 0,
+                "y": 0
+              }
+            },
+            {
+              "name": "Weapon",
+              "config": {
+                "type": "range",
+                "cooldown": 0.5,
+                "damage": 1,
+                "range": 160,
+                "projectileSpeed": 200,
+                "projectileRadius": 4,
+                "projectileModel": "d01d07c3-ec89-4f61-a2e4-beadcefee92a"
+              }
+            },
+            {
+              "name": "MouseControl",
+              "config": {
+                "inputEventBindings": [
+                  {
+                    "id": "3410a29c-eb56-4b4c-8f01-b2ac0b8d8192",
+                    "event": "mousedown",
+                    "eventType": "AttackInput",
+                    "attrs": [],
+                    "button": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Team",
+              "config": {
+                "index": 0
+              }
+            },
+            {
+              "name": "Behaviors",
+              "config": {
+                "list": [
+                  {
+                    "id": "731fdf57-bb6b-430c-87fc-6837b148f77c",
+                    "name": "ControlStickBehavior",
+                    "options": {}
+                  }
+                ]
+              }
+            },
+            {
+              "name": "CharacterBody",
+              "config": {
+                "motionMode": "free",
+                "skinWidth": 0.1,
+                "maxSlides": 4,
+                "maxRecoveries": 3,
+                "disabled": false
+              }
+            },
+            {
+              "name": "Shape",
+              "config": {
+                "type": "circle",
+                "strokeWidth": 0,
+                "strokeColor": "rgb(255,255,255)",
+                "strokeAlignment": 0.5,
+                "fill": "rgb(12,55,250)",
+                "pixelLine": false,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "sortingLayer": "units",
+                "blending": "normal",
+                "opacity": 1,
+                "disabled": false,
+                "radius": 8
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "70055138-4a42-49b8-a400-5b33918579b8",
+          "name": "Enemy",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -72,
+                "offsetY": 56,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Collider",
+              "config": {
+                "type": "box",
+                "sizeX": 16,
+                "sizeY": 16,
+                "offsetX": 0,
+                "offsetY": 0,
+                "layer": "default",
+                "debugColor": "#4DFFB8",
+                "disabled": false
+              }
+            },
+            {
+              "name": "Health",
+              "config": {
+                "points": 1
+              }
+            },
+            {
+              "name": "RigidBody",
+              "config": {
+                "type": "dynamic",
+                "mass": 1,
+                "gravityScale": 0,
+                "linearDamping": 0,
+                "disabled": false,
+                "restitution": 0,
+                "friction": 0.6,
+                "oneWay": false,
+                "angularDamping": 0,
+                "lockRotation": false
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "default",
+                "fit": "stretch",
+                "blending": "normal",
+                "color": "#d30404",
+                "opacity": 1,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "disabled": false
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "3d500f56-b005-4686-b8b7-f31b114cfb3f",
+              "name": "Hit Box",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "Collider",
+                  "config": {
+                    "type": "box",
+                    "sizeX": 16,
+                    "sizeY": 16,
+                    "offsetX": 0,
+                    "offsetY": 0,
+                    "layer": "default",
+                    "debugColor": "#4DFFB8",
+                    "disabled": false
+                  }
+                },
+                {
+                  "name": "HitBox",
+                  "config": {}
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "f7885966-b39b-4f36-b050-77dee33d444e",
+          "name": "Enemy 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 72,
+                "offsetY": -56,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Collider",
+              "config": {
+                "type": "box",
+                "sizeX": 16,
+                "sizeY": 16,
+                "offsetX": 0,
+                "offsetY": 0,
+                "layer": "default",
+                "debugColor": "#4DFFB8",
+                "disabled": false
+              }
+            },
+            {
+              "name": "Health",
+              "config": {
+                "points": 1
+              }
+            },
+            {
+              "name": "RigidBody",
+              "config": {
+                "type": "dynamic",
+                "mass": 1,
+                "gravityScale": 0,
+                "linearDamping": 0,
+                "disabled": false,
+                "restitution": 0,
+                "friction": 0.6,
+                "oneWay": false,
+                "angularDamping": 0,
+                "lockRotation": false
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 16,
+                "height": 16,
+                "slice": 1,
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "default",
+                "fit": "stretch",
+                "blending": "normal",
+                "color": "#d30404",
+                "opacity": 1,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "disabled": false
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "a6bb2eb8-7ba8-4d25-9baa-b70a2b461c9d",
+              "name": "Hit Box",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": 0,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "Collider",
+                  "config": {
+                    "type": "box",
+                    "sizeX": 16,
+                    "sizeY": 16,
+                    "offsetX": 0,
+                    "offsetY": 0,
+                    "layer": "default",
+                    "debugColor": "#4DFFB8",
+                    "disabled": false
+                  }
+                },
+                {
+                  "name": "HitBox",
+                  "config": {}
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "b3af7323-8d6e-4f0e-8da6-d30ec439dc79",
+          "name": "Blocker",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -80,
+                "offsetY": -64,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Collider",
+              "config": {
+                "type": "circle",
+                "offsetX": 0,
+                "offsetY": 0,
+                "layer": "default",
+                "radius": 16,
+                "debugColor": "#4DFFB8",
+                "disabled": false
+              }
+            },
+            {
+              "name": "RigidBody",
+              "config": {
+                "type": "static",
+                "mass": 1,
+                "gravityScale": 0,
+                "linearDamping": 0,
+                "disabled": false,
+                "restitution": 0,
+                "friction": 0.6,
+                "oneWay": false
+              }
+            },
+            {
+              "name": "Shape",
+              "config": {
+                "type": "circle",
+                "strokeWidth": 0,
+                "strokeColor": "#fff",
+                "strokeAlignment": 0.5,
+                "fill": "rgb(135,12,69)",
+                "pixelLine": false,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "sortingLayer": "decorations",
+                "blending": "normal",
+                "opacity": 1,
+                "disabled": false,
+                "radius": 16
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "e2849417-da8c-466d-a24b-d1bd00551988",
+          "name": "Blocker 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 48,
+                "offsetY": -32,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 32,
+                "height": 32,
+                "slice": 1,
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations",
+                "fit": "stretch",
+                "blending": "normal",
+                "color": "#471b00",
+                "opacity": 1,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "disabled": false
+              }
+            },
+            {
+              "name": "Collider",
+              "config": {
+                "type": "box",
+                "sizeX": 32,
+                "sizeY": 32,
+                "offsetX": 0,
+                "offsetY": 0,
+                "layer": "default",
+                "debugColor": "#4DFFB8",
+                "disabled": false
+              }
+            },
+            {
+              "name": "RigidBody",
+              "config": {
+                "type": "static",
+                "mass": 1,
+                "gravityScale": 0,
+                "linearDamping": 0,
+                "disabled": false,
+                "restitution": 0,
+                "friction": 0.6,
+                "oneWay": false
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "a332ef02-b5ea-441c-b0cf-24d7439f33cf",
+          "name": "Blocker 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 16,
+                "offsetY": 96,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "",
+                "width": 32,
+                "height": 32,
+                "slice": 1,
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "decorations",
+                "fit": "stretch",
+                "blending": "normal",
+                "color": "#471b00",
+                "opacity": 1,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "disabled": false
+              }
+            },
+            {
+              "name": "Collider",
+              "config": {
+                "type": "box",
+                "sizeX": 32,
+                "sizeY": 32,
+                "offsetX": 0,
+                "offsetY": 0,
+                "layer": "default",
+                "debugColor": "#4DFFB8",
+                "disabled": false
+              }
+            },
+            {
+              "name": "RigidBody",
+              "config": {
+                "type": "static",
+                "mass": 1,
+                "gravityScale": 0,
+                "linearDamping": 0,
+                "disabled": false,
+                "restitution": 0,
+                "friction": 0.6,
+                "oneWay": false
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "f95793b3-dff4-448d-9990-b8ff1f50d872",
+          "name": "Main Camera",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Camera",
+              "config": {
+                "zoom": 1,
+                "current": true
+              }
+            },
+            {
+              "name": "Behaviors",
+              "config": {
+                "list": [
+                  {
+                    "id": "f9e8e789-528c-41d7-b7cd-c11399f1c7a2",
+                    "name": "CameraBehavior",
+                    "options": {}
+                  }
+                ]
+              }
+            },
+            {
+              "name": "LevelInfo",
+              "config": {
+                "exampleField": "",
+                "index": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "60d47f93-52bf-4429-98df-239d4964bf4e",
+          "templateId": "3375b1c1-1495-4e62-9837-4c57890d6a75",
+          "name": "Finish",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -120,
+                "offsetY": 120,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
+    }
+  ],
+  "systems": [
+    {
+      "name": "AnalyticsSystem",
+      "options": {}
+    },
+    {
+      "name": "Saver",
+      "options": {}
+    },
+    {
+      "name": "MovementSystem",
+      "options": {}
+    },
+    {
+      "name": "CharacterController",
+      "options": {}
+    },
+    {
+      "name": "PhysicsSystem",
+      "options": {
+        "gravityX": 0,
+        "gravityY": 980,
+        "solverIterations": 8,
+        "maxAllowedPenetration": 0.5,
+        "maxBiasVelocity": 60
+      }
+    },
+    {
+      "name": "Interpolator",
+      "options": {}
+    },
+    {
+      "name": "CameraSystem",
+      "options": {
+        "windowNodeId": "root",
+        "initialCamera": "0f754dc8-612c-434e-bacd-ba047f23a873",
+        "scaleSensitivity": 0
+      }
+    },
+    {
+      "name": "MouseInputSystem",
+      "options": {
+        "useWindow": true
+      }
+    },
+    {
+      "name": "KeyboardInputSystem",
+      "options": {
+        "useWindow": true
+      }
+    },
+    {
+      "name": "MouseControlSystem",
+      "options": {}
+    },
+    {
+      "name": "KeyboardControlSystem",
+      "options": {}
+    },
+    {
+      "name": "CombatSystem",
+      "options": {}
+    },
+    {
+      "name": "Reaper",
+      "options": {}
+    },
+    {
+      "name": "BehaviorSystem",
+      "options": {}
+    },
+    {
+      "name": "ParallaxSystem",
+      "options": {}
+    },
+    {
+      "name": "Animator",
+      "options": {}
+    },
+    {
+      "name": "Renderer",
+      "options": {
+        "windowNodeId": "root",
+        "backgroundColor": "#000000",
+        "filterEffects": []
+      }
+    },
+    {
+      "name": "UIBridge",
+      "options": {}
+    },
+    {
+      "name": "AudioSystem",
+      "options": {}
+    },
+    {
+      "name": "GameStatsMeter",
+      "options": {
+        "frequency": 1
+      }
+    }
+  ],
+  "templates": [
+    {
+      "id": "92d2fa56-852a-4435-bb4c-d6d3bc15d5f7",
+      "name": "Melee Hit",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Collider",
+          "config": {
+            "type": "circle",
+            "radius": 0,
+            "offsetX": 0,
+            "offsetY": 0,
+            "layer": "default",
+            "debugColor": "#4DFFB8",
+            "disabled": false
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "",
+            "width": 16,
+            "height": 16,
+            "slice": 1,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "default",
+            "fit": "stretch",
+            "blending": "normal",
+            "color": "#fff",
+            "opacity": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "disabled": false
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "d01d07c3-ec89-4f61-a2e4-beadcefee92a",
+      "name": "Projectile",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Collider",
+          "config": {
+            "type": "circle",
+            "radius": 0,
+            "offsetX": 0,
+            "offsetY": 0,
+            "layer": "default",
+            "debugColor": "#4DFFB8",
+            "disabled": false
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "",
+            "width": 8,
+            "height": 8,
+            "slice": 1,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "units",
+            "fit": "stretch",
+            "blending": "normal",
+            "color": "#fff",
+            "opacity": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "disabled": false
+          }
+        },
+        {
+          "name": "RigidBody",
+          "config": {
+            "type": "dynamic",
+            "mass": 1,
+            "gravityScale": 0,
+            "linearDamping": 0,
+            "disabled": false,
+            "restitution": 0,
+            "friction": 0.6,
+            "oneWay": false,
+            "angularDamping": 0,
+            "lockRotation": false
+          }
+        },
+        {
+          "name": "Health",
+          "config": {
+            "points": 1
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "3375b1c1-1495-4e62-9837-4c57890d6a75",
+      "name": "Finish",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Shape",
+          "config": {
+            "type": "rectangle",
+            "strokeWidth": 0,
+            "strokeColor": "#fff",
+            "strokeAlignment": 0.5,
+            "fill": "rgb(255,251,10)",
+            "pixelLine": false,
+            "sortingLayer": "decorations",
+            "blending": "normal",
+            "opacity": 1,
+            "disabled": false,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "sizeX": 16,
+            "sizeY": 16
+          }
+        },
+        {
+          "name": "Collider",
+          "config": {
+            "type": "box",
+            "sizeX": 16,
+            "sizeY": 16,
+            "offsetX": 0,
+            "offsetY": 0,
+            "layer": "default",
+            "debugColor": "#4DFFB8",
+            "disabled": false
+          }
+        },
+        {
+          "name": "Behaviors",
+          "config": {
+            "list": [
+              {
+                "id": "eaae0a11-e5e7-41d4-a519-c775a17ebac6",
+                "name": "Finish",
+                "options": {}
+              }
+            ]
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "5d0588f5-6ca1-45b9-b8fd-d411f72983dc",
+      "name": "Platform Thin",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Collider",
+          "config": {
+            "type": "segment",
+            "offsetX": 0,
+            "offsetY": 0,
+            "layer": "default",
+            "debugColor": "#4DFFB8",
+            "disabled": false,
+            "point1X": -32,
+            "point1Y": -2,
+            "point2X": 32,
+            "point2Y": -2
+          }
+        },
+        {
+          "name": "Shape",
+          "config": {
+            "type": "rectangle",
+            "sizeX": 64,
+            "sizeY": 4,
+            "strokeWidth": 0,
+            "strokeColor": "#fff",
+            "strokeAlignment": 0.5,
+            "fill": "rgb(184,98,27)",
+            "pixelLine": false,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "sortingLayer": "decorations",
+            "blending": "normal",
+            "opacity": 1,
+            "disabled": false
+          }
+        },
+        {
+          "name": "RigidBody",
+          "config": {
+            "type": "static",
+            "mass": 1,
+            "gravityScale": 0,
+            "linearDamping": 0,
+            "oneWay": true,
+            "disabled": false,
+            "oneWayNormalX": 0,
+            "oneWayNormalY": -1,
+            "restitution": 0,
+            "friction": 0.6
+          }
+        }
+      ],
+      "children": []
+    }
+  ],
+  "globalOptions": [
+    {
+      "name": "sorting",
+      "options": {
+        "order": "bottomRight",
+        "layers": [
+          {
+            "id": "388f43fb-4ab3-4973-8dc3-0332ca893ff1",
+            "name": "background"
+          },
+          {
+            "id": "688c5812-b0fd-434b-aa24-70ce09be7d11",
+            "name": "background-2"
+          },
+          {
+            "id": "2654d67f-bc09-47eb-af47-7b393537a1de",
+            "name": "background-3"
+          },
+          {
+            "id": "ddab3636-1184-4c46-ab33-2792b755b5dc",
+            "name": "decorations"
+          },
+          {
+            "id": "77f028c4-151b-4094-a16d-3e50e7654a08",
+            "name": "decorations-2"
+          },
+          {
+            "id": "3111c97c-6daf-4e32-8bfd-a8420b98f9c9",
+            "name": "decorations-3"
+          },
+          {
+            "id": "204715e5-c855-4bc3-b459-06023519ce36",
+            "name": "units"
+          },
+          {
+            "id": "cd8c8d30-fe0c-4e48-92b0-926e58600e49",
+            "name": "foreground"
+          },
+          {
+            "id": "bb65312e-5873-4b63-99d6-eda457e94b06",
+            "name": "default"
+          }
+        ]
+      }
+    },
+    {
+      "name": "audioGroups",
+      "options": {
+        "groups": [
+          {
+            "id": "9fcddc8d-250a-4439-b0b3-6f6cb335714e",
+            "name": "music",
+            "volume": 1
+          },
+          {
+            "id": "0fd17347-48d8-4433-b9fe-f532c8fafd0c",
+            "name": "effects",
+            "volume": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "physics",
+      "options": {
+        "collisionLayers": [
+          {
+            "id": "0c558a83-d403-490b-abfe-ab7a59c78851",
+            "name": "boxes"
+          },
+          {
+            "id": "1ab9b58e-e535-4bcc-b393-85c6b32ef694",
+            "name": "character"
+          }
+        ],
+        "collisionMatrix": {
+          "default": {
+            "default": true,
+            "0c558a83-d403-490b-abfe-ab7a59c78851": true,
+            "1ab9b58e-e535-4bcc-b393-85c6b32ef694": true
+          },
+          "0c558a83-d403-490b-abfe-ab7a59c78851": {
+            "default": true,
+            "0c558a83-d403-490b-abfe-ab7a59c78851": true,
+            "1ab9b58e-e535-4bcc-b393-85c6b32ef694": true
+          },
+          "1ab9b58e-e535-4bcc-b393-85c6b32ef694": {
+            "default": true,
+            "0c558a83-d403-490b-abfe-ab7a59c78851": true,
+            "1ab9b58e-e535-4bcc-b393-85c6b32ef694": false
+          }
+        }
+      }
+    },
+    {
+      "name": "performance",
+      "options": {
+        "maxFPS": 0,
+        "fixedUpdateRate": 60,
+        "maxFrameDelta": 250,
+        "maxFixedUpdatesPerFrame": 5
+      }
+    }
+  ],
+  "startSceneId": "8aa8d080-b995-4892-b718-829dd717612c"
+}

@@ -1,0 +1,19 @@
+.button {
+  border: 4px solid #fff;
+  padding: 10px 24px;
+  font-size: 24px;
+  color: #fff;
+  background: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Monocraft', sans-serif;
+}
+
+.button:hover {
+  background: #fff;
+  color: #070004;
+}
+
+.button:active {
+  transform: translateY(2px);
+}

@@ -1,0 +1,19 @@
+.settings-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-menu__button {
+  margin-top: 16px;
+}
+
+.settings-menu__field + .settings-menu__field {
+  margin-top: 10px;
+}
+
+@media screen and (max-height: 481px), screen and (max-width: 768px) {
+  .settings-menu {
+    width: 100%;
+    max-width: 356px;
+  }
+}

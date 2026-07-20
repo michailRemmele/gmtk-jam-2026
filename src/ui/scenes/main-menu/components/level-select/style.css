@@ -1,0 +1,39 @@
+.level-select-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.level-select-menu__button + .level-select-menu__button {
+  margin-top: 16px;
+}
+
+.level-select-menu__levels {
+  margin-bottom: 16px;
+}
+
+.level-select-menu__level {
+  margin-bottom: 16px;
+}
+
+.level-select-menu__panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.level-select-menu__button {
+  width: 100%;
+}
+
+.level-select-menu__panel-description {
+  margin-top: 8px;
+  font-size: 16px;
+  text-transform: none;
+}
+
+.level-select-menu__panel-description_gold {
+  color: gold;
+}
+
+.level-select-menu__panel-description_red {
+  color: red;
+}
