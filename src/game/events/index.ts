@@ -5,6 +5,9 @@ export const MovementJump = 'MovementJump';
 
 export const ControlStickInput = 'ControlStickInput';
 
+export const ThrustInput = 'ThrustInput';
+export const RotateInput = 'RotateInput';
+
 export const AttackInput = 'AttackInput';
 export const Attack = 'Attack';
 export const Damage = 'Damage';
@@ -28,6 +31,9 @@ export type DamageEvent = ActorEvent<{ value: number; actor?: Actor }>;
 
 export type ControlStickInputEvent = SceneEvent<{ x: number; y: number }>;
 
+export type ThrustInputEvent = ActorEvent<{ value?: number | string }>;
+export type RotateInputEvent = ActorEvent<{ value?: number | string }>;
+
 export type SendAnalyticsEvent = SceneEvent<{
   name: string;
   payload: Record<string, string | number | boolean>;
@@ -43,6 +49,9 @@ declare module 'dacha' {
   export interface ActorEventMap {
     [Movement]: MovementEvent;
     [MovementJump]: ActorEvent;
+
+    [ThrustInput]: ThrustInputEvent;
+    [RotateInput]: RotateInputEvent;
 
     [AttackInput]: AttackInputEvent;
     [Attack]: ActorEvent;

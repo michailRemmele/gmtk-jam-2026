@@ -4,7 +4,7 @@ import { DefineBehavior } from 'dacha-workbench/decorators';
 
 import { PLAYER_ACTOR_NAME } from '../../../consts/actors';
 
-const VIEWPORT_SIZE = 160;
+const VIEWPORT_SIZE = 480;
 
 @DefineBehavior({
   name: 'CameraBehavior',
