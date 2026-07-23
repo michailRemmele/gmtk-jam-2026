@@ -1,4 +1,4 @@
-import type { Actor, BehaviorOptions, World } from 'dacha';
+import type { Actor, ActorEvent, BehaviorOptions, World } from 'dacha';
 import {
   Behavior,
   Collider,
@@ -15,6 +15,8 @@ import * as EventType from '../../events';
 import { ContactBuffer } from './contacts';
 import { ContactSolver } from './solver';
 import type { SolverSettings } from './solver';
+import { ImpactDamage } from './impact-damage';
+import type { ImpactDamageSettings } from './impact-damage';
 
 const DEFAULT_BASE_MASS = 1;
 const DEFAULT_BLOCK_MASS = 1;
@@ -24,6 +26,7 @@ const DEFAULT_FRICTION = 0.4;
 const DEFAULT_VELOCITY_ITERATIONS = 3;
 const DEFAULT_POSITION_SLOP = 0.5;
 const DEFAULT_POSITION_BETA = 0.8;
+const DEFAULT_IMPACT_THRESHOLD = 200;
 
 interface PlatformBodyOptions extends BehaviorOptions {
   baseMass?: number;
@@ -34,12 +37,16 @@ interface PlatformBodyOptions extends BehaviorOptions {
   velocityIterations?: number;
   positionSlop?: number;
   positionBeta?: number;
+  impactThreshold?: number;
 }
 
 @DefineBehavior({
   name: 'PlatformBody',
 })
-export default class PlatformBody extends Behavior implements SolverSettings {
+export default class PlatformBody
+  extends Behavior
+  implements SolverSettings, ImpactDamageSettings
+{
   @DefineField({ initialValue: DEFAULT_BASE_MASS })
   baseMass: number;
 
@@ -64,6 +71,9 @@ export default class PlatformBody extends Behavior implements SolverSettings {
   @DefineField({ initialValue: DEFAULT_POSITION_BETA })
   positionBeta: number;
 
+  @DefineField({ initialValue: DEFAULT_IMPACT_THRESHOLD })
+  impactThreshold: number;
+
   private actor: Actor;
   private world: World;
 
@@ -76,6 +86,7 @@ export default class PlatformBody extends Behavior implements SolverSettings {
 
   private contacts: ContactBuffer;
   private solver: ContactSolver;
+  private impactDamage: ImpactDamage;
 
   private forceBuffer: Vector2;
   private pointBuffer: Vector2;
@@ -95,6 +106,7 @@ export default class PlatformBody extends Behavior implements SolverSettings {
       options.velocityIterations ?? DEFAULT_VELOCITY_ITERATIONS;
     this.positionSlop = options.positionSlop ?? DEFAULT_POSITION_SLOP;
     this.positionBeta = options.positionBeta ?? DEFAULT_POSITION_BETA;
+    this.impactThreshold = options.impactThreshold ?? DEFAULT_IMPACT_THRESHOLD;
 
     this.parts = [];
     this.partSet = new Set();
@@ -105,6 +117,7 @@ export default class PlatformBody extends Behavior implements SolverSettings {
 
     this.contacts = new ContactBuffer(SHIP_PARTS_LAYER, this.isForeignActor);
     this.solver = new ContactSolver();
+    this.impactDamage = new ImpactDamage();
 
     this.forceBuffer = new Vector2(0, 0);
     this.pointBuffer = new Vector2(0, 0);
@@ -113,6 +126,7 @@ export default class PlatformBody extends Behavior implements SolverSettings {
       EventType.PlatformPartsChanged,
       this.handlePartsChanged,
     );
+    this.actor.addEventListener(EventType.Kill, this.handleKill);
   }
 
   destroy(): void {
@@ -120,10 +134,20 @@ export default class PlatformBody extends Behavior implements SolverSettings {
       EventType.PlatformPartsChanged,
       this.handlePartsChanged,
     );
+    this.actor.removeEventListener(EventType.Kill, this.handleKill);
   }
 
   private handlePartsChanged = (): void => {
     this.isDirty = true;
+  };
+
+  private handleKill = (event: ActorEvent): void => {
+    if (!this.partSet.has(event.target)) {
+      return;
+    }
+
+    this.isDirty = true;
+    this.actor.dispatchEvent(EventType.PlatformPartsChanged);
   };
 
   private isForeignActor = (actor: Actor): boolean =>
@@ -214,7 +238,15 @@ export default class PlatformBody extends Behavior implements SolverSettings {
       position.y + this.localCenterX * sin + this.localCenterY * cos,
     );
 
-    this.contacts.collect(this.world.systemApi.get(PhysicsAPI), this.parts);
+    this.contacts.collect(
+      this.world.systemApi.get(PhysicsAPI),
+      this.parts,
+      rigidBody,
+      position.x,
+      position.y,
+    );
+
+    this.impactDamage.process(this.contacts, this);
 
     this.solver.resolveVelocities(
       rigidBody,

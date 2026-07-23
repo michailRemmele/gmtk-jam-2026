@@ -7,13 +7,9 @@ import {
   BitmapText,
   Animatable,
   Camera,
+  Mesh,
 } from 'dacha';
-import type {
-  SceneSystemOptions,
-  Scene,
-  Time,
-  ActorEvent,
-} from 'dacha';
+import type { SceneSystemOptions, Scene, Time, ActorEvent } from 'dacha';
 import { DefineSystem } from 'dacha-workbench/decorators';
 
 import * as EventType from '../../events';
@@ -32,6 +28,7 @@ const ALLOWED_COMPONENTS = new Set<ComponentConstructor>([
   BitmapText,
   Animatable,
   Camera,
+  Mesh,
 ]);
 
 @DefineSystem({

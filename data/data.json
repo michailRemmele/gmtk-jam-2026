@@ -173,7 +173,8 @@
                       "friction": 0.4,
                       "velocityIterations": 3,
                       "positionSlop": 0.5,
-                      "positionBeta": 0.8
+                      "positionBeta": 0.8,
+                      "impactThreshold": 100
                     }
                   }
                 ]
@@ -270,7 +271,7 @@
                 {
                   "name": "Transform",
                   "config": {
-                    "offsetX": -24,
+                    "offsetX": 0,
                     "offsetY": -48,
                     "rotation": 0,
                     "scaleX": 1,
@@ -1024,6 +1025,12 @@
             "sizeY": 48,
             "strokeWidth": 0
           }
+        },
+        {
+          "name": "CollisionDamage",
+          "config": {
+            "value": 1
+          }
         }
       ],
       "children": []
@@ -1083,6 +1090,12 @@
             "sizeY": 24,
             "strokeWidth": 0
           }
+        },
+        {
+          "name": "CollisionDamage",
+          "config": {
+            "value": 1
+          }
         }
       ],
       "children": []
@@ -1115,22 +1128,27 @@
           }
         },
         {
-          "name": "Shape",
+          "name": "Mesh",
           "config": {
-            "type": "rectangle",
-            "strokeColor": "#fff",
-            "strokeAlignment": 0.5,
-            "pixelLine": false,
-            "fill": "rgb(77,122,23)",
+            "src": "",
+            "width": 24,
+            "height": 24,
+            "slice": 1,
             "sortOffsetX": 0,
             "sortOffsetY": 0,
-            "sortingLayer": "default",
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "units",
             "blending": "normal",
+            "color": "rgb(23,106,41)",
             "opacity": 1,
-            "disabled": false,
-            "sizeX": 24,
-            "sizeY": 24,
-            "strokeWidth": 0
+            "disabled": false
+          }
+        },
+        {
+          "name": "Health",
+          "config": {
+            "points": 3
           }
         }
       ],
