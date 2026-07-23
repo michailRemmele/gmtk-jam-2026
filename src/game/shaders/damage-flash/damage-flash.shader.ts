@@ -10,7 +10,7 @@ interface DamageFlashOptions {
 
 const DEFAULT_HIT_TIME = -1000;
 const DEFAULT_FLASH_COLOR: [number, number, number] = [1, 1, 1];
-const DEFAULT_FLASH_DURATION = 0.25;
+const DEFAULT_FLASH_DURATION = 0.1;
 
 const VERTEX_SHADER = `
   precision mediump float;
@@ -53,7 +53,7 @@ const FRAGMENT_SHADER = `
     vec4 color = texture2D(uSampler, uUVOffset + vUV * uUVScale);
     color.rgb *= uTint;
 
-    float flash = step(uTime - uHitTime, uFlashDuration);
+    float flash = step(uTime - uHitTime, uFlashDuration) * color.a;
     color.rgb = mix(color.rgb, uFlashColor, flash);
 
     color *= uAlpha;

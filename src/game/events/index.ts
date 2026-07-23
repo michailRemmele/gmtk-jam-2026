@@ -21,6 +21,8 @@ export const SendAnalytics = 'SendAnalytics';
 
 export const GameOver = 'GameOver';
 
+export const TimerTick = 'TimerTick';
+
 export type MovementEvent = ActorEvent<{
   angle?: number;
   x?: number;
@@ -47,6 +49,8 @@ export type GameOverEvent = SceneEvent<{
   score: number;
 }>;
 
+export type TimerTickEvent = SceneEvent<{ secondsLeft: number }>;
+
 declare module 'dacha' {
   export interface ActorEventMap {
     [Movement]: MovementEvent;
@@ -68,5 +72,6 @@ declare module 'dacha' {
     [ResetSaveState]: SceneEvent;
     [SendAnalytics]: SendAnalyticsEvent;
     [GameOver]: GameOverEvent;
+    [TimerTick]: TimerTickEvent;
   }
 }

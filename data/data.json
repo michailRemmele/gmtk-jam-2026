@@ -1217,7 +1217,8 @@
               "name": "LevelInfo",
               "config": {
                 "exampleField": "",
-                "index": 0
+                "index": 0,
+                "escapeTime": 60
               }
             }
           ],
@@ -2529,9 +2530,9 @@
         {
           "name": "Mesh",
           "config": {
-            "src": "",
-            "width": 24,
-            "height": 24,
+            "src": "images/ram-block.png",
+            "width": 36,
+            "height": 36,
             "slice": 1,
             "sortOffsetX": 0,
             "sortOffsetY": 0,
@@ -2539,7 +2540,7 @@
             "flipY": false,
             "sortingLayer": "units",
             "blending": "normal",
-            "color": "rgb(146,13,15)",
+            "color": "rgb(255,255,255)",
             "opacity": 1,
             "disabled": false,
             "material": {
@@ -2880,17 +2881,17 @@
         {
           "name": "Mesh",
           "config": {
-            "src": "",
-            "width": 24,
-            "height": 24,
-            "slice": 1,
+            "src": "images/storage-block.png",
+            "width": 36,
+            "height": 36,
+            "slice": 4,
             "sortOffsetX": 0,
             "sortOffsetY": 0,
             "flipX": false,
             "flipY": false,
             "sortingLayer": "units",
             "blending": "normal",
-            "color": "rgb(231,171,42)",
+            "color": "rgb(255,255,255)",
             "opacity": 1,
             "disabled": false,
             "material": {
@@ -2914,7 +2915,7 @@
                 "id": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
                 "name": "idle",
                 "type": "individual",
-                "speed": 1,
+                "speed": 0.3,
                 "timeline": {
                   "frames": [
                     {
@@ -2925,6 +2926,63 @@
                           "name": "components.Mesh.disabled",
                           "type": "boolean",
                           "value": false
+                        },
+                        {
+                          "id": "2bf785ab-1b91-4e3a-9b55-0f63c1c60fcf",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        }
+                      ]
+                    },
+                    {
+                      "id": "fae2cbd4-46c4-46d7-9343-186bc44bf3b3",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2bf785ab-1b91-4e3a-9b55-0f63c1c60fcf",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 1
+                        }
+                      ]
+                    },
+                    {
+                      "id": "42526215-c546-41b4-90d2-80f92a95c122",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2bf785ab-1b91-4e3a-9b55-0f63c1c60fcf",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 2
+                        }
+                      ]
+                    },
+                    {
+                      "id": "9685667b-96df-40fa-85b4-da48c534b74c",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2bf785ab-1b91-4e3a-9b55-0f63c1c60fcf",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 3
                         }
                       ]
                     }
