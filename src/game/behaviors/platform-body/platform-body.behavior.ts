@@ -12,6 +12,7 @@ import { DefineBehavior, DefineField } from 'dacha-workbench/decorators';
 import { SHIP_PARTS_LAYER } from '../../../consts/physics';
 import * as EventType from '../../events';
 import { GameStateAPI } from '../../systems/game-state/game-state.api';
+import PlatformBlock from '../../components/platform-block/platform-block.component';
 
 import { ContactBuffer } from './contacts';
 import { ContactSolver } from './solver';
@@ -21,7 +22,6 @@ import type { ImpactDamageSettings } from './impact-damage';
 import { LossCondition } from './loss-condition';
 
 const DEFAULT_BASE_MASS = 1;
-const DEFAULT_BLOCK_MASS = 1;
 const DEFAULT_GRAVITY_SCALE = 1;
 const DEFAULT_RESTITUTION = 0;
 const DEFAULT_FRICTION = 0.4;
@@ -32,7 +32,6 @@ const DEFAULT_IMPACT_THRESHOLD = 200;
 
 interface PlatformBodyOptions extends BehaviorOptions {
   baseMass?: number;
-  blockMass?: number;
   gravityScale?: number;
   restitution?: number;
   friction?: number;
@@ -51,9 +50,6 @@ export default class PlatformBody
 {
   @DefineField({ initialValue: DEFAULT_BASE_MASS })
   baseMass: number;
-
-  @DefineField({ initialValue: DEFAULT_BLOCK_MASS })
-  blockMass: number;
 
   @DefineField({ initialValue: DEFAULT_GRAVITY_SCALE })
   gravityScale: number;
@@ -103,7 +99,6 @@ export default class PlatformBody
     this.scene = options.scene;
 
     this.baseMass = options.baseMass ?? DEFAULT_BASE_MASS;
-    this.blockMass = options.blockMass ?? DEFAULT_BLOCK_MASS;
     this.gravityScale = options.gravityScale ?? DEFAULT_GRAVITY_SCALE;
     this.restitution = options.restitution ?? DEFAULT_RESTITUTION;
     this.friction = options.friction ?? DEFAULT_FRICTION;
@@ -173,18 +168,19 @@ export default class PlatformBody
     let momentY = 0;
 
     for (const child of this.actor.children) {
+      const platformBlock = child.getComponent(PlatformBlock);
       const transform = child.getComponent(Transform);
 
-      if (!child.getComponent(Collider) || !transform) {
+      if (!platformBlock || !child.getComponent(Collider) || !transform) {
         continue;
       }
 
       this.parts.push(child);
       this.partSet.add(child);
 
-      momentX += transform.local.position.x * this.blockMass;
-      momentY += transform.local.position.y * this.blockMass;
-      mass += this.blockMass;
+      momentX += transform.local.position.x * platformBlock.mass;
+      momentY += transform.local.position.y * platformBlock.mass;
+      mass += platformBlock.mass;
     }
 
     this.localCenterX = mass > 0 ? momentX / mass : 0;

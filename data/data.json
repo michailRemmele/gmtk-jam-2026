@@ -167,7 +167,6 @@
                     "name": "PlatformBody",
                     "options": {
                       "baseMass": 0.4,
-                      "blockMass": 0.1,
                       "gravityScale": 1,
                       "restitution": 0,
                       "friction": 0.4,
@@ -210,33 +209,15 @@
           ],
           "children": [
             {
-              "id": "e6313fe4-3d66-47da-9052-10eb1c3a0032",
-              "templateId": "fcc3f3e9-c932-41b2-ad52-b9ce6fc30333",
-              "name": "Platform Block",
-              "components": [
-                {
-                  "name": "Transform",
-                  "config": {
-                    "offsetX": 23.99999999999997,
-                    "offsetY": -24,
-                    "rotation": 0,
-                    "scaleX": 1,
-                    "scaleY": 1
-                  }
-                }
-              ],
-              "children": []
-            },
-            {
-              "id": "72bc07a3-a6ee-4ba7-87c3-70161118833d",
-              "templateId": "fcc3f3e9-c932-41b2-ad52-b9ce6fc30333",
-              "name": "Platform Block 2",
+              "id": "0dc3e7a8-3349-40f2-9bf8-d1bc01749ad1",
+              "templateId": "add3b188-188f-4e79-bdb5-f2ae9f886f4c",
+              "name": "Storage Block",
               "components": [
                 {
                   "name": "Transform",
                   "config": {
                     "offsetX": 0,
-                    "offsetY": -24,
+                    "offsetY": -72,
                     "rotation": 0,
                     "scaleX": 1,
                     "scaleY": 1
@@ -246,33 +227,105 @@
               "children": []
             },
             {
-              "id": "38d01718-b898-4e05-bcd8-2ff8c3adc7d8",
-              "templateId": "fcc3f3e9-c932-41b2-ad52-b9ce6fc30333",
-              "name": "Platform Block 3",
-              "components": [
-                {
-                  "name": "Transform",
-                  "config": {
-                    "offsetX": -24,
-                    "offsetY": -24,
-                    "rotation": 0,
-                    "scaleX": 1,
-                    "scaleY": 1
-                  }
-                }
-              ],
-              "children": []
-            },
-            {
-              "id": "82939ea0-408a-4190-b4f4-e6d08b2e214d",
-              "templateId": "fcc3f3e9-c932-41b2-ad52-b9ce6fc30333",
-              "name": "Platform Block 5",
+              "id": "8cb748cd-de48-4929-98e9-8b686cca86f3",
+              "templateId": "add3b188-188f-4e79-bdb5-f2ae9f886f4c",
+              "name": "Storage Block 2",
               "components": [
                 {
                   "name": "Transform",
                   "config": {
                     "offsetX": 0,
                     "offsetY": -48,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "62301d36-b3d9-486c-a7a0-dd4d0d32cce7",
+              "templateId": "80076c5f-bb28-494b-aa89-602f8d1a1e8b",
+              "name": "Ram Block",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 24,
+                    "offsetY": -48,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "8b4834cc-e31e-486e-9b4e-9044ed83d92e",
+              "templateId": "80076c5f-bb28-494b-aa89-602f8d1a1e8b",
+              "name": "Ram Block 2",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -24,
+                    "offsetY": -48,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "7842c265-a2da-4c7d-87e1-9f5dec2a022d",
+              "templateId": "664662c7-bc82-480d-8668-af14fae72d64",
+              "name": "Turret Block",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 24,
+                    "offsetY": -23.99999999999997,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "b0444f9c-1a43-4ae9-b2ad-c471d3c6187d",
+              "templateId": "664662c7-bc82-480d-8668-af14fae72d64",
+              "name": "Turret Block 2",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -24,
+                    "offsetY": -23.99999999999997,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "3f2f27d8-59ca-4235-8873-7b522678544b",
+              "templateId": "2b3d5fcb-0489-4fdc-b8d3-c388f4c7b653",
+              "name": "Booster Block",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": -23.99999999999997,
                     "rotation": 0,
                     "scaleX": 1,
                     "scaleY": 1
@@ -1249,7 +1302,7 @@
         {
           "name": "CollisionDamage",
           "config": {
-            "value": 1
+            "value": 2
           }
         }
       ],
@@ -1257,7 +1310,7 @@
     },
     {
       "id": "c5322801-9783-49bf-af66-153d2c6a010d",
-      "name": "Wall",
+      "name": "Static Wall",
       "components": [
         {
           "name": "Transform",
@@ -1314,7 +1367,7 @@
         {
           "name": "CollisionDamage",
           "config": {
-            "value": 1
+            "value": 2
           }
         }
       ],
@@ -1372,7 +1425,7 @@
         {
           "name": "Health",
           "config": {
-            "points": 3
+            "points": 6
           }
         },
         {
@@ -1446,7 +1499,10 @@
         },
         {
           "name": "PlatformBlock",
-          "config": {}
+          "config": {
+            "mass": 0.1,
+            "type": "basic"
+          }
         },
         {
           "name": "CollisionDamage",
@@ -1595,6 +1651,566 @@
                 "transitions": []
               }
             ]
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "80076c5f-bb28-494b-aa89-602f8d1a1e8b",
+      "name": "Ram Block",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Collider",
+          "config": {
+            "type": "box",
+            "offsetX": 0,
+            "offsetY": 0,
+            "layer": "0c558a83-d403-490b-abfe-ab7a59c78851",
+            "debugColor": "#4DFFB8",
+            "disabled": false,
+            "sizeX": 24,
+            "sizeY": 24
+          }
+        },
+        {
+          "name": "Mesh",
+          "config": {
+            "src": "",
+            "width": 24,
+            "height": 24,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "units",
+            "blending": "normal",
+            "color": "rgb(146,13,15)",
+            "opacity": 1,
+            "disabled": false,
+            "material": {
+              "name": "DamageFlash",
+              "options": {}
+            }
+          }
+        },
+        {
+          "name": "Health",
+          "config": {
+            "points": 12
+          }
+        },
+        {
+          "name": "Animatable",
+          "config": {
+            "initialState": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+            "states": [
+              {
+                "id": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+                "name": "idle",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "a682db86-64a1-4fc0-a464-5524c6ac75ac",
+                    "state": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "22c187c1-3017-45f7-8a1b-973f3d2fe0b2",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                "name": "Death",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "PlatformBlock",
+          "config": {
+            "mass": 0.3,
+            "type": "ram"
+          }
+        },
+        {
+          "name": "CollisionDamage",
+          "config": {
+            "value": 3
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "664662c7-bc82-480d-8668-af14fae72d64",
+      "name": "Turret Block",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Collider",
+          "config": {
+            "type": "box",
+            "offsetX": 0,
+            "offsetY": 0,
+            "layer": "0c558a83-d403-490b-abfe-ab7a59c78851",
+            "debugColor": "#4DFFB8",
+            "disabled": false,
+            "sizeX": 24,
+            "sizeY": 24
+          }
+        },
+        {
+          "name": "Mesh",
+          "config": {
+            "src": "",
+            "width": 24,
+            "height": 24,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "units",
+            "blending": "normal",
+            "color": "rgb(40,52,180)",
+            "opacity": 1,
+            "disabled": false,
+            "material": {
+              "name": "DamageFlash",
+              "options": {}
+            }
+          }
+        },
+        {
+          "name": "Health",
+          "config": {
+            "points": 4
+          }
+        },
+        {
+          "name": "Animatable",
+          "config": {
+            "initialState": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+            "states": [
+              {
+                "id": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+                "name": "idle",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "a682db86-64a1-4fc0-a464-5524c6ac75ac",
+                    "state": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "22c187c1-3017-45f7-8a1b-973f3d2fe0b2",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                "name": "Death",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "PlatformBlock",
+          "config": {
+            "mass": 0.1,
+            "type": "turret"
+          }
+        },
+        {
+          "name": "CollisionDamage",
+          "config": {
+            "value": 1
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "add3b188-188f-4e79-bdb5-f2ae9f886f4c",
+      "name": "Storage Block",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Collider",
+          "config": {
+            "type": "box",
+            "offsetX": 0,
+            "offsetY": 0,
+            "layer": "0c558a83-d403-490b-abfe-ab7a59c78851",
+            "debugColor": "#4DFFB8",
+            "disabled": false,
+            "sizeX": 24,
+            "sizeY": 24
+          }
+        },
+        {
+          "name": "Mesh",
+          "config": {
+            "src": "",
+            "width": 24,
+            "height": 24,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "units",
+            "blending": "normal",
+            "color": "rgb(231,171,42)",
+            "opacity": 1,
+            "disabled": false,
+            "material": {
+              "name": "DamageFlash",
+              "options": {}
+            }
+          }
+        },
+        {
+          "name": "Health",
+          "config": {
+            "points": 8
+          }
+        },
+        {
+          "name": "Animatable",
+          "config": {
+            "initialState": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+            "states": [
+              {
+                "id": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+                "name": "idle",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "a682db86-64a1-4fc0-a464-5524c6ac75ac",
+                    "state": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "22c187c1-3017-45f7-8a1b-973f3d2fe0b2",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                "name": "Death",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "PlatformBlock",
+          "config": {
+            "mass": 0.2,
+            "type": "storage"
+          }
+        },
+        {
+          "name": "CollisionDamage",
+          "config": {
+            "value": 1
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "2b3d5fcb-0489-4fdc-b8d3-c388f4c7b653",
+      "name": "Booster Block",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Collider",
+          "config": {
+            "type": "box",
+            "offsetX": 0,
+            "offsetY": 0,
+            "layer": "0c558a83-d403-490b-abfe-ab7a59c78851",
+            "debugColor": "#4DFFB8",
+            "disabled": false,
+            "sizeX": 24,
+            "sizeY": 24
+          }
+        },
+        {
+          "name": "Mesh",
+          "config": {
+            "src": "",
+            "width": 24,
+            "height": 24,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "units",
+            "blending": "normal",
+            "color": "rgb(42,228,231)",
+            "opacity": 1,
+            "disabled": false,
+            "material": {
+              "name": "DamageFlash",
+              "options": {}
+            }
+          }
+        },
+        {
+          "name": "Health",
+          "config": {
+            "points": 4
+          }
+        },
+        {
+          "name": "Animatable",
+          "config": {
+            "initialState": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+            "states": [
+              {
+                "id": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+                "name": "idle",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "a682db86-64a1-4fc0-a464-5524c6ac75ac",
+                    "state": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "22c187c1-3017-45f7-8a1b-973f3d2fe0b2",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                "name": "Death",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "PlatformBlock",
+          "config": {
+            "mass": 0.1,
+            "type": "booster"
+          }
+        },
+        {
+          "name": "CollisionDamage",
+          "config": {
+            "value": 1
           }
         }
       ],
