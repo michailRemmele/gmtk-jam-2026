@@ -381,6 +381,799 @@
                     "opacity": 1,
                     "disabled": false
                   }
+                },
+                {
+                  "name": "Animatable",
+                  "config": {
+                    "initialState": "c35e9828-6a25-424a-a980-4a111df97f61",
+                    "states": [
+                      {
+                        "id": "c35e9828-6a25-424a-a980-4a111df97f61",
+                        "name": "Idle",
+                        "type": "individual",
+                        "speed": 0.3,
+                        "timeline": {
+                          "frames": [
+                            {
+                              "id": "e3e4fe26-3c7b-410a-bd50-df24dc0ed6ac",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 0
+                                }
+                              ]
+                            },
+                            {
+                              "id": "d67284fa-b5e1-4431-be6c-0cfaf07d0c4d",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              ]
+                            },
+                            {
+                              "id": "99eae757-2d55-42bf-907e-b372113bf901",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 2
+                                }
+                              ]
+                            },
+                            {
+                              "id": "96fdaaf5-9821-4edc-b518-90e82901c00f",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 3
+                                }
+                              ]
+                            }
+                          ],
+                          "looped": true
+                        },
+                        "transitions": [
+                          {
+                            "id": "ea590b28-bd2b-44fd-baae-8d4ad68f055c",
+                            "state": "51d9a23b-5d0b-4926-97da-dc6ad7f0a125",
+                            "time": 0,
+                            "conditions": [
+                              {
+                                "id": "41da80e7-ee6e-43d6-b796-c3b32d1143d1",
+                                "type": "comparator",
+                                "props": {
+                                  "arg1": {
+                                    "type": "componentValue",
+                                    "value": "components.Turbine.running"
+                                  },
+                                  "arg2": {
+                                    "type": "boolean",
+                                    "value": true
+                                  },
+                                  "operation": "equals"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "51d9a23b-5d0b-4926-97da-dc6ad7f0a125",
+                        "name": "Running",
+                        "type": "individual",
+                        "speed": 0.75,
+                        "timeline": {
+                          "frames": [
+                            {
+                              "id": "e3e4fe26-3c7b-410a-bd50-df24dc0ed6ac",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 4
+                                }
+                              ]
+                            },
+                            {
+                              "id": "d67284fa-b5e1-4431-be6c-0cfaf07d0c4d",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              ]
+                            },
+                            {
+                              "id": "99eae757-2d55-42bf-907e-b372113bf901",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 6
+                                }
+                              ]
+                            },
+                            {
+                              "id": "96fdaaf5-9821-4edc-b518-90e82901c00f",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 7
+                                }
+                              ]
+                            }
+                          ],
+                          "looped": true
+                        },
+                        "transitions": [
+                          {
+                            "id": "4f33178c-ab22-495c-99af-91f624ed296d",
+                            "state": "c35e9828-6a25-424a-a980-4a111df97f61",
+                            "time": 0,
+                            "conditions": [
+                              {
+                                "id": "41da80e7-ee6e-43d6-b796-c3b32d1143d1",
+                                "type": "comparator",
+                                "props": {
+                                  "arg1": {
+                                    "type": "componentValue",
+                                    "value": "components.Turbine.running"
+                                  },
+                                  "arg2": {
+                                    "type": "boolean",
+                                    "value": false
+                                  },
+                                  "operation": "equals"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "Turbine",
+                  "config": {
+                    "type": "top"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "f7992652-c2b4-454f-b79a-928cbc3634b8",
+              "name": "Left Turbine",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": 8,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "Mesh",
+                  "config": {
+                    "src": "images/platform-left.png",
+                    "width": 98,
+                    "height": 48,
+                    "slice": 8,
+                    "sortOffsetX": 0,
+                    "sortOffsetY": 0,
+                    "flipX": false,
+                    "flipY": false,
+                    "sortingLayer": "units",
+                    "blending": "normal",
+                    "color": "#fff",
+                    "opacity": 1,
+                    "disabled": false
+                  }
+                },
+                {
+                  "name": "Animatable",
+                  "config": {
+                    "initialState": "c35e9828-6a25-424a-a980-4a111df97f61",
+                    "states": [
+                      {
+                        "id": "c35e9828-6a25-424a-a980-4a111df97f61",
+                        "name": "Idle",
+                        "type": "individual",
+                        "speed": 0.3,
+                        "timeline": {
+                          "frames": [
+                            {
+                              "id": "e3e4fe26-3c7b-410a-bd50-df24dc0ed6ac",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 0
+                                }
+                              ]
+                            },
+                            {
+                              "id": "d67284fa-b5e1-4431-be6c-0cfaf07d0c4d",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              ]
+                            },
+                            {
+                              "id": "99eae757-2d55-42bf-907e-b372113bf901",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 2
+                                }
+                              ]
+                            },
+                            {
+                              "id": "96fdaaf5-9821-4edc-b518-90e82901c00f",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 3
+                                }
+                              ]
+                            }
+                          ],
+                          "looped": true
+                        },
+                        "transitions": [
+                          {
+                            "id": "ea590b28-bd2b-44fd-baae-8d4ad68f055c",
+                            "state": "51d9a23b-5d0b-4926-97da-dc6ad7f0a125",
+                            "time": 0,
+                            "conditions": [
+                              {
+                                "id": "41da80e7-ee6e-43d6-b796-c3b32d1143d1",
+                                "type": "comparator",
+                                "props": {
+                                  "arg1": {
+                                    "type": "componentValue",
+                                    "value": "components.Turbine.running"
+                                  },
+                                  "arg2": {
+                                    "type": "boolean",
+                                    "value": true
+                                  },
+                                  "operation": "equals"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "51d9a23b-5d0b-4926-97da-dc6ad7f0a125",
+                        "name": "Running",
+                        "type": "individual",
+                        "speed": 1,
+                        "timeline": {
+                          "frames": [
+                            {
+                              "id": "e3e4fe26-3c7b-410a-bd50-df24dc0ed6ac",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 4
+                                }
+                              ]
+                            },
+                            {
+                              "id": "d67284fa-b5e1-4431-be6c-0cfaf07d0c4d",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              ]
+                            },
+                            {
+                              "id": "99eae757-2d55-42bf-907e-b372113bf901",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 6
+                                }
+                              ]
+                            },
+                            {
+                              "id": "96fdaaf5-9821-4edc-b518-90e82901c00f",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 7
+                                }
+                              ]
+                            }
+                          ],
+                          "looped": true
+                        },
+                        "transitions": [
+                          {
+                            "id": "4f33178c-ab22-495c-99af-91f624ed296d",
+                            "state": "c35e9828-6a25-424a-a980-4a111df97f61",
+                            "time": 0,
+                            "conditions": [
+                              {
+                                "id": "41da80e7-ee6e-43d6-b796-c3b32d1143d1",
+                                "type": "comparator",
+                                "props": {
+                                  "arg1": {
+                                    "type": "componentValue",
+                                    "value": "components.Turbine.running"
+                                  },
+                                  "arg2": {
+                                    "type": "boolean",
+                                    "value": false
+                                  },
+                                  "operation": "equals"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "Turbine",
+                  "config": {
+                    "type": "left"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "c1f86670-8179-4dea-8150-1bdc14f01f03",
+              "name": "Right Turbine",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": 8,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "Mesh",
+                  "config": {
+                    "src": "images/platform-right.png",
+                    "width": 98,
+                    "height": 48,
+                    "slice": 8,
+                    "sortOffsetX": 0,
+                    "sortOffsetY": 0,
+                    "flipX": false,
+                    "flipY": false,
+                    "sortingLayer": "units",
+                    "blending": "normal",
+                    "color": "#fff",
+                    "opacity": 1,
+                    "disabled": false
+                  }
+                },
+                {
+                  "name": "Animatable",
+                  "config": {
+                    "initialState": "c35e9828-6a25-424a-a980-4a111df97f61",
+                    "states": [
+                      {
+                        "id": "c35e9828-6a25-424a-a980-4a111df97f61",
+                        "name": "Idle",
+                        "type": "individual",
+                        "speed": 0.3,
+                        "timeline": {
+                          "frames": [
+                            {
+                              "id": "e3e4fe26-3c7b-410a-bd50-df24dc0ed6ac",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 0
+                                }
+                              ]
+                            },
+                            {
+                              "id": "d67284fa-b5e1-4431-be6c-0cfaf07d0c4d",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              ]
+                            },
+                            {
+                              "id": "99eae757-2d55-42bf-907e-b372113bf901",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 2
+                                }
+                              ]
+                            },
+                            {
+                              "id": "96fdaaf5-9821-4edc-b518-90e82901c00f",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 3
+                                }
+                              ]
+                            }
+                          ],
+                          "looped": true
+                        },
+                        "transitions": [
+                          {
+                            "id": "ea590b28-bd2b-44fd-baae-8d4ad68f055c",
+                            "state": "51d9a23b-5d0b-4926-97da-dc6ad7f0a125",
+                            "time": 0,
+                            "conditions": [
+                              {
+                                "id": "41da80e7-ee6e-43d6-b796-c3b32d1143d1",
+                                "type": "comparator",
+                                "props": {
+                                  "arg1": {
+                                    "type": "componentValue",
+                                    "value": "components.Turbine.running"
+                                  },
+                                  "arg2": {
+                                    "type": "boolean",
+                                    "value": true
+                                  },
+                                  "operation": "equals"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "51d9a23b-5d0b-4926-97da-dc6ad7f0a125",
+                        "name": "Running",
+                        "type": "individual",
+                        "speed": 1,
+                        "timeline": {
+                          "frames": [
+                            {
+                              "id": "e3e4fe26-3c7b-410a-bd50-df24dc0ed6ac",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 4
+                                }
+                              ]
+                            },
+                            {
+                              "id": "d67284fa-b5e1-4431-be6c-0cfaf07d0c4d",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              ]
+                            },
+                            {
+                              "id": "99eae757-2d55-42bf-907e-b372113bf901",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 6
+                                }
+                              ]
+                            },
+                            {
+                              "id": "96fdaaf5-9821-4edc-b518-90e82901c00f",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 7
+                                }
+                              ]
+                            }
+                          ],
+                          "looped": true
+                        },
+                        "transitions": [
+                          {
+                            "id": "4f33178c-ab22-495c-99af-91f624ed296d",
+                            "state": "c35e9828-6a25-424a-a980-4a111df97f61",
+                            "time": 0,
+                            "conditions": [
+                              {
+                                "id": "41da80e7-ee6e-43d6-b796-c3b32d1143d1",
+                                "type": "comparator",
+                                "props": {
+                                  "arg1": {
+                                    "type": "componentValue",
+                                    "value": "components.Turbine.running"
+                                  },
+                                  "arg2": {
+                                    "type": "boolean",
+                                    "value": false
+                                  },
+                                  "operation": "equals"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "Turbine",
+                  "config": {
+                    "type": "right"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "4b8f8dea-aa31-4584-ba8c-880f40a5a986",
+              "name": "Bottom Turbine",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": 8,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "Mesh",
+                  "config": {
+                    "src": "images/platform-bottom.png",
+                    "width": 98,
+                    "height": 48,
+                    "slice": 8,
+                    "sortOffsetX": 0,
+                    "sortOffsetY": 0,
+                    "flipX": false,
+                    "flipY": false,
+                    "sortingLayer": "units",
+                    "blending": "normal",
+                    "color": "#fff",
+                    "opacity": 1,
+                    "disabled": false
+                  }
+                },
+                {
+                  "name": "Animatable",
+                  "config": {
+                    "initialState": "c35e9828-6a25-424a-a980-4a111df97f61",
+                    "states": [
+                      {
+                        "id": "c35e9828-6a25-424a-a980-4a111df97f61",
+                        "name": "Idle",
+                        "type": "individual",
+                        "speed": 0.3,
+                        "timeline": {
+                          "frames": [
+                            {
+                              "id": "e3e4fe26-3c7b-410a-bd50-df24dc0ed6ac",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 0
+                                }
+                              ]
+                            },
+                            {
+                              "id": "d67284fa-b5e1-4431-be6c-0cfaf07d0c4d",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              ]
+                            },
+                            {
+                              "id": "99eae757-2d55-42bf-907e-b372113bf901",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 2
+                                }
+                              ]
+                            },
+                            {
+                              "id": "96fdaaf5-9821-4edc-b518-90e82901c00f",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 3
+                                }
+                              ]
+                            }
+                          ],
+                          "looped": true
+                        },
+                        "transitions": [
+                          {
+                            "id": "ea590b28-bd2b-44fd-baae-8d4ad68f055c",
+                            "state": "51d9a23b-5d0b-4926-97da-dc6ad7f0a125",
+                            "time": 0,
+                            "conditions": [
+                              {
+                                "id": "41da80e7-ee6e-43d6-b796-c3b32d1143d1",
+                                "type": "comparator",
+                                "props": {
+                                  "arg1": {
+                                    "type": "componentValue",
+                                    "value": "components.Turbine.running"
+                                  },
+                                  "arg2": {
+                                    "type": "boolean",
+                                    "value": true
+                                  },
+                                  "operation": "equals"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "51d9a23b-5d0b-4926-97da-dc6ad7f0a125",
+                        "name": "Running",
+                        "type": "individual",
+                        "speed": 1,
+                        "timeline": {
+                          "frames": [
+                            {
+                              "id": "e3e4fe26-3c7b-410a-bd50-df24dc0ed6ac",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 4
+                                }
+                              ]
+                            },
+                            {
+                              "id": "d67284fa-b5e1-4431-be6c-0cfaf07d0c4d",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              ]
+                            },
+                            {
+                              "id": "99eae757-2d55-42bf-907e-b372113bf901",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 6
+                                }
+                              ]
+                            },
+                            {
+                              "id": "96fdaaf5-9821-4edc-b518-90e82901c00f",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 7
+                                }
+                              ]
+                            }
+                          ],
+                          "looped": true
+                        },
+                        "transitions": [
+                          {
+                            "id": "4f33178c-ab22-495c-99af-91f624ed296d",
+                            "state": "c35e9828-6a25-424a-a980-4a111df97f61",
+                            "time": 0,
+                            "conditions": [
+                              {
+                                "id": "41da80e7-ee6e-43d6-b796-c3b32d1143d1",
+                                "type": "comparator",
+                                "props": {
+                                  "arg1": {
+                                    "type": "componentValue",
+                                    "value": "components.Turbine.running"
+                                  },
+                                  "arg2": {
+                                    "type": "boolean",
+                                    "value": false
+                                  },
+                                  "operation": "equals"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "Turbine",
+                  "config": {
+                    "type": "bottom"
+                  }
                 }
               ],
               "children": []

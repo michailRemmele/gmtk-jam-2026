@@ -12,6 +12,8 @@ import * as EventType from '../../events';
 import type { RotateInputEvent, ThrustInputEvent } from '../../events';
 import { GameStateAPI } from '../../systems/game-state/game-state.api';
 import PlatformBlock from '../../components/platform-block/platform-block.component';
+import Turbine from '../../components/turbine/turbine.component';
+import type { TurbineType } from '../../components/turbine/turbine.component';
 
 const DEFAULT_MAIN_THRUST = 2400;
 const DEFAULT_DESCENT_THRUST = 800;
@@ -98,6 +100,11 @@ export default class PlatformControl extends Behavior {
   private thrustMultiplier: number;
   private isDirty: boolean;
 
+  private topTurbine?: Turbine;
+  private bottomTurbine?: Turbine;
+  private leftTurbine?: Turbine;
+  private rightTurbine?: Turbine;
+
   constructor(options: PlatformControlOptions) {
     super();
 
@@ -127,6 +134,11 @@ export default class PlatformControl extends Behavior {
 
     this.thrustMultiplier = 1;
     this.isDirty = true;
+
+    this.topTurbine = this.findTurbine('top');
+    this.bottomTurbine = this.findTurbine('bottom');
+    this.leftTurbine = this.findTurbine('left');
+    this.rightTurbine = this.findTurbine('right');
 
     this.actor.addEventListener(EventType.ThrustInput, this.handleThrustInput);
     this.actor.addEventListener(EventType.RotateInput, this.handleRotateInput);
@@ -170,6 +182,29 @@ export default class PlatformControl extends Behavior {
   private handlePartsChanged = (): void => {
     this.isDirty = true;
   };
+
+  private findTurbine(type: TurbineType): Turbine | undefined {
+    return this.actor.findChild(
+      (child) => child.getComponent(Turbine)?.type === type,
+    )?.getComponent(Turbine);
+  }
+
+  private updateTurbineStates(frozen: boolean): void {
+    const active = !frozen;
+
+    if (this.topTurbine) {
+      this.topTurbine.running = active && this.thrustInput < 0;
+    }
+    if (this.bottomTurbine) {
+      this.bottomTurbine.running = active && this.thrustInput > 0;
+    }
+    if (this.leftTurbine) {
+      this.leftTurbine.running = active && this.rotateInput > 0;
+    }
+    if (this.rightTurbine) {
+      this.rightTurbine.running = active && this.rotateInput < 0;
+    }
+  }
 
   private rebuildThrustMultiplier(): void {
     let boost = 0;
@@ -292,6 +327,8 @@ export default class PlatformControl extends Behavior {
     }
 
     const { frozen } = this.world.systemApi.get(GameStateAPI);
+
+    this.updateTurbineStates(frozen);
 
     if (frozen) {
       if (!this.wasFrozen) {
