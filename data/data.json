@@ -757,6 +757,10 @@
       "options": {}
     },
     {
+      "name": "GameState",
+      "options": {}
+    },
+    {
       "name": "BehaviorSystem",
       "options": {}
     },
@@ -1223,6 +1227,10 @@
               }
             ]
           }
+        },
+        {
+          "name": "PlatformBlock",
+          "config": {}
         }
       ],
       "children": []

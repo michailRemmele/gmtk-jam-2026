@@ -1,4 +1,4 @@
-import type { Actor, BehaviorOptions, Time } from 'dacha';
+import type { Actor, BehaviorOptions, Time, World } from 'dacha';
 import {
   Behavior,
   MathOps,
@@ -10,6 +10,7 @@ import { DefineBehavior, DefineField } from 'dacha-workbench/decorators';
 
 import * as EventType from '../../events';
 import type { RotateInputEvent, ThrustInputEvent } from '../../events';
+import { GameStateAPI } from '../../systems/game-state/game-state.api';
 
 const DEFAULT_MAIN_THRUST = 2400;
 const DEFAULT_DESCENT_THRUST = 800;
@@ -80,6 +81,7 @@ export default class PlatformControl extends Behavior {
   private maxImpactAngularSpeed: number;
 
   private actor: Actor;
+  private world: World;
   private time: Time;
 
   private thrustInput: number;
@@ -90,10 +92,13 @@ export default class PlatformControl extends Behavior {
   private prevAngularVelocity: number;
   private expectedAngularDelta: number;
 
+  private wasFrozen: boolean;
+
   constructor(options: PlatformControlOptions) {
     super();
 
     this.actor = options.actor;
+    this.world = options.world;
     this.time = options.time;
 
     this.mainThrust = options.mainThrust ?? DEFAULT_MAIN_THRUST;
@@ -113,6 +118,8 @@ export default class PlatformControl extends Behavior {
     this.forceBuffer = new Vector2(0, 0);
     this.prevAngularVelocity = 0;
     this.expectedAngularDelta = 0;
+
+    this.wasFrozen = false;
 
     this.actor.addEventListener(EventType.ThrustInput, this.handleThrustInput);
     this.actor.addEventListener(EventType.RotateInput, this.handleRotateInput);
@@ -243,6 +250,17 @@ export default class PlatformControl extends Behavior {
     const transform = this.actor.getComponent(Transform);
 
     if (!rigidBody || !transform) {
+      return;
+    }
+
+    const { frozen } = this.world.systemApi.get(GameStateAPI);
+
+    if (frozen) {
+      if (!this.wasFrozen) {
+        rigidBody.linearVelocity.multiplyNumber(0);
+        rigidBody.angularVelocity = 0;
+        this.wasFrozen = true;
+      }
       return;
     }
 

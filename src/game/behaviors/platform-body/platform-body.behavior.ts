@@ -1,4 +1,4 @@
-import type { Actor, ActorEvent, BehaviorOptions, World } from 'dacha';
+import type { Actor, ActorEvent, BehaviorOptions, Scene, World } from 'dacha';
 import {
   Behavior,
   Collider,
@@ -11,12 +11,14 @@ import { DefineBehavior, DefineField } from 'dacha-workbench/decorators';
 
 import { SHIP_PARTS_LAYER } from '../../../consts/physics';
 import * as EventType from '../../events';
+import { GameStateAPI } from '../../systems/game-state/game-state.api';
 
 import { ContactBuffer } from './contacts';
 import { ContactSolver } from './solver';
 import type { SolverSettings } from './solver';
 import { ImpactDamage } from './impact-damage';
 import type { ImpactDamageSettings } from './impact-damage';
+import { LossCondition } from './loss-condition';
 
 const DEFAULT_BASE_MASS = 1;
 const DEFAULT_BLOCK_MASS = 1;
@@ -76,6 +78,7 @@ export default class PlatformBody
 
   private actor: Actor;
   private world: World;
+  private scene: Scene;
 
   private parts: Actor[];
   private partSet: Set<Actor>;
@@ -87,6 +90,7 @@ export default class PlatformBody
   private contacts: ContactBuffer;
   private solver: ContactSolver;
   private impactDamage: ImpactDamage;
+  private lossCondition: LossCondition;
 
   private forceBuffer: Vector2;
   private pointBuffer: Vector2;
@@ -96,6 +100,7 @@ export default class PlatformBody
 
     this.actor = options.actor;
     this.world = options.world;
+    this.scene = options.scene;
 
     this.baseMass = options.baseMass ?? DEFAULT_BASE_MASS;
     this.blockMass = options.blockMass ?? DEFAULT_BLOCK_MASS;
@@ -118,6 +123,7 @@ export default class PlatformBody
     this.contacts = new ContactBuffer(SHIP_PARTS_LAYER, this.isForeignActor);
     this.solver = new ContactSolver();
     this.impactDamage = new ImpactDamage();
+    this.lossCondition = new LossCondition();
 
     this.forceBuffer = new Vector2(0, 0);
     this.pointBuffer = new Vector2(0, 0);
@@ -223,8 +229,18 @@ export default class PlatformBody
       return;
     }
 
+    const { frozen } = this.world.systemApi.get(GameStateAPI);
+
     if (this.isDirty) {
       this.rebuildParts(rigidBody);
+
+      if (!frozen) {
+        this.lossCondition.check(this.actor, this.scene);
+      }
+    }
+
+    if (frozen) {
+      return;
     }
 
     const { position, rotation } = transform.world;
