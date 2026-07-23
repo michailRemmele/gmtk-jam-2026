@@ -19,11 +19,11 @@ export class LossCondition {
       return;
     }
 
-    const hasBlocks = actor.children.some((child) =>
-      child.getComponent(PlatformBlock),
+    const hasStorage = actor.children.some(
+      (child) => child.getComponent(PlatformBlock)?.type === 'storage',
     );
 
-    if (hasBlocks) {
+    if (hasStorage) {
       this.armed = true;
       return;
     }

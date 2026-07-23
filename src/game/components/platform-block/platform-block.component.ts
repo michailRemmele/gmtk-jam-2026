@@ -11,6 +11,7 @@ export type PlatformBlockType =
 interface PlatformBlockConfig {
   mass: number;
   type: PlatformBlockType;
+  thrustBoost?: number;
 }
 
 @DefineComponent({
@@ -27,10 +28,17 @@ export default class PlatformBlock extends Component {
   })
   type: PlatformBlockType;
 
+  @DefineField({
+    initialValue: 0.2,
+    dependency: { name: 'type', value: 'booster' },
+  })
+  thrustBoost: number;
+
   constructor(config: PlatformBlockConfig) {
     super();
 
     this.mass = config.mass;
     this.type = config.type;
+    this.thrustBoost = config.thrustBoost ?? 0.2;
   }
 }

@@ -14,14 +14,12 @@ import { DefineSystem } from 'dacha-workbench/decorators';
 
 import * as EventType from '../../events';
 import type { DamageEvent } from '../../events';
-import ViewDirection from '../../components/view-direction/view-direction.component';
 import Health from '../../components/health/health.component';
 import type { ComponentConstructor } from '../../../types/utils';
 
 const GRAVEYARD_CLEAN_FREQUENCY = 1;
 const GRAVEYARD_ENTRIES_LIFETIME = 4;
 const ALLOWED_COMPONENTS = new Set<ComponentConstructor>([
-  ViewDirection,
   Transform,
   Sprite,
   Shape,
@@ -59,6 +57,15 @@ export default class Reaper extends SceneSystem {
     this.scene.removeEventListener(EventType.Damage, this.handleDamage);
   }
 
+  private flashMesh = (actor: Actor): void => {
+    const mesh = actor.getComponent(Mesh);
+    if (mesh?.material) {
+      mesh.material.options.hitTime = this.time.elapsedTime;
+    }
+
+    actor.children.forEach(this.flashMesh);
+  };
+
   handleDamage = (event: DamageEvent): void => {
     const { target, value } = event;
 
@@ -69,10 +76,7 @@ export default class Reaper extends SceneSystem {
 
     health.points -= Math.round(value);
 
-    const mesh = target.getComponent(Mesh);
-    if (mesh?.material) {
-      mesh.material.options.hitTime = this.time.elapsedTime;
-    }
+    this.flashMesh(target);
 
     if (health.points <= 0) {
       health.points = 0;

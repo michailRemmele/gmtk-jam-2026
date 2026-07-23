@@ -11,6 +11,7 @@ import { DefineBehavior, DefineField } from 'dacha-workbench/decorators';
 import * as EventType from '../../events';
 import type { RotateInputEvent, ThrustInputEvent } from '../../events';
 import { GameStateAPI } from '../../systems/game-state/game-state.api';
+import PlatformBlock from '../../components/platform-block/platform-block.component';
 
 const DEFAULT_MAIN_THRUST = 2400;
 const DEFAULT_DESCENT_THRUST = 800;
@@ -94,6 +95,9 @@ export default class PlatformControl extends Behavior {
 
   private wasFrozen: boolean;
 
+  private thrustMultiplier: number;
+  private isDirty: boolean;
+
   constructor(options: PlatformControlOptions) {
     super();
 
@@ -121,8 +125,15 @@ export default class PlatformControl extends Behavior {
 
     this.wasFrozen = false;
 
+    this.thrustMultiplier = 1;
+    this.isDirty = true;
+
     this.actor.addEventListener(EventType.ThrustInput, this.handleThrustInput);
     this.actor.addEventListener(EventType.RotateInput, this.handleRotateInput);
+    this.actor.addEventListener(
+      EventType.PlatformPartsChanged,
+      this.handlePartsChanged,
+    );
   }
 
   destroy(): void {
@@ -133,6 +144,10 @@ export default class PlatformControl extends Behavior {
     this.actor.removeEventListener(
       EventType.RotateInput,
       this.handleRotateInput,
+    );
+    this.actor.removeEventListener(
+      EventType.PlatformPartsChanged,
+      this.handlePartsChanged,
     );
   }
 
@@ -152,6 +167,25 @@ export default class PlatformControl extends Behavior {
     );
   };
 
+  private handlePartsChanged = (): void => {
+    this.isDirty = true;
+  };
+
+  private rebuildThrustMultiplier(): void {
+    let boost = 0;
+
+    for (const child of this.actor.children) {
+      const platformBlock = child.getComponent(PlatformBlock);
+
+      if (platformBlock?.type === 'booster') {
+        boost += platformBlock.thrustBoost;
+      }
+    }
+
+    this.thrustMultiplier = 1 + boost;
+    this.isDirty = false;
+  }
+
   private applyForce(rigidBody: RigidBody, x: number, y: number): void {
     this.forceBuffer.x = x;
     this.forceBuffer.y = y;
@@ -168,9 +202,9 @@ export default class PlatformControl extends Behavior {
     const upY = -Math.cos(rotation);
 
     const force =
-      this.thrustInput > 0
+      (this.thrustInput > 0
         ? this.thrustInput * this.mainThrust
-        : this.thrustInput * this.descentThrust;
+        : this.thrustInput * this.descentThrust) * this.thrustMultiplier;
 
     this.applyForce(rigidBody, upX * force, upY * force);
   }
@@ -251,6 +285,10 @@ export default class PlatformControl extends Behavior {
 
     if (!rigidBody || !transform) {
       return;
+    }
+
+    if (this.isDirty) {
+      this.rebuildThrustMultiplier();
     }
 
     const { frozen } = this.world.systemApi.get(GameStateAPI);

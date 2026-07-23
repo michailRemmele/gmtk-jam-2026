@@ -5,8 +5,7 @@ import type { CollisionEnterEvent } from 'dacha/events';
 
 import * as EventType from '../../../events';
 import Weapon from '../../../components/weapon/weapon.component';
-import HitBox from '../../../components/hit-box/hit-box.component';
-import Team from '../../../components/team/team.component';
+import Health from '../../../components/health/health.component';
 import { findTeam } from '../utils/find-team';
 
 import type { Attack } from './attack';
@@ -82,14 +81,12 @@ export class RangeAttack implements Attack {
     const { actor } = event;
 
     const { damage } = this.weapon;
-    const team = this.actor.getComponent(Team);
+    const team = findTeam(this.actor);
 
-    const hitBox = actor.getComponent(HitBox);
     const rigidBody = actor.getComponent(RigidBody);
     const targetTeam = findTeam(actor);
-    const target = actor.parent;
 
-    if (team && targetTeam && team?.index === targetTeam?.index) {
+    if (team && targetTeam && team.index === targetTeam.index) {
       return;
     }
 
@@ -97,11 +94,11 @@ export class RangeAttack implements Attack {
       this.lifetime = 0;
     }
 
-    if (!hitBox || !target || !(target instanceof Actor)) {
+    if (!actor.getComponent(Health)) {
       return;
     }
 
-    target.dispatchEvent(EventType.Damage, {
+    actor.dispatchEvent(EventType.Damage, {
       value: damage,
       actor: this.actor,
     });

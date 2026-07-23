@@ -8,7 +8,6 @@ import {
   PhysicsAPI,
 } from 'dacha';
 import type {
-  Actor,
   Scene,
   World,
   SceneSystemOptions,
@@ -20,7 +19,6 @@ import { DefineSystem } from 'dacha-workbench/decorators';
 import * as EventType from '../../events';
 import type { MovementEvent } from '../../events';
 import Movement from '../../components/movement/movement.component';
-import ViewDirection from '../../components/view-direction/view-direction.component';
 
 const JUMP_SPEED = 200;
 
@@ -76,8 +74,6 @@ export default class MovementSystem extends SceneSystem {
     if (movement.requestedDirection.magnitude > 1) {
       movement.requestedDirection.normalize();
     }
-
-    this.updateViewDirection(target);
   };
 
   private handleJump = (event: ActorEvent): void => {
@@ -94,22 +90,6 @@ export default class MovementSystem extends SceneSystem {
     characterBody.velocity.x += characterBody.upDirection.x * jumpDelta;
     characterBody.velocity.y += characterBody.upDirection.y * jumpDelta;
   };
-
-  private updateViewDirection(actor: Actor): void {
-    const movement = actor.getComponent(Movement);
-    const viewDirection = actor.getComponent(ViewDirection);
-
-    const { requestedDirection } = movement;
-
-    if (requestedDirection.x === 0 && requestedDirection.y === 0) {
-      return;
-    }
-
-    if (viewDirection) {
-      viewDirection.x = requestedDirection.x;
-      viewDirection.y = requestedDirection.y;
-    }
-  }
 
   private getLateralDirection(
     direction: Vector2,

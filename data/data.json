@@ -296,7 +296,15 @@
                   }
                 }
               ],
-              "children": []
+              "children": [
+                {
+                  "id": "f1bf213e-3973-4cc5-9ed4-dc48d6fa744d",
+                  "templateId": "1c9c3414-2d3e-4ec4-9493-f6c50d968294",
+                  "name": "Tower",
+                  "components": [],
+                  "children": []
+                }
+              ]
             },
             {
               "id": "b0444f9c-1a43-4ae9-b2ad-c471d3c6187d",
@@ -314,7 +322,15 @@
                   }
                 }
               ],
-              "children": []
+              "children": [
+                {
+                  "id": "2603074a-b82b-4156-a0f7-3f16ba39f395",
+                  "templateId": "1c9c3414-2d3e-4ec4-9493-f6c50d968294",
+                  "name": "Tower",
+                  "components": [],
+                  "children": []
+                }
+              ]
             },
             {
               "id": "3f2f27d8-59ca-4235-8873-7b522678544b",
@@ -329,6 +345,41 @@
                     "rotation": 0,
                     "scaleX": 1,
                     "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "c148583e-f259-4248-86df-ee3e0a9a27bc",
+              "name": "Base",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": 8,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "Mesh",
+                  "config": {
+                    "src": "images/platform.png",
+                    "width": 98,
+                    "height": 48,
+                    "slice": 8,
+                    "sortOffsetX": 0,
+                    "sortOffsetY": 0,
+                    "flipX": false,
+                    "flipY": false,
+                    "sortingLayer": "units",
+                    "blending": "normal",
+                    "color": "#fff",
+                    "opacity": 1,
+                    "disabled": false
                   }
                 }
               ],
@@ -1134,49 +1185,48 @@
             "radius": 0,
             "offsetX": 0,
             "offsetY": 0,
-            "layer": "default",
+            "layer": "bc5a4298-b6c7-4720-9896-c4191fc3d2ee",
             "debugColor": "#4DFFB8",
             "disabled": false
-          }
-        },
-        {
-          "name": "Sprite",
-          "config": {
-            "src": "",
-            "width": 8,
-            "height": 8,
-            "slice": 1,
-            "flipX": false,
-            "flipY": false,
-            "sortingLayer": "units",
-            "fit": "stretch",
-            "blending": "normal",
-            "color": "#fff",
-            "opacity": 1,
-            "sortOffsetX": 0,
-            "sortOffsetY": 0,
-            "disabled": false
-          }
-        },
-        {
-          "name": "RigidBody",
-          "config": {
-            "type": "dynamic",
-            "mass": 1,
-            "gravityScale": 0,
-            "linearDamping": 0,
-            "disabled": false,
-            "restitution": 0,
-            "friction": 0.6,
-            "oneWay": false,
-            "angularDamping": 0,
-            "lockRotation": false
           }
         },
         {
           "name": "Health",
           "config": {
             "points": 1
+          }
+        },
+        {
+          "name": "Shape",
+          "config": {
+            "type": "circle",
+            "strokeColor": "#fff",
+            "strokeAlignment": 0.5,
+            "pixelLine": false,
+            "fill": "rgb(255,0,0)",
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "sortingLayer": "foreground",
+            "blending": "normal",
+            "opacity": 1,
+            "disabled": false,
+            "strokeWidth": 0,
+            "radius": 3
+          }
+        },
+        {
+          "name": "RigidBody",
+          "config": {
+            "type": "dynamic",
+            "restitution": 0,
+            "friction": 0.6,
+            "oneWay": false,
+            "disabled": false,
+            "mass": 1,
+            "gravityScale": 0,
+            "linearDamping": 0,
+            "angularDamping": 0,
+            "lockRotation": false
           }
         }
       ],
@@ -1783,7 +1833,7 @@
         {
           "name": "PlatformBlock",
           "config": {
-            "mass": 0.3,
+            "mass": 0.4,
             "type": "ram"
           }
         },
@@ -1909,6 +1959,12 @@
                           "name": "components.Mesh.disabled",
                           "type": "boolean",
                           "value": true
+                        },
+                        {
+                          "id": "c07431e9-059a-4e77-bf9c-dfeeada6bff9",
+                          "name": "children.Tower.components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
                         }
                       ]
                     }
@@ -1932,9 +1988,74 @@
           "config": {
             "value": 1
           }
+        },
+        {
+          "name": "Weapon",
+          "config": {
+            "type": "range",
+            "cooldown": 1.2,
+            "damage": 2,
+            "range": 144,
+            "projectileSpeed": 500,
+            "projectileModel": "d01d07c3-ec89-4f61-a2e4-beadcefee92a",
+            "projectileRadius": 3
+          }
+        },
+        {
+          "name": "Behaviors",
+          "config": {
+            "list": [
+              {
+                "id": "02299347-d9a5-4d4e-8362-a7444751459c",
+                "name": "TurretControl",
+                "options": {
+                  "trackSpeed": 4.71238898038469,
+                  "patrolSpeed": 0.6,
+                  "patrolAmplitude": 0.5,
+                  "aimOffset": 0
+                }
+              }
+            ]
+          }
         }
       ],
-      "children": []
+      "children": [
+        {
+          "id": "1c9c3414-2d3e-4ec4-9493-f6c50d968294",
+          "name": "Tower",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Mesh",
+              "config": {
+                "src": "",
+                "width": 10,
+                "height": 10,
+                "slice": 1,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "units",
+                "blending": "normal",
+                "color": "rgb(182,206,255)",
+                "opacity": 1,
+                "disabled": false
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
     },
     {
       "id": "add3b188-188f-4e79-bdb5-f2ae9f886f4c",
@@ -2204,7 +2325,8 @@
           "name": "PlatformBlock",
           "config": {
             "mass": 0.1,
-            "type": "booster"
+            "type": "booster",
+            "thrustBoost": 1
           }
         },
         {
@@ -2290,23 +2412,36 @@
           {
             "id": "1ab9b58e-e535-4bcc-b393-85c6b32ef694",
             "name": "ship-hull"
+          },
+          {
+            "id": "bc5a4298-b6c7-4720-9896-c4191fc3d2ee",
+            "name": "projectiles"
           }
         ],
         "collisionMatrix": {
           "default": {
             "default": true,
             "0c558a83-d403-490b-abfe-ab7a59c78851": true,
-            "1ab9b58e-e535-4bcc-b393-85c6b32ef694": false
+            "1ab9b58e-e535-4bcc-b393-85c6b32ef694": false,
+            "bc5a4298-b6c7-4720-9896-c4191fc3d2ee": true
           },
           "0c558a83-d403-490b-abfe-ab7a59c78851": {
             "default": true,
             "0c558a83-d403-490b-abfe-ab7a59c78851": false,
-            "1ab9b58e-e535-4bcc-b393-85c6b32ef694": false
+            "1ab9b58e-e535-4bcc-b393-85c6b32ef694": false,
+            "bc5a4298-b6c7-4720-9896-c4191fc3d2ee": false
           },
           "1ab9b58e-e535-4bcc-b393-85c6b32ef694": {
             "default": false,
             "0c558a83-d403-490b-abfe-ab7a59c78851": false,
-            "1ab9b58e-e535-4bcc-b393-85c6b32ef694": false
+            "1ab9b58e-e535-4bcc-b393-85c6b32ef694": false,
+            "bc5a4298-b6c7-4720-9896-c4191fc3d2ee": false
+          },
+          "bc5a4298-b6c7-4720-9896-c4191fc3d2ee": {
+            "default": true,
+            "0c558a83-d403-490b-abfe-ab7a59c78851": false,
+            "1ab9b58e-e535-4bcc-b393-85c6b32ef694": false,
+            "bc5a4298-b6c7-4720-9896-c4191fc3d2ee": false
           }
         }
       }
