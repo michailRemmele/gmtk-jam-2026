@@ -23,6 +23,8 @@ export const GameOver = 'GameOver';
 
 export const TimerTick = 'TimerTick';
 
+export const CameraShake = 'CameraShake';
+
 export type MovementEvent = ActorEvent<{
   angle?: number;
   x?: number;
@@ -73,5 +75,6 @@ declare module 'dacha' {
     [SendAnalytics]: SendAnalyticsEvent;
     [GameOver]: GameOverEvent;
     [TimerTick]: TimerTickEvent;
+    [CameraShake]: SceneEvent;
   }
 }

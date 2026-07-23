@@ -151,8 +151,7 @@ export default class PlatformBody
     this.actor.dispatchEvent(EventType.PlatformPartsChanged);
   };
 
-  private isForeignActor = (actor: Actor): boolean =>
-    !this.partSet.has(actor);
+  private isForeignActor = (actor: Actor): boolean => !this.partSet.has(actor);
 
   private rebuildParts(rigidBody: RigidBody): void {
     this.parts.length = 0;
@@ -258,7 +257,9 @@ export default class PlatformBody
       position.y,
     );
 
-    this.impactDamage.process(this.contacts, this);
+    if (this.impactDamage.process(this.contacts, this)) {
+      this.scene.dispatchEvent(EventType.CameraShake);
+    }
 
     this.solver.resolveVelocities(
       rigidBody,

@@ -132,6 +132,81 @@
                         "value": -1
                       }
                     ]
+                  },
+                  {
+                    "id": "68f7e4f1-0fe8-4206-b243-dbf5e349fcc6",
+                    "key": "Space",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "ThrustInput",
+                    "attrs": [
+                      {
+                        "id": "bac74922-3b3e-4668-88cb-8bb0c1b4209f",
+                        "name": "value",
+                        "type": "number",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "13392f2f-76b2-4f44-9a9b-7ad619f16ab9",
+                    "key": "ArrowUp",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "ThrustInput",
+                    "attrs": [
+                      {
+                        "id": "19750274-a913-41ef-8f28-b0f20e6c9166",
+                        "name": "value",
+                        "type": "number",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "7751b0de-3795-4622-b883-b97cdcf6a651",
+                    "key": "ArrowDown",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "ThrustInput",
+                    "attrs": [
+                      {
+                        "id": "c2989ec3-d52f-4be4-b24b-617557e9d34e",
+                        "name": "value",
+                        "type": "number",
+                        "value": -1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "eeae7f55-0420-42ef-bcb8-ead5de480e23",
+                    "key": "ArrowLeft",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "RotateInput",
+                    "attrs": [
+                      {
+                        "id": "7c7d474b-f728-4e22-a85b-4e62c4d4c4cb",
+                        "name": "value",
+                        "type": "number",
+                        "value": -1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "ed5bb823-55b4-44d1-bfa9-393bdcf4109d",
+                    "key": "ArrowRight",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "RotateInput",
+                    "attrs": [
+                      {
+                        "id": "5df6d4c2-8862-4d0a-8720-a61d1be527e9",
+                        "name": "value",
+                        "type": "number",
+                        "value": 1
+                      }
+                    ]
                   }
                 ]
               }
@@ -1208,7 +1283,9 @@
                   {
                     "id": "f9e8e789-528c-41d7-b7cd-c11399f1c7a2",
                     "name": "CameraBehavior",
-                    "options": {}
+                    "options": {
+                      "shakeStrength": 4
+                    }
                   }
                 ]
               }
@@ -3078,17 +3155,17 @@
         {
           "name": "Mesh",
           "config": {
-            "src": "",
-            "width": 24,
-            "height": 24,
-            "slice": 1,
+            "src": "images/booster-block.png",
+            "width": 36,
+            "height": 36,
+            "slice": 4,
             "sortOffsetX": 0,
             "sortOffsetY": 0,
             "flipX": false,
             "flipY": false,
             "sortingLayer": "units",
             "blending": "normal",
-            "color": "rgb(42,228,231)",
+            "color": "rgb(255,255,255)",
             "opacity": 1,
             "disabled": false,
             "material": {
@@ -3112,7 +3189,7 @@
                 "id": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
                 "name": "idle",
                 "type": "individual",
-                "speed": 1,
+                "speed": 0.5,
                 "timeline": {
                   "frames": [
                     {
@@ -3123,6 +3200,63 @@
                           "name": "components.Mesh.disabled",
                           "type": "boolean",
                           "value": false
+                        },
+                        {
+                          "id": "2e6a0d2a-4eb5-4884-9408-b148b6ad1e58",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        }
+                      ]
+                    },
+                    {
+                      "id": "4d02ca67-41ea-4a3a-9b06-6c542b466c2a",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2e6a0d2a-4eb5-4884-9408-b148b6ad1e58",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 1
+                        }
+                      ]
+                    },
+                    {
+                      "id": "f6e5c5e7-0fe9-4910-ac22-2684664776f5",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2e6a0d2a-4eb5-4884-9408-b148b6ad1e58",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 2
+                        }
+                      ]
+                    },
+                    {
+                      "id": "6b41a243-e38a-4b6c-9db0-a9341b592f84",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2e6a0d2a-4eb5-4884-9408-b148b6ad1e58",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 3
                         }
                       ]
                     }

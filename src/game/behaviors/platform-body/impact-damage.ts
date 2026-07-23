@@ -19,9 +19,10 @@ export class ImpactDamage {
     this.freshPairs = new Set();
   }
 
-  process(contacts: ContactBuffer, settings: ImpactDamageSettings): void {
+  process(contacts: ContactBuffer, settings: ImpactDamageSettings): boolean {
     this.freshPairs.clear();
 
+    let hadImpact = false;
     const { length } = contacts;
 
     for (let i = 0; i < length; i += 1) {
@@ -37,12 +38,15 @@ export class ImpactDamage {
 
       if (-approachSpeed >= settings.impactThreshold) {
         this.dealDamage(part, obstacle);
+        hadImpact = true;
       }
     }
 
     const previousPairs = this.activePairs;
     this.activePairs = this.freshPairs;
     this.freshPairs = previousPairs;
+
+    return hadImpact;
   }
 
   private dealDamage(part: Actor, obstacle: Actor): void {
