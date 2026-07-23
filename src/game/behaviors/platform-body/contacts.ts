@@ -2,7 +2,13 @@ import type { Actor, PhysicsAPI, RigidBody as RigidBodyInstance } from 'dacha';
 import { RigidBody } from 'dacha';
 import type { OverlapActorParams, OverlapHit } from 'dacha/physics';
 
+import Creature from '../../components/creature/creature.component';
+
 const isSolidHit = (hit: OverlapHit): boolean => {
+  if (hit.actor.getComponent(Creature)) {
+    return false;
+  }
+
   const rigidBody = hit.actor.getComponent(RigidBody);
   return rigidBody !== undefined && !rigidBody.disabled;
 };

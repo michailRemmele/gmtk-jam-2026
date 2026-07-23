@@ -41,15 +41,6 @@ export const Game: FC = () => {
   };
 
   useEffect(() => {
-    world.dispatchEvent(EventType.SendAnalytics, {
-      name: 'screen_show',
-      payload: {
-        screenName: 'game',
-      },
-    });
-  }, []);
-
-  useEffect(() => {
     const handleGameOver = (event: GameOverEvent): void => {
       setIsGameOver(true);
       setIsWin(event.isWin);

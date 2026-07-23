@@ -8,6 +8,7 @@ import {
   Animatable,
   Camera,
   Mesh,
+  Collider,
 } from 'dacha';
 import type { SceneSystemOptions, Scene, Time, ActorEvent } from 'dacha';
 import { DefineSystem } from 'dacha-workbench/decorators';
@@ -27,6 +28,7 @@ const ALLOWED_COMPONENTS = new Set<ComponentConstructor>([
   Animatable,
   Camera,
   Mesh,
+  Collider,
 ]);
 
 @DefineSystem({
@@ -86,6 +88,11 @@ export default class Reaper extends SceneSystem {
 
   handleKill = (value: Actor | ActorEvent): void => {
     const actor = value instanceof Actor ? value : value.target;
+
+    const collider = actor.getComponent(Collider);
+    if (collider) {
+      collider.disabled = true;
+    }
 
     actor.getComponents().forEach((component) => {
       if (

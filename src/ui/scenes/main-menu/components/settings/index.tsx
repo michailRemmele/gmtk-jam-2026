@@ -1,8 +1,7 @@
-import { useContext, useMemo, useEffect } from 'react';
+import { useContext, useMemo } from 'react';
 import type { FC } from 'react';
 import { AudioAPI } from 'dacha';
 
-import * as EventType from '../../../../../game/events';
 import { Button, Range } from '../../../../components';
 import { EngineContext } from '../../../../providers';
 import { MAIN_MENU } from '../../consts';
@@ -39,15 +38,6 @@ export const Settings: FC<SettingsProps> = ({ openMenu }) => {
     handleVolumeChange('effects', value);
 
   const handleBack = (): void => openMenu(MAIN_MENU);
-
-  useEffect(() => {
-    world.dispatchEvent(EventType.SendAnalytics, {
-      name: 'screen_show',
-      payload: {
-        screenName: 'settings',
-      },
-    });
-  }, []);
 
   return (
     <div className="settings-menu">

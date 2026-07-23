@@ -1,8 +1,5 @@
 import type { Actor, ActorEvent, SceneEvent } from 'dacha';
 
-export const Movement = 'Movement';
-export const MovementJump = 'MovementJump';
-
 export const ControlStickInput = 'ControlStickInput';
 
 export const ThrustInput = 'ThrustInput';
@@ -17,19 +14,11 @@ export const Kill = 'Kill';
 
 export const ResetSaveState = 'ResetSaveState';
 
-export const SendAnalytics = 'SendAnalytics';
-
 export const GameOver = 'GameOver';
 
 export const TimerTick = 'TimerTick';
 
 export const CameraShake = 'CameraShake';
-
-export type MovementEvent = ActorEvent<{
-  angle?: number;
-  x?: number;
-  y?: number;
-}>;
 
 export type AttackInputEvent = ActorEvent<{ x: number; y: number }>;
 export type AttackEvent = ActorEvent<{ x: number; y: number }>;
@@ -39,11 +28,6 @@ export type ControlStickInputEvent = SceneEvent<{ x: number; y: number }>;
 
 export type ThrustInputEvent = ActorEvent<{ value?: number | string }>;
 export type RotateInputEvent = ActorEvent<{ value?: number | string }>;
-
-export type SendAnalyticsEvent = SceneEvent<{
-  name: string;
-  payload: Record<string, string | number | boolean>;
-}>;
 
 export type GameOverEvent = SceneEvent<{
   isWin: boolean;
@@ -55,9 +39,6 @@ export type TimerTickEvent = SceneEvent<{ secondsLeft: number }>;
 
 declare module 'dacha' {
   export interface ActorEventMap {
-    [Movement]: MovementEvent;
-    [MovementJump]: ActorEvent;
-
     [ThrustInput]: ThrustInputEvent;
     [RotateInput]: RotateInputEvent;
 
@@ -72,7 +53,6 @@ declare module 'dacha' {
   export interface SceneEventMap {
     [ControlStickInput]: ControlStickInputEvent;
     [ResetSaveState]: SceneEvent;
-    [SendAnalytics]: SendAnalyticsEvent;
     [GameOver]: GameOverEvent;
     [TimerTick]: TimerTickEvent;
     [CameraShake]: SceneEvent;

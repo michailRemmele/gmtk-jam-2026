@@ -1626,42 +1626,6 @@
           "children": []
         },
         {
-          "id": "bba173ea-81e6-41b0-9ce0-ddc5299ed502",
-          "templateId": "c5322801-9783-49bf-af66-153d2c6a010d",
-          "name": "Wall 5",
-          "components": [
-            {
-              "name": "Transform",
-              "config": {
-                "offsetX": -408,
-                "offsetY": 252,
-                "rotation": 0,
-                "scaleX": 1,
-                "scaleY": 1
-              }
-            }
-          ],
-          "children": []
-        },
-        {
-          "id": "eaf8ca61-4742-4490-821d-e16f625029f1",
-          "templateId": "c5322801-9783-49bf-af66-153d2c6a010d",
-          "name": "Wall 6",
-          "components": [
-            {
-              "name": "Transform",
-              "config": {
-                "offsetX": -72,
-                "offsetY": 252,
-                "rotation": 0,
-                "scaleX": 1,
-                "scaleY": 1
-              }
-            }
-          ],
-          "children": []
-        },
-        {
           "id": "bb35da50-6d38-4f57-94bd-5d80111cc030",
           "templateId": "01616fe1-b861-4da6-9888-eb2bbe10e95a",
           "name": "Light Obstacle",
@@ -1876,21 +1840,211 @@
             }
           ],
           "children": []
+        },
+        {
+          "id": "9ea9ca1b-b389-4c92-b4f2-8686e061804d",
+          "templateId": "05b146aa-eb51-4bf9-9fdb-acbf121e3cca",
+          "name": "Hive Obstacle",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -204,
+                "offsetY": -228,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "7316018a-5f96-4f2d-9eb2-18e87bec8187",
+          "templateId": "05b146aa-eb51-4bf9-9fdb-acbf121e3cca",
+          "name": "Hive Obstacle 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -180.00000000000003,
+                "offsetY": -12,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "48f54767-6239-4f8b-909b-a14b94b5091a",
+          "templateId": "9c5b9c8a-98dd-42bc-a833-55c66f2b88b9",
+          "name": "Explosive Obstacle",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -252,
+                "offsetY": -396,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "d0c0cafb-6f03-4794-b7c3-c58b670503e6",
+          "templateId": "9c5b9c8a-98dd-42bc-a833-55c66f2b88b9",
+          "name": "Explosive Obstacle 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -180,
+                "offsetY": -516,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "c3a385b7-f32f-4e70-83de-661cf8256a0e",
+          "templateId": "9746506a-9d3a-4672-93bf-daa274db74c0",
+          "name": "Background",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -479.99999999999994,
+                "offsetY": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "133bd92e-73ff-4b07-b375-c3293f5dd325",
+          "templateId": "9746506a-9d3a-4672-93bf-daa274db74c0",
+          "name": "Background 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 5.684341886080802e-14,
+                "offsetY": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "0a368446-aab9-4ca8-ac78-329f2f884d05",
+          "templateId": "9746506a-9d3a-4672-93bf-daa274db74c0",
+          "name": "Background 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 5.684341886080802e-14,
+                "offsetY": -480,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "53028104-411a-469b-b586-ee3d35656905",
+          "templateId": "9746506a-9d3a-4672-93bf-daa274db74c0",
+          "name": "Background 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -479.99999999999994,
+                "offsetY": -480,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "f839bcdb-7a97-49c0-ab8b-0a049ed53b5e",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -23.999999999999986,
+                "offsetY": 252.00000000000003,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "bc3a0eaf-2462-47ec-88bd-c977707da2f9",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -264,
+                "offsetY": 252,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "b33234bb-f5e0-4da6-b8a1-c161dfe924fd",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -432,
+                "offsetY": 252,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
         }
       ]
     }
   ],
   "systems": [
     {
-      "name": "AnalyticsSystem",
-      "options": {}
-    },
-    {
       "name": "Saver",
-      "options": {}
-    },
-    {
-      "name": "MovementSystem",
       "options": {}
     },
     {
@@ -1949,6 +2103,10 @@
     },
     {
       "name": "GameState",
+      "options": {}
+    },
+    {
+      "name": "CreatureAttachment",
       "options": {}
     },
     {
@@ -3557,6 +3715,596 @@
           "name": "CollisionDamage",
           "config": {
             "value": 1
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "f39d6ef7-3134-461e-8236-3077773cb672",
+      "name": "Creature",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Collider",
+          "config": {
+            "type": "circle",
+            "offsetX": 0,
+            "offsetY": 0,
+            "layer": "default",
+            "debugColor": "#4DFFB8",
+            "disabled": false,
+            "radius": 4
+          }
+        },
+        {
+          "name": "RigidBody",
+          "config": {
+            "type": "kinematic",
+            "restitution": 0,
+            "friction": 0.6,
+            "oneWay": false,
+            "disabled": false
+          }
+        },
+        {
+          "name": "CharacterBody",
+          "config": {
+            "motionMode": "free",
+            "skinWidth": 0.1,
+            "maxSlides": 4,
+            "maxRecoveries": 3,
+            "disabled": false
+          }
+        },
+        {
+          "name": "Health",
+          "config": {
+            "points": 2
+          }
+        },
+        {
+          "name": "Creature",
+          "config": {
+            "mass": 0.5
+          }
+        },
+        {
+          "name": "Mesh",
+          "config": {
+            "src": "",
+            "width": 8,
+            "height": 8,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "foreground",
+            "blending": "normal",
+            "color": "rgb(220,30,30)",
+            "opacity": 1,
+            "disabled": false,
+            "material": {
+              "name": "DamageFlash",
+              "options": {}
+            }
+          }
+        },
+        {
+          "name": "Behaviors",
+          "config": {
+            "list": [
+              {
+                "id": "1d8a3191-f47e-44e6-96e4-9baa8dcd8ab4",
+                "name": "CreatureControl",
+                "options": {
+                  "chaseSpeed": 60,
+                  "attachRange": 30
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Animatable",
+          "config": {
+            "initialState": "69d784a2-8b89-4cbf-b264-e79a52c1b078",
+            "states": [
+              {
+                "id": "69d784a2-8b89-4cbf-b264-e79a52c1b078",
+                "name": "Idle",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "ccfca70f-1017-49af-a6a7-68b54e728945",
+                      "fields": [
+                        {
+                          "id": "00c714fa-726b-4890-a532-a657b9204128",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "2aa80acf-5bfe-44d2-bc5b-0a11c66dc60f",
+                    "state": "4957e34c-4ef3-4306-a175-82d30e46149a",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "ffeae4ef-a670-4d17-8c35-7f001bea975f",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "4957e34c-4ef3-4306-a175-82d30e46149a",
+                "name": "Death",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "ccfca70f-1017-49af-a6a7-68b54e728945",
+                      "fields": [
+                        {
+                          "id": "00c714fa-726b-4890-a532-a657b9204128",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": false
+                },
+                "transitions": []
+              }
+            ]
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "9c5b9c8a-98dd-42bc-a833-55c66f2b88b9",
+      "name": "Explosive Obstacle",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "RigidBody",
+          "config": {
+            "type": "static",
+            "restitution": 0,
+            "friction": 0.6,
+            "oneWay": false,
+            "disabled": false
+          }
+        },
+        {
+          "name": "Collider",
+          "config": {
+            "type": "box",
+            "offsetX": 0,
+            "offsetY": 0,
+            "layer": "default",
+            "debugColor": "#4DFFB8",
+            "disabled": false,
+            "sizeX": 24,
+            "sizeY": 24
+          }
+        },
+        {
+          "name": "CollisionDamage",
+          "config": {
+            "value": 1
+          }
+        },
+        {
+          "name": "Mesh",
+          "config": {
+            "src": "",
+            "width": 24,
+            "height": 24,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "units",
+            "blending": "normal",
+            "color": "rgb(226,44,135)",
+            "opacity": 1,
+            "disabled": false,
+            "material": {
+              "name": "DamageFlash",
+              "options": {}
+            }
+          }
+        },
+        {
+          "name": "Health",
+          "config": {
+            "points": 1
+          }
+        },
+        {
+          "name": "Animatable",
+          "config": {
+            "initialState": "3529b938-d212-4604-a15d-a3379ff9eac3",
+            "states": [
+              {
+                "id": "3529b938-d212-4604-a15d-a3379ff9eac3",
+                "name": "Idle",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "0401b807-d885-4bdc-91f3-62ca514114c8",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "070dff8f-eba7-47de-92a8-19237d57c08b",
+                    "state": "431f6360-feca-428d-92a8-5e73c3a221f1",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "759420c8-343f-4884-adc3-fbf9f51a2f40",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "431f6360-feca-428d-92a8-5e73c3a221f1",
+                "name": "Death",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "0401b807-d885-4bdc-91f3-62ca514114c8",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "Behaviors",
+          "config": {
+            "list": [
+              {
+                "id": "3bef443c-55ae-4547-97b4-81b36e5d89aa",
+                "name": "ExplosiveObstacle",
+                "options": {
+                  "fuseTime": 3,
+                  "radius": 80,
+                  "damage": 3
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "05b146aa-eb51-4bf9-9fdb-acbf121e3cca",
+      "name": "Hive Obstacle",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "RigidBody",
+          "config": {
+            "type": "static",
+            "restitution": 0,
+            "friction": 0.6,
+            "oneWay": false,
+            "disabled": false
+          }
+        },
+        {
+          "name": "Collider",
+          "config": {
+            "type": "box",
+            "offsetX": 0,
+            "offsetY": 0,
+            "layer": "default",
+            "debugColor": "#4DFFB8",
+            "disabled": false,
+            "sizeX": 24,
+            "sizeY": 24
+          }
+        },
+        {
+          "name": "CollisionDamage",
+          "config": {
+            "value": 1
+          }
+        },
+        {
+          "name": "Mesh",
+          "config": {
+            "src": "",
+            "width": 24,
+            "height": 24,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "units",
+            "blending": "normal",
+            "color": "rgb(253,226,19)",
+            "opacity": 1,
+            "disabled": false,
+            "material": {
+              "name": "DamageFlash",
+              "options": {}
+            }
+          }
+        },
+        {
+          "name": "Health",
+          "config": {
+            "points": 1
+          }
+        },
+        {
+          "name": "Animatable",
+          "config": {
+            "initialState": "3529b938-d212-4604-a15d-a3379ff9eac3",
+            "states": [
+              {
+                "id": "3529b938-d212-4604-a15d-a3379ff9eac3",
+                "name": "Idle",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "0401b807-d885-4bdc-91f3-62ca514114c8",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "070dff8f-eba7-47de-92a8-19237d57c08b",
+                    "state": "431f6360-feca-428d-92a8-5e73c3a221f1",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "759420c8-343f-4884-adc3-fbf9f51a2f40",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "431f6360-feca-428d-92a8-5e73c3a221f1",
+                "name": "Death",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "0401b807-d885-4bdc-91f3-62ca514114c8",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "Behaviors",
+          "config": {
+            "list": [
+              {
+                "id": "e2e2b470-cb63-4010-9487-96cf5be93f47",
+                "name": "HiveObstacle",
+                "options": {
+                  "creatureTemplateId": "f39d6ef7-3134-461e-8236-3077773cb672",
+                  "creatureCount": 3,
+                  "spawnRadius": 20
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "9746506a-9d3a-4672-93bf-daa274db74c0",
+      "name": "Background",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "images/terrain-background.png",
+            "width": 480,
+            "height": 480,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "background",
+            "fit": "repeat",
+            "blending": "normal",
+            "color": "#fff",
+            "opacity": 1,
+            "disabled": false,
+            "textureOffsetX": 0,
+            "textureOffsetY": 0
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+      "name": "Static Ground",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "RigidBody",
+          "config": {
+            "type": "static",
+            "restitution": 0,
+            "friction": 0.6,
+            "oneWay": false,
+            "disabled": false
+          }
+        },
+        {
+          "name": "Collider",
+          "config": {
+            "type": "box",
+            "offsetX": 0,
+            "offsetY": 0,
+            "layer": "default",
+            "debugColor": "#4DFFB8",
+            "disabled": false,
+            "sizeX": 480,
+            "sizeY": 24
+          }
+        },
+        {
+          "name": "CollisionDamage",
+          "config": {
+            "value": 2
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "images/terrain-ground.png",
+            "width": 240,
+            "height": 24,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "background-3",
+            "fit": "repeat",
+            "blending": "normal",
+            "color": "#fff",
+            "opacity": 1,
+            "disabled": false,
+            "textureOffsetX": 0,
+            "textureOffsetY": 0
           }
         }
       ],

@@ -8,6 +8,7 @@ import type { ContactBuffer } from './contacts';
 
 export interface ImpactDamageSettings {
   impactThreshold: number;
+  getAttachedCreatures(): Actor[];
 }
 
 export class ImpactDamage {
@@ -37,7 +38,7 @@ export class ImpactDamage {
       }
 
       if (-approachSpeed >= settings.impactThreshold) {
-        this.dealDamage(part, obstacle);
+        this.dealDamage(part, obstacle, settings);
         hadImpact = true;
       }
     }
@@ -49,9 +50,19 @@ export class ImpactDamage {
     return hadImpact;
   }
 
-  private dealDamage(part: Actor, obstacle: Actor): void {
-    this.damageTarget(part, obstacle.getComponent(CollisionDamage));
+  private dealDamage(
+    part: Actor,
+    obstacle: Actor,
+    settings: ImpactDamageSettings,
+  ): void {
+    const obstacleDamage = obstacle.getComponent(CollisionDamage);
+
+    this.damageTarget(part, obstacleDamage);
     this.damageTarget(obstacle, part.getComponent(CollisionDamage));
+
+    settings.getAttachedCreatures().forEach((creature) => {
+      this.damageTarget(creature, obstacleDamage);
+    });
   }
 
   private damageTarget(

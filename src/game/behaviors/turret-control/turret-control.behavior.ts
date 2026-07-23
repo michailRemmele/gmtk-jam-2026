@@ -8,8 +8,8 @@ import * as EventType from '../../events';
 import { GameStateAPI } from '../../systems/game-state/game-state.api';
 import Weapon from '../../components/weapon/weapon.component';
 import Health from '../../components/health/health.component';
-import CollisionDamage from '../../components/collision-damage/collision-damage.component';
 import PlatformBlock from '../../components/platform-block/platform-block.component';
+import Creature from '../../components/creature/creature.component';
 
 const DEFAULT_TRACK_SPEED = Math.PI * 1.5;
 const DEFAULT_PATROL_SPEED = 0.6;
@@ -19,9 +19,7 @@ const DEFAULT_AIM_OFFSET = 0;
 const AIM_TOLERANCE = MathOps.degToRad(6);
 
 const isTarget = (actor: Actor): boolean =>
-  !!actor.getComponent(Health) &&
-  !!actor.getComponent(CollisionDamage) &&
-  !actor.getComponent(PlatformBlock);
+  !!actor.getComponent(Health) && !actor.getComponent(PlatformBlock);
 
 interface TurretControlOptions extends BehaviorOptions {
   towerActorName?: string;
@@ -81,8 +79,11 @@ export default class TurretControl extends Behavior {
   private findTarget(x: number, y: number, range: number): Actor | undefined {
     const physics = this.world.systemApi.get(PhysicsAPI);
 
-    let nearest: Actor | undefined;
-    let nearestDistanceSq = range * range;
+    let nearestCreature: Actor | undefined;
+    let nearestCreatureDistanceSq = range * range;
+
+    let nearestObstacle: Actor | undefined;
+    let nearestObstacleDistanceSq = range * range;
 
     physics.overlapEach(
       {
@@ -100,14 +101,22 @@ export default class TurretControl extends Behavior {
         const dy = targetTransform.world.position.y - y;
         const distanceSq = dx * dx + dy * dy;
 
-        if (distanceSq < nearestDistanceSq) {
-          nearestDistanceSq = distanceSq;
-          nearest = hit.actor;
+        if (hit.actor.getComponent(Creature)) {
+          if (distanceSq < nearestCreatureDistanceSq) {
+            nearestCreatureDistanceSq = distanceSq;
+            nearestCreature = hit.actor;
+          }
+          return;
+        }
+
+        if (distanceSq < nearestObstacleDistanceSq) {
+          nearestObstacleDistanceSq = distanceSq;
+          nearestObstacle = hit.actor;
         }
       },
     );
 
-    return nearest;
+    return nearestCreature ?? nearestObstacle;
   }
 
   update(): void {

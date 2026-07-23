@@ -12,6 +12,7 @@ import { DefineBehavior, DefineField } from 'dacha-workbench/decorators';
 import { SHIP_PARTS_LAYER } from '../../../consts/physics';
 import * as EventType from '../../events';
 import { GameStateAPI } from '../../systems/game-state/game-state.api';
+import { CreatureAttachmentAPI } from '../../systems/creature-attachment/creature-attachment.api';
 import PlatformBlock from '../../components/platform-block/platform-block.component';
 
 import { ContactBuffer } from './contacts';
@@ -153,6 +154,9 @@ export default class PlatformBody
 
   private isForeignActor = (actor: Actor): boolean => !this.partSet.has(actor);
 
+  getAttachedCreatures = (): Actor[] =>
+    this.world.systemApi.get(CreatureAttachmentAPI).getAllAttached();
+
   private rebuildParts(rigidBody: RigidBody): void {
     this.parts.length = 0;
     this.partSet.clear();
@@ -161,6 +165,8 @@ export default class PlatformBody
     if (this.actor.getComponent(Collider)) {
       this.parts.push(this.actor);
     }
+
+    const attachmentApi = this.world.systemApi.get(CreatureAttachmentAPI);
 
     let mass = this.baseMass;
     let momentX = 0;
@@ -177,9 +183,11 @@ export default class PlatformBody
       this.parts.push(child);
       this.partSet.add(child);
 
-      momentX += transform.local.position.x * platformBlock.mass;
-      momentY += transform.local.position.y * platformBlock.mass;
-      mass += platformBlock.mass;
+      const blockMass = platformBlock.mass + attachmentApi.getAttachedMass(child);
+
+      momentX += transform.local.position.x * blockMass;
+      momentY += transform.local.position.y * blockMass;
+      mass += blockMass;
     }
 
     this.localCenterX = mass > 0 ? momentX / mass : 0;

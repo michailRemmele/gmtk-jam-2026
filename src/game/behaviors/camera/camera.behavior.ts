@@ -5,7 +5,7 @@ import { DefineBehavior, DefineField } from 'dacha-workbench/decorators';
 import { PLAYER_ACTOR_NAME } from '../../../consts/actors';
 import * as EventType from '../../events';
 
-const VIEWPORT_SIZE = 480;
+const VIEWPORT_SIZE = 360;
 const DEFAULT_SHAKE_STRENGTH = 8;
 const SHAKE_DURATION = 0.3;
 
@@ -55,7 +55,7 @@ export default class CameraBehavior extends Behavior {
 
   private updateZoom(): void {
     const camera = this.actor.getComponent(Camera);
-    camera.zoom = Math.round(camera.windowSizeY / VIEWPORT_SIZE);
+    camera.zoom = camera.windowSizeY / VIEWPORT_SIZE;
   }
 
   private applyShake(transform: Transform): void {
