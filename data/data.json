@@ -2037,7 +2037,7 @@
     },
     {
       "id": "d01d07c3-ec89-4f61-a2e4-beadcefee92a",
-      "name": "Projectile",
+      "name": "Turret Fire",
       "components": [
         {
           "name": "Transform",
@@ -2068,24 +2068,6 @@
           }
         },
         {
-          "name": "Shape",
-          "config": {
-            "type": "circle",
-            "strokeColor": "#fff",
-            "strokeAlignment": 0.5,
-            "pixelLine": false,
-            "fill": "rgb(255,0,0)",
-            "sortOffsetX": 0,
-            "sortOffsetY": 0,
-            "sortingLayer": "foreground",
-            "blending": "normal",
-            "opacity": 1,
-            "disabled": false,
-            "strokeWidth": 0,
-            "radius": 3
-          }
-        },
-        {
           "name": "RigidBody",
           "config": {
             "type": "dynamic",
@@ -2098,6 +2080,159 @@
             "linearDamping": 0,
             "angularDamping": 0,
             "lockRotation": false
+          }
+        },
+        {
+          "name": "Mesh",
+          "config": {
+            "src": "images/turret-fire.png",
+            "width": 24,
+            "height": 24,
+            "slice": 7,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "foreground",
+            "blending": "normal",
+            "color": "#fff",
+            "opacity": 1,
+            "disabled": false
+          }
+        },
+        {
+          "name": "Animatable",
+          "config": {
+            "initialState": "dbd36ca5-a643-4da9-9806-915db71d294f",
+            "states": [
+              {
+                "id": "dbd36ca5-a643-4da9-9806-915db71d294f",
+                "name": "Idle",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "53363e73-eac7-47de-9201-8d4a123fe425",
+                      "fields": [
+                        {
+                          "id": "4e7e33e9-932e-43b6-afa2-a56c9bb1c547",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        }
+                      ]
+                    },
+                    {
+                      "id": "d7f82bd0-1a79-41cd-8825-2a7e681a134e",
+                      "fields": [
+                        {
+                          "id": "4e7e33e9-932e-43b6-afa2-a56c9bb1c547",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 1
+                        }
+                      ]
+                    },
+                    {
+                      "id": "45ec66d1-93d0-4e1d-beb1-aa4428c650b0",
+                      "fields": [
+                        {
+                          "id": "4e7e33e9-932e-43b6-afa2-a56c9bb1c547",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 2
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "98ca3dae-48d6-4fdc-b5c4-b60e32c6f795",
+                    "state": "e64e4ad2-4596-418f-9f1c-95c5a2092d52",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "01bc4153-7674-48a6-be2e-2cdde8c8d9a4",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "e64e4ad2-4596-418f-9f1c-95c5a2092d52",
+                "name": "Death",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "53363e73-eac7-47de-9201-8d4a123fe425",
+                      "fields": [
+                        {
+                          "id": "4e7e33e9-932e-43b6-afa2-a56c9bb1c547",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 3
+                        }
+                      ]
+                    },
+                    {
+                      "id": "d7f82bd0-1a79-41cd-8825-2a7e681a134e",
+                      "fields": [
+                        {
+                          "id": "4e7e33e9-932e-43b6-afa2-a56c9bb1c547",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 4
+                        }
+                      ]
+                    },
+                    {
+                      "id": "45ec66d1-93d0-4e1d-beb1-aa4428c650b0",
+                      "fields": [
+                        {
+                          "id": "4e7e33e9-932e-43b6-afa2-a56c9bb1c547",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 5
+                        }
+                      ]
+                    },
+                    {
+                      "id": "e2b7fcde-4c8e-427d-8e25-34b7eb1f2d8b",
+                      "fields": [
+                        {
+                          "id": "4e7e33e9-932e-43b6-afa2-a56c9bb1c547",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 6
+                        }
+                      ]
+                    },
+                    {
+                      "id": "7ce923a0-a5db-4f25-ad7a-b9c07b5432f1",
+                      "fields": [
+                        {
+                          "id": "4e7e33e9-932e-43b6-afa2-a56c9bb1c547",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": false
+                },
+                "transitions": []
+              }
+            ]
           }
         }
       ],
@@ -2747,9 +2882,9 @@
         {
           "name": "Mesh",
           "config": {
-            "src": "",
-            "width": 24,
-            "height": 24,
+            "src": "images/turret-block.png",
+            "width": 36,
+            "height": 36,
             "slice": 1,
             "sortOffsetX": 0,
             "sortOffsetY": 0,
@@ -2757,7 +2892,7 @@
             "flipY": false,
             "sortingLayer": "units",
             "blending": "normal",
-            "color": "rgb(40,52,180)",
+            "color": "rgb(255,255,255)",
             "opacity": 1,
             "disabled": false,
             "material": {
@@ -2792,6 +2927,12 @@
                           "name": "components.Mesh.disabled",
                           "type": "boolean",
                           "value": false
+                        },
+                        {
+                          "id": "9865c920-7a46-4595-ab25-50c04dce9575",
+                          "name": "children.Tower.components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 0
                         }
                       ]
                     }
@@ -2809,6 +2950,20 @@
                         "type": "event",
                         "props": {
                           "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "91988f9b-bb26-4b90-b20b-65e48d9f5a28",
+                    "state": "d5ef20da-eec1-46bb-bcf4-a27869873ec4",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "aba04620-2170-40d1-a00e-5af262bd1822",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Attack"
                         }
                       }
                     ]
@@ -2843,6 +2998,90 @@
                   "looped": true
                 },
                 "transitions": []
+              },
+              {
+                "id": "d5ef20da-eec1-46bb-bcf4-a27869873ec4",
+                "name": "Fire",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "879dcf7e-522c-4513-afa5-8e468fbee246",
+                          "name": "children.Tower.components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 1
+                        }
+                      ]
+                    },
+                    {
+                      "id": "9c179c73-7a00-4ff0-bd19-1035c63f2b91",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "879dcf7e-522c-4513-afa5-8e468fbee246",
+                          "name": "children.Tower.components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 2
+                        }
+                      ]
+                    },
+                    {
+                      "id": "1656eb47-4421-43c5-8dfa-a693a558ce55",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "879dcf7e-522c-4513-afa5-8e468fbee246",
+                          "name": "children.Tower.components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 3
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": false
+                },
+                "transitions": [
+                  {
+                    "id": "a682db86-64a1-4fc0-a464-5524c6ac75ac",
+                    "state": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "22c187c1-3017-45f7-8a1b-973f3d2fe0b2",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "5ea58ba3-3364-4d13-ab7d-e78b0c563a95",
+                    "state": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+                    "time": 1,
+                    "conditions": []
+                  }
+                ]
               }
             ]
           }
@@ -2908,17 +3147,17 @@
             {
               "name": "Mesh",
               "config": {
-                "src": "",
-                "width": 10,
-                "height": 10,
-                "slice": 1,
+                "src": "images/turret-tower.png",
+                "width": 36,
+                "height": 36,
+                "slice": 4,
                 "sortOffsetX": 0,
                 "sortOffsetY": 0,
                 "flipX": false,
                 "flipY": false,
                 "sortingLayer": "units",
                 "blending": "normal",
-                "color": "rgb(182,206,255)",
+                "color": "rgb(255,255,255)",
                 "opacity": 1,
                 "disabled": false
               }
