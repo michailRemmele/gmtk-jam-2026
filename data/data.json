@@ -1142,13 +1142,86 @@
             "blending": "normal",
             "color": "rgb(23,106,41)",
             "opacity": 1,
-            "disabled": false
+            "disabled": false,
+            "material": {
+              "name": "DamageFlash",
+              "options": {}
+            }
           }
         },
         {
           "name": "Health",
           "config": {
             "points": 3
+          }
+        },
+        {
+          "name": "Animatable",
+          "config": {
+            "initialState": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+            "states": [
+              {
+                "id": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+                "name": "idle",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "a682db86-64a1-4fc0-a464-5524c6ac75ac",
+                    "state": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "22c187c1-3017-45f7-8a1b-973f3d2fe0b2",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                "name": "Death",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": []
+              }
+            ]
           }
         }
       ],

@@ -69,6 +69,11 @@ export default class Reaper extends SceneSystem {
 
     health.points -= Math.round(value);
 
+    const mesh = target.getComponent(Mesh);
+    if (mesh?.material) {
+      mesh.material.options.hitTime = this.time.elapsedTime;
+    }
+
     if (health.points <= 0) {
       health.points = 0;
       target.dispatchEvent(EventType.Kill);
