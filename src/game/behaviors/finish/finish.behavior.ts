@@ -10,6 +10,19 @@ import {
 import * as EventType from '../../events';
 import LevelInfo from '../../components/level-info/level-info.component';
 
+const belongsToPlayer = (actor: Actor): boolean => {
+  let current: Actor | null = actor;
+
+  while (current !== null) {
+    if (current.name === PLAYER_ACTOR_NAME) {
+      return true;
+    }
+    current = current.parent instanceof Actor ? current.parent : null;
+  }
+
+  return false;
+};
+
 @DefineBehavior({
   name: 'Finish',
 })
@@ -39,7 +52,7 @@ export default class Finish extends Behavior {
   private handleCollisionEnter = (event: CollisionEnterEvent): void => {
     const { actor } = event;
 
-    if (actor.name === PLAYER_ACTOR_NAME) {
+    if (belongsToPlayer(actor)) {
       const levelInfo = this.mainCamera.getComponent(LevelInfo);
 
       this.scene.dispatchEvent(EventType.GameOver, {

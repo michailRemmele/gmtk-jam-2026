@@ -8,6 +8,8 @@ export const ControlStickInput = 'ControlStickInput';
 export const ThrustInput = 'ThrustInput';
 export const RotateInput = 'RotateInput';
 
+export const PlatformPartsChanged = 'PlatformPartsChanged';
+
 export const AttackInput = 'AttackInput';
 export const Attack = 'Attack';
 export const Damage = 'Damage';
@@ -52,6 +54,8 @@ declare module 'dacha' {
 
     [ThrustInput]: ThrustInputEvent;
     [RotateInput]: RotateInputEvent;
+
+    [PlatformPartsChanged]: ActorEvent;
 
     [AttackInput]: AttackInputEvent;
     [Attack]: ActorEvent;

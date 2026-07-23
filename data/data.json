@@ -150,16 +150,30 @@
                     "id": "e7e3f0ee-60d9-41da-bf5c-b6f9d36d5a58",
                     "name": "PlatformControl",
                     "options": {
-                      "mainThrust": 1200,
-                      "descentThrust": 1200,
-                      "turnTorque": 2400,
+                      "mainThrust": 2400,
+                      "descentThrust": 2400,
+                      "turnTorque": 14000,
                       "turnThrust": 0,
                       "maxLinearSpeed": 200,
                       "maxAngularSpeed": 3,
                       "gravityScale": 1,
-                      "levelingStiffness": 10,
-                      "levelingDamping": 5,
+                      "levelingStiffness": 60,
+                      "levelingDamping": 30,
                       "maxImpactAngularSpeed": 1
+                    }
+                  },
+                  {
+                    "id": "76298a4c-893d-41e0-8e78-c9d9a94ddb93",
+                    "name": "PlatformBody",
+                    "options": {
+                      "baseMass": 0.4,
+                      "blockMass": 0.1,
+                      "gravityScale": 1,
+                      "restitution": 0,
+                      "friction": 0.4,
+                      "velocityIterations": 3,
+                      "positionSlop": 0.5,
+                      "positionBeta": 0.8
                     }
                   }
                 ]
@@ -193,7 +207,80 @@
               }
             }
           ],
-          "children": []
+          "children": [
+            {
+              "id": "e6313fe4-3d66-47da-9052-10eb1c3a0032",
+              "templateId": "fcc3f3e9-c932-41b2-ad52-b9ce6fc30333",
+              "name": "Platform Block",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 23.99999999999997,
+                    "offsetY": -24,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "72bc07a3-a6ee-4ba7-87c3-70161118833d",
+              "templateId": "fcc3f3e9-c932-41b2-ad52-b9ce6fc30333",
+              "name": "Platform Block 2",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": -24,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "38d01718-b898-4e05-bcd8-2ff8c3adc7d8",
+              "templateId": "fcc3f3e9-c932-41b2-ad52-b9ce6fc30333",
+              "name": "Platform Block 3",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -24,
+                    "offsetY": -24,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "82939ea0-408a-4190-b4f4-e6d08b2e214d",
+              "templateId": "fcc3f3e9-c932-41b2-ad52-b9ce6fc30333",
+              "name": "Platform Block 5",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -24,
+                    "offsetY": -48,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
         },
         {
           "id": "a067ab21-5153-4130-b1b9-a8c9c4424c3c",
@@ -999,6 +1086,55 @@
         }
       ],
       "children": []
+    },
+    {
+      "id": "fcc3f3e9-c932-41b2-ad52-b9ce6fc30333",
+      "name": "Platform Block",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Collider",
+          "config": {
+            "type": "box",
+            "offsetX": 0,
+            "offsetY": 0,
+            "layer": "0c558a83-d403-490b-abfe-ab7a59c78851",
+            "debugColor": "#4DFFB8",
+            "disabled": false,
+            "sizeX": 24,
+            "sizeY": 24
+          }
+        },
+        {
+          "name": "Shape",
+          "config": {
+            "type": "rectangle",
+            "strokeColor": "#fff",
+            "strokeAlignment": 0.5,
+            "pixelLine": false,
+            "fill": "rgb(77,122,23)",
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "sortingLayer": "default",
+            "blending": "normal",
+            "opacity": 1,
+            "disabled": false,
+            "sizeX": 24,
+            "sizeY": 24,
+            "strokeWidth": 0
+          }
+        }
+      ],
+      "children": []
     }
   ],
   "globalOptions": [
@@ -1069,27 +1205,27 @@
         "collisionLayers": [
           {
             "id": "0c558a83-d403-490b-abfe-ab7a59c78851",
-            "name": "boxes"
+            "name": "ship-parts"
           },
           {
             "id": "1ab9b58e-e535-4bcc-b393-85c6b32ef694",
-            "name": "character"
+            "name": "ship-hull"
           }
         ],
         "collisionMatrix": {
           "default": {
             "default": true,
             "0c558a83-d403-490b-abfe-ab7a59c78851": true,
-            "1ab9b58e-e535-4bcc-b393-85c6b32ef694": true
+            "1ab9b58e-e535-4bcc-b393-85c6b32ef694": false
           },
           "0c558a83-d403-490b-abfe-ab7a59c78851": {
             "default": true,
-            "0c558a83-d403-490b-abfe-ab7a59c78851": true,
-            "1ab9b58e-e535-4bcc-b393-85c6b32ef694": true
+            "0c558a83-d403-490b-abfe-ab7a59c78851": false,
+            "1ab9b58e-e535-4bcc-b393-85c6b32ef694": false
           },
           "1ab9b58e-e535-4bcc-b393-85c6b32ef694": {
-            "default": true,
-            "0c558a83-d403-490b-abfe-ab7a59c78851": true,
+            "default": false,
+            "0c558a83-d403-490b-abfe-ab7a59c78851": false,
             "1ab9b58e-e535-4bcc-b393-85c6b32ef694": false
           }
         }

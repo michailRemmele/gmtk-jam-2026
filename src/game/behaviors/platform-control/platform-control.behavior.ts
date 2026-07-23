@@ -1,8 +1,7 @@
-import type { Actor, BehaviorOptions, Time, World } from 'dacha';
+import type { Actor, BehaviorOptions, Time } from 'dacha';
 import {
   Behavior,
   MathOps,
-  PhysicsAPI,
   RigidBody,
   Transform,
   Vector2,
@@ -18,7 +17,6 @@ const DEFAULT_TURN_TORQUE = 4000;
 const DEFAULT_TURN_THRUST = 0;
 const DEFAULT_MAX_LINEAR_SPEED = 800;
 const DEFAULT_MAX_ANGULAR_SPEED = 3;
-const DEFAULT_GRAVITY_SCALE = 1;
 const DEFAULT_LEVELING_STIFFNESS = 100;
 const DEFAULT_LEVELING_DAMPING = 20;
 const DEFAULT_MAX_IMPACT_ANGULAR_SPEED = 0;
@@ -30,7 +28,6 @@ interface PlatformControlOptions extends BehaviorOptions {
   turnThrust?: number;
   maxLinearSpeed?: number;
   maxAngularSpeed?: number;
-  gravityScale?: number;
   levelingStiffness?: number;
   levelingDamping?: number;
   maxImpactAngularSpeed?: number;
@@ -73,9 +70,6 @@ export default class PlatformControl extends Behavior {
   @DefineField({ initialValue: DEFAULT_MAX_ANGULAR_SPEED })
   private maxAngularSpeed: number;
 
-  @DefineField({ initialValue: DEFAULT_GRAVITY_SCALE })
-  private gravityScale: number;
-
   @DefineField({ initialValue: DEFAULT_LEVELING_STIFFNESS })
   private levelingStiffness: number;
 
@@ -86,7 +80,6 @@ export default class PlatformControl extends Behavior {
   private maxImpactAngularSpeed: number;
 
   private actor: Actor;
-  private world: World;
   private time: Time;
 
   private thrustInput: number;
@@ -101,7 +94,6 @@ export default class PlatformControl extends Behavior {
     super();
 
     this.actor = options.actor;
-    this.world = options.world;
     this.time = options.time;
 
     this.mainThrust = options.mainThrust ?? DEFAULT_MAIN_THRUST;
@@ -110,7 +102,6 @@ export default class PlatformControl extends Behavior {
     this.turnThrust = options.turnThrust ?? DEFAULT_TURN_THRUST;
     this.maxLinearSpeed = options.maxLinearSpeed ?? DEFAULT_MAX_LINEAR_SPEED;
     this.maxAngularSpeed = options.maxAngularSpeed ?? DEFAULT_MAX_ANGULAR_SPEED;
-    this.gravityScale = options.gravityScale ?? DEFAULT_GRAVITY_SCALE;
     this.levelingStiffness =
       options.levelingStiffness ?? DEFAULT_LEVELING_STIFFNESS;
     this.levelingDamping = options.levelingDamping ?? DEFAULT_LEVELING_DAMPING;
@@ -159,17 +150,6 @@ export default class PlatformControl extends Behavior {
     this.forceBuffer.y = y;
 
     rigidBody.applyForce(this.forceBuffer);
-  }
-
-  private applyGravity(rigidBody: RigidBody): void {
-    if (!this.gravityScale) {
-      return;
-    }
-
-    const { gravity } = this.world.systemApi.get(PhysicsAPI);
-    const scale = rigidBody.mass * this.gravityScale;
-
-    this.applyForce(rigidBody, gravity.x * scale, gravity.y * scale);
   }
 
   private applyThrust(rigidBody: RigidBody, rotation: number): void {
@@ -273,7 +253,6 @@ export default class PlatformControl extends Behavior {
 
     this.expectedAngularDelta = 0;
 
-    this.applyGravity(rigidBody);
     this.applyThrust(rigidBody, rotation);
     this.applyRotation(rigidBody, rotation);
     this.applyLeveling(rigidBody, rotation);
