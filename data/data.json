@@ -685,6 +685,222 @@
             }
           ],
           "children": []
+        },
+        {
+          "id": "bb35da50-6d38-4f57-94bd-5d80111cc030",
+          "templateId": "01616fe1-b861-4da6-9888-eb2bbe10e95a",
+          "name": "Light Obstacle",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -264,
+                "offsetY": -24,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "3b9ff9a9-d1da-447b-99e7-a9226105e17a",
+          "templateId": "01616fe1-b861-4da6-9888-eb2bbe10e95a",
+          "name": "Light Obstacle 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -216,
+                "offsetY": -24,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "74f1dded-949d-4aa7-895a-c632ccdfb71d",
+          "templateId": "01616fe1-b861-4da6-9888-eb2bbe10e95a",
+          "name": "Light Obstacle 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -168,
+                "offsetY": -192,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "7e2c43d5-e25d-4f55-a367-7236b48002a1",
+          "templateId": "01616fe1-b861-4da6-9888-eb2bbe10e95a",
+          "name": "Light Obstacle 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -215.99999999999997,
+                "offsetY": -192,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "8960931c-51af-40e4-9b02-c4683a77c2a1",
+          "templateId": "01616fe1-b861-4da6-9888-eb2bbe10e95a",
+          "name": "Light Obstacle 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -168,
+                "offsetY": -240,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "6824f3cc-95d0-4c56-b382-c94c97efe8ac",
+          "templateId": "01616fe1-b861-4da6-9888-eb2bbe10e95a",
+          "name": "Light Obstacle 6",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -264,
+                "offsetY": -360,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "ef492cb5-d463-4b43-a816-dd6fc5bc5c62",
+          "templateId": "01616fe1-b861-4da6-9888-eb2bbe10e95a",
+          "name": "Light Obstacle 7",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -288,
+                "offsetY": -408,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "ef5defd9-a71e-47d7-95e2-280d0b3eb0a4",
+          "templateId": "01616fe1-b861-4da6-9888-eb2bbe10e95a",
+          "name": "Light Obstacle 8",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -192,
+                "offsetY": -552,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "9e764429-0699-4f55-a11a-7de9e37b8543",
+          "templateId": "01616fe1-b861-4da6-9888-eb2bbe10e95a",
+          "name": "Light Obstacle 9",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -144.00000000000003,
+                "offsetY": -504,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "15eb8d7e-7b95-4adf-95bc-50aeae89116c",
+          "templateId": "01616fe1-b861-4da6-9888-eb2bbe10e95a",
+          "name": "Light Obstacle 10",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -240,
+                "offsetY": -600,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "4feef6b8-bc2d-48f3-be8b-5864b295aa72",
+          "templateId": "01616fe1-b861-4da6-9888-eb2bbe10e95a",
+          "name": "Light Obstacle 11",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -288,
+                "offsetY": -600,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "c169bca1-4d15-4f50-a6b3-e83b1be928c5",
+          "templateId": "01616fe1-b861-4da6-9888-eb2bbe10e95a",
+          "name": "Light Obstacle 12",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -240,
+                "offsetY": -552,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
         }
       ]
     }
@@ -1231,6 +1447,155 @@
         {
           "name": "PlatformBlock",
           "config": {}
+        },
+        {
+          "name": "CollisionDamage",
+          "config": {
+            "value": 1
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "01616fe1-b861-4da6-9888-eb2bbe10e95a",
+      "name": "Light Obstacle",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "RigidBody",
+          "config": {
+            "type": "static",
+            "restitution": 0,
+            "friction": 0.6,
+            "oneWay": false,
+            "disabled": false
+          }
+        },
+        {
+          "name": "Collider",
+          "config": {
+            "type": "box",
+            "offsetX": 0,
+            "offsetY": 0,
+            "layer": "default",
+            "debugColor": "#4DFFB8",
+            "disabled": false,
+            "sizeX": 48,
+            "sizeY": 48
+          }
+        },
+        {
+          "name": "CollisionDamage",
+          "config": {
+            "value": 1
+          }
+        },
+        {
+          "name": "Mesh",
+          "config": {
+            "src": "",
+            "width": 48,
+            "height": 48,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "units",
+            "blending": "normal",
+            "color": "rgb(226,135,44)",
+            "opacity": 1,
+            "disabled": false,
+            "material": {
+              "name": "DamageFlash",
+              "options": {}
+            }
+          }
+        },
+        {
+          "name": "Health",
+          "config": {
+            "points": 1
+          }
+        },
+        {
+          "name": "Animatable",
+          "config": {
+            "initialState": "3529b938-d212-4604-a15d-a3379ff9eac3",
+            "states": [
+              {
+                "id": "3529b938-d212-4604-a15d-a3379ff9eac3",
+                "name": "Idle",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "0401b807-d885-4bdc-91f3-62ca514114c8",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "070dff8f-eba7-47de-92a8-19237d57c08b",
+                    "state": "431f6360-feca-428d-92a8-5e73c3a221f1",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "759420c8-343f-4884-adc3-fbf9f51a2f40",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "431f6360-feca-428d-92a8-5e73c3a221f1",
+                "name": "Death",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "0401b807-d885-4bdc-91f3-62ca514114c8",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": []
+              }
+            ]
+          }
         }
       ],
       "children": []

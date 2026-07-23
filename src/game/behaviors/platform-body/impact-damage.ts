@@ -46,15 +46,17 @@ export class ImpactDamage {
   }
 
   private dealDamage(part: Actor, obstacle: Actor): void {
-    if (!part.getComponent(Health)) {
+    this.damageTarget(part, obstacle.getComponent(CollisionDamage));
+    this.damageTarget(obstacle, part.getComponent(CollisionDamage));
+  }
+
+  private damageTarget(
+    target: Actor,
+    collisionDamage: CollisionDamage | undefined,
+  ): void {
+    if (!collisionDamage || !target.getComponent(Health)) {
       return;
     }
-
-    const collisionDamage = obstacle.getComponent(CollisionDamage);
-    if (!collisionDamage) {
-      return;
-    }
-
-    part.dispatchEvent(EventType.Damage, { value: collisionDamage.value });
+    target.dispatchEvent(EventType.Damage, { value: collisionDamage.value });
   }
 }
