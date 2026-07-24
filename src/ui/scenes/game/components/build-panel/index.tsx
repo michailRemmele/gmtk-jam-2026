@@ -82,10 +82,9 @@ export const BuildPanel: FC<BuildPanelProps> = ({ className = '' }) => {
     }
 
     const buildApi = world.systemApi.get(BuildAPI);
-    const nextType = selectedType === type ? null : type;
 
-    buildApi.selectType(nextType);
-    setSelectedType(nextType);
+    buildApi.selectType(type);
+    setSelectedType(type);
   };
 
   const handleStart = (): void => {
