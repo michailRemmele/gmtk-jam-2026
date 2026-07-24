@@ -75,10 +75,10 @@ const engine = new Engine({
     GameStatsMeter,
     CharacterController,
     Interpolator,
+    MouseInputSystem,
+    MouseControlSystem,
     ...(!mobileDevice
       ? [
-          MouseInputSystem,
-          MouseControlSystem,
           KeyboardInputSystem,
           KeyboardControlSystem,
         ]

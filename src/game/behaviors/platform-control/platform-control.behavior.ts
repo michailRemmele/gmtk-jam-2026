@@ -12,6 +12,7 @@ import * as EventType from '../../events';
 import type { RotateInputEvent, ThrustInputEvent } from '../../events';
 import { GameStateAPI } from '../../systems/game-state/game-state.api';
 import PlatformBlock from '../../components/platform-block/platform-block.component';
+import Platform from '../../components/platform/platform.component';
 import Turbine from '../../components/turbine/turbine.component';
 import type { TurbineType } from '../../components/turbine/turbine.component';
 
@@ -26,7 +27,6 @@ const DEFAULT_LEVELING_DAMPING = 20;
 const DEFAULT_MAX_IMPACT_ANGULAR_SPEED = 0;
 
 interface PlatformControlOptions extends BehaviorOptions {
-  mainThrust?: number;
   descentThrust?: number;
   turnTorque?: number;
   turnThrust?: number;
@@ -56,9 +56,6 @@ const wrapAngle = (angle: number): number => {
   name: 'PlatformControl',
 })
 export default class PlatformControl extends Behavior {
-  @DefineField({ initialValue: DEFAULT_MAIN_THRUST })
-  private mainThrust: number;
-
   @DefineField({ initialValue: DEFAULT_DESCENT_THRUST })
   private descentThrust: number;
 
@@ -97,6 +94,7 @@ export default class PlatformControl extends Behavior {
 
   private wasFrozen: boolean;
 
+  private mainThrust: number;
   private thrustMultiplier: number;
   private isDirty: boolean;
 
@@ -112,7 +110,7 @@ export default class PlatformControl extends Behavior {
     this.world = options.world;
     this.time = options.time;
 
-    this.mainThrust = options.mainThrust ?? DEFAULT_MAIN_THRUST;
+    this.mainThrust = this.actor.getComponent(Platform)?.mainThrust ?? DEFAULT_MAIN_THRUST;
     this.descentThrust = options.descentThrust ?? DEFAULT_DESCENT_THRUST;
     this.turnTorque = options.turnTorque ?? DEFAULT_TURN_TORQUE;
     this.turnThrust = options.turnThrust ?? DEFAULT_TURN_THRUST;
@@ -338,6 +336,8 @@ export default class PlatformControl extends Behavior {
       }
       return;
     }
+
+    this.wasFrozen = false;
 
     this.clampImpactSpin(rigidBody);
     this.clampVelocities(rigidBody);

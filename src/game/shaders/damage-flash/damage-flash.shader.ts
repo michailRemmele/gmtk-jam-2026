@@ -6,11 +6,15 @@ interface DamageFlashOptions {
   hitTime?: number;
   flashColor?: [number, number, number];
   flashDuration?: number;
+  stateTint?: [number, number, number];
+  stateStrength?: number;
 }
 
 const DEFAULT_HIT_TIME = -1000;
 const DEFAULT_FLASH_COLOR: [number, number, number] = [1, 1, 1];
 const DEFAULT_FLASH_DURATION = 0.1;
+const DEFAULT_STATE_TINT: [number, number, number] = [1, 1, 1];
+const DEFAULT_STATE_STRENGTH = 0;
 
 const VERTEX_SHADER = `
   precision mediump float;
@@ -49,12 +53,19 @@ const FRAGMENT_SHADER = `
   uniform vec3 uFlashColor;
   uniform float uFlashDuration;
 
+  uniform vec3 uStateTint;
+  uniform float uStateStrength;
+
   void main() {
     vec4 color = texture2D(uSampler, uUVOffset + vUV * uUVScale);
     color.rgb *= uTint;
 
     float flash = step(uTime - uHitTime, uFlashDuration) * color.a;
     color.rgb = mix(color.rgb, uFlashColor, flash);
+
+    float luminance = dot(color.rgb, vec3(0.299, 0.587, 0.114));
+    vec3 duotone = luminance * uStateTint;
+    color.rgb = mix(color.rgb, duotone, uStateStrength * color.a);
 
     color *= uAlpha;
     gl_FragColor = color;
@@ -84,10 +95,20 @@ export default class DamageFlash extends Shader {
         value: options.flashDuration ?? DEFAULT_FLASH_DURATION,
         type: 'f32',
       },
+      uStateTint: {
+        value: options.stateTint ?? DEFAULT_STATE_TINT,
+        type: 'vec3<f32>',
+      },
+      uStateStrength: {
+        value: options.stateStrength ?? DEFAULT_STATE_STRENGTH,
+        type: 'f32',
+      },
     };
   }
 
   updateUniforms(uniforms: ShaderUniforms, options: DamageFlashOptions): void {
     uniforms.uHitTime = options.hitTime ?? DEFAULT_HIT_TIME;
+    uniforms.uStateTint = options.stateTint ?? DEFAULT_STATE_TINT;
+    uniforms.uStateStrength = options.stateStrength ?? DEFAULT_STATE_STRENGTH;
   }
 }

@@ -225,7 +225,6 @@
                     "id": "e7e3f0ee-60d9-41da-bf5c-b6f9d36d5a58",
                     "name": "PlatformControl",
                     "options": {
-                      "mainThrust": 2400,
                       "descentThrust": 2400,
                       "turnTorque": 14000,
                       "turnThrust": 0,
@@ -241,7 +240,6 @@
                     "id": "76298a4c-893d-41e0-8e78-c9d9a94ddb93",
                     "name": "PlatformBody",
                     "options": {
-                      "baseMass": 0.4,
                       "gravityScale": 1,
                       "restitution": 0,
                       "friction": 0.4,
@@ -249,6 +247,13 @@
                       "positionSlop": 0.5,
                       "positionBeta": 0.8,
                       "impactThreshold": 100
+                    }
+                  },
+                  {
+                    "id": "cf9a37dd-c9c2-4f32-ad16-96a707f35466",
+                    "name": "PlatformBuild",
+                    "options": {
+                      "minThrustToWeightRatio": 1.2
                     }
                   }
                 ]
@@ -280,6 +285,13 @@
                 "snapThreshold": 0,
                 "disabled": false
               }
+            },
+            {
+              "name": "Platform",
+              "config": {
+                "baseMass": 0.4,
+                "mainThrust": 2400
+              }
             }
           ],
           "children": [
@@ -292,131 +304,7 @@
                   "name": "Transform",
                   "config": {
                     "offsetX": 0,
-                    "offsetY": -72,
-                    "rotation": 0,
-                    "scaleX": 1,
-                    "scaleY": 1
-                  }
-                }
-              ],
-              "children": []
-            },
-            {
-              "id": "8cb748cd-de48-4929-98e9-8b686cca86f3",
-              "templateId": "add3b188-188f-4e79-bdb5-f2ae9f886f4c",
-              "name": "Storage Block 2",
-              "components": [
-                {
-                  "name": "Transform",
-                  "config": {
-                    "offsetX": 0,
-                    "offsetY": -48,
-                    "rotation": 0,
-                    "scaleX": 1,
-                    "scaleY": 1
-                  }
-                }
-              ],
-              "children": []
-            },
-            {
-              "id": "62301d36-b3d9-486c-a7a0-dd4d0d32cce7",
-              "templateId": "80076c5f-bb28-494b-aa89-602f8d1a1e8b",
-              "name": "Ram Block",
-              "components": [
-                {
-                  "name": "Transform",
-                  "config": {
-                    "offsetX": 24,
-                    "offsetY": -48,
-                    "rotation": 0,
-                    "scaleX": 1,
-                    "scaleY": 1
-                  }
-                }
-              ],
-              "children": []
-            },
-            {
-              "id": "8b4834cc-e31e-486e-9b4e-9044ed83d92e",
-              "templateId": "80076c5f-bb28-494b-aa89-602f8d1a1e8b",
-              "name": "Ram Block 2",
-              "components": [
-                {
-                  "name": "Transform",
-                  "config": {
-                    "offsetX": -24,
-                    "offsetY": -48,
-                    "rotation": 0,
-                    "scaleX": 1,
-                    "scaleY": 1
-                  }
-                }
-              ],
-              "children": []
-            },
-            {
-              "id": "7842c265-a2da-4c7d-87e1-9f5dec2a022d",
-              "templateId": "664662c7-bc82-480d-8668-af14fae72d64",
-              "name": "Turret Block",
-              "components": [
-                {
-                  "name": "Transform",
-                  "config": {
-                    "offsetX": 24,
-                    "offsetY": -23.99999999999997,
-                    "rotation": 0,
-                    "scaleX": 1,
-                    "scaleY": 1
-                  }
-                }
-              ],
-              "children": [
-                {
-                  "id": "f1bf213e-3973-4cc5-9ed4-dc48d6fa744d",
-                  "templateId": "1c9c3414-2d3e-4ec4-9493-f6c50d968294",
-                  "name": "Tower",
-                  "components": [],
-                  "children": []
-                }
-              ]
-            },
-            {
-              "id": "b0444f9c-1a43-4ae9-b2ad-c471d3c6187d",
-              "templateId": "664662c7-bc82-480d-8668-af14fae72d64",
-              "name": "Turret Block 2",
-              "components": [
-                {
-                  "name": "Transform",
-                  "config": {
-                    "offsetX": -24,
-                    "offsetY": -23.99999999999997,
-                    "rotation": 0,
-                    "scaleX": 1,
-                    "scaleY": 1
-                  }
-                }
-              ],
-              "children": [
-                {
-                  "id": "2603074a-b82b-4156-a0f7-3f16ba39f395",
-                  "templateId": "1c9c3414-2d3e-4ec4-9493-f6c50d968294",
-                  "name": "Tower",
-                  "components": [],
-                  "children": []
-                }
-              ]
-            },
-            {
-              "id": "3f2f27d8-59ca-4235-8873-7b522678544b",
-              "templateId": "2b3d5fcb-0489-4fdc-b8d3-c388f4c7b653",
-              "name": "Booster Block",
-              "components": [
-                {
-                  "name": "Transform",
-                  "config": {
-                    "offsetX": 0,
-                    "offsetY": -23.99999999999997,
+                    "offsetY": -24,
                     "rotation": 0,
                     "scaleX": 1,
                     "scaleY": 1
@@ -1252,6 +1140,126 @@
                 }
               ],
               "children": []
+            },
+            {
+              "id": "d8ded94d-3a33-4934-9624-3422f174bef5",
+              "templateId": "848b5cc2-08c5-4c5b-ba2e-ee7f0b124f0b",
+              "name": "Build Slot",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -24,
+                    "offsetY": -24,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "BuildSlot",
+                  "config": {
+                    "order": 0
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "a7f85852-25c2-42c1-a987-6dedae5e7681",
+              "templateId": "848b5cc2-08c5-4c5b-ba2e-ee7f0b124f0b",
+              "name": "Build Slot 2",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 24,
+                    "offsetY": -24,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "BuildSlot",
+                  "config": {
+                    "order": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "87a73cec-577b-4692-8cd7-d6e679b4b2a3",
+              "templateId": "848b5cc2-08c5-4c5b-ba2e-ee7f0b124f0b",
+              "name": "Build Slot 3",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -24,
+                    "offsetY": -48,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "BuildSlot",
+                  "config": {
+                    "order": 2
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "3d52eb13-ad57-476b-8c61-5f2a5e618e83",
+              "templateId": "848b5cc2-08c5-4c5b-ba2e-ee7f0b124f0b",
+              "name": "Build Slot 4",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": -48,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "BuildSlot",
+                  "config": {
+                    "order": 3
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "c8f080d2-9939-487a-b7c3-8d93e0ab35c3",
+              "templateId": "848b5cc2-08c5-4c5b-ba2e-ee7f0b124f0b",
+              "name": "Build Slot 5",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 24,
+                    "offsetY": -48,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "BuildSlot",
+                  "config": {
+                    "order": 4
+                  }
+                }
+              ],
+              "children": []
             }
           ]
         },
@@ -1293,12 +1301,10 @@
             {
               "name": "LevelInfo",
               "config": {
-                "exampleField": "",
                 "index": 0,
                 "escapeTime": 60,
-                "buildTime": 20,
-                "budget": 100,
-                "maxMass": 0
+                "buildTime": 30,
+                "budget": 100
               }
             }
           ],
@@ -2311,6 +2317,42 @@
             }
           ],
           "children": []
+        },
+        {
+          "id": "a0646817-7853-42b0-9ff6-0793bfa9e5ea",
+          "templateId": "768fe440-3902-43de-8fe3-6219e883fef0",
+          "name": "Static Terrain Corner",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -480,
+                "offsetY": 264,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "dfa8364d-805c-4cee-b857-191efa191e09",
+          "templateId": "768fe440-3902-43de-8fe3-6219e883fef0",
+          "name": "Static Terrain Corner 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 264.00000000000006,
+                "rotation": -90,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
         }
       ]
     }
@@ -2768,28 +2810,30 @@
           }
         },
         {
-          "name": "Shape",
-          "config": {
-            "type": "rectangle",
-            "strokeColor": "#fff",
-            "strokeAlignment": 0.5,
-            "pixelLine": false,
-            "fill": "rgb(138,18,18)",
-            "sortOffsetX": 0,
-            "sortOffsetY": 0,
-            "sortingLayer": "default",
-            "blending": "normal",
-            "opacity": 1,
-            "disabled": false,
-            "sizeX": 48,
-            "sizeY": 48,
-            "strokeWidth": 0
-          }
-        },
-        {
           "name": "CollisionDamage",
           "config": {
             "value": 2
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "images/static-obstacle.png",
+            "width": 48,
+            "height": 48,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "decorations-3",
+            "fit": "repeat",
+            "blending": "normal",
+            "color": "#fff",
+            "opacity": 1,
+            "disabled": false,
+            "textureOffsetX": 0,
+            "textureOffsetY": 0
           }
         }
       ],
@@ -3049,7 +3093,7 @@
         {
           "name": "Mesh",
           "config": {
-            "src": "",
+            "src": "images/light-obstacle.png",
             "width": 48,
             "height": 48,
             "slice": 1,
@@ -3057,9 +3101,9 @@
             "sortOffsetY": 0,
             "flipX": false,
             "flipY": false,
-            "sortingLayer": "units",
+            "sortingLayer": "decorations-3",
             "blending": "normal",
-            "color": "rgb(226,135,44)",
+            "color": "rgb(255,255,255)",
             "opacity": 1,
             "disabled": false,
             "material": {
@@ -3273,15 +3317,46 @@
         {
           "name": "PlatformBlock",
           "config": {
-            "mass": 0.4,
+            "mass": 1,
             "type": "ram",
-            "cost": 0
+            "cost": 25
           }
         },
         {
           "name": "CollisionDamage",
           "config": {
             "value": 3
+          }
+        },
+        {
+          "name": "MouseControl",
+          "config": {
+            "inputEventBindings": [
+              {
+                "id": "0d95d3ba-98ba-4ac8-86ff-cc8ab6aa94e1",
+                "event": "click",
+                "eventType": "BuildClick",
+                "attrs": []
+              },
+              {
+                "id": "80baab73-570b-40c1-936c-8cb44166051c",
+                "event": "mousemove",
+                "eventType": "BuildHover",
+                "attrs": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "Behaviors",
+          "config": {
+            "list": [
+              {
+                "id": "b01a4d2c-2d1e-4bba-a973-30dffea0bbab",
+                "name": "BuildPickable",
+                "options": {}
+              }
+            ]
           }
         }
       ],
@@ -3526,7 +3601,7 @@
           "config": {
             "mass": 0.1,
             "type": "turret",
-            "cost": 0
+            "cost": 50
           }
         },
         {
@@ -3560,6 +3635,30 @@
                   "patrolAmplitude": 0.5,
                   "aimOffset": 0
                 }
+              },
+              {
+                "id": "4ab75398-9ff5-4e98-82b7-c75e3fe5d158",
+                "name": "BuildPickable",
+                "options": {}
+              }
+            ]
+          }
+        },
+        {
+          "name": "MouseControl",
+          "config": {
+            "inputEventBindings": [
+              {
+                "id": "2825c74b-c4ab-455c-a8c1-b4384430fa30",
+                "event": "click",
+                "eventType": "BuildClick",
+                "attrs": []
+              },
+              {
+                "id": "011dd46a-e5ae-46ca-91e6-2fe99b9430ee",
+                "event": "mousemove",
+                "eventType": "BuildHover",
+                "attrs": []
               }
             ]
           }
@@ -3595,7 +3694,11 @@
                 "blending": "normal",
                 "color": "rgb(255,255,255)",
                 "opacity": 1,
-                "disabled": false
+                "disabled": false,
+                "material": {
+                  "name": "DamageFlash",
+                  "options": {}
+                }
               }
             }
           ],
@@ -3988,13 +4091,44 @@
             "mass": 0.1,
             "type": "booster",
             "thrustBoost": 1,
-            "cost": 0
+            "cost": 50
           }
         },
         {
           "name": "CollisionDamage",
           "config": {
             "value": 1
+          }
+        },
+        {
+          "name": "MouseControl",
+          "config": {
+            "inputEventBindings": [
+              {
+                "id": "a68e90c7-d137-43a8-b281-2e9ea449b5f2",
+                "event": "click",
+                "eventType": "BuildClick",
+                "attrs": []
+              },
+              {
+                "id": "145eb9d5-354a-4dc5-aeab-f8f3df5c10d6",
+                "event": "mousemove",
+                "eventType": "BuildHover",
+                "attrs": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "Behaviors",
+          "config": {
+            "list": [
+              {
+                "id": "973b972f-6033-4c03-8db9-464f5d1ffa4d",
+                "name": "BuildPickable",
+                "options": {}
+              }
+            ]
           }
         }
       ],
@@ -4697,6 +4831,120 @@
             "disabled": false,
             "textureOffsetX": 0,
             "textureOffsetY": 0
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "768fe440-3902-43de-8fe3-6219e883fef0",
+      "name": "Static Terrain Corner",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "images/terrain-corner.png",
+            "width": 48,
+            "height": 48,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "decorations-3",
+            "fit": "repeat",
+            "blending": "normal",
+            "color": "#fff",
+            "opacity": 1,
+            "disabled": false,
+            "textureOffsetX": 0,
+            "textureOffsetY": 0
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "848b5cc2-08c5-4c5b-ba2e-ee7f0b124f0b",
+      "name": "Build Slot",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "BuildSlot",
+          "config": {
+            "order": 0
+          }
+        },
+        {
+          "name": "Mesh",
+          "config": {
+            "src": "images/build-slot.png",
+            "width": 24,
+            "height": 24,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "decorations-3",
+            "blending": "normal",
+            "color": "#fff",
+            "opacity": 1,
+            "disabled": false,
+            "material": {
+              "name": "DamageFlash",
+              "options": {}
+            }
+          }
+        },
+        {
+          "name": "MouseControl",
+          "config": {
+            "inputEventBindings": [
+              {
+                "id": "877fcb46-f267-47e9-a662-e20b20453e3e",
+                "event": "click",
+                "eventType": "BuildClick",
+                "attrs": []
+              },
+              {
+                "id": "a8a4b925-0190-4274-87b3-1b131fc723be",
+                "event": "mousemove",
+                "eventType": "BuildHover",
+                "attrs": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "Behaviors",
+          "config": {
+            "list": [
+              {
+                "id": "66e407b3-b0cc-4cc6-8d48-52ff2a533491",
+                "name": "BuildPickable",
+                "options": {}
+              }
+            ]
           }
         }
       ],

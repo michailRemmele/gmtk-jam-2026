@@ -12,6 +12,9 @@ export const Attack = 'Attack';
 export const Damage = 'Damage';
 export const Kill = 'Kill';
 
+export const BuildClick = 'BuildClick';
+export const BuildHover = 'BuildHover';
+
 export const ResetSaveState = 'ResetSaveState';
 
 export const GameOver = 'GameOver';
@@ -27,6 +30,8 @@ export const CameraShake = 'CameraShake';
 export type AttackInputEvent = ActorEvent<{ x: number; y: number }>;
 export type AttackEvent = ActorEvent<{ x: number; y: number }>;
 export type DamageEvent = ActorEvent<{ value: number; actor?: Actor }>;
+export type BuildClickEvent = ActorEvent<{ x: number; y: number }>;
+export type BuildHoverEvent = ActorEvent<{ x: number; y: number }>;
 
 export type ControlStickInputEvent = SceneEvent<{ x: number; y: number }>;
 
@@ -52,6 +57,8 @@ declare module 'dacha' {
     [Attack]: ActorEvent;
     [Damage]: DamageEvent;
     [Kill]: ActorEvent;
+    [BuildClick]: BuildClickEvent;
+    [BuildHover]: BuildHoverEvent;
   }
 
   export interface SceneEventMap {

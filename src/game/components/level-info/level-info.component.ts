@@ -10,7 +10,6 @@ interface LevelInfoConfig {
   escapeTime?: number;
   buildTime?: number;
   budget?: number;
-  maxMass?: number;
 }
 
 @DefineComponent({
@@ -29,20 +28,16 @@ export default class LevelInfo extends Component {
   @DefineField({ initialValue: DEFAULT_BUDGET })
   budget: number;
 
-  @DefineField()
-  maxMass?: number;
-
   constructor(config: LevelInfoConfig) {
     super();
 
     const {
-      index, escapeTime, buildTime, budget, maxMass,
+      index, escapeTime, buildTime, budget,
     } = config;
 
     this.index = index;
     this.escapeTime = escapeTime ?? DEFAULT_ESCAPE_TIME;
     this.buildTime = buildTime ?? DEFAULT_BUILD_TIME;
     this.budget = budget ?? DEFAULT_BUDGET;
-    this.maxMass = maxMass;
   }
 }

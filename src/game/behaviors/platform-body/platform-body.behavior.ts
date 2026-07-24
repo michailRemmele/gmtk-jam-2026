@@ -14,6 +14,7 @@ import * as EventType from '../../events';
 import { GameStateAPI } from '../../systems/game-state/game-state.api';
 import { CreatureAttachmentAPI } from '../../systems/creature-attachment/creature-attachment.api';
 import PlatformBlock from '../../components/platform-block/platform-block.component';
+import Platform from '../../components/platform/platform.component';
 
 import { ContactBuffer } from './contacts';
 import { ContactSolver } from './solver';
@@ -32,7 +33,6 @@ const DEFAULT_POSITION_BETA = 0.8;
 const DEFAULT_IMPACT_THRESHOLD = 200;
 
 interface PlatformBodyOptions extends BehaviorOptions {
-  baseMass?: number;
   gravityScale?: number;
   restitution?: number;
   friction?: number;
@@ -49,9 +49,6 @@ export default class PlatformBody
   extends Behavior
   implements SolverSettings, ImpactDamageSettings
 {
-  @DefineField({ initialValue: DEFAULT_BASE_MASS })
-  baseMass: number;
-
   @DefineField({ initialValue: DEFAULT_GRAVITY_SCALE })
   gravityScale: number;
 
@@ -77,6 +74,8 @@ export default class PlatformBody
   private world: World;
   private scene: Scene;
 
+  private baseMass: number;
+
   private parts: Actor[];
   private partSet: Set<Actor>;
   private isDirty: boolean;
@@ -99,7 +98,7 @@ export default class PlatformBody
     this.world = options.world;
     this.scene = options.scene;
 
-    this.baseMass = options.baseMass ?? DEFAULT_BASE_MASS;
+    this.baseMass = this.actor.getComponent(Platform)?.baseMass ?? DEFAULT_BASE_MASS;
     this.gravityScale = options.gravityScale ?? DEFAULT_GRAVITY_SCALE;
     this.restitution = options.restitution ?? DEFAULT_RESTITUTION;
     this.friction = options.friction ?? DEFAULT_FRICTION;

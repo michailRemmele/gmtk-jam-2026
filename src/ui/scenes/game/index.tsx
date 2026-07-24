@@ -5,12 +5,12 @@ import { LoadScene, ExitScene, EnterScene } from 'dacha/events';
 import * as EventType from '../../../game/events';
 import type { GameOverEvent } from '../../../game/events';
 import { EngineContext } from '../../providers';
-import { FpsMeter, Button, Timer } from '../../components';
+import { Button, Timer } from '../../components';
 import { isMobileDevice } from '../../../utils/is-mobile-device';
 import { MAIN_MENU_ID } from '../../../consts/scenes';
 import { LEVELS } from '../../../consts/game';
 
-import { MoveControl } from './components';
+import { MoveControl, BuildPanel } from './components';
 import './style.css';
 
 export const Game: FC = () => {
@@ -19,6 +19,7 @@ export const Game: FC = () => {
   const [isGameOver, setIsGameOver] = useState(false);
   const [isWin, setIsWin] = useState(false);
   const [levelIndex, setLevelIndex] = useState(0);
+  const [isBuildPhase, setIsBuildPhase] = useState(true);
 
   const handleRestart = (): void => {
     world.dispatchEvent(ExitScene);
@@ -54,16 +55,32 @@ export const Game: FC = () => {
     };
   }, [world]);
 
+  useEffect(() => {
+    const handleBuildPhaseEnd = (): void => {
+      setIsBuildPhase(false);
+    };
+
+    scene?.addEventListener(EventType.BuildPhaseEnd, handleBuildPhaseEnd);
+
+    return (): void => {
+      scene?.removeEventListener(EventType.BuildPhaseEnd, handleBuildPhaseEnd);
+    };
+  }, [scene]);
+
   return (
     <div className="game">
       <header className="game__header">
         <div className="header__left" />
       </header>
-      {process.env.NODE_ENV === 'development' && <FpsMeter />}
+      {/* {process.env.NODE_ENV === 'development' && <FpsMeter />} */}
 
       <Timer />
 
-      {isMobileDevice() && <MoveControl className="game__move-control" />}
+      {isMobileDevice() && !isBuildPhase && (
+        <MoveControl className="game__move-control" />
+      )}
+
+      <BuildPanel />
 
       {isGameOver && (
         <div className="game-over__overlay">

@@ -1,7 +1,7 @@
 import type {
-  Actor, ActorSpawner, Scene, TemplateConfig,
+  Actor, ActorSpawner, Scene, TemplateConfig, World,
 } from 'dacha';
-import { Transform } from 'dacha';
+import { PhysicsAPI, Transform } from 'dacha';
 
 import * as EventType from '../../events';
 import PlatformBlock from '../../components/platform-block/platform-block.component';
@@ -32,8 +32,12 @@ export interface SlotInfo {
 export interface BuildAPIConfig {
   platform: Actor;
   scene: Scene;
+  world: World;
   actorSpawner: ActorSpawner;
   budget: number;
+  baseMass: number;
+  mainThrust: number;
+  minThrustToWeightRatio: number;
   catalogSpec: CatalogSpec[];
 }
 
@@ -47,18 +51,30 @@ const getComponentConfig = (
 export class BuildAPI {
   private platform: Actor;
   private scene: Scene;
+  private world: World;
   private actorSpawner: ActorSpawner;
+
+  private baseMass: number;
+  private mainThrust: number;
+  private minThrustToWeightRatio: number;
 
   private slots: SlotInfo[];
   private catalog: CatalogEntry[];
   private budgetRemaining: number;
+  private selectedType: BlockType | null;
 
   constructor(config: BuildAPIConfig) {
     this.platform = config.platform;
     this.scene = config.scene;
+    this.world = config.world;
     this.actorSpawner = config.actorSpawner;
 
+    this.baseMass = config.baseMass;
+    this.mainThrust = config.mainThrust;
+    this.minThrustToWeightRatio = config.minThrustToWeightRatio;
+
     this.budgetRemaining = config.budget;
+    this.selectedType = null;
 
     this.slots = this.platform.children
       .filter((child) => !!child.getComponent(BuildSlot))
@@ -97,6 +113,54 @@ export class BuildAPI {
 
   getBudgetRemaining(): number {
     return this.budgetRemaining;
+  }
+
+  selectType(type: BlockType | null): void {
+    this.selectedType = type;
+  }
+
+  getSelectedType(): BlockType | null {
+    return this.selectedType;
+  }
+
+  getTotalMass(): number {
+    let mass = this.baseMass;
+
+    for (const slot of this.slots) {
+      if (slot.occupiedBy) {
+        mass += slot.occupiedBy.getComponent(PlatformBlock)?.mass ?? 0;
+      }
+    }
+
+    return mass;
+  }
+
+  getThrustMultiplier(): number {
+    let thrustMultiplier = 1;
+
+    for (const slot of this.slots) {
+      const block = slot.occupiedBy?.getComponent(PlatformBlock);
+      if (block?.type === 'booster') {
+        thrustMultiplier += block.thrustBoost;
+      }
+    }
+
+    return thrustMultiplier;
+  }
+
+  getThrustToWeightRatio(): number {
+    const { gravity } = this.world.systemApi.get(PhysicsAPI);
+    const weight = this.getTotalMass() * gravity.magnitude;
+
+    if (weight <= 0) {
+      return Infinity;
+    }
+
+    return (this.mainThrust * this.getThrustMultiplier()) / weight;
+  }
+
+  getMinThrustToWeightRatio(): number {
+    return this.minThrustToWeightRatio;
   }
 
   placeBlock(slotActor: Actor, type: BlockType): boolean {
