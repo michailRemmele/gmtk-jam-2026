@@ -11,7 +11,7 @@
 
 .button:hover {
   background: #f9c22b;
-  color: var(--button-hover-text, #000);
+  color: var(--button-hover-text, #2b090d);
 }
 
 .button:active {

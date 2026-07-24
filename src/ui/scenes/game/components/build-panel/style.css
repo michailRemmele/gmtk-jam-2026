@@ -74,7 +74,7 @@
 .build-card:hover:not(.build-card--disabled) {
   border-color: #f9c22b;
   background: #f9c22b;
-  color: var(--button-hover-text, #202020);
+  color: var(--button-hover-text, #2b090d);
 }
 
 .build-card:active:not(.build-card--disabled) {
@@ -84,7 +84,7 @@
 .build-card--selected {
   border-color: #f9c22b;
   background: #f9c22b;
-  color: var(--button-hover-text, #202020);
+  color: var(--button-hover-text, #2b090d);
 }
 
 .build-card--disabled {
