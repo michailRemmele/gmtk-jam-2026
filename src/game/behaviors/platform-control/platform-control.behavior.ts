@@ -17,23 +17,25 @@ import Turbine from '../../components/turbine/turbine.component';
 import type { TurbineType } from '../../components/turbine/turbine.component';
 
 const DEFAULT_MAIN_THRUST = 2400;
-const DEFAULT_DESCENT_THRUST = 800;
+const DEFAULT_DESCENT_THRUST_RATIO = 0.33;
 const DEFAULT_TURN_TORQUE = 4000;
-const DEFAULT_TURN_THRUST = 0;
+const DEFAULT_TURN_THRUST_RATIO = 0;
 const DEFAULT_MAX_LINEAR_SPEED = 800;
 const DEFAULT_MAX_ANGULAR_SPEED = 3;
 const DEFAULT_LEVELING_STIFFNESS = 100;
 const DEFAULT_LEVELING_DAMPING = 20;
+const DEFAULT_LEVELING_EXPONENT = 2;
 const DEFAULT_MAX_IMPACT_ANGULAR_SPEED = 0;
 
 interface PlatformControlOptions extends BehaviorOptions {
-  descentThrust?: number;
+  descentThrustRatio?: number;
   turnTorque?: number;
-  turnThrust?: number;
+  turnThrustRatio?: number;
   maxLinearSpeed?: number;
   maxAngularSpeed?: number;
   levelingStiffness?: number;
   levelingDamping?: number;
+  levelingExponent?: number;
   maxImpactAngularSpeed?: number;
 }
 
@@ -56,14 +58,14 @@ const wrapAngle = (angle: number): number => {
   name: 'PlatformControl',
 })
 export default class PlatformControl extends Behavior {
-  @DefineField({ initialValue: DEFAULT_DESCENT_THRUST })
-  private descentThrust: number;
+  @DefineField({ initialValue: DEFAULT_DESCENT_THRUST_RATIO })
+  private descentThrustRatio: number;
 
   @DefineField({ initialValue: DEFAULT_TURN_TORQUE })
   private turnTorque: number;
 
-  @DefineField({ initialValue: DEFAULT_TURN_THRUST })
-  private turnThrust: number;
+  @DefineField({ initialValue: DEFAULT_TURN_THRUST_RATIO })
+  private turnThrustRatio: number;
 
   @DefineField({ initialValue: DEFAULT_MAX_LINEAR_SPEED })
   private maxLinearSpeed: number;
@@ -76,6 +78,9 @@ export default class PlatformControl extends Behavior {
 
   @DefineField({ initialValue: DEFAULT_LEVELING_DAMPING })
   private levelingDamping: number;
+
+  @DefineField({ initialValue: DEFAULT_LEVELING_EXPONENT })
+  private levelingExponent: number;
 
   @DefineField({ initialValue: DEFAULT_MAX_IMPACT_ANGULAR_SPEED })
   private maxImpactAngularSpeed: number;
@@ -111,14 +116,18 @@ export default class PlatformControl extends Behavior {
     this.time = options.time;
 
     this.mainThrust = this.actor.getComponent(Platform)?.mainThrust ?? DEFAULT_MAIN_THRUST;
-    this.descentThrust = options.descentThrust ?? DEFAULT_DESCENT_THRUST;
+    this.descentThrustRatio =
+      options.descentThrustRatio ?? DEFAULT_DESCENT_THRUST_RATIO;
     this.turnTorque = options.turnTorque ?? DEFAULT_TURN_TORQUE;
-    this.turnThrust = options.turnThrust ?? DEFAULT_TURN_THRUST;
+    this.turnThrustRatio =
+      options.turnThrustRatio ?? DEFAULT_TURN_THRUST_RATIO;
     this.maxLinearSpeed = options.maxLinearSpeed ?? DEFAULT_MAX_LINEAR_SPEED;
     this.maxAngularSpeed = options.maxAngularSpeed ?? DEFAULT_MAX_ANGULAR_SPEED;
     this.levelingStiffness =
       options.levelingStiffness ?? DEFAULT_LEVELING_STIFFNESS;
     this.levelingDamping = options.levelingDamping ?? DEFAULT_LEVELING_DAMPING;
+    this.levelingExponent =
+      options.levelingExponent ?? DEFAULT_LEVELING_EXPONENT;
     this.maxImpactAngularSpeed =
       options.maxImpactAngularSpeed ?? DEFAULT_MAX_IMPACT_ANGULAR_SPEED;
 
@@ -234,10 +243,11 @@ export default class PlatformControl extends Behavior {
     const upX = Math.sin(rotation);
     const upY = -Math.cos(rotation);
 
-    const force =
-      (this.thrustInput > 0
-        ? this.thrustInput * this.mainThrust
-        : this.thrustInput * this.descentThrust) * this.thrustMultiplier;
+    const base =
+      this.thrustInput > 0
+        ? this.mainThrust
+        : this.mainThrust * this.descentThrustRatio;
+    const force = this.thrustInput * base * this.thrustMultiplier;
 
     this.applyForce(rigidBody, upX * force, upY * force);
   }
@@ -254,15 +264,22 @@ export default class PlatformControl extends Behavior {
       return;
     }
 
-    this.applyTorque(rigidBody, this.rotateInput * this.turnTorque);
+    this.applyTorque(
+      rigidBody,
+      this.rotateInput * this.turnTorque * this.thrustMultiplier,
+    );
 
-    if (!this.turnThrust) {
+    if (!this.turnThrustRatio) {
       return;
     }
 
     const rightX = Math.cos(rotation);
     const rightY = Math.sin(rotation);
-    const force = this.rotateInput * this.turnThrust;
+    const force =
+      this.rotateInput *
+      this.mainThrust *
+      this.turnThrustRatio *
+      this.thrustMultiplier;
 
     this.applyForce(rigidBody, rightX * force, rightY * force);
   }
@@ -273,10 +290,13 @@ export default class PlatformControl extends Behavior {
     }
 
     const error = wrapAngle(rotation);
+    const restoring =
+      Math.sign(error) *
+      Math.abs(error) ** this.levelingExponent *
+      this.levelingStiffness;
     const torque =
       rigidBody.inertia *
-      (-error * this.levelingStiffness -
-        rigidBody.angularVelocity * this.levelingDamping);
+      (-restoring - rigidBody.angularVelocity * this.levelingDamping);
 
     this.applyTorque(rigidBody, torque);
   }
