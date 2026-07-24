@@ -6910,7 +6910,7 @@
             "sortOffsetY": 0,
             "flipX": false,
             "flipY": false,
-            "sortingLayer": "decorations-3",
+            "sortingLayer": "decorations",
             "blending": "normal",
             "color": "#fff",
             "opacity": 1,

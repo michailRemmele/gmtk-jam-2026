@@ -33,7 +33,7 @@
 }
 
 .game__restart-button:active {
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 
 .game__move-control {
