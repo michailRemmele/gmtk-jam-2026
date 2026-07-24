@@ -10,9 +10,13 @@ export const MainMenu: FC = () => {
 
   return (
     <div className="menu">
+      <div
+        className="menu__surface"
+        style={{ backgroundImage: 'url(./images/surface-background.png)' }}
+      />
       <img
         src="./images/logo.png"
-        alt="GMTK Jam 2026"
+        alt="Drillers' Escape"
         className="menu__logo"
       />
       {menuState === MAIN_MENU && <Main openMenu={setMenuState} />}

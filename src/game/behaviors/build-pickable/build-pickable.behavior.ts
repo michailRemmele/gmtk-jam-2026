@@ -7,7 +7,7 @@ import BuildSlot from '../../components/build-slot/build-slot.component';
 import { BuildAPI } from '../platform-build/build-api';
 
 const HALF_SIZE = 12;
-const BUILDABLE_TINT: [number, number, number] = [0.2, 1, 0.3];
+const BUILDABLE_TINT: [number, number, number] = [0.984, 1, 0.525];
 const REMOVABLE_TINT: [number, number, number] = [1, 0.2, 0.2];
 
 @DefineBehavior({

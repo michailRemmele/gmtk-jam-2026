@@ -14,6 +14,12 @@ import './style.css';
 
 const SLIDE_DURATION = 600;
 
+const BLOCK_ICONS: Record<BlockType, string> = {
+  ram: './images/ram-block-icon.png',
+  turret: './images/turret-block-icon.png',
+  booster: './images/booster-block-icon.png',
+};
+
 export interface BuildPanelProps {
   className?: string;
 }
@@ -127,6 +133,14 @@ export const BuildPanel: FC<BuildPanelProps> = ({ className = '' }) => {
               onClick={(): void => handleSelect(entry.type)}
             >
               <span className="build-card__name">{entry.name}</span>
+              <div
+                className="build-card__icon"
+                aria-hidden="true"
+                style={{
+                  maskImage: `url(${BLOCK_ICONS[entry.type]})`,
+                  WebkitMaskImage: `url(${BLOCK_ICONS[entry.type]})`,
+                }}
+              />
               <span className="build-card__stat">{`Cost: ${entry.cost}`}</span>
               <span className="build-card__stat">{`Mass: ${entry.mass}`}</span>
             </button>

@@ -10,8 +10,10 @@ import { isMobileDevice } from '../../../utils/is-mobile-device';
 import { MAIN_MENU_ID } from '../../../consts/scenes';
 import { LEVELS } from '../../../consts/game';
 
-import { MoveControl, BuildPanel } from './components';
+import { MoveControl, BuildPanel, PhaseBanner } from './components';
 import './style.css';
+
+const ESCAPE_BANNER_DURATION = 2500;
 
 export const Game: FC = () => {
   const { world, scene } = useContext(EngineContext);
@@ -20,6 +22,7 @@ export const Game: FC = () => {
   const [isWin, setIsWin] = useState(false);
   const [levelIndex, setLevelIndex] = useState(0);
   const [isBuildPhase, setIsBuildPhase] = useState(true);
+  const [showEscapeBanner, setShowEscapeBanner] = useState(false);
 
   const handleRestart = (): void => {
     world.dispatchEvent(ExitScene);
@@ -58,6 +61,8 @@ export const Game: FC = () => {
   useEffect(() => {
     const handleBuildPhaseEnd = (): void => {
       setIsBuildPhase(false);
+      setShowEscapeBanner(true);
+      window.setTimeout(() => setShowEscapeBanner(false), ESCAPE_BANNER_DURATION);
     };
 
     scene?.addEventListener(EventType.BuildPhaseEnd, handleBuildPhaseEnd);
@@ -71,10 +76,22 @@ export const Game: FC = () => {
     <div className="game">
       <header className="game__header">
         <div className="header__left" />
+        <div className="header__right">
+          <button
+            type="button"
+            className="game__restart-button"
+            aria-label="Restart"
+            style={{ backgroundImage: 'url(./images/restart.png)' }}
+            onClick={handleRestart}
+          />
+        </div>
       </header>
       {/* {process.env.NODE_ENV === 'development' && <FpsMeter />} */}
 
       <Timer />
+
+      {isBuildPhase && <PhaseBanner label="Assemble Stage" variant="build" />}
+      {showEscapeBanner && <PhaseBanner label="Escape" variant="escape" />}
 
       {isMobileDevice() && !isBuildPhase && (
         <MoveControl className="game__move-control" />

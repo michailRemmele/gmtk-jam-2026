@@ -1,22 +1,45 @@
 .menu {
+  position: relative;
+  overflow: hidden;
+
   width: 100%;
   height: 100%;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
-  background-color: #070004;
+  background-color: #ea4f36;
   color: white;
 
+  --button-hover-text: #ea4f36;
+
   box-sizing: border-box;
-  padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
+  padding: max(24px, env(safe-area-inset-top))
+    max(24px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom))
+    max(24px, env(safe-area-inset-left));
+}
+
+.menu__surface {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: clamp(70px, 18vh, 150px);
+
+  background-repeat: repeat-x;
+  background-position: bottom center;
+  background-size: auto 100%;
+
+  image-rendering: pixelated;
+  pointer-events: none;
 }
 
 @keyframes slide {
   0% {
-      transform: translateY(-10px);
+    transform: translateY(-10px);
   }
   100% {
     transform: translateY(10px);

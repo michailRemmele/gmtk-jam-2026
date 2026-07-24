@@ -14,7 +14,6 @@ interface LevelInfo {
   id: string;
   title: string;
   completed: boolean;
-  highestScore: number;
 }
 
 interface LevelSelectProps {
@@ -37,7 +36,6 @@ export const LevelSelect: FC<LevelSelectProps> = ({ openMenu }) => {
         id: LEVELS[i].id,
         title: LEVELS[i].title,
         completed: !!saveState.completedLevels[i],
-        highestScore: saveState.completedLevels[i]?.highestScore ?? 0,
       });
     }
 
@@ -66,11 +64,6 @@ export const LevelSelect: FC<LevelSelectProps> = ({ openMenu }) => {
                 <span className="level-select-menu__panel-title">
                   {level.title}
                 </span>
-                {level.completed && (
-                  <span className="level-select-menu__panel-description level-select-menu__panel-description_gold">
-                    {`Highest Score: ${level.highestScore}`}
-                  </span>
-                )}
                 {!level.completed && (
                   <span className="level-select-menu__panel-description level-select-menu__panel-description_red">
                     Not Completed

@@ -8,6 +8,7 @@
 .range__label {
   flex-shrink: 0;
   width: 40%;
+  color: #f9c22b;
 }
 
 .range__input {
@@ -25,16 +26,14 @@
 
 /***** Chrome, Safari, Opera, and Edge Chromium *****/
 .range__input[type="range"]::-webkit-slider-runnable-track {
-  background: #fff;
+  background: #f9c22b;
   height: 0.5rem;
-  border-radius: 0.25rem;
 }
 
 /******** Firefox ********/
 .range__input[type="range"]::-moz-range-track {
-  background: #fff;
+  background: #f9c22b;
   height: 0.5rem;
-  border-radius: 0.25rem;
 }
 
 /***** Thumb Styles *****/
@@ -43,18 +42,16 @@
   -webkit-appearance: none;
   appearance: none;
   margin-top: -0.5rem;
-  background-color: #fff;
+  background-color: #f9c22b;
   height: 1.5rem;
-  width: 1.5rem;  
-  border-radius: 50%;
+  width: 1.5rem;
 }
 
 /***** Firefox *****/
 .range__input[type="range"]::-moz-range-thumb {
   border: none;
   border-radius: 0;
-  background-color: #fff;
+  background-color: #f9c22b;
   height: 1.5rem;
-  width: 1.5rem;  
-  border-radius: 50%;
+  width: 1.5rem;
 }

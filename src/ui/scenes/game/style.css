@@ -16,6 +16,26 @@
   gap: 4px;
 }
 
+.header__right {
+  display: flex;
+  gap: 12px;
+}
+
+.game__restart-button {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  background-size: cover;
+  image-rendering: pixelated;
+  cursor: pointer;
+}
+
+.game__restart-button:active {
+  transform: scale(0.9);
+}
+
 .game__move-control {
   position: absolute;
 
@@ -59,11 +79,11 @@
   margin: auto;
   padding: 24px;
   background-color: rgba(32, 32, 32, 0.25);
-  border: 4px solid #fff;
+  border: 4px solid #f9c22b;
 }
 
 .game-over__title {
-  color: #fff;
+  color: #f9c22b;
   margin-top: 0;
 }
 

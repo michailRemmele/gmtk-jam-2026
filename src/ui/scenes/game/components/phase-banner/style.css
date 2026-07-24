@@ -1,0 +1,22 @@
+.phase-banner {
+  position: fixed;
+  top: calc(max(15px, env(safe-area-inset-top)) + 64px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 48px;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+
+  pointer-events: none;
+}
+
+.phase-banner_build {
+  color: #f9c22b;
+}
+
+.phase-banner_escape {
+  color: #e83b3b;
+}
