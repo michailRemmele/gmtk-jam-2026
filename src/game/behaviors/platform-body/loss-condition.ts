@@ -14,7 +14,7 @@ export class LossCondition {
     this.triggered = false;
   }
 
-  check(actor: Actor, scene: Scene): void {
+  check(actor: Actor, scene: Scene, frozen: boolean): void {
     if (this.triggered) {
       return;
     }
@@ -28,7 +28,7 @@ export class LossCondition {
       return;
     }
 
-    if (!this.armed) {
+    if (!this.armed || frozen) {
       return;
     }
 

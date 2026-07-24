@@ -27,6 +27,8 @@ export const BuildStateChanged = 'BuildStateChanged';
 
 export const CameraShake = 'CameraShake';
 
+export const ExplosiveTriggered = 'ExplosiveTriggered';
+
 export type AttackInputEvent = ActorEvent<{ x: number; y: number }>;
 export type AttackEvent = ActorEvent<{ x: number; y: number }>;
 export type DamageEvent = ActorEvent<{ value: number; actor?: Actor }>;
@@ -57,6 +59,7 @@ declare module 'dacha' {
     [Attack]: ActorEvent;
     [Damage]: DamageEvent;
     [Kill]: ActorEvent;
+    [ExplosiveTriggered]: ActorEvent;
     [BuildClick]: BuildClickEvent;
     [BuildHover]: BuildHoverEvent;
   }

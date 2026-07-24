@@ -236,9 +236,7 @@ export default class PlatformBody
     if (this.isDirty) {
       this.rebuildParts(rigidBody);
 
-      if (!frozen) {
-        this.lossCondition.check(this.actor, this.scene);
-      }
+      this.lossCondition.check(this.actor, this.scene, frozen);
     }
 
     if (frozen) {

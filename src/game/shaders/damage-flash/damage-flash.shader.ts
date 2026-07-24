@@ -1,5 +1,5 @@
 import { Shader } from 'dacha';
-import { DefineShader } from 'dacha-workbench/decorators';
+import { DefineShader, DefineField } from 'dacha-workbench/decorators';
 import type { ShaderUniformDefinitions, ShaderUniforms } from 'dacha/renderer';
 
 interface DamageFlashOptions {
@@ -8,6 +8,9 @@ interface DamageFlashOptions {
   flashDuration?: number;
   stateTint?: [number, number, number];
   stateStrength?: number;
+  tiled?: boolean;
+  tileRepeatX?: number;
+  tileRepeatY?: number;
 }
 
 const DEFAULT_HIT_TIME = -1000;
@@ -15,6 +18,8 @@ const DEFAULT_FLASH_COLOR: [number, number, number] = [1, 1, 1];
 const DEFAULT_FLASH_DURATION = 0.1;
 const DEFAULT_STATE_TINT: [number, number, number] = [1, 1, 1];
 const DEFAULT_STATE_STRENGTH = 0;
+const DEFAULT_TILED = false;
+const DEFAULT_TILE_REPEAT = 1;
 
 const VERTEX_SHADER = `
   precision mediump float;
@@ -56,8 +61,12 @@ const FRAGMENT_SHADER = `
   uniform vec3 uStateTint;
   uniform float uStateStrength;
 
+  uniform float uTiled;
+  uniform vec2 uTileRepeat;
+
   void main() {
-    vec4 color = texture2D(uSampler, uUVOffset + vUV * uUVScale);
+    vec2 localUV = mix(vUV, fract(vUV * uTileRepeat), uTiled);
+    vec4 color = texture2D(uSampler, uUVOffset + localUV * uUVScale);
     color.rgb *= uTint;
 
     float flash = step(uTime - uHitTime, uFlashDuration) * color.a;
@@ -76,6 +85,15 @@ const FRAGMENT_SHADER = `
   name: 'DamageFlash',
 })
 export default class DamageFlash extends Shader {
+  @DefineField({ initialValue: DEFAULT_TILED })
+  tiled: boolean = DEFAULT_TILED;
+
+  @DefineField({ initialValue: DEFAULT_TILE_REPEAT, dependency: { name: 'tiled', value: true } })
+  tileRepeatX: number = DEFAULT_TILE_REPEAT;
+
+  @DefineField({ initialValue: DEFAULT_TILE_REPEAT, dependency: { name: 'tiled', value: true } })
+  tileRepeatY: number = DEFAULT_TILE_REPEAT;
+
   vertex(): string {
     return VERTEX_SHADER;
   }
@@ -103,6 +121,17 @@ export default class DamageFlash extends Shader {
         value: options.stateStrength ?? DEFAULT_STATE_STRENGTH,
         type: 'f32',
       },
+      uTiled: {
+        value: (options.tiled ?? DEFAULT_TILED) ? 1 : 0,
+        type: 'f32',
+      },
+      uTileRepeat: {
+        value: [
+          options.tileRepeatX ?? DEFAULT_TILE_REPEAT,
+          options.tileRepeatY ?? DEFAULT_TILE_REPEAT,
+        ],
+        type: 'vec2<f32>',
+      },
     };
   }
 
@@ -110,5 +139,10 @@ export default class DamageFlash extends Shader {
     uniforms.uHitTime = options.hitTime ?? DEFAULT_HIT_TIME;
     uniforms.uStateTint = options.stateTint ?? DEFAULT_STATE_TINT;
     uniforms.uStateStrength = options.stateStrength ?? DEFAULT_STATE_STRENGTH;
+    uniforms.uTiled = (options.tiled ?? DEFAULT_TILED) ? 1 : 0;
+    uniforms.uTileRepeat = [
+      options.tileRepeatX ?? DEFAULT_TILE_REPEAT,
+      options.tileRepeatY ?? DEFAULT_TILE_REPEAT,
+    ];
   }
 }

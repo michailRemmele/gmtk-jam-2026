@@ -1902,7 +1902,15 @@
               }
             }
           ],
-          "children": []
+          "children": [
+            {
+              "id": "a7c3dd6f-84b5-460b-b129-0fa50a47f295",
+              "templateId": "6361e157-348b-413d-8b75-eddf33c1e144",
+              "name": "Explosion",
+              "components": [],
+              "children": []
+            }
+          ]
         },
         {
           "id": "d0c0cafb-6f03-4794-b7c3-c58b670503e6",
@@ -1920,7 +1928,15 @@
               }
             }
           ],
-          "children": []
+          "children": [
+            {
+              "id": "8a9ef05c-7cc7-430f-9f61-c3dcbc8cd289",
+              "templateId": "6361e157-348b-413d-8b75-eddf33c1e144",
+              "name": "Explosion",
+              "components": [],
+              "children": []
+            }
+          ]
         },
         {
           "id": "c3a385b7-f32f-4e70-83de-661cf8256a0e",
@@ -3108,7 +3124,11 @@
             "disabled": false,
             "material": {
               "name": "DamageFlash",
-              "options": {}
+              "options": {
+                "tiled": true,
+                "tileRepeatX": 2,
+                "tileRepeatY": 2
+              }
             }
           }
         },
@@ -4189,23 +4209,23 @@
         {
           "name": "Creature",
           "config": {
-            "mass": 0.5
+            "mass": 0.1
           }
         },
         {
           "name": "Mesh",
           "config": {
-            "src": "",
-            "width": 8,
-            "height": 8,
-            "slice": 1,
+            "src": "images/bug.png",
+            "width": 12,
+            "height": 12,
+            "slice": 7,
             "sortOffsetX": 0,
             "sortOffsetY": 0,
             "flipX": false,
             "flipY": false,
             "sortingLayer": "foreground",
             "blending": "normal",
-            "color": "rgb(220,30,30)",
+            "color": "rgb(255,255,255)",
             "opacity": 1,
             "disabled": false,
             "material": {
@@ -4238,7 +4258,7 @@
                 "id": "69d784a2-8b89-4cbf-b264-e79a52c1b078",
                 "name": "Idle",
                 "type": "individual",
-                "speed": 1,
+                "speed": 0.75,
                 "timeline": {
                   "frames": [
                     {
@@ -4249,6 +4269,63 @@
                           "name": "components.Mesh.disabled",
                           "type": "boolean",
                           "value": false
+                        },
+                        {
+                          "id": "d6d7be42-9af0-4446-887c-10e643d8f615",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        }
+                      ]
+                    },
+                    {
+                      "id": "3f7a7979-e733-41ba-8e0d-f1576937e416",
+                      "fields": [
+                        {
+                          "id": "00c714fa-726b-4890-a532-a657b9204128",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "d6d7be42-9af0-4446-887c-10e643d8f615",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 1
+                        }
+                      ]
+                    },
+                    {
+                      "id": "cd26a557-df59-4a3a-92aa-68316ca6991c",
+                      "fields": [
+                        {
+                          "id": "00c714fa-726b-4890-a532-a657b9204128",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "d6d7be42-9af0-4446-887c-10e643d8f615",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 2
+                        }
+                      ]
+                    },
+                    {
+                      "id": "3b96f124-e860-42a7-85f8-f844a9c393d4",
+                      "fields": [
+                        {
+                          "id": "00c714fa-726b-4890-a532-a657b9204128",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "d6d7be42-9af0-4446-887c-10e643d8f615",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 3
                         }
                       ]
                     }
@@ -4276,11 +4353,44 @@
                 "id": "4957e34c-4ef3-4306-a175-82d30e46149a",
                 "name": "Death",
                 "type": "individual",
-                "speed": 1,
+                "speed": 0.75,
                 "timeline": {
                   "frames": [
                     {
                       "id": "ccfca70f-1017-49af-a6a7-68b54e728945",
+                      "fields": [
+                        {
+                          "id": "00c714fa-726b-4890-a532-a657b9204128",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 4
+                        }
+                      ]
+                    },
+                    {
+                      "id": "58c1f0fe-7ab1-4589-9f9c-ebee295eb270",
+                      "fields": [
+                        {
+                          "id": "00c714fa-726b-4890-a532-a657b9204128",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 5
+                        }
+                      ]
+                    },
+                    {
+                      "id": "b535614f-059b-4d02-9c60-276dd46c4ae6",
+                      "fields": [
+                        {
+                          "id": "00c714fa-726b-4890-a532-a657b9204128",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 6
+                        }
+                      ]
+                    },
+                    {
+                      "id": "d8038ee5-a3f7-4a86-b406-5ec638c88329",
                       "fields": [
                         {
                           "id": "00c714fa-726b-4890-a532-a657b9204128",
@@ -4296,6 +4406,14 @@
                 "transitions": []
               }
             ]
+          }
+        },
+        {
+          "name": "Interpolation",
+          "config": {
+            "mode": "interpolate",
+            "snapThreshold": 0,
+            "disabled": false
           }
         }
       ],
@@ -4347,17 +4465,17 @@
         {
           "name": "Mesh",
           "config": {
-            "src": "",
+            "src": "images/explosive-obstacle.png",
             "width": 24,
             "height": 24,
-            "slice": 1,
+            "slice": 6,
             "sortOffsetX": 0,
             "sortOffsetY": 0,
             "flipX": false,
             "flipY": false,
             "sortingLayer": "units",
             "blending": "normal",
-            "color": "rgb(226,44,135)",
+            "color": "rgb(255,255,255)",
             "opacity": 1,
             "disabled": false,
             "material": {
@@ -4369,7 +4487,7 @@
         {
           "name": "Health",
           "config": {
-            "points": 1
+            "points": 2
           }
         },
         {
@@ -4381,7 +4499,7 @@
                 "id": "3529b938-d212-4604-a15d-a3379ff9eac3",
                 "name": "Idle",
                 "type": "individual",
-                "speed": 1,
+                "speed": 0.4,
                 "timeline": {
                   "frames": [
                     {
@@ -4392,6 +4510,265 @@
                           "name": "components.Mesh.disabled",
                           "type": "boolean",
                           "value": false
+                        },
+                        {
+                          "id": "9311103f-e6db-4752-b31f-aa75227ae2c9",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        }
+                      ]
+                    },
+                    {
+                      "id": "a5f4b5ca-6ea3-44ff-b59d-7e8bb90acbe7",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "9311103f-e6db-4752-b31f-aa75227ae2c9",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 1
+                        }
+                      ]
+                    },
+                    {
+                      "id": "b4d5bbec-f9f5-4a0a-a830-9e9dcb68bde9",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "9311103f-e6db-4752-b31f-aa75227ae2c9",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 2
+                        }
+                      ]
+                    },
+                    {
+                      "id": "1af40e5b-0e5c-4a4c-8406-d7045edbe650",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "9311103f-e6db-4752-b31f-aa75227ae2c9",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 3
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "070dff8f-eba7-47de-92a8-19237d57c08b",
+                    "state": "431f6360-feca-428d-92a8-5e73c3a221f1",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "759420c8-343f-4884-adc3-fbf9f51a2f40",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "99e814d3-5bb1-4e38-8ffe-dfdd385d4c28",
+                    "state": "3c53bff5-de1b-4434-aab2-a1797e8d18fd",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "f3506392-14b5-4353-8eed-e2c764c9beac",
+                        "type": "event",
+                        "props": {
+                          "eventType": "ExplosiveTriggered"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "431f6360-feca-428d-92a8-5e73c3a221f1",
+                "name": "Death",
+                "type": "individual",
+                "speed": 1.25,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "0401b807-d885-4bdc-91f3-62ca514114c8",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        },
+                        {
+                          "id": "189f1f79-469b-418c-95f4-d67f9dd7df3c",
+                          "name": "children.Explosion.components.Sprite.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "d66879cc-3427-49c4-abb3-126fb9b930d0",
+                          "name": "children.Explosion.components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        }
+                      ]
+                    },
+                    {
+                      "id": "583f7db4-1f3f-4f06-b946-2beced085029",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        },
+                        {
+                          "id": "189f1f79-469b-418c-95f4-d67f9dd7df3c",
+                          "name": "children.Explosion.components.Sprite.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "d66879cc-3427-49c4-abb3-126fb9b930d0",
+                          "name": "children.Explosion.components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 1
+                        }
+                      ]
+                    },
+                    {
+                      "id": "449f2416-8bed-486d-ae5f-65c078bf0f39",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        },
+                        {
+                          "id": "189f1f79-469b-418c-95f4-d67f9dd7df3c",
+                          "name": "children.Explosion.components.Sprite.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "d66879cc-3427-49c4-abb3-126fb9b930d0",
+                          "name": "children.Explosion.components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 2
+                        }
+                      ]
+                    },
+                    {
+                      "id": "71e5a96c-6781-4229-9a12-7aabddd00a06",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        },
+                        {
+                          "id": "189f1f79-469b-418c-95f4-d67f9dd7df3c",
+                          "name": "children.Explosion.components.Sprite.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "d66879cc-3427-49c4-abb3-126fb9b930d0",
+                          "name": "children.Explosion.components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 3
+                        }
+                      ]
+                    },
+                    {
+                      "id": "5bd9799e-4e57-49e7-8eed-d8cee2ae1bd9",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        },
+                        {
+                          "id": "189f1f79-469b-418c-95f4-d67f9dd7df3c",
+                          "name": "children.Explosion.components.Sprite.disabled",
+                          "type": "boolean",
+                          "value": true
+                        },
+                        {
+                          "id": "d66879cc-3427-49c4-abb3-126fb9b930d0",
+                          "name": "children.Explosion.components.Sprite.currentFrame",
+                          "type": "number",
+                          "value": 3
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": false
+                },
+                "transitions": []
+              },
+              {
+                "id": "3c53bff5-de1b-4434-aab2-a1797e8d18fd",
+                "name": "Fuse",
+                "type": "individual",
+                "speed": 2,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "0401b807-d885-4bdc-91f3-62ca514114c8",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "9311103f-e6db-4752-b31f-aa75227ae2c9",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 4
+                        }
+                      ]
+                    },
+                    {
+                      "id": "a5f4b5ca-6ea3-44ff-b59d-7e8bb90acbe7",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "9311103f-e6db-4752-b31f-aa75227ae2c9",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 5
                         }
                       ]
                     }
@@ -4414,29 +4791,6 @@
                     ]
                   }
                 ]
-              },
-              {
-                "id": "431f6360-feca-428d-92a8-5e73c3a221f1",
-                "name": "Death",
-                "type": "individual",
-                "speed": 1,
-                "timeline": {
-                  "frames": [
-                    {
-                      "id": "0401b807-d885-4bdc-91f3-62ca514114c8",
-                      "fields": [
-                        {
-                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
-                          "name": "components.Mesh.disabled",
-                          "type": "boolean",
-                          "value": true
-                        }
-                      ]
-                    }
-                  ],
-                  "looped": true
-                },
-                "transitions": []
               }
             ]
           }
@@ -4458,7 +4812,44 @@
           }
         }
       ],
-      "children": []
+      "children": [
+        {
+          "id": "6361e157-348b-413d-8b75-eddf33c1e144",
+          "name": "Explosion",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "images/explosion.png",
+                "width": 96,
+                "height": 96,
+                "slice": 4,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "foreground",
+                "fit": "stretch",
+                "blending": "normal",
+                "color": "#fff",
+                "opacity": 1,
+                "disabled": true
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
     },
     {
       "id": "05b146aa-eb51-4bf9-9fdb-acbf121e3cca",
@@ -4506,17 +4897,17 @@
         {
           "name": "Mesh",
           "config": {
-            "src": "",
+            "src": "images/hive-obstacle.png",
             "width": 24,
             "height": 24,
-            "slice": 1,
+            "slice": 4,
             "sortOffsetX": 0,
             "sortOffsetY": 0,
             "flipX": false,
             "flipY": false,
             "sortingLayer": "units",
             "blending": "normal",
-            "color": "rgb(253,226,19)",
+            "color": "rgb(255,255,255)",
             "opacity": 1,
             "disabled": false,
             "material": {
@@ -4540,7 +4931,7 @@
                 "id": "3529b938-d212-4604-a15d-a3379ff9eac3",
                 "name": "Idle",
                 "type": "individual",
-                "speed": 1,
+                "speed": 0.5,
                 "timeline": {
                   "frames": [
                     {
@@ -4551,6 +4942,63 @@
                           "name": "components.Mesh.disabled",
                           "type": "boolean",
                           "value": false
+                        },
+                        {
+                          "id": "c8034e4c-9317-4ad7-86a5-4b383cfee3f8",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ac83f410-42ee-40d7-b9ee-0dae58143174",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "c8034e4c-9317-4ad7-86a5-4b383cfee3f8",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 1
+                        }
+                      ]
+                    },
+                    {
+                      "id": "8404d025-cdf4-42eb-a211-5a4a2a5657db",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "c8034e4c-9317-4ad7-86a5-4b383cfee3f8",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 2
+                        }
+                      ]
+                    },
+                    {
+                      "id": "557644e5-c519-4ccf-b988-17def31ae7a0",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "c8034e4c-9317-4ad7-86a5-4b383cfee3f8",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 3
                         }
                       ]
                     }

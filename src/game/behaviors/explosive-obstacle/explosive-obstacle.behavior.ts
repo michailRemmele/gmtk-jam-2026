@@ -78,6 +78,8 @@ export default class ExplosiveObstacle extends Behavior {
 
     this.triggered = true;
     this.timer = this.fuseTime;
+
+    this.actor.dispatchEvent(EventType.ExplosiveTriggered);
   };
 
   private handleKill = (): void => {
