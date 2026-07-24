@@ -26,9 +26,10 @@ export default class GameState extends SceneSystem {
     this.time = options.time;
 
     this.api = new GameStateAPI();
-    this.escapeTimer = new EscapeTimer(this.scene);
+    this.escapeTimer = new EscapeTimer(this.scene, this.api);
 
     this.scene.addEventListener(EventType.GameOver, this.handleGameOver);
+    this.scene.addEventListener(EventType.BuildStart, this.handleBuildStart);
   }
 
   onSceneEnter(): void {
@@ -42,13 +43,21 @@ export default class GameState extends SceneSystem {
 
   onSceneDestroy(): void {
     this.scene.removeEventListener(EventType.GameOver, this.handleGameOver);
+    this.scene.removeEventListener(
+      EventType.BuildStart,
+      this.handleBuildStart,
+    );
   }
 
   update(): void {
-    this.escapeTimer.update(this.time.deltaTime, this.api.frozen);
+    this.escapeTimer.update(this.time.deltaTime);
   }
 
   private handleGameOver = (): void => {
     this.api.frozen = true;
+  };
+
+  private handleBuildStart = (): void => {
+    this.escapeTimer.forceStart();
   };
 }

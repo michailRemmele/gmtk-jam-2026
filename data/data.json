@@ -1295,7 +1295,10 @@
               "config": {
                 "exampleField": "",
                 "index": 0,
-                "escapeTime": 60
+                "escapeTime": 60,
+                "buildTime": 20,
+                "budget": 100,
+                "maxMass": 0
               }
             }
           ],
@@ -1309,8 +1312,8 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": -332,
-                "offsetY": -652,
+                "offsetX": -240,
+                "offsetY": -732,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -1561,9 +1564,9 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": -479,
-                "offsetY": 10,
-                "rotation": 100,
+                "offsetX": -468,
+                "offsetY": 0,
+                "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
               }
@@ -1579,9 +1582,9 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 55,
-                "offsetY": 16,
-                "rotation": 85,
+                "offsetX": -11.999999999999943,
+                "offsetY": -1.1368683772161603e-13,
+                "rotation": 180,
                 "scaleX": 1,
                 "scaleY": 1
               }
@@ -1597,9 +1600,9 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": -47,
-                "offsetY": -439,
-                "rotation": 70,
+                "offsetX": -12.000000000000028,
+                "offsetY": -480,
+                "rotation": 180,
                 "scaleX": 1,
                 "scaleY": 1
               }
@@ -1615,9 +1618,9 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": -481,
-                "offsetY": -451,
-                "rotation": 80,
+                "offsetX": -468,
+                "offsetY": -480,
+                "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
               }
@@ -2032,6 +2035,276 @@
                 "offsetX": -432,
                 "offsetY": 252,
                 "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "e8d5b2fa-0fda-45e8-a9c1-02c4962904d2",
+          "templateId": "5636c4e8-44d2-4c79-a406-cee71ba94380",
+          "name": "Background Cover",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -720,
+                "offsetY": 23.999999999999943,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "a793c0d1-dbea-46ff-8d9c-fd07bc7dad6c",
+          "templateId": "5636c4e8-44d2-4c79-a406-cee71ba94380",
+          "name": "Background Cover 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -720,
+                "offsetY": -456,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "69491c48-3d78-4578-9a70-895b24ac9741",
+          "templateId": "5636c4e8-44d2-4c79-a406-cee71ba94380",
+          "name": "Background Cover 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 240,
+                "offsetY": 24,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "84875979-8ca7-4301-90bb-b9e157be5aa7",
+          "templateId": "5636c4e8-44d2-4c79-a406-cee71ba94380",
+          "name": "Background Cover 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 240,
+                "offsetY": -456,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "c4c6bbe3-4a82-4587-8206-fcb581ae78a9",
+          "templateId": "5636c4e8-44d2-4c79-a406-cee71ba94380",
+          "name": "Background Cover 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 240,
+                "offsetY": 504,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "8cdb86f3-35c5-417b-a509-434dd3cb5905",
+          "templateId": "5636c4e8-44d2-4c79-a406-cee71ba94380",
+          "name": "Background Cover 6",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -240,
+                "offsetY": 504,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "35973b1b-acb3-4cfa-85bd-82167cd9b9dd",
+          "templateId": "5636c4e8-44d2-4c79-a406-cee71ba94380",
+          "name": "Background Cover 7",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -720,
+                "offsetY": 504,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "4e013e7f-bc66-417e-95a4-55438c913e0f",
+          "templateId": "46b1d3ec-e811-44b6-89f8-3d7c2cc85ef3",
+          "name": "Static Terrain Block",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -120,
+                "offsetY": 276,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "afa62373-ec1f-44ff-98ab-becc7869962a",
+          "templateId": "46b1d3ec-e811-44b6-89f8-3d7c2cc85ef3",
+          "name": "Static Terrain Block 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -360,
+                "offsetY": 276,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "9e711135-bcf1-45d4-8ed3-12d281b49c9a",
+          "templateId": "291dce70-b413-4f9c-ae89-8fda453a40f9",
+          "name": "Static Terrain Block Wall",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -492,
+                "offsetY": 59.99999999999999,
+                "rotation": 90,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "ae1687ee-5931-4e1f-9312-46ebb15e92f4",
+          "templateId": "291dce70-b413-4f9c-ae89-8fda453a40f9",
+          "name": "Static Terrain Block Wall 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -492,
+                "offsetY": -300,
+                "rotation": 90,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "249a991c-ec87-4f4d-a932-6ed92152ea1a",
+          "templateId": "291dce70-b413-4f9c-ae89-8fda453a40f9",
+          "name": "Static Terrain Block Wall 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -492,
+                "offsetY": -540,
+                "rotation": 90,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "b9d1e48e-97b4-42cd-a0fe-ac572da911cd",
+          "templateId": "291dce70-b413-4f9c-ae89-8fda453a40f9",
+          "name": "Static Terrain Block Wall 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 12.000000000000057,
+                "offsetY": 60,
+                "rotation": -90,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "c3cef18e-2198-479b-b93e-885c5077e35d",
+          "templateId": "291dce70-b413-4f9c-ae89-8fda453a40f9",
+          "name": "Static Terrain Block Wall 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 12.000000000000057,
+                "offsetY": -276,
+                "rotation": -90,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "9f3b630b-c848-4665-9c8b-db6ed8bee39d",
+          "templateId": "291dce70-b413-4f9c-ae89-8fda453a40f9",
+          "name": "Static Terrain Block Wall 6",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 12,
+                "offsetY": -540,
+                "rotation": -90,
                 "scaleX": 1,
                 "scaleY": 1
               }
@@ -2555,33 +2828,35 @@
             "layer": "default",
             "debugColor": "#4DFFB8",
             "disabled": false,
-            "sizeX": 480,
-            "sizeY": 24
-          }
-        },
-        {
-          "name": "Shape",
-          "config": {
-            "type": "rectangle",
-            "strokeColor": "#fff",
-            "strokeAlignment": 0.5,
-            "pixelLine": false,
-            "fill": "rgb(118,43,43)",
-            "sortOffsetX": 0,
-            "sortOffsetY": 0,
-            "sortingLayer": "default",
-            "blending": "normal",
-            "opacity": 1,
-            "disabled": false,
-            "sizeX": 480,
-            "sizeY": 24,
-            "strokeWidth": 0
+            "sizeX": 24,
+            "sizeY": 480
           }
         },
         {
           "name": "CollisionDamage",
           "config": {
             "value": 2
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "images/terrain-wall.png",
+            "width": 24,
+            "height": 480,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "decorations",
+            "fit": "repeat",
+            "blending": "normal",
+            "color": "#fff",
+            "opacity": 1,
+            "disabled": false,
+            "textureOffsetX": 0,
+            "textureOffsetY": 0
           }
         }
       ],
@@ -2715,7 +2990,8 @@
           "name": "PlatformBlock",
           "config": {
             "mass": 0.1,
-            "type": "basic"
+            "type": "basic",
+            "cost": 0
           }
         },
         {
@@ -2998,7 +3274,8 @@
           "name": "PlatformBlock",
           "config": {
             "mass": 0.4,
-            "type": "ram"
+            "type": "ram",
+            "cost": 0
           }
         },
         {
@@ -3248,7 +3525,8 @@
           "name": "PlatformBlock",
           "config": {
             "mass": 0.1,
-            "type": "turret"
+            "type": "turret",
+            "cost": 0
           }
         },
         {
@@ -3510,7 +3788,8 @@
           "name": "PlatformBlock",
           "config": {
             "mass": 0.2,
-            "type": "storage"
+            "type": "storage",
+            "cost": 0
           }
         },
         {
@@ -3708,7 +3987,8 @@
           "config": {
             "mass": 0.1,
             "type": "booster",
-            "thrustBoost": 1
+            "thrustBoost": 1,
+            "cost": 0
           }
         },
         {
@@ -4298,6 +4578,118 @@
             "flipX": false,
             "flipY": false,
             "sortingLayer": "background-3",
+            "fit": "repeat",
+            "blending": "normal",
+            "color": "#fff",
+            "opacity": 1,
+            "disabled": false,
+            "textureOffsetX": 0,
+            "textureOffsetY": 0
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "5636c4e8-44d2-4c79-a406-cee71ba94380",
+      "name": "Background Cover",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Shape",
+          "config": {
+            "type": "rectangle",
+            "strokeColor": "#fff",
+            "strokeAlignment": 0.5,
+            "pixelLine": false,
+            "fill": "rgb(43,9,13)",
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "sortingLayer": "decorations",
+            "blending": "normal",
+            "opacity": 1,
+            "disabled": false,
+            "sizeX": 480,
+            "sizeY": 480,
+            "strokeWidth": 0
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "46b1d3ec-e811-44b6-89f8-3d7c2cc85ef3",
+      "name": "Static Terrain Block",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "images/terrain-block.png",
+            "width": 240,
+            "height": 24,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "decorations-2",
+            "fit": "repeat",
+            "blending": "normal",
+            "color": "#fff",
+            "opacity": 1,
+            "disabled": false,
+            "textureOffsetX": 0,
+            "textureOffsetY": 0
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "291dce70-b413-4f9c-ae89-8fda453a40f9",
+      "name": "Static Terrain Block Wall",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 90,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "images/terrain-block.png",
+            "width": 360,
+            "height": 24,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "decorations-2",
             "fit": "repeat",
             "blending": "normal",
             "color": "#fff",

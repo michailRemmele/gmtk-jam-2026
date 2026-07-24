@@ -1,7 +1,9 @@
 /node_modules
 
 dist
+docs
 
+.vscode
 .idea
 .dacha
 .DS_Store

@@ -18,6 +18,10 @@ export const GameOver = 'GameOver';
 
 export const TimerTick = 'TimerTick';
 
+export const BuildStart = 'BuildStart';
+export const BuildPhaseEnd = 'BuildPhaseEnd';
+export const BuildStateChanged = 'BuildStateChanged';
+
 export const CameraShake = 'CameraShake';
 
 export type AttackInputEvent = ActorEvent<{ x: number; y: number }>;
@@ -55,6 +59,9 @@ declare module 'dacha' {
     [ResetSaveState]: SceneEvent;
     [GameOver]: GameOverEvent;
     [TimerTick]: TimerTickEvent;
+    [BuildStart]: SceneEvent;
+    [BuildPhaseEnd]: SceneEvent;
+    [BuildStateChanged]: SceneEvent;
     [CameraShake]: SceneEvent;
   }
 }
