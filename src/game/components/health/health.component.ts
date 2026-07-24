@@ -24,4 +24,18 @@ export default class Health extends Component {
     this.points = points;
     this.maxPoints = points;
   }
+
+  get state(): 'good' | 'medium' | 'bad' {
+    const ratio = this.maxPoints > 0 ? this.points / this.maxPoints : 0;
+
+    if (ratio > 0.75) {
+      return 'good';
+    }
+
+    if (ratio > 0.25) {
+      return 'medium';
+    }
+
+    return 'bad';
+  }
 }

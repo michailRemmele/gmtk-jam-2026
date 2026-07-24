@@ -260,25 +260,6 @@
               }
             },
             {
-              "name": "Shape",
-              "config": {
-                "type": "rectangle",
-                "strokeWidth": 0,
-                "strokeColor": "#fff",
-                "strokeAlignment": 0.5,
-                "fill": "rgb(200,26,26)",
-                "pixelLine": false,
-                "sortingLayer": "units",
-                "blending": "normal",
-                "opacity": 1,
-                "disabled": false,
-                "sortOffsetX": 0,
-                "sortOffsetY": 0,
-                "sizeX": 72,
-                "sizeY": 24
-              }
-            },
-            {
               "name": "Interpolation",
               "config": {
                 "mode": "interpolate",
@@ -311,7 +292,15 @@
                   }
                 }
               ],
-              "children": []
+              "children": [
+                {
+                  "id": "451cf15e-6a3a-48f2-8dbd-57cf02e14e08",
+                  "templateId": "b57dd33e-ab9c-495d-b8b6-10d1166304d8",
+                  "name": "Damage",
+                  "components": [],
+                  "children": []
+                }
+              ]
             },
             {
               "id": "c148583e-f259-4248-86df-ee3e0a9a27bc",
@@ -1260,6 +1249,78 @@
                 }
               ],
               "children": []
+            },
+            {
+              "id": "daa5c116-8e72-447a-a8ed-8615618af305",
+              "templateId": "848b5cc2-08c5-4c5b-ba2e-ee7f0b124f0b",
+              "name": "Build Slot 6",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -24,
+                    "offsetY": -72,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "BuildSlot",
+                  "config": {
+                    "order": 5
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "82f412f7-bbe2-4374-9303-f4611a2913f0",
+              "templateId": "848b5cc2-08c5-4c5b-ba2e-ee7f0b124f0b",
+              "name": "Build Slot 7",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": -72,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "BuildSlot",
+                  "config": {
+                    "order": 6
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "acfabd70-1f37-4b97-80a2-45b370668f06",
+              "templateId": "848b5cc2-08c5-4c5b-ba2e-ee7f0b124f0b",
+              "name": "Build Slot 8",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 24,
+                    "offsetY": -72,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "BuildSlot",
+                  "config": {
+                    "order": 7
+                  }
+                }
+              ],
+              "children": []
             }
           ]
         },
@@ -1304,7 +1365,7 @@
                 "index": 0,
                 "escapeTime": 60,
                 "buildTime": 30,
-                "budget": 100
+                "budget": 200
               }
             }
           ],
@@ -2073,7 +2134,7 @@
               "name": "Transform",
               "config": {
                 "offsetX": -720,
-                "offsetY": 23.999999999999943,
+                "offsetY": -5.684341886080802e-14,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -2091,7 +2152,7 @@
               "name": "Transform",
               "config": {
                 "offsetX": -720,
-                "offsetY": -456,
+                "offsetY": -479.99999999999994,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -2109,7 +2170,7 @@
               "name": "Transform",
               "config": {
                 "offsetX": 240,
-                "offsetY": 24,
+                "offsetY": -1.1368683772161603e-13,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -2127,7 +2188,7 @@
               "name": "Transform",
               "config": {
                 "offsetX": 240,
-                "offsetY": -456,
+                "offsetY": -479.99999999999994,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -2145,7 +2206,7 @@
               "name": "Transform",
               "config": {
                 "offsetX": 240,
-                "offsetY": 504,
+                "offsetY": 480,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -2181,7 +2242,7 @@
               "name": "Transform",
               "config": {
                 "offsetX": -720,
-                "offsetY": 504,
+                "offsetY": 480,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -2363,6 +2424,96 @@
                 "offsetX": 0,
                 "offsetY": 264.00000000000006,
                 "rotation": -90,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "1cd82994-10c0-44e5-8673-23d620629779",
+          "templateId": "3b452866-cc1e-4cdd-a67a-d1c121d83071",
+          "name": "Surface Background",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -240,
+                "offsetY": -744,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "d1a7d27c-69e5-4663-b4f5-bd7d35a12b49",
+          "templateId": "0881f5b5-ad08-4f4e-bc76-7df5e6965215",
+          "name": "Background Surface Cover",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -720,
+                "offsetY": -960,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "e49c2cc1-6602-4602-9ebd-5f0f38f6bc46",
+          "templateId": "0881f5b5-ad08-4f4e-bc76-7df5e6965215",
+          "name": "Background Surface Cover 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -240,
+                "offsetY": -960,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "15c27254-7ff1-4b1e-ac47-25a605f9b8b3",
+          "templateId": "0881f5b5-ad08-4f4e-bc76-7df5e6965215",
+          "name": "Background Surface Cover 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 240.0000000000001,
+                "offsetY": -960,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "89f5dfed-2b3f-4cbc-9fd5-906a97aed78e",
+          "templateId": "a1bfbc8d-5f10-40f8-a9d5-1af8eb39e9e9",
+          "name": "Repair Obstacle",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -324,
+                "offsetY": -324,
+                "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
               }
@@ -2582,7 +2733,7 @@
             "sortOffsetY": 0,
             "flipX": false,
             "flipY": false,
-            "sortingLayer": "foreground",
+            "sortingLayer": "foreground-1",
             "blending": "normal",
             "color": "#fff",
             "opacity": 1,
@@ -2753,7 +2904,7 @@
             "sortingLayer": "decorations",
             "blending": "normal",
             "opacity": 1,
-            "disabled": false,
+            "disabled": true,
             "sortOffsetX": 0,
             "sortOffsetY": 0,
             "sizeX": 480,
@@ -3262,7 +3413,7 @@
         {
           "name": "Health",
           "config": {
-            "points": 12
+            "points": 16
           }
         },
         {
@@ -3272,7 +3423,7 @@
             "states": [
               {
                 "id": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
-                "name": "idle",
+                "name": "idle 100",
                 "type": "individual",
                 "speed": 1,
                 "timeline": {
@@ -3283,6 +3434,135 @@
                         {
                           "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
                           "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "a1291896-3790-40f8-a461-0eb4f12fee1d",
+                          "name": "children.Damage.components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "a682db86-64a1-4fc0-a464-5524c6ac75ac",
+                    "state": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "22c187c1-3017-45f7-8a1b-973f3d2fe0b2",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "bae6b10c-3ae7-4f9f-b182-014b4756b3f8",
+                    "state": "ad14e76d-3d3b-4559-96eb-3a21defb4b26",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "72ba1879-3aba-461c-bab6-f2a639304c84",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "medium"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "1807df26-45f8-4371-951a-565500d98c5c",
+                    "state": "23541093-6e7d-49b0-ba39-49986136cde6",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "72ba1879-3aba-461c-bab6-f2a639304c84",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "bad"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                "name": "Death",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        },
+                        {
+                          "id": "928fa541-5b8c-44cf-80b1-dfa539bae1c6",
+                          "name": "children.Damage.components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": []
+              },
+              {
+                "id": "ad14e76d-3d3b-4559-96eb-3a21defb4b26",
+                "name": "idle 50",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "4371d07a-8624-4221-ab0d-dc2e167bcb7a",
+                          "name": "children.Damage.components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        },
+                        {
+                          "id": "e6f15ad7-782a-4ce2-935c-a940a5d9d63f",
+                          "name": "children.Damage.components.Mesh.disabled",
                           "type": "boolean",
                           "value": false
                         }
@@ -3305,12 +3585,56 @@
                         }
                       }
                     ]
+                  },
+                  {
+                    "id": "5db2ac6c-1ab9-462a-aad7-6fb6648f5c79",
+                    "state": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "72ba1879-3aba-461c-bab6-f2a639304c84",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "good"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "51d345f8-0dcf-486d-9428-330453450fe3",
+                    "state": "23541093-6e7d-49b0-ba39-49986136cde6",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "72ba1879-3aba-461c-bab6-f2a639304c84",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "bad"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
                   }
                 ]
               },
               {
-                "id": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
-                "name": "Death",
+                "id": "23541093-6e7d-49b0-ba39-49986136cde6",
+                "name": "idle 25",
                 "type": "individual",
                 "speed": 1,
                 "timeline": {
@@ -3322,14 +3646,85 @@
                           "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
                           "name": "components.Mesh.disabled",
                           "type": "boolean",
-                          "value": true
+                          "value": false
+                        },
+                        {
+                          "id": "4371d07a-8624-4221-ab0d-dc2e167bcb7a",
+                          "name": "children.Damage.components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 1
+                        },
+                        {
+                          "id": "e6f15ad7-782a-4ce2-935c-a940a5d9d63f",
+                          "name": "children.Damage.components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
                         }
                       ]
                     }
                   ],
                   "looped": true
                 },
-                "transitions": []
+                "transitions": [
+                  {
+                    "id": "a682db86-64a1-4fc0-a464-5524c6ac75ac",
+                    "state": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "22c187c1-3017-45f7-8a1b-973f3d2fe0b2",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "5db2ac6c-1ab9-462a-aad7-6fb6648f5c79",
+                    "state": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "72ba1879-3aba-461c-bab6-f2a639304c84",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "good"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "cd94690c-c0d5-4cee-93c3-fc0121823833",
+                    "state": "ad14e76d-3d3b-4559-96eb-3a21defb4b26",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "72ba1879-3aba-461c-bab6-f2a639304c84",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "medium"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }
@@ -3337,7 +3732,7 @@
         {
           "name": "PlatformBlock",
           "config": {
-            "mass": 1,
+            "mass": 0.3,
             "type": "ram",
             "cost": 25
           }
@@ -3380,7 +3775,49 @@
           }
         }
       ],
-      "children": []
+      "children": [
+        {
+          "id": "0ecee307-79ce-41d1-a32b-bb8f15b6c5d6",
+          "name": "Damage",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Mesh",
+              "config": {
+                "src": "images/block-damage.png",
+                "width": 36,
+                "height": 36,
+                "slice": 2,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "units-2",
+                "blending": "normal",
+                "color": "#fff",
+                "opacity": 0.75,
+                "disabled": true,
+                "material": {
+                  "name": "DamageFlash",
+                  "options": {
+                    "tiled": false
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
     },
     {
       "id": "664662c7-bc82-480d-8668-af14fae72d64",
@@ -3434,7 +3871,7 @@
         {
           "name": "Health",
           "config": {
-            "points": 4
+            "points": 8
           }
         },
         {
@@ -3444,7 +3881,7 @@
             "states": [
               {
                 "id": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
-                "name": "idle",
+                "name": "idle 100",
                 "type": "individual",
                 "speed": 1,
                 "timeline": {
@@ -3463,6 +3900,12 @@
                           "name": "children.Tower.components.Mesh.currentFrame",
                           "type": "number",
                           "value": 0
+                        },
+                        {
+                          "id": "9e30cf0d-97cd-4819-8135-0f9a8055ba47",
+                          "name": "children.Damage.components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
                         }
                       ]
                     }
@@ -3497,6 +3940,50 @@
                         }
                       }
                     ]
+                  },
+                  {
+                    "id": "55154c5b-bf78-419a-abdc-95f1ae0c2c72",
+                    "state": "63b6ec26-3d5d-4a6a-95c9-1f67374cb6dc",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "faea4fec-9949-4d4b-87dc-36b94872e8f2",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "medium"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "40eeb495-37d6-4e98-866d-be9927445dd6",
+                    "state": "ad84ad99-c547-4284-8c75-1b3aee246cea",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "faea4fec-9949-4d4b-87dc-36b94872e8f2",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "bad"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
                   }
                 ]
               },
@@ -3519,6 +4006,12 @@
                         {
                           "id": "c07431e9-059a-4e77-bf9c-dfeeada6bff9",
                           "name": "children.Tower.components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        },
+                        {
+                          "id": "84c69c97-94cb-43e9-b481-7e4313971a4a",
+                          "name": "children.Damage.components.Mesh.disabled",
                           "type": "boolean",
                           "value": true
                         }
@@ -3610,6 +4103,234 @@
                     "state": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
                     "time": 1,
                     "conditions": []
+                  }
+                ]
+              },
+              {
+                "id": "63b6ec26-3d5d-4a6a-95c9-1f67374cb6dc",
+                "name": "idle 50",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "9865c920-7a46-4595-ab25-50c04dce9575",
+                          "name": "children.Tower.components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        },
+                        {
+                          "id": "9e30cf0d-97cd-4819-8135-0f9a8055ba47",
+                          "name": "children.Damage.components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "a05a9bdb-23e7-443c-8586-33d906c0fec9",
+                          "name": "children.Damage.components.Mesh.disabled",
+                          "type": "number",
+                          "value": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "a682db86-64a1-4fc0-a464-5524c6ac75ac",
+                    "state": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "22c187c1-3017-45f7-8a1b-973f3d2fe0b2",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "91988f9b-bb26-4b90-b20b-65e48d9f5a28",
+                    "state": "d5ef20da-eec1-46bb-bcf4-a27869873ec4",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "aba04620-2170-40d1-a00e-5af262bd1822",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Attack"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "2ac3ad5b-b77c-4a0b-a7c3-1ad6cf27ada7",
+                    "state": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "faea4fec-9949-4d4b-87dc-36b94872e8f2",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "good"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "eed5d0b1-d35c-4c8c-a1ba-4fbd1b2090ab",
+                    "state": "ad84ad99-c547-4284-8c75-1b3aee246cea",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "faea4fec-9949-4d4b-87dc-36b94872e8f2",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "bad"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "ad84ad99-c547-4284-8c75-1b3aee246cea",
+                "name": "idle 25",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "9865c920-7a46-4595-ab25-50c04dce9575",
+                          "name": "children.Tower.components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        },
+                        {
+                          "id": "9e30cf0d-97cd-4819-8135-0f9a8055ba47",
+                          "name": "children.Damage.components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "a05a9bdb-23e7-443c-8586-33d906c0fec9",
+                          "name": "children.Damage.components.Mesh.disabled",
+                          "type": "number",
+                          "value": 1
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "a682db86-64a1-4fc0-a464-5524c6ac75ac",
+                    "state": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "22c187c1-3017-45f7-8a1b-973f3d2fe0b2",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "91988f9b-bb26-4b90-b20b-65e48d9f5a28",
+                    "state": "d5ef20da-eec1-46bb-bcf4-a27869873ec4",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "aba04620-2170-40d1-a00e-5af262bd1822",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Attack"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "2ac3ad5b-b77c-4a0b-a7c3-1ad6cf27ada7",
+                    "state": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "faea4fec-9949-4d4b-87dc-36b94872e8f2",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "good"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "da1b14ad-de5b-402a-a656-a74032fe2b13",
+                    "state": "63b6ec26-3d5d-4a6a-95c9-1f67374cb6dc",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "faea4fec-9949-4d4b-87dc-36b94872e8f2",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "medium"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
                   }
                 ]
               }
@@ -3710,7 +4431,7 @@
                 "sortOffsetY": 0,
                 "flipX": false,
                 "flipY": false,
-                "sortingLayer": "units",
+                "sortingLayer": "units-3",
                 "blending": "normal",
                 "color": "rgb(255,255,255)",
                 "opacity": 1,
@@ -3718,6 +4439,47 @@
                 "material": {
                   "name": "DamageFlash",
                   "options": {}
+                }
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "ac84373b-f9a3-4634-af04-a06be96effdc",
+          "name": "Damage",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Mesh",
+              "config": {
+                "src": "images/block-damage.png",
+                "width": 36,
+                "height": 36,
+                "slice": 2,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "units-2",
+                "blending": "normal",
+                "color": "#fff",
+                "opacity": 0.75,
+                "disabled": true,
+                "material": {
+                  "name": "DamageFlash",
+                  "options": {
+                    "tiled": false
+                  }
                 }
               }
             }
@@ -3778,7 +4540,7 @@
         {
           "name": "Health",
           "config": {
-            "points": 8
+            "points": 6
           }
         },
         {
@@ -3788,7 +4550,7 @@
             "states": [
               {
                 "id": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
-                "name": "idle",
+                "name": "idle 100",
                 "type": "individual",
                 "speed": 0.3,
                 "timeline": {
@@ -3805,6 +4567,192 @@
                         {
                           "id": "2bf785ab-1b91-4e3a-9b55-0f63c1c60fcf",
                           "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        },
+                        {
+                          "id": "259d0bd3-5b71-47c1-ae3f-c3bc95edf8bd",
+                          "name": "children.Damage.components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    },
+                    {
+                      "id": "fae2cbd4-46c4-46d7-9343-186bc44bf3b3",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2bf785ab-1b91-4e3a-9b55-0f63c1c60fcf",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 1
+                        }
+                      ]
+                    },
+                    {
+                      "id": "42526215-c546-41b4-90d2-80f92a95c122",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2bf785ab-1b91-4e3a-9b55-0f63c1c60fcf",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 2
+                        }
+                      ]
+                    },
+                    {
+                      "id": "9685667b-96df-40fa-85b4-da48c534b74c",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2bf785ab-1b91-4e3a-9b55-0f63c1c60fcf",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 3
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "a682db86-64a1-4fc0-a464-5524c6ac75ac",
+                    "state": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "22c187c1-3017-45f7-8a1b-973f3d2fe0b2",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "6345f8ad-f431-4303-b35a-9d5396dba587",
+                    "state": "2ee2a7af-56de-4a10-a0e2-e2b46e224b30",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "125b6f0c-4f08-4930-b433-095df5ef8327",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "medium"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "2b1efaec-3a35-4133-9339-091d9b40be7c",
+                    "state": "841558d1-a661-4b72-a3b8-2011a0646be4",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "125b6f0c-4f08-4930-b433-095df5ef8327",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "bad"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                "name": "Death",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        },
+                        {
+                          "id": "d4a09dc5-47d7-40e8-b746-d1ef7102e98f",
+                          "name": "children.Damage.components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": []
+              },
+              {
+                "id": "2ee2a7af-56de-4a10-a0e2-e2b46e224b30",
+                "name": "idle 50",
+                "type": "individual",
+                "speed": 0.3,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2bf785ab-1b91-4e3a-9b55-0f63c1c60fcf",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        },
+                        {
+                          "id": "259d0bd3-5b71-47c1-ae3f-c3bc95edf8bd",
+                          "name": "children.Damage.components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "645c13ed-958c-46f3-9030-4398b3081f3b",
+                          "name": "children.Damage.components.Mesh.currentFrame",
                           "type": "number",
                           "value": 0
                         }
@@ -3878,14 +4826,58 @@
                         }
                       }
                     ]
+                  },
+                  {
+                    "id": "6e6a781f-461d-43bc-aa7d-58404e42d6dc",
+                    "state": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "125b6f0c-4f08-4930-b433-095df5ef8327",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "good"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "426e929b-29d3-4b79-85bf-3ab20e03e49d",
+                    "state": "841558d1-a661-4b72-a3b8-2011a0646be4",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "125b6f0c-4f08-4930-b433-095df5ef8327",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "bad"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
                   }
                 ]
               },
               {
-                "id": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
-                "name": "Death",
+                "id": "841558d1-a661-4b72-a3b8-2011a0646be4",
+                "name": "idle 25",
                 "type": "individual",
-                "speed": 1,
+                "speed": 0.3,
                 "timeline": {
                   "frames": [
                     {
@@ -3895,14 +4887,142 @@
                           "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
                           "name": "components.Mesh.disabled",
                           "type": "boolean",
-                          "value": true
+                          "value": false
+                        },
+                        {
+                          "id": "2bf785ab-1b91-4e3a-9b55-0f63c1c60fcf",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        },
+                        {
+                          "id": "259d0bd3-5b71-47c1-ae3f-c3bc95edf8bd",
+                          "name": "children.Damage.components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "645c13ed-958c-46f3-9030-4398b3081f3b",
+                          "name": "children.Damage.components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 1
+                        }
+                      ]
+                    },
+                    {
+                      "id": "fae2cbd4-46c4-46d7-9343-186bc44bf3b3",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2bf785ab-1b91-4e3a-9b55-0f63c1c60fcf",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 1
+                        }
+                      ]
+                    },
+                    {
+                      "id": "42526215-c546-41b4-90d2-80f92a95c122",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2bf785ab-1b91-4e3a-9b55-0f63c1c60fcf",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 2
+                        }
+                      ]
+                    },
+                    {
+                      "id": "9685667b-96df-40fa-85b4-da48c534b74c",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2bf785ab-1b91-4e3a-9b55-0f63c1c60fcf",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 3
                         }
                       ]
                     }
                   ],
                   "looped": true
                 },
-                "transitions": []
+                "transitions": [
+                  {
+                    "id": "a682db86-64a1-4fc0-a464-5524c6ac75ac",
+                    "state": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "22c187c1-3017-45f7-8a1b-973f3d2fe0b2",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "6e6a781f-461d-43bc-aa7d-58404e42d6dc",
+                    "state": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "125b6f0c-4f08-4930-b433-095df5ef8327",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "good"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "367d18a1-ae06-41a1-8467-d0f74bf30f5d",
+                    "state": "2ee2a7af-56de-4a10-a0e2-e2b46e224b30",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "125b6f0c-4f08-4930-b433-095df5ef8327",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "medium"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }
@@ -3922,7 +5042,49 @@
           }
         }
       ],
-      "children": []
+      "children": [
+        {
+          "id": "b57dd33e-ab9c-495d-b8b6-10d1166304d8",
+          "name": "Damage",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Mesh",
+              "config": {
+                "src": "images/block-damage.png",
+                "width": 36,
+                "height": 36,
+                "slice": 2,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "units-2",
+                "blending": "normal",
+                "color": "#fff",
+                "opacity": 0.75,
+                "disabled": true,
+                "material": {
+                  "name": "DamageFlash",
+                  "options": {
+                    "tiled": false
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
     },
     {
       "id": "2b3d5fcb-0489-4fdc-b8d3-c388f4c7b653",
@@ -3976,7 +5138,7 @@
         {
           "name": "Health",
           "config": {
-            "points": 4
+            "points": 8
           }
         },
         {
@@ -3986,7 +5148,7 @@
             "states": [
               {
                 "id": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
-                "name": "idle",
+                "name": "idle 100",
                 "type": "individual",
                 "speed": 0.5,
                 "timeline": {
@@ -4003,6 +5165,192 @@
                         {
                           "id": "2e6a0d2a-4eb5-4884-9408-b148b6ad1e58",
                           "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        },
+                        {
+                          "id": "e24ed29a-7af9-45de-bd6b-54a0694f604c",
+                          "name": "children.Damage.components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    },
+                    {
+                      "id": "4d02ca67-41ea-4a3a-9b06-6c542b466c2a",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2e6a0d2a-4eb5-4884-9408-b148b6ad1e58",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 1
+                        }
+                      ]
+                    },
+                    {
+                      "id": "f6e5c5e7-0fe9-4910-ac22-2684664776f5",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2e6a0d2a-4eb5-4884-9408-b148b6ad1e58",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 2
+                        }
+                      ]
+                    },
+                    {
+                      "id": "6b41a243-e38a-4b6c-9db0-a9341b592f84",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2e6a0d2a-4eb5-4884-9408-b148b6ad1e58",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 3
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "a682db86-64a1-4fc0-a464-5524c6ac75ac",
+                    "state": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "22c187c1-3017-45f7-8a1b-973f3d2fe0b2",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "3638a1a1-af6d-46f4-b95f-46d35d66b6a4",
+                    "state": "71cb0ca0-d01c-425e-b64c-d45e92898cba",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "d56540e2-15ec-4345-bcc5-113cc3cf1850",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "medium"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "24f26c6a-e779-4477-86d2-d17519a59e5b",
+                    "state": "f00df484-f5bc-4ce0-bf6c-9e2b37e83a6b",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "d56540e2-15ec-4345-bcc5-113cc3cf1850",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "bad"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                "name": "Death",
+                "type": "individual",
+                "speed": 1,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        },
+                        {
+                          "id": "14d7c509-01d5-4c4c-af40-724dac96af3e",
+                          "name": "children.Damage.components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": []
+              },
+              {
+                "id": "71cb0ca0-d01c-425e-b64c-d45e92898cba",
+                "name": "idle 50",
+                "type": "individual",
+                "speed": 0.5,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "9563b8e3-dfe4-47c8-ab0e-a1fd387b546b",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2e6a0d2a-4eb5-4884-9408-b148b6ad1e58",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        },
+                        {
+                          "id": "e24ed29a-7af9-45de-bd6b-54a0694f604c",
+                          "name": "children.Damage.components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "98b7ce71-0c4c-45c0-ab46-a10ade20c7c4",
+                          "name": "children.Damage.components.Mesh.currentFrame",
                           "type": "number",
                           "value": 0
                         }
@@ -4076,14 +5424,58 @@
                         }
                       }
                     ]
+                  },
+                  {
+                    "id": "ed609d5c-fa9d-4b57-815f-a27df6a34e01",
+                    "state": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "d56540e2-15ec-4345-bcc5-113cc3cf1850",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "good"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "47dd196e-d13d-4487-a9e3-a0c9af3dbe76",
+                    "state": "f00df484-f5bc-4ce0-bf6c-9e2b37e83a6b",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "d56540e2-15ec-4345-bcc5-113cc3cf1850",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "bad"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
                   }
                 ]
               },
               {
-                "id": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
-                "name": "Death",
+                "id": "f00df484-f5bc-4ce0-bf6c-9e2b37e83a6b",
+                "name": "idle 25",
                 "type": "individual",
-                "speed": 1,
+                "speed": 0.5,
                 "timeline": {
                   "frames": [
                     {
@@ -4093,14 +5485,142 @@
                           "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
                           "name": "components.Mesh.disabled",
                           "type": "boolean",
-                          "value": true
+                          "value": false
+                        },
+                        {
+                          "id": "2e6a0d2a-4eb5-4884-9408-b148b6ad1e58",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        },
+                        {
+                          "id": "e24ed29a-7af9-45de-bd6b-54a0694f604c",
+                          "name": "children.Damage.components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "98b7ce71-0c4c-45c0-ab46-a10ade20c7c4",
+                          "name": "children.Damage.components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 1
+                        }
+                      ]
+                    },
+                    {
+                      "id": "4d02ca67-41ea-4a3a-9b06-6c542b466c2a",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2e6a0d2a-4eb5-4884-9408-b148b6ad1e58",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 1
+                        }
+                      ]
+                    },
+                    {
+                      "id": "f6e5c5e7-0fe9-4910-ac22-2684664776f5",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2e6a0d2a-4eb5-4884-9408-b148b6ad1e58",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 2
+                        }
+                      ]
+                    },
+                    {
+                      "id": "6b41a243-e38a-4b6c-9db0-a9341b592f84",
+                      "fields": [
+                        {
+                          "id": "18332727-ef14-4f1a-8e0a-3751672ba78f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "2e6a0d2a-4eb5-4884-9408-b148b6ad1e58",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 3
                         }
                       ]
                     }
                   ],
                   "looped": true
                 },
-                "transitions": []
+                "transitions": [
+                  {
+                    "id": "a682db86-64a1-4fc0-a464-5524c6ac75ac",
+                    "state": "7249ad81-1d43-49ec-9101-ba2bbced91c8",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "22c187c1-3017-45f7-8a1b-973f3d2fe0b2",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "ed609d5c-fa9d-4b57-815f-a27df6a34e01",
+                    "state": "71cb0ca0-d01c-425e-b64c-d45e92898cba",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "d56540e2-15ec-4345-bcc5-113cc3cf1850",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "medium"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "6950546e-7de2-4f28-8907-6b874dc199e2",
+                    "state": "adb98a76-c538-41fe-a6c8-6cb0921c0491",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "d56540e2-15ec-4345-bcc5-113cc3cf1850",
+                        "type": "comparator",
+                        "props": {
+                          "arg1": {
+                            "type": "componentValue",
+                            "value": "components.Health.state"
+                          },
+                          "arg2": {
+                            "type": "string",
+                            "value": "good"
+                          },
+                          "operation": "equals"
+                        }
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }
@@ -4152,7 +5672,49 @@
           }
         }
       ],
-      "children": []
+      "children": [
+        {
+          "id": "25cc758f-faf3-4176-85b6-fcd2e709b754",
+          "name": "Damage",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Mesh",
+              "config": {
+                "src": "images/block-damage.png",
+                "width": 36,
+                "height": 36,
+                "slice": 2,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "flipX": false,
+                "flipY": false,
+                "sortingLayer": "units-2",
+                "blending": "normal",
+                "color": "#fff",
+                "opacity": 0.75,
+                "disabled": true,
+                "material": {
+                  "name": "DamageFlash",
+                  "options": {
+                    "tiled": false
+                  }
+                }
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
     },
     {
       "id": "f39d6ef7-3134-461e-8236-3077773cb672",
@@ -4223,7 +5785,7 @@
             "sortOffsetY": 0,
             "flipX": false,
             "flipY": false,
-            "sortingLayer": "foreground",
+            "sortingLayer": "foreground-1",
             "blending": "normal",
             "color": "rgb(255,255,255)",
             "opacity": 1,
@@ -4487,7 +6049,7 @@
         {
           "name": "Health",
           "config": {
-            "points": 2
+            "points": 6
           }
         },
         {
@@ -4838,7 +6400,7 @@
                 "sortOffsetY": 0,
                 "flipX": false,
                 "flipY": false,
-                "sortingLayer": "foreground",
+                "sortingLayer": "foreground-1",
                 "fit": "stretch",
                 "blending": "normal",
                 "color": "#fff",
@@ -5397,6 +6959,292 @@
         }
       ],
       "children": []
+    },
+    {
+      "id": "3b452866-cc1e-4cdd-a67a-d1c121d83071",
+      "name": "Surface Background",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "images/surface-background.png",
+            "width": 960,
+            "height": 48,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "background-2",
+            "fit": "repeat",
+            "blending": "normal",
+            "color": "#fff",
+            "opacity": 1,
+            "disabled": false,
+            "textureOffsetX": 0,
+            "textureOffsetY": 0
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "0881f5b5-ad08-4f4e-bc76-7df5e6965215",
+      "name": "Background Surface Cover",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "Shape",
+          "config": {
+            "type": "rectangle",
+            "strokeColor": "#fff",
+            "strokeAlignment": 0.5,
+            "pixelLine": false,
+            "fill": "rgb(234,79,54)",
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "sortingLayer": "background",
+            "blending": "normal",
+            "opacity": 1,
+            "disabled": false,
+            "sizeX": 480,
+            "sizeY": 480,
+            "strokeWidth": 0
+          }
+        }
+      ],
+      "children": []
+    },
+    {
+      "id": "a1bfbc8d-5f10-40f8-a9d5-1af8eb39e9e9",
+      "name": "Repair Obstacle",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "RigidBody",
+          "config": {
+            "type": "static",
+            "restitution": 0,
+            "friction": 0.6,
+            "oneWay": false,
+            "disabled": false
+          }
+        },
+        {
+          "name": "Collider",
+          "config": {
+            "type": "box",
+            "offsetX": 0,
+            "offsetY": 0,
+            "layer": "default",
+            "debugColor": "#4DFFB8",
+            "disabled": false,
+            "sizeX": 24,
+            "sizeY": 24
+          }
+        },
+        {
+          "name": "CollisionDamage",
+          "config": {
+            "value": 0
+          }
+        },
+        {
+          "name": "Mesh",
+          "config": {
+            "src": "images/repair-obstacle.png",
+            "width": 24,
+            "height": 24,
+            "slice": 4,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": false,
+            "sortingLayer": "units",
+            "blending": "normal",
+            "color": "rgb(255,255,255)",
+            "opacity": 1,
+            "disabled": false,
+            "material": {
+              "name": "DamageFlash",
+              "options": {}
+            }
+          }
+        },
+        {
+          "name": "Health",
+          "config": {
+            "points": 1
+          }
+        },
+        {
+          "name": "Animatable",
+          "config": {
+            "initialState": "3529b938-d212-4604-a15d-a3379ff9eac3",
+            "states": [
+              {
+                "id": "3529b938-d212-4604-a15d-a3379ff9eac3",
+                "name": "Idle",
+                "type": "individual",
+                "speed": 0.4,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "0401b807-d885-4bdc-91f3-62ca514114c8",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "9311103f-e6db-4752-b31f-aa75227ae2c9",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 0
+                        }
+                      ]
+                    },
+                    {
+                      "id": "a5f4b5ca-6ea3-44ff-b59d-7e8bb90acbe7",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "9311103f-e6db-4752-b31f-aa75227ae2c9",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 1
+                        }
+                      ]
+                    },
+                    {
+                      "id": "b4d5bbec-f9f5-4a0a-a830-9e9dcb68bde9",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "9311103f-e6db-4752-b31f-aa75227ae2c9",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 2
+                        }
+                      ]
+                    },
+                    {
+                      "id": "1af40e5b-0e5c-4a4c-8406-d7045edbe650",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": false
+                        },
+                        {
+                          "id": "9311103f-e6db-4752-b31f-aa75227ae2c9",
+                          "name": "components.Mesh.currentFrame",
+                          "type": "number",
+                          "value": 3
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": true
+                },
+                "transitions": [
+                  {
+                    "id": "070dff8f-eba7-47de-92a8-19237d57c08b",
+                    "state": "431f6360-feca-428d-92a8-5e73c3a221f1",
+                    "time": 0,
+                    "conditions": [
+                      {
+                        "id": "759420c8-343f-4884-adc3-fbf9f51a2f40",
+                        "type": "event",
+                        "props": {
+                          "eventType": "Kill"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "431f6360-feca-428d-92a8-5e73c3a221f1",
+                "name": "Death",
+                "type": "individual",
+                "speed": 1.25,
+                "timeline": {
+                  "frames": [
+                    {
+                      "id": "5bd9799e-4e57-49e7-8eed-d8cee2ae1bd9",
+                      "fields": [
+                        {
+                          "id": "0d9109d3-4a40-4464-b2db-8a90303ef61f",
+                          "name": "components.Mesh.disabled",
+                          "type": "boolean",
+                          "value": true
+                        }
+                      ]
+                    }
+                  ],
+                  "looped": false
+                },
+                "transitions": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "Behaviors",
+          "config": {
+            "list": [
+              {
+                "id": "64bcc8e6-3805-41ec-a414-dddc30d9a2f8",
+                "name": "RepairObstacle",
+                "options": {}
+              }
+            ]
+          }
+        }
+      ],
+      "children": []
     }
   ],
   "globalOptions": [
@@ -5434,8 +7282,20 @@
             "name": "units"
           },
           {
+            "id": "f4e853bb-d7a5-466b-b956-ce611cee9f2c",
+            "name": "units-2"
+          },
+          {
+            "id": "354ce5b3-b8ab-4fab-acc0-4a97e8e65615",
+            "name": "units-3"
+          },
+          {
+            "id": "6ca9b739-2a19-4321-bc7f-0638209f2b13",
+            "name": "foreground-1"
+          },
+          {
             "id": "cd8c8d30-fe0c-4e48-92b0-926e58600e49",
-            "name": "foreground"
+            "name": "foreground-2"
           },
           {
             "id": "bb65312e-5873-4b63-99d6-eda457e94b06",
