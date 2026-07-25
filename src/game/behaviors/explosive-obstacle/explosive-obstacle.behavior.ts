@@ -1,12 +1,10 @@
 import type { Actor, BehaviorOptions, Scene, Time, World } from 'dacha';
 import { Behavior, PhysicsAPI, Transform } from 'dacha';
-import { CollisionEnter } from 'dacha/events';
-import type { CollisionEnterEvent } from 'dacha/events';
 import { DefineBehavior, DefineField } from 'dacha-workbench/decorators';
 
 import * as EventType from '../../events';
+import type { DamageEvent } from '../../events';
 import Health from '../../components/health/health.component';
-import PlatformBlock from '../../components/platform-block/platform-block.component';
 
 const DEFAULT_FUSE_TIME = 2;
 const DEFAULT_RADIUS = 80;
@@ -58,21 +56,21 @@ export default class ExplosiveObstacle extends Behavior {
     this.exploded = false;
     this.timer = 0;
 
-    this.actor.addEventListener(CollisionEnter, this.handleCollisionEnter);
+    this.actor.addEventListener(EventType.Damage, this.handleDamage);
     this.actor.addEventListener(EventType.Kill, this.handleKill);
   }
 
   destroy(): void {
-    this.actor.removeEventListener(CollisionEnter, this.handleCollisionEnter);
+    this.actor.removeEventListener(EventType.Damage, this.handleDamage);
     this.actor.removeEventListener(EventType.Kill, this.handleKill);
   }
 
-  private handleCollisionEnter = (event: CollisionEnterEvent): void => {
+  private handleDamage = (event: DamageEvent): void => {
     if (this.triggered) {
       return;
     }
 
-    if (!event.actor.getComponent(PlatformBlock)) {
+    if (event.value <= 0) {
       return;
     }
 
