@@ -5,6 +5,7 @@ import { DefineBehavior, DefineField } from 'dacha-workbench/decorators';
 import * as EventType from '../../events';
 import type { DamageEvent } from '../../events';
 import Health from '../../components/health/health.component';
+import { EXPLOSIVE_OBSTACLE_TEMPLATE_ID } from '../../../consts/templates';
 
 const DEFAULT_FUSE_TIME = 2;
 const DEFAULT_RADIUS = 80;
@@ -66,6 +67,13 @@ export default class ExplosiveObstacle extends Behavior {
   }
 
   private handleDamage = (event: DamageEvent): void => {
+    if (event.actor?.templateId === EXPLOSIVE_OBSTACLE_TEMPLATE_ID) {
+      this.triggered = false;
+      this.detonate();
+      this.actor.dispatchEvent(EventType.Kill);
+      return;
+    }
+
     if (this.triggered) {
       return;
     }
@@ -110,7 +118,10 @@ export default class ExplosiveObstacle extends Behavior {
           return;
         }
 
-        hit.actor.dispatchEvent(EventType.Damage, { value: this.damage });
+        hit.actor.dispatchEvent(EventType.Damage, {
+          value: this.damage,
+          actor: this.actor,
+        });
       },
     );
 

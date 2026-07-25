@@ -1,5 +1,12 @@
 import type { Actor, Scene, World, Time, BehaviorOptions } from 'dacha';
-import { Behavior, Camera, Transform, InterpolatorAPI, MathOps, RendererAPI } from 'dacha';
+import {
+  Behavior,
+  Camera,
+  Transform,
+  InterpolatorAPI,
+  MathOps,
+  RendererAPI,
+} from 'dacha';
 import { DefineBehavior, DefineField } from 'dacha-workbench/decorators';
 
 import { PLAYER_ACTOR_NAME } from '../../../consts/actors';
@@ -8,7 +15,7 @@ import * as EventType from '../../events';
 import type { TimerTickEvent } from '../../events';
 import { GameStateAPI } from '../../systems/game-state/game-state.api';
 
-const VIEWPORT_SIZE = 360;
+const VIEWPORT_SIZE = 384;
 const DEFAULT_SHAKE_STRENGTH = 8;
 const DEFAULT_MIN_SHAKE_STRENGTH = 2;
 const DEFAULT_MAX_SHAKE_STRENGTH = 3;
@@ -125,8 +132,10 @@ export default class CameraBehavior extends Behavior {
       return;
     }
 
-    dustClouds.options.cameraOffsetX = x * camera.zoom * window.devicePixelRatio;
-    dustClouds.options.cameraOffsetY = y * camera.zoom * window.devicePixelRatio;
+    dustClouds.options.cameraOffsetX =
+      x * camera.zoom * window.devicePixelRatio;
+    dustClouds.options.cameraOffsetY =
+      y * camera.zoom * window.devicePixelRatio;
   }
 
   private updateZoom(): void {
