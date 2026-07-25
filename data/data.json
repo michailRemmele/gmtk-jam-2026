@@ -3002,6 +3002,3692 @@
           ]
         }
       ]
+    },
+    {
+      "id": "6562c93a-9d1d-4478-afec-53678a8cc530",
+      "name": "Level 2",
+      "actors": [
+        {
+          "id": "fde0e2df-a4d1-4bda-b48c-50e0155dbf97",
+          "name": "Player",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -492,
+                "offsetY": 372,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "RigidBody",
+              "config": {
+                "type": "dynamic",
+                "disabled": false,
+                "restitution": 0,
+                "friction": 0.6,
+                "oneWay": false,
+                "mass": 1,
+                "gravityScale": 0,
+                "linearDamping": 0,
+                "angularDamping": 0,
+                "lockRotation": false
+              }
+            },
+            {
+              "name": "Collider",
+              "config": {
+                "type": "box",
+                "layer": "1ab9b58e-e535-4bcc-b393-85c6b32ef694",
+                "debugColor": "rgb(0,8,255)",
+                "offsetX": 0,
+                "offsetY": 0,
+                "disabled": false,
+                "sizeX": 72,
+                "sizeY": 24
+              }
+            },
+            {
+              "name": "KeyboardControl",
+              "config": {
+                "inputEventBindings": [
+                  {
+                    "id": "0a8a3a91-5f51-43fa-b074-38d6fe4c6f64",
+                    "key": "KeyA",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "RotateInput",
+                    "attrs": [
+                      {
+                        "id": "be9e797d-c9f7-4864-bc92-e9018f0b2e64",
+                        "name": "value",
+                        "type": "number",
+                        "value": -1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "eade1fe5-b361-40d6-bc5d-37730afbf0b3",
+                    "key": "KeyD",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "RotateInput",
+                    "attrs": [
+                      {
+                        "id": "6bfc4283-5f89-474a-877b-8aaa756cd6e4",
+                        "name": "value",
+                        "type": "number",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "d8ca42e5-1501-463e-ad2d-e136c231718c",
+                    "key": "KeyW",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "ThrustInput",
+                    "attrs": [
+                      {
+                        "id": "9ed61e4e-f6d4-4aa0-8384-8a26e9ca401b",
+                        "name": "value",
+                        "type": "number",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "b18d85b5-a534-4e49-9cab-abb2330cadcc",
+                    "key": "KeyS",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "ThrustInput",
+                    "attrs": [
+                      {
+                        "id": "0505696c-314a-4237-a7f0-e22faf85ca33",
+                        "name": "value",
+                        "type": "number",
+                        "value": -1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "68f7e4f1-0fe8-4206-b243-dbf5e349fcc6",
+                    "key": "Space",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "ThrustInput",
+                    "attrs": [
+                      {
+                        "id": "bac74922-3b3e-4668-88cb-8bb0c1b4209f",
+                        "name": "value",
+                        "type": "number",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "13392f2f-76b2-4f44-9a9b-7ad619f16ab9",
+                    "key": "ArrowUp",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "ThrustInput",
+                    "attrs": [
+                      {
+                        "id": "19750274-a913-41ef-8f28-b0f20e6c9166",
+                        "name": "value",
+                        "type": "number",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "7751b0de-3795-4622-b883-b97cdcf6a651",
+                    "key": "ArrowDown",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "ThrustInput",
+                    "attrs": [
+                      {
+                        "id": "c2989ec3-d52f-4be4-b24b-617557e9d34e",
+                        "name": "value",
+                        "type": "number",
+                        "value": -1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "eeae7f55-0420-42ef-bcb8-ead5de480e23",
+                    "key": "ArrowLeft",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "RotateInput",
+                    "attrs": [
+                      {
+                        "id": "7c7d474b-f728-4e22-a85b-4e62c4d4c4cb",
+                        "name": "value",
+                        "type": "number",
+                        "value": -1
+                      }
+                    ]
+                  },
+                  {
+                    "id": "ed5bb823-55b4-44d1-bfa9-393bdcf4109d",
+                    "key": "ArrowRight",
+                    "pressed": true,
+                    "keepEmit": true,
+                    "eventType": "RotateInput",
+                    "attrs": [
+                      {
+                        "id": "5df6d4c2-8862-4d0a-8720-a61d1be527e9",
+                        "name": "value",
+                        "type": "number",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Team",
+              "config": {
+                "index": 0
+              }
+            },
+            {
+              "name": "Behaviors",
+              "config": {
+                "list": [
+                  {
+                    "id": "e7e3f0ee-60d9-41da-bf5c-b6f9d36d5a58",
+                    "name": "PlatformControl",
+                    "options": {
+                      "turnTorque": 40000,
+                      "maxLinearSpeed": 200,
+                      "maxAngularSpeed": 3,
+                      "gravityScale": 1,
+                      "levelingStiffness": 60,
+                      "levelingDamping": 30,
+                      "maxImpactAngularSpeed": 1,
+                      "levelingExponent": 3,
+                      "descentThrustRatio": 0.33,
+                      "turnThrustRatio": 0.1
+                    }
+                  },
+                  {
+                    "id": "76298a4c-893d-41e0-8e78-c9d9a94ddb93",
+                    "name": "PlatformBody",
+                    "options": {
+                      "gravityScale": 1,
+                      "restitution": 0,
+                      "friction": 0.4,
+                      "velocityIterations": 3,
+                      "positionSlop": 0.5,
+                      "positionBeta": 0.8,
+                      "impactThreshold": 100
+                    }
+                  },
+                  {
+                    "id": "cf9a37dd-c9c2-4f32-ad16-96a707f35466",
+                    "name": "PlatformBuild",
+                    "options": {
+                      "minThrustToWeightRatio": 1.2
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Interpolation",
+              "config": {
+                "mode": "interpolate",
+                "snapThreshold": 0,
+                "disabled": false
+              }
+            },
+            {
+              "name": "Platform",
+              "config": {
+                "baseMass": 0.4,
+                "mainThrust": 2400
+              }
+            },
+            {
+              "name": "Shape",
+              "config": {
+                "type": "rectangle",
+                "strokeColor": "#fff",
+                "strokeAlignment": 0.5,
+                "pixelLine": false,
+                "fill": "#fff",
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "sortingLayer": "default",
+                "blending": "normal",
+                "opacity": 1,
+                "disabled": false,
+                "sizeX": 24,
+                "sizeY": 24,
+                "strokeWidth": 0
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "11ae54bd-b4d7-40c7-87ba-4f11f95522ac",
+              "templateId": "add3b188-188f-4e79-bdb5-f2ae9f886f4c",
+              "name": "Storage Block",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": -24,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "id": "874da000-cb54-4297-8acf-9f2d2c2658af",
+                  "templateId": "b57dd33e-ab9c-495d-b8b6-10d1166304d8",
+                  "name": "Damage",
+                  "components": [],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "c004dd84-cb04-4aeb-b3bd-e2980806c8f4",
+              "name": "Base",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": 8,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "Mesh",
+                  "config": {
+                    "src": "images/platform.png",
+                    "width": 98,
+                    "height": 48,
+                    "slice": 8,
+                    "sortOffsetX": 0,
+                    "sortOffsetY": 0,
+                    "flipX": false,
+                    "flipY": false,
+                    "sortingLayer": "units",
+                    "blending": "normal",
+                    "color": "#fff",
+                    "opacity": 1,
+                    "disabled": false
+                  }
+                },
+                {
+                  "name": "Animatable",
+                  "config": {
+                    "initialState": "c35e9828-6a25-424a-a980-4a111df97f61",
+                    "states": [
+                      {
+                        "id": "c35e9828-6a25-424a-a980-4a111df97f61",
+                        "name": "Idle",
+                        "type": "individual",
+                        "speed": 0.3,
+                        "timeline": {
+                          "frames": [
+                            {
+                              "id": "e3e4fe26-3c7b-410a-bd50-df24dc0ed6ac",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 0
+                                }
+                              ]
+                            },
+                            {
+                              "id": "d67284fa-b5e1-4431-be6c-0cfaf07d0c4d",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              ]
+                            },
+                            {
+                              "id": "99eae757-2d55-42bf-907e-b372113bf901",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 2
+                                }
+                              ]
+                            },
+                            {
+                              "id": "96fdaaf5-9821-4edc-b518-90e82901c00f",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 3
+                                }
+                              ]
+                            }
+                          ],
+                          "looped": true
+                        },
+                        "transitions": [
+                          {
+                            "id": "ea590b28-bd2b-44fd-baae-8d4ad68f055c",
+                            "state": "51d9a23b-5d0b-4926-97da-dc6ad7f0a125",
+                            "time": 0,
+                            "conditions": [
+                              {
+                                "id": "41da80e7-ee6e-43d6-b796-c3b32d1143d1",
+                                "type": "comparator",
+                                "props": {
+                                  "arg1": {
+                                    "type": "componentValue",
+                                    "value": "components.Turbine.running"
+                                  },
+                                  "arg2": {
+                                    "type": "boolean",
+                                    "value": true
+                                  },
+                                  "operation": "equals"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "51d9a23b-5d0b-4926-97da-dc6ad7f0a125",
+                        "name": "Running",
+                        "type": "individual",
+                        "speed": 0.75,
+                        "timeline": {
+                          "frames": [
+                            {
+                              "id": "e3e4fe26-3c7b-410a-bd50-df24dc0ed6ac",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 4
+                                }
+                              ]
+                            },
+                            {
+                              "id": "d67284fa-b5e1-4431-be6c-0cfaf07d0c4d",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              ]
+                            },
+                            {
+                              "id": "99eae757-2d55-42bf-907e-b372113bf901",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 6
+                                }
+                              ]
+                            },
+                            {
+                              "id": "96fdaaf5-9821-4edc-b518-90e82901c00f",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 7
+                                }
+                              ]
+                            }
+                          ],
+                          "looped": true
+                        },
+                        "transitions": [
+                          {
+                            "id": "4f33178c-ab22-495c-99af-91f624ed296d",
+                            "state": "c35e9828-6a25-424a-a980-4a111df97f61",
+                            "time": 0,
+                            "conditions": [
+                              {
+                                "id": "41da80e7-ee6e-43d6-b796-c3b32d1143d1",
+                                "type": "comparator",
+                                "props": {
+                                  "arg1": {
+                                    "type": "componentValue",
+                                    "value": "components.Turbine.running"
+                                  },
+                                  "arg2": {
+                                    "type": "boolean",
+                                    "value": false
+                                  },
+                                  "operation": "equals"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "Turbine",
+                  "config": {
+                    "type": "top"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "8d663232-f70d-4019-98c1-25a450d99281",
+              "name": "Left Turbine",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": 8,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "Mesh",
+                  "config": {
+                    "src": "images/platform-left.png",
+                    "width": 98,
+                    "height": 48,
+                    "slice": 8,
+                    "sortOffsetX": 0,
+                    "sortOffsetY": 0,
+                    "flipX": false,
+                    "flipY": false,
+                    "sortingLayer": "units",
+                    "blending": "normal",
+                    "color": "#fff",
+                    "opacity": 1,
+                    "disabled": false
+                  }
+                },
+                {
+                  "name": "Animatable",
+                  "config": {
+                    "initialState": "c35e9828-6a25-424a-a980-4a111df97f61",
+                    "states": [
+                      {
+                        "id": "c35e9828-6a25-424a-a980-4a111df97f61",
+                        "name": "Idle",
+                        "type": "individual",
+                        "speed": 0.3,
+                        "timeline": {
+                          "frames": [
+                            {
+                              "id": "e3e4fe26-3c7b-410a-bd50-df24dc0ed6ac",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 0
+                                }
+                              ]
+                            },
+                            {
+                              "id": "d67284fa-b5e1-4431-be6c-0cfaf07d0c4d",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              ]
+                            },
+                            {
+                              "id": "99eae757-2d55-42bf-907e-b372113bf901",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 2
+                                }
+                              ]
+                            },
+                            {
+                              "id": "96fdaaf5-9821-4edc-b518-90e82901c00f",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 3
+                                }
+                              ]
+                            }
+                          ],
+                          "looped": true
+                        },
+                        "transitions": [
+                          {
+                            "id": "ea590b28-bd2b-44fd-baae-8d4ad68f055c",
+                            "state": "51d9a23b-5d0b-4926-97da-dc6ad7f0a125",
+                            "time": 0,
+                            "conditions": [
+                              {
+                                "id": "41da80e7-ee6e-43d6-b796-c3b32d1143d1",
+                                "type": "comparator",
+                                "props": {
+                                  "arg1": {
+                                    "type": "componentValue",
+                                    "value": "components.Turbine.running"
+                                  },
+                                  "arg2": {
+                                    "type": "boolean",
+                                    "value": true
+                                  },
+                                  "operation": "equals"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "51d9a23b-5d0b-4926-97da-dc6ad7f0a125",
+                        "name": "Running",
+                        "type": "individual",
+                        "speed": 1,
+                        "timeline": {
+                          "frames": [
+                            {
+                              "id": "e3e4fe26-3c7b-410a-bd50-df24dc0ed6ac",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 4
+                                }
+                              ]
+                            },
+                            {
+                              "id": "d67284fa-b5e1-4431-be6c-0cfaf07d0c4d",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              ]
+                            },
+                            {
+                              "id": "99eae757-2d55-42bf-907e-b372113bf901",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 6
+                                }
+                              ]
+                            },
+                            {
+                              "id": "96fdaaf5-9821-4edc-b518-90e82901c00f",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 7
+                                }
+                              ]
+                            }
+                          ],
+                          "looped": true
+                        },
+                        "transitions": [
+                          {
+                            "id": "4f33178c-ab22-495c-99af-91f624ed296d",
+                            "state": "c35e9828-6a25-424a-a980-4a111df97f61",
+                            "time": 0,
+                            "conditions": [
+                              {
+                                "id": "41da80e7-ee6e-43d6-b796-c3b32d1143d1",
+                                "type": "comparator",
+                                "props": {
+                                  "arg1": {
+                                    "type": "componentValue",
+                                    "value": "components.Turbine.running"
+                                  },
+                                  "arg2": {
+                                    "type": "boolean",
+                                    "value": false
+                                  },
+                                  "operation": "equals"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "Turbine",
+                  "config": {
+                    "type": "left"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "49c4aa6c-df56-4e37-b18a-18939d7f5a8d",
+              "name": "Right Turbine",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": 8,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "Mesh",
+                  "config": {
+                    "src": "images/platform-right.png",
+                    "width": 98,
+                    "height": 48,
+                    "slice": 8,
+                    "sortOffsetX": 0,
+                    "sortOffsetY": 0,
+                    "flipX": false,
+                    "flipY": false,
+                    "sortingLayer": "units",
+                    "blending": "normal",
+                    "color": "#fff",
+                    "opacity": 1,
+                    "disabled": false
+                  }
+                },
+                {
+                  "name": "Animatable",
+                  "config": {
+                    "initialState": "c35e9828-6a25-424a-a980-4a111df97f61",
+                    "states": [
+                      {
+                        "id": "c35e9828-6a25-424a-a980-4a111df97f61",
+                        "name": "Idle",
+                        "type": "individual",
+                        "speed": 0.3,
+                        "timeline": {
+                          "frames": [
+                            {
+                              "id": "e3e4fe26-3c7b-410a-bd50-df24dc0ed6ac",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 0
+                                }
+                              ]
+                            },
+                            {
+                              "id": "d67284fa-b5e1-4431-be6c-0cfaf07d0c4d",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              ]
+                            },
+                            {
+                              "id": "99eae757-2d55-42bf-907e-b372113bf901",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 2
+                                }
+                              ]
+                            },
+                            {
+                              "id": "96fdaaf5-9821-4edc-b518-90e82901c00f",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 3
+                                }
+                              ]
+                            }
+                          ],
+                          "looped": true
+                        },
+                        "transitions": [
+                          {
+                            "id": "ea590b28-bd2b-44fd-baae-8d4ad68f055c",
+                            "state": "51d9a23b-5d0b-4926-97da-dc6ad7f0a125",
+                            "time": 0,
+                            "conditions": [
+                              {
+                                "id": "41da80e7-ee6e-43d6-b796-c3b32d1143d1",
+                                "type": "comparator",
+                                "props": {
+                                  "arg1": {
+                                    "type": "componentValue",
+                                    "value": "components.Turbine.running"
+                                  },
+                                  "arg2": {
+                                    "type": "boolean",
+                                    "value": true
+                                  },
+                                  "operation": "equals"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "51d9a23b-5d0b-4926-97da-dc6ad7f0a125",
+                        "name": "Running",
+                        "type": "individual",
+                        "speed": 1,
+                        "timeline": {
+                          "frames": [
+                            {
+                              "id": "e3e4fe26-3c7b-410a-bd50-df24dc0ed6ac",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 4
+                                }
+                              ]
+                            },
+                            {
+                              "id": "d67284fa-b5e1-4431-be6c-0cfaf07d0c4d",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              ]
+                            },
+                            {
+                              "id": "99eae757-2d55-42bf-907e-b372113bf901",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 6
+                                }
+                              ]
+                            },
+                            {
+                              "id": "96fdaaf5-9821-4edc-b518-90e82901c00f",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 7
+                                }
+                              ]
+                            }
+                          ],
+                          "looped": true
+                        },
+                        "transitions": [
+                          {
+                            "id": "4f33178c-ab22-495c-99af-91f624ed296d",
+                            "state": "c35e9828-6a25-424a-a980-4a111df97f61",
+                            "time": 0,
+                            "conditions": [
+                              {
+                                "id": "41da80e7-ee6e-43d6-b796-c3b32d1143d1",
+                                "type": "comparator",
+                                "props": {
+                                  "arg1": {
+                                    "type": "componentValue",
+                                    "value": "components.Turbine.running"
+                                  },
+                                  "arg2": {
+                                    "type": "boolean",
+                                    "value": false
+                                  },
+                                  "operation": "equals"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "Turbine",
+                  "config": {
+                    "type": "right"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "ba283ed0-c989-4032-9c0e-ed7dbccb68c8",
+              "name": "Bottom Turbine",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": 8,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "Mesh",
+                  "config": {
+                    "src": "images/platform-bottom.png",
+                    "width": 98,
+                    "height": 48,
+                    "slice": 8,
+                    "sortOffsetX": 0,
+                    "sortOffsetY": 0,
+                    "flipX": false,
+                    "flipY": false,
+                    "sortingLayer": "units",
+                    "blending": "normal",
+                    "color": "#fff",
+                    "opacity": 1,
+                    "disabled": false
+                  }
+                },
+                {
+                  "name": "Animatable",
+                  "config": {
+                    "initialState": "c35e9828-6a25-424a-a980-4a111df97f61",
+                    "states": [
+                      {
+                        "id": "c35e9828-6a25-424a-a980-4a111df97f61",
+                        "name": "Idle",
+                        "type": "individual",
+                        "speed": 0.3,
+                        "timeline": {
+                          "frames": [
+                            {
+                              "id": "e3e4fe26-3c7b-410a-bd50-df24dc0ed6ac",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 0
+                                }
+                              ]
+                            },
+                            {
+                              "id": "d67284fa-b5e1-4431-be6c-0cfaf07d0c4d",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              ]
+                            },
+                            {
+                              "id": "99eae757-2d55-42bf-907e-b372113bf901",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 2
+                                }
+                              ]
+                            },
+                            {
+                              "id": "96fdaaf5-9821-4edc-b518-90e82901c00f",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 3
+                                }
+                              ]
+                            }
+                          ],
+                          "looped": true
+                        },
+                        "transitions": [
+                          {
+                            "id": "ea590b28-bd2b-44fd-baae-8d4ad68f055c",
+                            "state": "51d9a23b-5d0b-4926-97da-dc6ad7f0a125",
+                            "time": 0,
+                            "conditions": [
+                              {
+                                "id": "41da80e7-ee6e-43d6-b796-c3b32d1143d1",
+                                "type": "comparator",
+                                "props": {
+                                  "arg1": {
+                                    "type": "componentValue",
+                                    "value": "components.Turbine.running"
+                                  },
+                                  "arg2": {
+                                    "type": "boolean",
+                                    "value": true
+                                  },
+                                  "operation": "equals"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "51d9a23b-5d0b-4926-97da-dc6ad7f0a125",
+                        "name": "Running",
+                        "type": "individual",
+                        "speed": 1,
+                        "timeline": {
+                          "frames": [
+                            {
+                              "id": "e3e4fe26-3c7b-410a-bd50-df24dc0ed6ac",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 4
+                                }
+                              ]
+                            },
+                            {
+                              "id": "d67284fa-b5e1-4431-be6c-0cfaf07d0c4d",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              ]
+                            },
+                            {
+                              "id": "99eae757-2d55-42bf-907e-b372113bf901",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 6
+                                }
+                              ]
+                            },
+                            {
+                              "id": "96fdaaf5-9821-4edc-b518-90e82901c00f",
+                              "fields": [
+                                {
+                                  "id": "c6f1c96f-9676-4922-a266-9acb3ad32c9f",
+                                  "name": "components.Mesh.currentFrame",
+                                  "type": "number",
+                                  "value": 7
+                                }
+                              ]
+                            }
+                          ],
+                          "looped": true
+                        },
+                        "transitions": [
+                          {
+                            "id": "4f33178c-ab22-495c-99af-91f624ed296d",
+                            "state": "c35e9828-6a25-424a-a980-4a111df97f61",
+                            "time": 0,
+                            "conditions": [
+                              {
+                                "id": "41da80e7-ee6e-43d6-b796-c3b32d1143d1",
+                                "type": "comparator",
+                                "props": {
+                                  "arg1": {
+                                    "type": "componentValue",
+                                    "value": "components.Turbine.running"
+                                  },
+                                  "arg2": {
+                                    "type": "boolean",
+                                    "value": false
+                                  },
+                                  "operation": "equals"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "Turbine",
+                  "config": {
+                    "type": "bottom"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "c0b26a3b-e070-47db-86bc-e60d09ca99e9",
+              "templateId": "848b5cc2-08c5-4c5b-ba2e-ee7f0b124f0b",
+              "name": "Build Slot",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -24,
+                    "offsetY": -24,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "BuildSlot",
+                  "config": {
+                    "order": 0
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "a3b34edf-7f92-4e73-acd4-ef25ce0c974f",
+              "templateId": "848b5cc2-08c5-4c5b-ba2e-ee7f0b124f0b",
+              "name": "Build Slot 2",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 24,
+                    "offsetY": -24,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "BuildSlot",
+                  "config": {
+                    "order": 1
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "7dac35d7-de17-4858-a321-32cbe8e6d61c",
+              "templateId": "848b5cc2-08c5-4c5b-ba2e-ee7f0b124f0b",
+              "name": "Build Slot 3",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -24,
+                    "offsetY": -48,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "BuildSlot",
+                  "config": {
+                    "order": 2
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "fec39db8-8797-42a8-8f98-83c7471a6fef",
+              "templateId": "848b5cc2-08c5-4c5b-ba2e-ee7f0b124f0b",
+              "name": "Build Slot 4",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": -48,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "BuildSlot",
+                  "config": {
+                    "order": 3
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "03a6620f-be81-497a-8aba-1d54e0a6335b",
+              "templateId": "848b5cc2-08c5-4c5b-ba2e-ee7f0b124f0b",
+              "name": "Build Slot 5",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 24,
+                    "offsetY": -48,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "BuildSlot",
+                  "config": {
+                    "order": 4
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "e22ce714-bbad-4edb-b699-6528a27e8865",
+              "templateId": "848b5cc2-08c5-4c5b-ba2e-ee7f0b124f0b",
+              "name": "Build Slot 6",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": -24,
+                    "offsetY": -72,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "BuildSlot",
+                  "config": {
+                    "order": 5
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "bcd94f12-e917-4e2a-9368-d899c498913b",
+              "templateId": "848b5cc2-08c5-4c5b-ba2e-ee7f0b124f0b",
+              "name": "Build Slot 7",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 0,
+                    "offsetY": -72,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "BuildSlot",
+                  "config": {
+                    "order": 6
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "716c6f77-1ce6-4437-a524-6fb8ad30953f",
+              "templateId": "848b5cc2-08c5-4c5b-ba2e-ee7f0b124f0b",
+              "name": "Build Slot 8",
+              "components": [
+                {
+                  "name": "Transform",
+                  "config": {
+                    "offsetX": 24,
+                    "offsetY": -72,
+                    "rotation": 0,
+                    "scaleX": 1,
+                    "scaleY": 1
+                  }
+                },
+                {
+                  "name": "BuildSlot",
+                  "config": {
+                    "order": 7
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "9164f02c-289d-4caf-b5b1-21313c0c1732",
+          "name": "Main Camera",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Camera",
+              "config": {
+                "zoom": 1,
+                "current": true
+              }
+            },
+            {
+              "name": "Behaviors",
+              "config": {
+                "list": [
+                  {
+                    "id": "f9e8e789-528c-41d7-b7cd-c11399f1c7a2",
+                    "name": "CameraBehavior",
+                    "options": {
+                      "shakeStrength": 4
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "name": "LevelInfo",
+              "config": {
+                "index": 0,
+                "escapeTime": 60,
+                "buildTime": 30,
+                "budget": 300
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "da9b69f7-da0f-4548-91ea-e372e00cfca8",
+          "templateId": "3375b1c1-1495-4e62-9837-4c57890d6a75",
+          "name": "Finish",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -1752,
+                "offsetY": -1116,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "f8659779-1fe8-49b8-8e38-2b8f493b2bf5",
+          "templateId": "c5322801-9783-49bf-af66-153d2c6a010d",
+          "name": "Wall",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -2772,
+                "offsetY": -503.99999999999955,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "9c2e4f42-b598-4dce-aa5e-a1ccef06cfeb",
+              "templateId": "9b9bf1e3-803b-4f0c-b9df-0619dfe66432",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "6f572a2e-3b69-4c64-90db-255f0644beae",
+          "templateId": "c5322801-9783-49bf-af66-153d2c6a010d",
+          "name": "Wall 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -2315.9999999999995,
+                "offsetY": -503.99999999999955,
+                "rotation": 180,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "a98d6126-2b2c-4911-a183-57c6727ff45c",
+              "templateId": "9b9bf1e3-803b-4f0c-b9df-0619dfe66432",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "556a6c3e-4d73-42a2-b476-7e7e6870035c",
+          "templateId": "c5322801-9783-49bf-af66-153d2c6a010d",
+          "name": "Wall 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -2315.9999999999995,
+                "offsetY": -983.9999999999995,
+                "rotation": 180,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "7dcb7eda-b37d-48ce-a768-6346b21813a6",
+              "templateId": "9b9bf1e3-803b-4f0c-b9df-0619dfe66432",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "4cfbaa8c-2de0-4396-a24e-32d28b25d81a",
+          "templateId": "c5322801-9783-49bf-af66-153d2c6a010d",
+          "name": "Wall 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -2772,
+                "offsetY": -983.9999999999995,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "ee1768cb-16e4-4d05-96a1-2cf9e02158c6",
+              "templateId": "9b9bf1e3-803b-4f0c-b9df-0619dfe66432",
+              "name": "Template",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "0828174c-058a-4ea4-8517-1ebf420752bc",
+          "templateId": "768fe440-3902-43de-8fe3-6219e883fef0",
+          "name": "Static Terrain Corner",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -2784,
+                "offsetY": -240,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "fa4c699b-5de2-4fba-8022-661a6ce1464d",
+          "templateId": "768fe440-3902-43de-8fe3-6219e883fef0",
+          "name": "Static Terrain Corner 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -2303.9999999999995,
+                "offsetY": -240,
+                "rotation": -90,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "47b015f6-e51c-48fe-a8eb-879a5ba140e3",
+          "templateId": "3b452866-cc1e-4cdd-a67a-d1c121d83071",
+          "name": "Surface Background",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -2544,
+                "offsetY": -1247.9999999999995,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "c9fff468-f0e6-4411-b910-30cfeb78f2db",
+          "templateId": "0881f5b5-ad08-4f4e-bc76-7df5e6965215",
+          "name": "Background Surface Cover",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -3024,
+                "offsetY": -1463.9999999999995,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "7e5913aa-4d01-4c5a-a829-ad137a2581d1",
+          "templateId": "0881f5b5-ad08-4f4e-bc76-7df5e6965215",
+          "name": "Background Surface Cover 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -2544,
+                "offsetY": -1463.9999999999995,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "c51b9dbf-5999-41f1-86ef-ca996a05f836",
+          "templateId": "0881f5b5-ad08-4f4e-bc76-7df5e6965215",
+          "name": "Background Surface Cover 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -2063.9999999999995,
+                "offsetY": -1463.9999999999995,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "d110a660-b18d-4c88-83ee-6a50eb810fd6",
+          "templateId": "c96e28b6-0a58-4915-a1ae-9d2c3c799719",
+          "name": "Background Terrain Line",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -2544,
+                "offsetY": -1212,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "6acae460-21a4-4be8-8958-7bd048d7f364",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -2880,
+                "offsetY": -1212,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "5211fb6e-451f-4fa8-aa6c-8992d00d2b69",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "7c7ad679-8921-481d-9175-f6e838bb0b43",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -2208,
+                "offsetY": -1212,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "ef8d95bf-8a3a-46f1-aba2-405fd6bcb3a0",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "7e799960-83b4-4ecc-999d-2fa3f20b0f70",
+          "name": "UI Click",
+          "components": [
+            {
+              "name": "AudioSource",
+              "config": {
+                "src": "audio/ui-click.mp3",
+                "volume": 1,
+                "looped": false,
+                "autoplay": false,
+                "group": "effects"
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "c2088f8a-7bcb-495f-b08d-33688338cabc",
+          "name": "AudioManager",
+          "components": [
+            {
+              "name": "Behaviors",
+              "config": {
+                "list": [
+                  {
+                    "id": "79703dd2-06da-4155-b728-4b58e0c44f61",
+                    "name": "AudioManagerBehavior",
+                    "options": {
+                      "buildMusic": "e849238f-e990-4ca8-8aa4-0379899aee74",
+                      "escapeMusic": "54bd32e2-7c94-4d38-b703-aed277015689",
+                      "impact": "04790faf-f8d3-4a6f-96d4-4d2e6673d0e1",
+                      "turretShot": "7a307e71-9ad8-4b04-986a-16cce0df0a1f",
+                      "blockPlaced": "fc6e01ae-d967-4756-b988-6a26278f5d37",
+                      "blockSold": "28b70d1a-c2de-4ddd-b298-15d166bcdf5c",
+                      "obstacleDestroyed": "a77a33ab-dde6-42f7-a26b-0381cb11fd64",
+                      "repairPickup": "d92641c7-83d7-41ec-8425-d4c75b5c8c79",
+                      "explosion": "bd1513a9-97f8-4253-b02b-705c024dcb2f",
+                      "fuse": "f421ab82-373a-41eb-8d6d-074b713cc4bc",
+                      "creaturesSpawned": "4b3ddec0-7716-4180-b4fb-54f33336f14f",
+                      "blockLoss": "bc38cae9-9e1c-4dca-8ef9-72a70a294cfb",
+                      "turbine": "94836dc6-5e90-4815-8da7-df719ba04c4c",
+                      "win": "eab14f53-5417-422f-9ff1-3f50d1a990ea",
+                      "lose": "83285c30-9068-4c78-90d1-9878782ab9bc",
+                      "countdown": "aefe1d3e-e86f-4378-a198-780307d84e28"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "eeede6ac-829e-4f89-9804-1efa7d017df4",
+              "name": "Build Music",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/build-music.ogg",
+                    "volume": 1,
+                    "looped": true,
+                    "autoplay": false,
+                    "group": "music"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "26f85ab1-43f6-4a7f-922e-a658f99d14af",
+              "name": "Escape Music",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/escape-music.ogg",
+                    "volume": 0.6,
+                    "looped": true,
+                    "autoplay": false,
+                    "group": "music"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "82923c93-85ff-4ed8-afed-ff484caf6738",
+              "name": "Impact",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/impact.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "fa7d2924-d515-4f97-a97e-ddcb000cba3e",
+              "name": "Turret Shot",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/turret-shot.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "4ea86794-e7f3-4f64-950d-87f124f67d5d",
+              "name": "Block Placed",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/block-placed.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "1b64929d-c03e-4422-a71f-4c2873abb216",
+              "name": "Block Sold",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/block-sold.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "14b19962-6a44-496c-9be8-7565b77dadc7",
+              "name": "Obstacle Destroyed",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/obstacle-destroyed.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "23a5d861-c6fa-4a57-b2a6-eab8fd79b4cc",
+              "name": "Repair Pickup",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/repair-pickup.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "0a4cb322-ad46-4c0b-a5e5-a60ac4aae692",
+              "name": "Explosion",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/explosion.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "ac13e1c5-1cda-4c01-b9c6-8d5e97221c9e",
+              "name": "Fuse",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/fuse.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "92fc372d-0ccb-4a4f-aa3f-2b2bac1d80e3",
+              "name": "Creatures Spawned",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/creatures-spawned.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "9070b697-f40c-4d7f-90c3-43d3dafb640f",
+              "name": "Block Loss",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/block-loss.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "a1f4084c-05af-441c-a699-cb1125ce7d86",
+              "name": "Turbine",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/turbine.wav",
+                    "volume": 1,
+                    "looped": true,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "b593a4ff-8531-4a82-b362-4a32fb8d74ec",
+              "name": "Win",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/win.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "c1d28756-bbc2-4b2c-978e-3227f3a8bbac",
+              "name": "Lose",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/lose.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "85c7ac9d-df0e-467a-b99a-26c31c0f0022",
+              "name": "Countdown",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/countdown.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "52a9f1f0-9492-4e9a-a3f8-744e89c72ea6",
+          "templateId": "2db49f59-8f04-4079-9d46-db47b1cd9fd1",
+          "name": "Static Wall R",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -228,
+                "offsetY": 144,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "c856aa7c-29bb-42a7-bc24-7f8a67ffe7bf",
+              "templateId": "9667dea9-ad8f-409c-9e8f-7c26221d1c6d",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "9200f80d-efa3-488b-9a69-eeea677581e8",
+          "templateId": "c5322801-9783-49bf-af66-153d2c6a010d",
+          "name": "Static Wall L",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -732,
+                "offsetY": -336,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "ea981f9d-e7ea-423e-8b21-81868a6974ce",
+              "templateId": "9b9bf1e3-803b-4f0c-b9df-0619dfe66432",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "97e0ab05-188c-4a14-8512-45da7f2b1db5",
+          "templateId": "c5322801-9783-49bf-af66-153d2c6a010d",
+          "name": "Static Wall L 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -732,
+                "offsetY": -816,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "22b1dd9f-f0cc-441e-9d75-b23e77decadf",
+              "templateId": "9b9bf1e3-803b-4f0c-b9df-0619dfe66432",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "7d93a602-9228-4b48-92ca-0d25d8cdc78e",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "Static Ground T",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -600,
+                "offsetY": -1068,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "c563b587-50af-4912-9c6a-480f27d642fe",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "1142d459-817a-4249-aad4-d48651e89e8e",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "Static Ground T 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -360,
+                "offsetY": -1068,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "02ce1f11-6338-4c01-b661-d91acce92dd0",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "e6d0a346-2ed8-45a5-9d02-482e3f6ae8b2",
+          "templateId": "2db49f59-8f04-4079-9d46-db47b1cd9fd1",
+          "name": "Static Wall R 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -228,
+                "offsetY": -336,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "43d2a70f-2936-495a-b38b-23db0283d108",
+              "templateId": "9667dea9-ad8f-409c-9e8f-7c26221d1c6d",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "9d0af222-c557-4880-b702-fcf2102913d5",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground B",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -72,
+                "offsetY": -756,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "a35bd13d-8a52-4bec-be6a-248f9893ec00",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "9af9fcfd-bd8d-4dde-b201-d9f813b26edb",
+          "templateId": "2db49f59-8f04-4079-9d46-db47b1cd9fd1",
+          "name": "Static Wall R 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -228,
+                "offsetY": -528,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "1e6532e7-deaf-437a-9af2-890a0c260f96",
+              "templateId": "9667dea9-ad8f-409c-9e8f-7c26221d1c6d",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bb27b2f8-58d7-46d1-93dd-8f58e45148f8",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "Static Ground T 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -120,
+                "offsetY": -1068,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "6a05c3b7-8653-4df7-ba84-9cde4c9a1f35",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "83205a22-b3a7-4498-8404-515b6ef8b7c3",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "Static Ground T 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 119.99999999999991,
+                "offsetY": -1068,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "9f6fe992-aad0-4385-a121-834dce9a63e3",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "0183e6f3-6552-4ff6-b70a-e1b293c16599",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground B 2",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 168,
+                "offsetY": -756,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "43cfd4c3-dcea-4ea7-8a97-c8a1daef1fc1",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "6871a7d0-ef7e-4c9a-bd8c-5e4fb31a04a3",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground B 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 408.0000000000001,
+                "offsetY": -756.0000000000001,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "a6bfa85b-3d2e-4cda-9cd4-dadb03ac22e0",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "85d3c225-a36c-4346-81d4-cca400332974",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground B 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 480,
+                "offsetY": -756,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "863e9cff-a615-4907-a5f8-63b567a57d1c",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "44db7218-473f-4fd4-a3ac-8ffcd193ae50",
+          "templateId": "2db49f59-8f04-4079-9d46-db47b1cd9fd1",
+          "name": "Static Wall R 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 564,
+                "offsetY": -1008,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "490c7b3c-d23b-42f0-9d4a-b7a83a8e637f",
+              "templateId": "9667dea9-ad8f-409c-9e8f-7c26221d1c6d",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "72548766-0529-4848-a3ef-98ac9a727064",
+          "templateId": "c5322801-9783-49bf-af66-153d2c6a010d",
+          "name": "Static Wall L 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 227.99999999999997,
+                "offsetY": -1344,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "3998db2f-7935-40d3-880c-3dff38764710",
+              "templateId": "9b9bf1e3-803b-4f0c-b9df-0619dfe66432",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "146eda5e-dac8-4f0e-81ad-8984b1307bbe",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground B 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 120,
+                "offsetY": -1572,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "52fdf93f-32c0-4506-bcf3-6d6b1dfe80e5",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "12f26cfc-1399-41fd-89a5-5147eb0e9efd",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground B 6",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -119.99999999999994,
+                "offsetY": -1572,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "7a33f22f-6020-43ad-a9db-3875817194e1",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "2be68af3-2966-4bd6-94fe-48e15fc9d570",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground B 7",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -360,
+                "offsetY": -1572,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "d4196ff3-afdf-4645-ab6e-9d562c58f102",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "0ee19322-9e69-473d-bcbf-392941cef6bc",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground B 8",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -600,
+                "offsetY": -1572,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "5cc32c7c-81a5-46e1-a3a0-b7a94c6061e7",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "390b03ae-4833-4b24-a910-9ea1bcaf6ca9",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "Static Ground T 6",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -408,
+                "offsetY": -1836,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "250f63ba-9306-460c-8ffc-65af6efe86a1",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "3d36f576-6483-488f-9d0b-31e1345c0c18",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "Static Ground T 7",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -168.00000000000006,
+                "offsetY": -1836,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "a24b2c4e-9635-41b1-9eca-d2a134450dc8",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "8819ebdc-1fb3-41a2-96f6-8f526d6de015",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "Static Ground T 8",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 72,
+                "offsetY": -1836,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "da69dd96-5d28-42b2-a2f0-94de8c092778",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "4a534e31-cf09-4300-b163-b3c4074d7313",
+          "templateId": "2db49f59-8f04-4079-9d46-db47b1cd9fd1",
+          "name": "Static Wall R 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 564,
+                "offsetY": -1488,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "b95de920-96f3-4471-b021-fff226a93c02",
+              "templateId": "9667dea9-ad8f-409c-9e8f-7c26221d1c6d",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "a15b8ca0-1247-4dff-b03e-c560e55960e9",
+          "templateId": "2db49f59-8f04-4079-9d46-db47b1cd9fd1",
+          "name": "Static Wall R 6",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 564,
+                "offsetY": -1632,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "93e98aca-8d18-4275-8b1e-91cf4b0ad15c",
+              "templateId": "9667dea9-ad8f-409c-9e8f-7c26221d1c6d",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "5c3ff339-3d52-4fb7-9ee5-5ce6db2bdfa3",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "Static Ground T 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 312,
+                "offsetY": -1836,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "e300795e-c4db-4931-be56-3f72f8de0c23",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "0091aa06-36c4-4f61-bfc6-2f6635db1ae5",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "Static Ground T 9",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 480,
+                "offsetY": -1836,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "3b730745-8cc8-4430-9d3c-2ef25fb78df6",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "0df5e04a-59b4-4ed9-8e92-64253b397363",
+          "templateId": "c5322801-9783-49bf-af66-153d2c6a010d",
+          "name": "Static Wall L 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -732,
+                "offsetY": -1824,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "4278a30e-ce76-4102-962c-7759b0b56918",
+              "templateId": "9b9bf1e3-803b-4f0c-b9df-0619dfe66432",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "ce3af3d2-79e8-48d5-a8df-0adc349ee130",
+          "templateId": "c5322801-9783-49bf-af66-153d2c6a010d",
+          "name": "Static Wall L 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -732,
+                "offsetY": -2256,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "4cfee78a-f406-4d42-9345-b792f0182d25",
+              "templateId": "9b9bf1e3-803b-4f0c-b9df-0619dfe66432",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "606deec0-5e3e-40df-b21f-775fc7cd3702",
+          "templateId": "2db49f59-8f04-4079-9d46-db47b1cd9fd1",
+          "name": "Static Wall R 7",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -516,
+                "offsetY": -2112,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "fe4ce298-6d00-4cff-942d-303fdf325e51",
+              "templateId": "9667dea9-ad8f-409c-9e8f-7c26221d1c6d",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "72d849d1-ec2a-4598-b00b-f55612df6271",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground B 9",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -360,
+                "offsetY": -2340,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "d15beb88-7041-4348-91e7-79ea7475d2ad",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "42113dee-f6a4-4ed9-acda-137204c4d174",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground B 10",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -120,
+                "offsetY": -2340,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "caa60954-bc37-40a6-a245-0c9b9dc1daa3",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bace8556-ddaf-4386-affb-e61d8244ae65",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground B 11",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 119.99999999999994,
+                "offsetY": -2340,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "0ac041b0-a087-4938-92a3-65f95f952341",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "1940121b-8da7-4e53-af16-30747d3f1dbd",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground B 12",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 360,
+                "offsetY": -2340,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "fbfec259-a671-4a83-884e-31b337417bc8",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "11e0689a-4cb3-400e-8c06-e2ed12402e43",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground B 13",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 600,
+                "offsetY": -2340,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "99dcacd5-625b-4298-84ef-c0e38c725900",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "de817cee-6653-4510-85a3-bb6d51ac0ddb",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground B 17",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 840,
+                "offsetY": -2340,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "4c21f58b-8337-4494-9ee9-333d7c1abacc",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "434b90ff-6ab2-4509-a069-7cb0d2d4c66c",
+          "templateId": "c5322801-9783-49bf-af66-153d2c6a010d",
+          "name": "Static Wall L 6",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -732,
+                "offsetY": -2424,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "a3a99d51-8e0d-4726-b666-fedd8306f8ff",
+              "templateId": "9b9bf1e3-803b-4f0c-b9df-0619dfe66432",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "6a940840-841d-4979-a100-1ec0a31ddf5c",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "Static Ground T 10",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -408.00000000000006,
+                "offsetY": -2628,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "86ad41d3-004f-4921-a203-89b9b1aca695",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "44bcb103-0784-4e8c-afd1-057bbfa2f0d6",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "StaticGroundT 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -648,
+                "offsetY": -2628,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "8b68e642-5a2f-4fb3-a31c-b199b429b700",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "750d3b6f-c884-49cd-ab37-1bf08049b0f7",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -600,
+                "offsetY": 395.9999999999999,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "35c3d4a6-f679-4725-9923-d667cce390e3",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "120beab6-4329-4a91-a2d6-bc8b9eaed7f4",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "StaticGround 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -360,
+                "offsetY": 395.9999999999999,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "815183dd-1f4d-4939-900f-25e721cf6b4f",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "eb638efb-bdd4-4be9-9fb1-2d962f40d8a0",
+          "templateId": "c5322801-9783-49bf-af66-153d2c6a010d",
+          "name": "Static Wall",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -732,
+                "offsetY": 144,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "3556d544-a8dc-4827-8430-a1d058f7848a",
+              "templateId": "9b9bf1e3-803b-4f0c-b9df-0619dfe66432",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "2ac1e954-795b-4b56-a2d4-e45664fc4618",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "Static Ground T 11",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1032,
+                "offsetY": -3636,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "f128e10c-edcc-4379-95b4-aeb72a77d0af",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "e1762f81-3922-4e07-b8ab-2b8b696ef3eb",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "StaticGroundT 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1272,
+                "offsetY": -3636,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "924fac24-f2fd-49da-8a86-b2dbad957bf9",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "17cc35eb-693a-4ebf-841a-f437b9b46e44",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "StaticGroundT 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1512,
+                "offsetY": -3636,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "8b2cb9ec-ff56-4612-8bed-8c5cc12fc977",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "23d0908e-05e8-4e49-a75c-21e6da864957",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "StaticGroundT 6",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1752,
+                "offsetY": -3636,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "c1d0fea3-1d96-4cbe-8f81-b063c8f2ba5d",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "7d8823db-15fd-4784-a58e-75af41402032",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "StaticGroundT 7",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1920,
+                "offsetY": -3636,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "4752a821-3f72-462b-9b05-5dbde2c50d75",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "6a677ad3-96cd-49a2-8c9d-2285e201e6bf",
+          "templateId": "2db49f59-8f04-4079-9d46-db47b1cd9fd1",
+          "name": "Static Wall R 8",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2052,
+                "offsetY": -3432,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "42319fd0-2e31-47d9-ac0a-29617e5491d2",
+              "templateId": "9667dea9-ad8f-409c-9e8f-7c26221d1c6d",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "35bc9d27-b359-4570-ba90-06b32408e2ca",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "Static Ground T 12",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -168,
+                "offsetY": -2628,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "1c128082-1c89-49a6-a098-7a3dd8fe609e",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "e5fcba91-2e38-4a33-945a-3bab1722247f",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "StaticGroundT 8",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 71.99999999999989,
+                "offsetY": -2628,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "6bd3a8cd-ff53-4ff5-9d9f-e564e3c60d38",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "88ca1265-0590-4443-b4f0-800b27e4469b",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "StaticGroundT 9",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 312,
+                "offsetY": -2628,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "8a7b2360-3cd5-4c4d-826e-2af492d50b16",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "c2f700f1-da87-4057-a391-707939e8e168",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "StaticGroundT 10",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 551.9999999999999,
+                "offsetY": -2628,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "36b75e13-cf13-499b-b638-9018027fb709",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "c2596a70-2971-42fa-8c3b-7a58a51eb45f",
+          "templateId": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+          "name": "StaticGroundT 14",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 791.9999999999999,
+                "offsetY": -2628,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "3fe9d48a-9b7f-4b74-9b78-549566561dcc",
+              "templateId": "25b7045b-be26-4116-9ec3-f478dc47afde",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "953dd0b6-a3d6-4057-adb7-b29df0c267f2",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground B 18",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1080,
+                "offsetY": -2340,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "cb255389-22d1-4f2a-b352-76228557f2f0",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "b3eb7eaf-3db0-43c7-a466-1b354227eca1",
+          "templateId": "2db49f59-8f04-4079-9d46-db47b1cd9fd1",
+          "name": "Static Wall R 9",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1212,
+                "offsetY": -2592,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "acbb8d66-fbcc-4dd3-a023-66df1cb1391d",
+              "templateId": "9667dea9-ad8f-409c-9e8f-7c26221d1c6d",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "f3f74765-5d92-4e6a-80bd-1f4e03fd2853",
+          "templateId": "2db49f59-8f04-4079-9d46-db47b1cd9fd1",
+          "name": "StaticWallR 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1212,
+                "offsetY": -3072,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "5f87a838-1495-41da-b3b7-8840cd4656f2",
+              "templateId": "9667dea9-ad8f-409c-9e8f-7c26221d1c6d",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "6ce26f3f-6d2c-4b7a-8adc-0b4e6603d04c",
+          "templateId": "2db49f59-8f04-4079-9d46-db47b1cd9fd1",
+          "name": "StaticWallR 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2052,
+                "offsetY": -3312,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "6cdf6e33-da78-441f-8ab8-e2b3c452f1cf",
+              "templateId": "9667dea9-ad8f-409c-9e8f-7c26221d1c6d",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "e4cbb10c-a727-42f1-a8f0-35855a93f45f",
+          "templateId": "2db49f59-8f04-4079-9d46-db47b1cd9fd1",
+          "name": "StaticWallR 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2052,
+                "offsetY": -2832,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "c3cecbde-303d-4a08-8990-6fa8335f18e3",
+              "templateId": "9667dea9-ad8f-409c-9e8f-7c26221d1c6d",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "5d96d461-e7b5-4050-a6c5-9667da9e9f76",
+          "templateId": "c5322801-9783-49bf-af66-153d2c6a010d",
+          "name": "Static Wall L 7",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 900,
+                "offsetY": -2904,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "d98df932-0169-4906-bf3d-5d5511fccc64",
+              "templateId": "9b9bf1e3-803b-4f0c-b9df-0619dfe66432",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "a87b4891-c386-44d2-8e0f-78df29f604b7",
+          "templateId": "c5322801-9783-49bf-af66-153d2c6a010d",
+          "name": "StaticWallL 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 899.9999999999999,
+                "offsetY": -3384,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "e6fc14f0-1b10-49c2-b956-d99a0622825a",
+              "templateId": "9b9bf1e3-803b-4f0c-b9df-0619dfe66432",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "5be8f017-90c6-4a93-8eec-6148ab5c5924",
+          "templateId": "c5322801-9783-49bf-af66-153d2c6a010d",
+          "name": "StaticWallL 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1716,
+                "offsetY": -3072,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "46475b3f-f4bc-4ed6-b77d-77d192862654",
+              "templateId": "9b9bf1e3-803b-4f0c-b9df-0619dfe66432",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "5994dbad-9d94-4996-af3d-3212e47c7d95",
+          "templateId": "c5322801-9783-49bf-af66-153d2c6a010d",
+          "name": "StaticWallL 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1716,
+                "offsetY": -2592,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "4f034ea9-2a6b-44ac-83a0-def22ba86213",
+              "templateId": "9b9bf1e3-803b-4f0c-b9df-0619dfe66432",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "108763de-9717-4280-8a50-8e235c5194dd",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "StaticGroundB 3",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1320,
+                "offsetY": -3300,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "35aeb0fe-e7cf-41c9-a9e3-5875b3783e7d",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "53578036-97ee-4c59-a084-2618e3568137",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "StaticGroundB 4",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1560,
+                "offsetY": -3300,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "9dc87696-3ede-41ae-8d6d-74db6f7978d6",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "10970413-c16e-42cf-a9d7-0907e96e863b",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "StaticGroundB 5",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1848,
+                "offsetY": -2340,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "63cd6c99-4c5e-425e-9886-6b55d0af66b7",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "5f8ba3ef-8ddd-4414-bc71-834f8355490f",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "StaticGroundB 6",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2088,
+                "offsetY": -2340,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "8cad1f7f-388b-4d22-b48b-34ffb6df72f4",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        }
+      ]
     }
   ],
   "systems": [
@@ -3384,7 +7070,7 @@
             "sortingLayer": "decorations",
             "blending": "normal",
             "opacity": 1,
-            "disabled": true,
+            "disabled": false,
             "sortOffsetX": 0,
             "sortOffsetY": 0,
             "sizeX": 480,
@@ -3488,7 +7174,7 @@
     },
     {
       "id": "c5322801-9783-49bf-af66-153d2c6a010d",
-      "name": "Static Wall",
+      "name": "Static Wall L",
       "components": [
         {
           "name": "Transform",
@@ -7200,7 +10886,7 @@
     },
     {
       "id": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
-      "name": "Static Ground",
+      "name": "Static Ground B",
       "components": [
         {
           "name": "Transform",
@@ -7974,6 +11660,218 @@
         }
       ],
       "children": []
+    },
+    {
+      "id": "2db49f59-8f04-4079-9d46-db47b1cd9fd1",
+      "name": "Static Wall R",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "RigidBody",
+          "config": {
+            "type": "static",
+            "restitution": 0,
+            "friction": 0.6,
+            "oneWay": false,
+            "disabled": false
+          }
+        },
+        {
+          "name": "Collider",
+          "config": {
+            "type": "box",
+            "offsetX": 0,
+            "offsetY": 0,
+            "layer": "default",
+            "debugColor": "#4DFFB8",
+            "disabled": false,
+            "sizeX": 24,
+            "sizeY": 480
+          }
+        },
+        {
+          "name": "CollisionDamage",
+          "config": {
+            "value": 2
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "images/terrain-wall.png",
+            "width": 24,
+            "height": 480,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": true,
+            "flipY": false,
+            "sortingLayer": "decorations-3",
+            "fit": "repeat",
+            "blending": "normal",
+            "color": "#fff",
+            "opacity": 1,
+            "disabled": false,
+            "textureOffsetX": 0,
+            "textureOffsetY": 0
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "9667dea9-ad8f-409c-9e8f-7c26221d1c6d",
+          "name": "Back",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 24,
+                "offsetY": 0,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "images/terrain-block-wall.png",
+                "width": 24,
+                "height": 480,
+                "slice": 1,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "flipX": true,
+                "flipY": false,
+                "sortingLayer": "decorations-2",
+                "fit": "repeat",
+                "blending": "normal",
+                "color": "#fff",
+                "opacity": 1,
+                "disabled": false,
+                "textureOffsetX": 0,
+                "textureOffsetY": 0
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "cdd89558-0f10-4a00-a9b6-093b36da3adf",
+      "name": "Static Ground T",
+      "components": [
+        {
+          "name": "Transform",
+          "config": {
+            "offsetX": 0,
+            "offsetY": 0,
+            "rotation": 0,
+            "scaleX": 1,
+            "scaleY": 1
+          }
+        },
+        {
+          "name": "RigidBody",
+          "config": {
+            "type": "static",
+            "restitution": 0,
+            "friction": 0.6,
+            "oneWay": false,
+            "disabled": false
+          }
+        },
+        {
+          "name": "Collider",
+          "config": {
+            "type": "box",
+            "offsetX": 0,
+            "offsetY": 0,
+            "layer": "default",
+            "debugColor": "#4DFFB8",
+            "disabled": false,
+            "sizeX": 240,
+            "sizeY": 24
+          }
+        },
+        {
+          "name": "CollisionDamage",
+          "config": {
+            "value": 2
+          }
+        },
+        {
+          "name": "Sprite",
+          "config": {
+            "src": "images/terrain-ground.png",
+            "width": 240,
+            "height": 24,
+            "slice": 1,
+            "sortOffsetX": 0,
+            "sortOffsetY": 0,
+            "flipX": false,
+            "flipY": true,
+            "sortingLayer": "decorations-3",
+            "fit": "repeat",
+            "blending": "normal",
+            "color": "#fff",
+            "opacity": 1,
+            "disabled": false,
+            "textureOffsetX": 0,
+            "textureOffsetY": 0
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "25b7045b-be26-4116-9ec3-f478dc47afde",
+          "name": "Back",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 0,
+                "offsetY": -24,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            },
+            {
+              "name": "Sprite",
+              "config": {
+                "src": "images/terrain-block.png",
+                "width": 240,
+                "height": 24,
+                "slice": 1,
+                "sortOffsetX": 0,
+                "sortOffsetY": 0,
+                "flipX": false,
+                "flipY": true,
+                "sortingLayer": "decorations-2",
+                "fit": "repeat",
+                "blending": "normal",
+                "color": "#fff",
+                "opacity": 1,
+                "disabled": false,
+                "textureOffsetX": 0,
+                "textureOffsetY": 0
+              }
+            }
+          ],
+          "children": []
+        }
+      ]
     }
   ],
   "globalOptions": [

@@ -15,6 +15,8 @@ body {
   overflow: hidden;
 
   user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 #root, #ui-root {

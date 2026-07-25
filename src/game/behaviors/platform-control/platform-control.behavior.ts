@@ -1,15 +1,13 @@
 import type { Actor, BehaviorOptions, Scene, Time, World } from 'dacha';
-import {
-  Behavior,
-  MathOps,
-  RigidBody,
-  Transform,
-  Vector2,
-} from 'dacha';
+import { Behavior, MathOps, RigidBody, Transform, Vector2 } from 'dacha';
 import { DefineBehavior, DefineField } from 'dacha-workbench/decorators';
 
 import * as EventType from '../../events';
-import type { RotateInputEvent, ThrustInputEvent } from '../../events';
+import type {
+  ControlStickInputEvent,
+  RotateInputEvent,
+  ThrustInputEvent,
+} from '../../events';
 import { GameStateAPI } from '../../systems/game-state/game-state.api';
 import PlatformBlock from '../../components/platform-block/platform-block.component';
 import Platform from '../../components/platform/platform.component';
@@ -93,6 +91,9 @@ export default class PlatformControl extends Behavior {
   private thrustInput: number;
   private rotateInput: number;
 
+  private stickThrust: number;
+  private stickRotate: number;
+
   private turbinesActive: boolean;
 
   private forceBuffer: Vector2;
@@ -121,12 +122,12 @@ export default class PlatformControl extends Behavior {
 
     this.turbinesActive = false;
 
-    this.mainThrust = this.actor.getComponent(Platform)?.mainThrust ?? DEFAULT_MAIN_THRUST;
+    this.mainThrust =
+      this.actor.getComponent(Platform)?.mainThrust ?? DEFAULT_MAIN_THRUST;
     this.descentThrustRatio =
       options.descentThrustRatio ?? DEFAULT_DESCENT_THRUST_RATIO;
     this.turnTorque = options.turnTorque ?? DEFAULT_TURN_TORQUE;
-    this.turnThrustRatio =
-      options.turnThrustRatio ?? DEFAULT_TURN_THRUST_RATIO;
+    this.turnThrustRatio = options.turnThrustRatio ?? DEFAULT_TURN_THRUST_RATIO;
     this.maxLinearSpeed = options.maxLinearSpeed ?? DEFAULT_MAX_LINEAR_SPEED;
     this.maxAngularSpeed = options.maxAngularSpeed ?? DEFAULT_MAX_ANGULAR_SPEED;
     this.levelingStiffness =
@@ -139,6 +140,9 @@ export default class PlatformControl extends Behavior {
 
     this.thrustInput = 0;
     this.rotateInput = 0;
+
+    this.stickThrust = 0;
+    this.stickRotate = 0;
     this.forceBuffer = new Vector2(0, 0);
     this.prevAngularVelocity = 0;
     this.expectedAngularDelta = 0;
@@ -159,6 +163,11 @@ export default class PlatformControl extends Behavior {
       EventType.PlatformPartsChanged,
       this.handlePartsChanged,
     );
+
+    this.scene.addEventListener(
+      EventType.ControlStickInput,
+      this.handleControlStickInput,
+    );
   }
 
   destroy(): void {
@@ -173,6 +182,11 @@ export default class PlatformControl extends Behavior {
     this.actor.removeEventListener(
       EventType.PlatformPartsChanged,
       this.handlePartsChanged,
+    );
+
+    this.scene.removeEventListener(
+      EventType.ControlStickInput,
+      this.handleControlStickInput,
     );
   }
 
@@ -192,37 +206,46 @@ export default class PlatformControl extends Behavior {
     );
   };
 
+  private handleControlStickInput = (event: ControlStickInputEvent): void => {
+    this.stickThrust = MathOps.clamp(-event.y, -1, 1);
+    this.stickRotate = MathOps.clamp(event.x, -1, 1);
+  };
+
   private handlePartsChanged = (): void => {
     this.isDirty = true;
   };
 
   private findTurbine(type: TurbineType): Turbine | undefined {
-    return this.actor.findChild(
-      (child) => child.getComponent(Turbine)?.type === type,
-    )?.getComponent(Turbine);
+    return this.actor
+      .findChild((child) => child.getComponent(Turbine)?.type === type)
+      ?.getComponent(Turbine);
   }
 
-  private updateTurbineStates(frozen: boolean): void {
+  private updateTurbineStates(
+    frozen: boolean,
+    thrust: number,
+    rotate: number,
+  ): void {
     const active = !frozen;
 
     if (this.topTurbine) {
-      this.topTurbine.running = active && this.thrustInput < 0;
+      this.topTurbine.running = active && thrust < 0;
     }
     if (this.bottomTurbine) {
-      this.bottomTurbine.running = active && this.thrustInput > 0;
+      this.bottomTurbine.running = active && thrust > 0;
     }
     if (this.leftTurbine) {
-      this.leftTurbine.running = active && this.rotateInput > 0;
+      this.leftTurbine.running = active && rotate > 0;
     }
     if (this.rightTurbine) {
-      this.rightTurbine.running = active && this.rotateInput < 0;
+      this.rightTurbine.running = active && rotate < 0;
     }
 
     const anyRunning = Boolean(
-      this.topTurbine?.running
-        || this.bottomTurbine?.running
-        || this.leftTurbine?.running
-        || this.rightTurbine?.running,
+      this.topTurbine?.running ||
+        this.bottomTurbine?.running ||
+        this.leftTurbine?.running ||
+        this.rightTurbine?.running,
     );
 
     if (anyRunning !== this.turbinesActive) {
@@ -255,8 +278,12 @@ export default class PlatformControl extends Behavior {
     rigidBody.applyForce(this.forceBuffer);
   }
 
-  private applyThrust(rigidBody: RigidBody, rotation: number): void {
-    if (!this.thrustInput) {
+  private applyThrust(
+    rigidBody: RigidBody,
+    rotation: number,
+    thrust: number,
+  ): void {
+    if (!thrust) {
       return;
     }
 
@@ -264,10 +291,8 @@ export default class PlatformControl extends Behavior {
     const upY = -Math.cos(rotation);
 
     const base =
-      this.thrustInput > 0
-        ? this.mainThrust
-        : this.mainThrust * this.descentThrustRatio;
-    const force = this.thrustInput * base * this.thrustMultiplier;
+      thrust > 0 ? this.mainThrust : this.mainThrust * this.descentThrustRatio;
+    const force = thrust * base * this.thrustMultiplier;
 
     this.applyForce(rigidBody, upX * force, upY * force);
   }
@@ -279,14 +304,18 @@ export default class PlatformControl extends Behavior {
       torque * rigidBody.inverseInertia * this.time.fixedDeltaTime;
   }
 
-  private applyRotation(rigidBody: RigidBody, rotation: number): void {
-    if (!this.rotateInput) {
+  private applyRotation(
+    rigidBody: RigidBody,
+    rotation: number,
+    rotate: number,
+  ): void {
+    if (!rotate) {
       return;
     }
 
     this.applyTorque(
       rigidBody,
-      this.rotateInput * this.turnTorque * this.thrustMultiplier,
+      rotate * this.turnTorque * this.thrustMultiplier,
     );
 
     if (!this.turnThrustRatio) {
@@ -296,10 +325,7 @@ export default class PlatformControl extends Behavior {
     const rightX = Math.cos(rotation);
     const rightY = Math.sin(rotation);
     const force =
-      this.rotateInput *
-      this.mainThrust *
-      this.turnThrustRatio *
-      this.thrustMultiplier;
+      rotate * this.mainThrust * this.turnThrustRatio * this.thrustMultiplier;
 
     this.applyForce(rigidBody, rightX * force, rightY * force);
   }
@@ -366,7 +392,10 @@ export default class PlatformControl extends Behavior {
 
     const { frozen } = this.world.systemApi.get(GameStateAPI);
 
-    this.updateTurbineStates(frozen);
+    const thrust = MathOps.clamp(this.thrustInput + this.stickThrust, -1, 1);
+    const rotate = MathOps.clamp(this.rotateInput + this.stickRotate, -1, 1);
+
+    this.updateTurbineStates(frozen, thrust, rotate);
 
     if (frozen) {
       if (!this.wasFrozen) {
@@ -386,8 +415,8 @@ export default class PlatformControl extends Behavior {
 
     this.expectedAngularDelta = 0;
 
-    this.applyThrust(rigidBody, rotation);
-    this.applyRotation(rigidBody, rotation);
+    this.applyThrust(rigidBody, rotation, thrust);
+    this.applyRotation(rigidBody, rotation, rotate);
     this.applyLeveling(rigidBody, rotation);
 
     this.prevAngularVelocity = rigidBody.angularVelocity;

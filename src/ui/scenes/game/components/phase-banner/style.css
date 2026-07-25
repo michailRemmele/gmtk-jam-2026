@@ -20,3 +20,9 @@
 .phase-banner_escape {
   color: #e83b3b;
 }
+
+@media (max-width: 480px) {
+  .phase-banner {
+    font-size: 32px;
+  }
+}

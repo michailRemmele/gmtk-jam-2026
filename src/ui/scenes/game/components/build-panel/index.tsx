@@ -127,11 +127,15 @@ export const BuildPanel: FC<BuildPanelProps> = ({ className = '' }) => {
                 'build-card',
                 selectedType === entry.type ? 'build-card--selected' : '',
                 disabled ? 'build-card--disabled' : '',
-              ].join(' ').trim()}
+              ]
+                .join(' ')
+                .trim()}
               disabled={disabled}
               onClick={(): void => handleSelect(entry.type)}
             >
-              <span className="build-card__name">{entry.name}</span>
+              <span className="build-card__name">
+                {entry.name?.replace(' Block', '')}
+              </span>
               <div
                 className="build-card__icon"
                 aria-hidden="true"

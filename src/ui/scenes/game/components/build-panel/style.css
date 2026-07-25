@@ -117,3 +117,46 @@
 .build-card__stat {
   font-size: 12px;
 }
+
+@media (max-width: 480px) {
+  .build-panel {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px max(8px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom))
+      max(8px, env(safe-area-inset-left));
+  }
+
+  .build-panel__side {
+    min-width: unset;
+  }
+
+  .build-panel__cards {
+    order: 3;
+    flex: 1 1 100%;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .build-panel__stat {
+    font-size: 12px;
+  }
+
+  .build-card {
+    min-width: 76px;
+    padding: 6px 10px;
+  }
+
+  .build-card__name {
+    font-size: 11px;
+  }
+
+  .build-card__icon {
+    width: 34px;
+    height: 34px;
+    padding: 4px;
+  }
+
+  .build-card__stat {
+    font-size: 10px;
+  }
+}

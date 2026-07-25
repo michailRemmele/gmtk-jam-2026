@@ -39,6 +39,8 @@
 }
 
 .game__move-control {
+  --thumm-stick-color: #f9c22b;
+
   position: absolute;
 
   left: max(15px, env(safe-area-inset-left));
