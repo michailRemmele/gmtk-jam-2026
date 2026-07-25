@@ -1,4 +1,4 @@
-import type { Actor, BehaviorOptions, Time, World } from 'dacha';
+import type { Actor, BehaviorOptions, Scene, Time, World } from 'dacha';
 import {
   Behavior,
   MathOps,
@@ -87,10 +87,13 @@ export default class PlatformControl extends Behavior {
 
   private actor: Actor;
   private world: World;
+  private scene: Scene;
   private time: Time;
 
   private thrustInput: number;
   private rotateInput: number;
+
+  private turbinesActive: boolean;
 
   private forceBuffer: Vector2;
 
@@ -113,7 +116,10 @@ export default class PlatformControl extends Behavior {
 
     this.actor = options.actor;
     this.world = options.world;
+    this.scene = options.scene;
     this.time = options.time;
+
+    this.turbinesActive = false;
 
     this.mainThrust = this.actor.getComponent(Platform)?.mainThrust ?? DEFAULT_MAIN_THRUST;
     this.descentThrustRatio =
@@ -210,6 +216,20 @@ export default class PlatformControl extends Behavior {
     }
     if (this.rightTurbine) {
       this.rightTurbine.running = active && this.rotateInput < 0;
+    }
+
+    const anyRunning = Boolean(
+      this.topTurbine?.running
+        || this.bottomTurbine?.running
+        || this.leftTurbine?.running
+        || this.rightTurbine?.running,
+    );
+
+    if (anyRunning !== this.turbinesActive) {
+      this.turbinesActive = anyRunning;
+      this.scene.dispatchEvent(
+        anyRunning ? EventType.TurbinesStarted : EventType.TurbinesStopped,
+      );
     }
   }
 

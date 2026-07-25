@@ -79,5 +79,7 @@ export default class HiveObstacle extends Behavior {
 
       this.scene.appendChild(creature);
     }
+
+    this.scene.dispatchEvent(EventType.CreaturesSpawned);
   };
 }

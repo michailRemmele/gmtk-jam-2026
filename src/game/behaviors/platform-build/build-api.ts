@@ -188,6 +188,7 @@ export class BuildAPI {
 
     this.platform.dispatchEvent(EventType.PlatformPartsChanged);
     this.scene.dispatchEvent(EventType.BuildStateChanged);
+    this.scene.dispatchEvent(EventType.BlockPlaced);
 
     return true;
   }
@@ -207,6 +208,7 @@ export class BuildAPI {
 
     this.platform.dispatchEvent(EventType.PlatformPartsChanged);
     this.scene.dispatchEvent(EventType.BuildStateChanged);
+    this.scene.dispatchEvent(EventType.BlockSold);
 
     return true;
   }

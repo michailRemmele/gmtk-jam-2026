@@ -117,6 +117,7 @@ export default class ExplosiveObstacle extends Behavior {
     );
 
     this.scene.dispatchEvent(EventType.CameraShake);
+    this.scene.dispatchEvent(EventType.Explosion);
   }
 
   update(): void {

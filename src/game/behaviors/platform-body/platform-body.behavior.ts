@@ -147,6 +147,10 @@ export default class PlatformBody
       return;
     }
 
+    if (event.target.getComponent(PlatformBlock)) {
+      this.scene.dispatchEvent(EventType.BlockDestroyed);
+    }
+
     this.isDirty = true;
     this.actor.dispatchEvent(EventType.PlatformPartsChanged);
   };
@@ -264,6 +268,7 @@ export default class PlatformBody
 
     if (this.impactDamage.process(this.contacts, this)) {
       this.scene.dispatchEvent(EventType.CameraShake);
+      this.scene.dispatchEvent(EventType.Impact);
     }
 
     this.solver.resolveVelocities(

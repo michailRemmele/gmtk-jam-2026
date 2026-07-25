@@ -11,11 +11,28 @@
             {
               "name": "AudioSource",
               "config": {
-                "src": "audio/menu-music.mp3",
+                "src": "audio/menu-music.ogg",
                 "volume": 1,
                 "looped": true,
                 "autoplay": true,
                 "group": "music"
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "bda8cd91-e4e3-401d-84d6-3c715b99c9d6",
+          "name": "UI Click",
+          "components": [
+            {
+              "name": "AudioSource",
+              "config": {
+                "src": "audio/ui-click.mp3",
+                "volume": 1,
+                "looped": false,
+                "autoplay": false,
+                "group": "effects"
               }
             }
           ],
@@ -2657,6 +2674,332 @@
             }
           ],
           "children": []
+        },
+        {
+          "id": "7ac21513-11d8-475f-a7f9-f24287c3b484",
+          "name": "UI Click",
+          "components": [
+            {
+              "name": "AudioSource",
+              "config": {
+                "src": "audio/ui-click.mp3",
+                "volume": 1,
+                "looped": false,
+                "autoplay": false,
+                "group": "effects"
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "67a04014-4513-4b59-9448-a00f8c18ece6",
+          "name": "AudioManager",
+          "components": [
+            {
+              "name": "Behaviors",
+              "config": {
+                "list": [
+                  {
+                    "id": "79703dd2-06da-4155-b728-4b58e0c44f61",
+                    "name": "AudioManagerBehavior",
+                    "options": {
+                      "buildMusic": "e849238f-e990-4ca8-8aa4-0379899aee74",
+                      "escapeMusic": "54bd32e2-7c94-4d38-b703-aed277015689",
+                      "impact": "04790faf-f8d3-4a6f-96d4-4d2e6673d0e1",
+                      "turretShot": "7a307e71-9ad8-4b04-986a-16cce0df0a1f",
+                      "blockPlaced": "fc6e01ae-d967-4756-b988-6a26278f5d37",
+                      "blockSold": "28b70d1a-c2de-4ddd-b298-15d166bcdf5c",
+                      "obstacleDestroyed": "a77a33ab-dde6-42f7-a26b-0381cb11fd64",
+                      "repairPickup": "d92641c7-83d7-41ec-8425-d4c75b5c8c79",
+                      "explosion": "bd1513a9-97f8-4253-b02b-705c024dcb2f",
+                      "fuse": "f421ab82-373a-41eb-8d6d-074b713cc4bc",
+                      "creaturesSpawned": "4b3ddec0-7716-4180-b4fb-54f33336f14f",
+                      "blockLoss": "bc38cae9-9e1c-4dca-8ef9-72a70a294cfb",
+                      "turbine": "94836dc6-5e90-4815-8da7-df719ba04c4c",
+                      "win": "eab14f53-5417-422f-9ff1-3f50d1a990ea",
+                      "lose": "83285c30-9068-4c78-90d1-9878782ab9bc",
+                      "countdown": "aefe1d3e-e86f-4378-a198-780307d84e28"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "e849238f-e990-4ca8-8aa4-0379899aee74",
+              "name": "Build Music",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/build-music.ogg",
+                    "volume": 1,
+                    "looped": true,
+                    "autoplay": false,
+                    "group": "music"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "54bd32e2-7c94-4d38-b703-aed277015689",
+              "name": "Escape Music",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/escape-music.ogg",
+                    "volume": 0.6,
+                    "looped": true,
+                    "autoplay": false,
+                    "group": "music"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "04790faf-f8d3-4a6f-96d4-4d2e6673d0e1",
+              "name": "Impact",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/impact.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "7a307e71-9ad8-4b04-986a-16cce0df0a1f",
+              "name": "Turret Shot",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/turret-shot.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "fc6e01ae-d967-4756-b988-6a26278f5d37",
+              "name": "Block Placed",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/block-placed.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "28b70d1a-c2de-4ddd-b298-15d166bcdf5c",
+              "name": "Block Sold",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/block-sold.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "a77a33ab-dde6-42f7-a26b-0381cb11fd64",
+              "name": "Obstacle Destroyed",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/obstacle-destroyed.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "d92641c7-83d7-41ec-8425-d4c75b5c8c79",
+              "name": "Repair Pickup",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/repair-pickup.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "bd1513a9-97f8-4253-b02b-705c024dcb2f",
+              "name": "Explosion",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/explosion.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "f421ab82-373a-41eb-8d6d-074b713cc4bc",
+              "name": "Fuse",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/fuse.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "4b3ddec0-7716-4180-b4fb-54f33336f14f",
+              "name": "Creatures Spawned",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/creatures-spawned.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "bc38cae9-9e1c-4dca-8ef9-72a70a294cfb",
+              "name": "Block Loss",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/block-loss.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "94836dc6-5e90-4815-8da7-df719ba04c4c",
+              "name": "Turbine",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/turbine.wav",
+                    "volume": 1,
+                    "looped": true,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "eab14f53-5417-422f-9ff1-3f50d1a990ea",
+              "name": "Win",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/win.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "83285c30-9068-4c78-90d1-9878782ab9bc",
+              "name": "Lose",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/lose.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "aefe1d3e-e86f-4378-a198-780307d84e28",
+              "name": "Countdown",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/countdown.mp3",
+                    "volume": 1,
+                    "looped": false,
+                    "autoplay": false,
+                    "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            }
+          ]
         }
       ]
     }
@@ -3530,6 +3873,18 @@
                   "looped": true
                 },
                 "transitions": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "Behaviors",
+          "config": {
+            "list": [
+              {
+                "id": "fb399868-f919-45b8-8667-27198a6f9602",
+                "name": "DestructibleObstacle",
+                "options": {}
               }
             ]
           }
@@ -7601,6 +7956,18 @@
                   "looped": true
                 },
                 "transitions": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "Behaviors",
+          "config": {
+            "list": [
+              {
+                "id": "c896f5e3-cde1-453b-a91f-0f92babef98c",
+                "name": "DestructibleObstacle",
+                "options": {}
               }
             ]
           }

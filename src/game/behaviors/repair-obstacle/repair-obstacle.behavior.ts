@@ -28,6 +28,8 @@ export default class RepairObstacle extends Behavior {
   }
 
   private handleKill = (): void => {
+    this.scene.dispatchEvent(EventType.RepairPickup);
+
     const platform = this.scene.findChildByName(PLAYER_ACTOR_NAME);
     if (!platform) {
       return;

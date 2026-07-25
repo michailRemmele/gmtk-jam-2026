@@ -29,6 +29,19 @@ export const CameraShake = 'CameraShake';
 
 export const ExplosiveTriggered = 'ExplosiveTriggered';
 
+export const Impact = 'Impact';
+export const TurretShot = 'TurretShot';
+export const ProjectileBurst = 'ProjectileBurst';
+export const BlockPlaced = 'BlockPlaced';
+export const BlockSold = 'BlockSold';
+export const BlockDestroyed = 'BlockDestroyed';
+export const ObstacleDestroyed = 'ObstacleDestroyed';
+export const Explosion = 'Explosion';
+export const CreaturesSpawned = 'CreaturesSpawned';
+export const RepairPickup = 'RepairPickup';
+export const TurbinesStarted = 'TurbinesStarted';
+export const TurbinesStopped = 'TurbinesStopped';
+
 export type AttackInputEvent = ActorEvent<{ x: number; y: number }>;
 export type AttackEvent = ActorEvent<{ x: number; y: number }>;
 export type DamageEvent = ActorEvent<{ value: number; actor?: Actor }>;
@@ -73,5 +86,17 @@ declare module 'dacha' {
     [BuildPhaseEnd]: SceneEvent;
     [BuildStateChanged]: SceneEvent;
     [CameraShake]: SceneEvent;
+    [Impact]: SceneEvent;
+    [TurretShot]: SceneEvent;
+    [ProjectileBurst]: SceneEvent;
+    [BlockPlaced]: SceneEvent;
+    [BlockSold]: SceneEvent;
+    [BlockDestroyed]: SceneEvent;
+    [ObstacleDestroyed]: SceneEvent;
+    [Explosion]: SceneEvent;
+    [CreaturesSpawned]: SceneEvent;
+    [RepairPickup]: SceneEvent;
+    [TurbinesStarted]: SceneEvent;
+    [TurbinesStopped]: SceneEvent;
   }
 }

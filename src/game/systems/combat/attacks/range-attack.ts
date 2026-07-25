@@ -21,6 +21,7 @@ export class RangeAttack implements Attack {
   private weapon: Weapon;
   private shot: Actor;
   private lifetime: number;
+  private hasBurst: boolean;
 
   isFinished: boolean;
 
@@ -67,10 +68,13 @@ export class RangeAttack implements Attack {
     this.shot = shot;
     this.lifetime = flightTime;
     this.isFinished = false;
+    this.hasBurst = false;
 
     shotRigidBody?.applyImpulse(directionVector.clone());
 
     this.shot.addEventListener(CollisionEnter, this.handleCollisionEnter);
+
+    this.scene.dispatchEvent(EventType.TurretShot);
   }
 
   destroy(): void {
@@ -90,11 +94,18 @@ export class RangeAttack implements Attack {
       return;
     }
 
+    const hasHealth = !!actor.getComponent(Health);
+
+    if ((rigidBody || hasHealth) && !this.hasBurst) {
+      this.hasBurst = true;
+      this.scene.dispatchEvent(EventType.ProjectileBurst);
+    }
+
     if (rigidBody) {
       this.lifetime = 0;
     }
 
-    if (!actor.getComponent(Health)) {
+    if (!hasHealth) {
       return;
     }
 
