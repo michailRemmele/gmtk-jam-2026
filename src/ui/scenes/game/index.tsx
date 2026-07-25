@@ -5,7 +5,7 @@ import { LoadScene, ExitScene, EnterScene } from 'dacha/events';
 import * as EventType from '../../../game/events';
 import type { GameOverEvent } from '../../../game/events';
 import { EngineContext } from '../../providers';
-import { Button, Timer } from '../../components';
+import { Button, Timer, FpsMeter } from '../../components';
 import { isMobileDevice } from '../../../utils/is-mobile-device';
 import { MAIN_MENU_ID } from '../../../consts/scenes';
 import { LEVELS } from '../../../consts/game';
@@ -86,7 +86,8 @@ export const Game: FC = () => {
           />
         </div>
       </header>
-      {/* {process.env.NODE_ENV === 'development' && <FpsMeter />} */}
+      {/* @ts-expect-error wip: it's better to fix process issue but later */}
+      {process.env.NODE_ENV === 'development' && <FpsMeter />}
 
       <Timer />
 

@@ -4,8 +4,7 @@ import { DefineBehavior, DefineField } from 'dacha-workbench/decorators';
 
 import * as EventType from '../../events';
 import type { GameOverEvent, TimerTickEvent } from '../../events';
-
-const CRITICAL_SECONDS_LEFT = 10;
+import { CRITICAL_SECONDS_LEFT } from '../../../consts/timer';
 
 interface AudioManagerBehaviorOptions extends BehaviorOptions {
   buildMusic: string;

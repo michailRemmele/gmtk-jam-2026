@@ -1,0 +1,1 @@
+export const CRITICAL_SECONDS_LEFT = 10;

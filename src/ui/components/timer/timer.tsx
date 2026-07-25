@@ -4,10 +4,9 @@ import type { FC } from 'react';
 import * as EventType from '../../../game/events';
 import type { TimerTickEvent } from '../../../game/events';
 import { EngineContext } from '../../providers';
+import { CRITICAL_SECONDS_LEFT } from '../../../consts/timer';
 
 import './style.css';
-
-const CRITICAL_SECONDS_LEFT = 10;
 
 interface TimerProps {
   className?: string;
