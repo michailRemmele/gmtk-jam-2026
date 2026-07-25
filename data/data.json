@@ -1652,22 +1652,22 @@
                     "id": "79703dd2-06da-4155-b728-4b58e0c44f61",
                     "name": "AudioManagerBehavior",
                     "options": {
-                      "buildMusic": "e849238f-e990-4ca8-8aa4-0379899aee74",
-                      "escapeMusic": "54bd32e2-7c94-4d38-b703-aed277015689",
-                      "impact": "04790faf-f8d3-4a6f-96d4-4d2e6673d0e1",
-                      "turretShot": "7a307e71-9ad8-4b04-986a-16cce0df0a1f",
-                      "blockPlaced": "fc6e01ae-d967-4756-b988-6a26278f5d37",
-                      "blockSold": "28b70d1a-c2de-4ddd-b298-15d166bcdf5c",
-                      "obstacleDestroyed": "a77a33ab-dde6-42f7-a26b-0381cb11fd64",
-                      "repairPickup": "d92641c7-83d7-41ec-8425-d4c75b5c8c79",
-                      "explosion": "bd1513a9-97f8-4253-b02b-705c024dcb2f",
-                      "fuse": "f421ab82-373a-41eb-8d6d-074b713cc4bc",
-                      "creaturesSpawned": "4b3ddec0-7716-4180-b4fb-54f33336f14f",
-                      "blockLoss": "bc38cae9-9e1c-4dca-8ef9-72a70a294cfb",
-                      "turbine": "94836dc6-5e90-4815-8da7-df719ba04c4c",
-                      "win": "eab14f53-5417-422f-9ff1-3f50d1a990ea",
-                      "lose": "83285c30-9068-4c78-90d1-9878782ab9bc",
-                      "countdown": "aefe1d3e-e86f-4378-a198-780307d84e28"
+                      "buildMusic": "eeede6ac-829e-4f89-9804-1efa7d017df4",
+                      "escapeMusic": "26f85ab1-43f6-4a7f-922e-a658f99d14af",
+                      "impact": "82923c93-85ff-4ed8-afed-ff484caf6738",
+                      "turretShot": "fa7d2924-d515-4f97-a97e-ddcb000cba3e",
+                      "blockPlaced": "4ea86794-e7f3-4f64-950d-87f124f67d5d",
+                      "blockSold": "1b64929d-c03e-4422-a71f-4c2873abb216",
+                      "obstacleDestroyed": "14b19962-6a44-496c-9be8-7565b77dadc7",
+                      "repairPickup": "23a5d861-c6fa-4a57-b2a6-eab8fd79b4cc",
+                      "explosion": "0a4cb322-ad46-4c0b-a5e5-a60ac4aae692",
+                      "fuse": "ac13e1c5-1cda-4c01-b9c6-8d5e97221c9e",
+                      "creaturesSpawned": "92fc372d-0ccb-4a4f-aa3f-2b2bac1d80e3",
+                      "blockLoss": "9070b697-f40c-4d7f-90c3-43d3dafb640f",
+                      "turbine": "a1f4084c-05af-441c-a699-cb1125ce7d86",
+                      "win": "b593a4ff-8531-4a82-b362-4a32fb8d74ec",
+                      "lose": "c1d28756-bbc2-4b2c-978e-3227f3a8bbac",
+                      "countdown": "85c7ac9d-df0e-467a-b99a-26c31c0f0022"
                     }
                   }
                 ]
