@@ -1,5 +1,5 @@
 import type { Actor, Scene, World, Time, BehaviorOptions } from 'dacha';
-import { Behavior, Camera, Transform, InterpolatorAPI, MathOps } from 'dacha';
+import { Behavior, Camera, Transform, InterpolatorAPI, MathOps, RendererAPI } from 'dacha';
 import { DefineBehavior, DefineField } from 'dacha-workbench/decorators';
 
 import { PLAYER_ACTOR_NAME } from '../../../consts/actors';
@@ -114,6 +114,21 @@ export default class CameraBehavior extends Behavior {
     this.shakeElapsed = 0;
   };
 
+  private updateDustCloudsCamera(x: number, y: number): void {
+    const camera = this.actor.getComponent(Camera);
+    const rendererApi = this.world.systemApi.get(RendererAPI);
+    const dustClouds = rendererApi
+      .getFilterEffects()
+      .find((effect) => effect.name === 'DustClouds');
+
+    if (!dustClouds) {
+      return;
+    }
+
+    dustClouds.options.cameraOffsetX = x * camera.zoom * window.devicePixelRatio;
+    dustClouds.options.cameraOffsetY = y * camera.zoom * window.devicePixelRatio;
+  }
+
   private updateZoom(): void {
     const camera = this.actor.getComponent(Camera);
     camera.zoom = camera.windowSizeY / VIEWPORT_SIZE;
@@ -150,6 +165,8 @@ export default class CameraBehavior extends Behavior {
 
     transform.world.position.x = x;
     transform.world.position.y = y;
+
+    this.updateDustCloudsCamera(x, y);
 
     this.applyShake(transform);
   }
