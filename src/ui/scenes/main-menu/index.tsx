@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import type { FC } from 'react';
 
-import { Main, Settings } from './components';
-import { MAIN_MENU, SETTINGS_MENU } from './consts';
+import { Main, Settings, Credits } from './components';
+import { MAIN_MENU, SETTINGS_MENU, CREDITS_MENU } from './consts';
 import './style.css';
 
 export const MainMenu: FC = () => {
@@ -21,6 +21,7 @@ export const MainMenu: FC = () => {
       />
       {menuState === MAIN_MENU && <Main openMenu={setMenuState} />}
       {menuState === SETTINGS_MENU && <Settings openMenu={setMenuState} />}
+      {menuState === CREDITS_MENU && <Credits openMenu={setMenuState} />}
     </div>
   );
 };

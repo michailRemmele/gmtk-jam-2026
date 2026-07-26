@@ -5,7 +5,7 @@ import { LoadScene, ExitScene } from 'dacha/events';
 import { Button } from '../../../../components';
 import { EngineContext } from '../../../../providers';
 import { LEVEL_1_ID } from '../../../../../consts/scenes';
-import { SETTINGS_MENU } from '../../consts';
+import { SETTINGS_MENU, CREDITS_MENU } from '../../consts';
 
 import './style.css';
 
@@ -24,6 +24,7 @@ export const Main: FC<MainProps> = ({ openMenu }) => {
   };
 
   const handleOpenSettings = (): void => openMenu(SETTINGS_MENU);
+  const handleOpenCredits = (): void => openMenu(CREDITS_MENU);
 
   return (
     <div className="main-menu">
@@ -32,6 +33,9 @@ export const Main: FC<MainProps> = ({ openMenu }) => {
       </Button>
       <Button className="main-menu__button" onClick={handleOpenSettings}>
         Settings
+      </Button>
+      <Button className="main-menu__button" onClick={handleOpenCredits}>
+        Credits
       </Button>
     </div>
   );

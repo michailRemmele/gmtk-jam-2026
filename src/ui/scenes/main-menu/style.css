@@ -54,6 +54,7 @@
   margin-bottom: 24px;
 
   width: 480px;
+  aspect-ratio: 98 / 48;
 
   @media screen and (max-height: 481px), screen and (max-width: 768px) {
     width: 360px;

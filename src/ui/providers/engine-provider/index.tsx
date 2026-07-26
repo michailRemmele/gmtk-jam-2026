@@ -27,6 +27,7 @@ export const EngineProvider: FC<EngineProviderProps> = ({
 
     const handleSceneEntered = (event: SceneEnteredEvent): void => {
       setScene(event.scene);
+      document.getElementById('loading-screen')?.remove();
     };
 
     const handleSceneExited = (): void => {

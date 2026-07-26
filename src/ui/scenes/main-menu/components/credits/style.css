@@ -1,0 +1,51 @@
+.credits-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.credits-menu__title {
+  margin: 0 0 16px;
+
+  font-family: 'Monocraft', sans-serif;
+  font-size: 28px;
+  color: #f9c22b;
+  text-transform: uppercase;
+}
+
+.credits-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  max-height: 40vh;
+  overflow-y: auto;
+}
+
+.credits-menu__item + .credits-menu__item {
+  margin-top: 10px;
+}
+
+.credits-menu__link {
+  font-family: 'Monocraft', sans-serif;
+  font-size: 20px;
+  color: #f9c22b;
+  text-align: center;
+  text-decoration: none;
+}
+
+.credits-menu__link:hover {
+  text-decoration: underline;
+}
+
+.credits-menu__button {
+  margin-top: 16px;
+}
+
+@media screen and (max-height: 481px), screen and (max-width: 768px) {
+  .credits-menu {
+    width: 100%;
+    max-width: 356px;
+  }
+}
