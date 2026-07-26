@@ -8626,8 +8626,8 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 1752,
-                "offsetY": -2952,
+                "offsetX": 1728,
+                "offsetY": -2976,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -8644,8 +8644,8 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 1752,
-                "offsetY": -3000,
+                "offsetX": 1728,
+                "offsetY": -3024,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -9015,24 +9015,6 @@
           "children": []
         },
         {
-          "id": "f60f1f0d-f5e5-409b-b95c-c567d369c20c",
-          "templateId": "7efad695-6e37-469f-ae07-5869efea3deb",
-          "name": "Static Obstacle 222",
-          "components": [
-            {
-              "name": "Transform",
-              "config": {
-                "offsetX": 2424,
-                "offsetY": -3960,
-                "rotation": 0,
-                "scaleX": 1,
-                "scaleY": 1
-              }
-            }
-          ],
-          "children": []
-        },
-        {
           "id": "95fd1384-e95a-4c63-9612-f7c9a4728d76",
           "templateId": "7efad695-6e37-469f-ae07-5869efea3deb",
           "name": "Static Obstacle 223",
@@ -9040,26 +9022,8 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 2472,
-                "offsetY": -3960,
-                "rotation": 0,
-                "scaleX": 1,
-                "scaleY": 1
-              }
-            }
-          ],
-          "children": []
-        },
-        {
-          "id": "29fb07b7-be05-4971-91df-d9366d86e7ea",
-          "templateId": "7efad695-6e37-469f-ae07-5869efea3deb",
-          "name": "Static Obstacle 224",
-          "components": [
-            {
-              "name": "Transform",
-              "config": {
-                "offsetX": 2472,
-                "offsetY": -4008,
+                "offsetX": 2448,
+                "offsetY": -3984,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -10419,24 +10383,6 @@
           "children": []
         },
         {
-          "id": "5faf9503-0c41-42ff-9405-92ee38c6be14",
-          "templateId": "7efad695-6e37-469f-ae07-5869efea3deb",
-          "name": "Static Obstacle 327",
-          "components": [
-            {
-              "name": "Transform",
-              "config": {
-                "offsetX": 3648,
-                "offsetY": -7032,
-                "rotation": 0,
-                "scaleX": 1,
-                "scaleY": 1
-              }
-            }
-          ],
-          "children": []
-        },
-        {
           "id": "e65d4a2c-9eba-4bc6-a6c7-b646edfa0317",
           "templateId": "7efad695-6e37-469f-ae07-5869efea3deb",
           "name": "Static Obstacle 328",
@@ -10678,7 +10624,7 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 2928,
+                "offsetX": 2904,
                 "offsetY": -7536,
                 "rotation": 0,
                 "scaleX": 1,
@@ -10804,7 +10750,7 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 2976,
+                "offsetX": 2952,
                 "offsetY": -7536,
                 "rotation": 0,
                 "scaleX": 1,
@@ -13552,7 +13498,7 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 1704,
+                "offsetX": 1680,
                 "offsetY": -2904,
                 "rotation": 0,
                 "scaleX": 1,
@@ -13570,7 +13516,7 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 1704,
+                "offsetX": 1680,
                 "offsetY": -2856,
                 "rotation": 0,
                 "scaleX": 1,
@@ -13624,7 +13570,7 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 1836,
+                "offsetX": 1812,
                 "offsetY": -2964,
                 "rotation": 0,
                 "scaleX": 1,
@@ -13660,7 +13606,7 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 1800,
+                "offsetX": 1776,
                 "offsetY": -3048,
                 "rotation": 0,
                 "scaleX": 1,
@@ -13678,8 +13624,8 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 1836,
-                "offsetY": -3012,
+                "offsetX": 1812,
+                "offsetY": -3036,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -13704,7 +13650,7 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 1860,
+                "offsetX": 1836,
                 "offsetY": -3084,
                 "rotation": 0,
                 "scaleX": 1,
@@ -13731,25 +13677,7 @@
               "name": "Transform",
               "config": {
                 "offsetX": 1752,
-                "offsetY": -3096,
-                "rotation": 0,
-                "scaleX": 1,
-                "scaleY": 1
-              }
-            }
-          ],
-          "children": []
-        },
-        {
-          "id": "28f9c4ee-7521-4993-b144-c04fe62228d7",
-          "templateId": "01616fe1-b861-4da6-9888-eb2bbe10e95a",
-          "name": "Light Obstacle 77",
-          "components": [
-            {
-              "name": "Transform",
-              "config": {
-                "offsetX": 1704,
-                "offsetY": -3048,
+                "offsetY": -3120,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -14045,43 +13973,7 @@
               "name": "Transform",
               "config": {
                 "offsetX": 2472,
-                "offsetY": -4056,
-                "rotation": 0,
-                "scaleX": 1,
-                "scaleY": 1
-              }
-            }
-          ],
-          "children": []
-        },
-        {
-          "id": "6c1dc5e9-7428-4148-bec1-5937417440eb",
-          "templateId": "8dde4f9c-8bf4-4191-993b-9fa4ac08d989",
-          "name": "Hard Obstacle 24",
-          "components": [
-            {
-              "name": "Transform",
-              "config": {
-                "offsetX": 2376,
-                "offsetY": -3960,
-                "rotation": 0,
-                "scaleX": 1,
-                "scaleY": 1
-              }
-            }
-          ],
-          "children": []
-        },
-        {
-          "id": "19dc7cf2-a3b2-4038-a369-030c356f10dc",
-          "templateId": "8dde4f9c-8bf4-4191-993b-9fa4ac08d989",
-          "name": "Hard Obstacle 25",
-          "components": [
-            {
-              "name": "Transform",
-              "config": {
-                "offsetX": 2424,
-                "offsetY": -4008,
+                "offsetY": -4032,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -14125,7 +14017,7 @@
               "name": "Transform",
               "config": {
                 "offsetX": 2556,
-                "offsetY": -4020,
+                "offsetY": -3996,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -14143,7 +14035,7 @@
               "name": "Transform",
               "config": {
                 "offsetX": 2568,
-                "offsetY": -4056,
+                "offsetY": -4032,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -14161,7 +14053,7 @@
               "name": "Transform",
               "config": {
                 "offsetX": 2520,
-                "offsetY": -4056,
+                "offsetY": -4032,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -14250,8 +14142,8 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 2532,
-                "offsetY": -4020,
+                "offsetX": 2508,
+                "offsetY": -3996,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -14835,24 +14727,6 @@
           "children": []
         },
         {
-          "id": "ad2c5cf6-c1f4-42c0-be96-80da745b34e4",
-          "templateId": "01616fe1-b861-4da6-9888-eb2bbe10e95a",
-          "name": "Light Obstacle 91",
-          "components": [
-            {
-              "name": "Transform",
-              "config": {
-                "offsetX": 3216,
-                "offsetY": -5904,
-                "rotation": 0,
-                "scaleX": 1,
-                "scaleY": 1
-              }
-            }
-          ],
-          "children": []
-        },
-        {
           "id": "8da58e04-6459-4ff5-93d0-c30f7bbdd0a7",
           "templateId": "8dde4f9c-8bf4-4191-993b-9fa4ac08d989",
           "name": "Hard Obstacle 45",
@@ -14860,7 +14734,7 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 3216,
+                "offsetX": 3264,
                 "offsetY": -5952,
                 "rotation": 0,
                 "scaleX": 1,
@@ -14878,25 +14752,7 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 3168,
-                "offsetY": -5952,
-                "rotation": 0,
-                "scaleX": 1,
-                "scaleY": 1
-              }
-            }
-          ],
-          "children": []
-        },
-        {
-          "id": "93e77353-5c3e-4105-b66f-1645c34de733",
-          "templateId": "8dde4f9c-8bf4-4191-993b-9fa4ac08d989",
-          "name": "Hard Obstacle 47",
-          "components": [
-            {
-              "name": "Transform",
-              "config": {
-                "offsetX": 3264,
+                "offsetX": 3216,
                 "offsetY": -5952,
                 "rotation": 0,
                 "scaleX": 1,
@@ -15092,8 +14948,8 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 3648,
-                "offsetY": -6984,
+                "offsetX": 3600,
+                "offsetY": -7032,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -15146,8 +15002,8 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 3204,
-                "offsetY": -5868,
+                "offsetX": 3396,
+                "offsetY": -6012,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -15902,7 +15758,7 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 1704,
+                "offsetX": 1680,
                 "offsetY": -2952,
                 "rotation": 0,
                 "scaleX": 1,
@@ -15920,7 +15776,7 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 1704,
+                "offsetX": 1680,
                 "offsetY": -3000,
                 "rotation": 0,
                 "scaleX": 1,
@@ -15938,8 +15794,8 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 1752,
-                "offsetY": -3048,
+                "offsetX": 1728,
+                "offsetY": -3072,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -16478,8 +16334,44 @@
             {
               "name": "Transform",
               "config": {
-                "offsetX": 2544,
-                "offsetY": -3972,
+                "offsetX": 2532,
+                "offsetY": -3948,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "5f97bc72-6a27-4e41-abd2-499728cfa45b",
+          "templateId": "8dde4f9c-8bf4-4191-993b-9fa4ac08d989",
+          "name": "Hard Obstacle 25",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2400,
+                "offsetY": -3984,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": "b113577b-4037-4073-a37d-643d50df35b4",
+          "templateId": "8dde4f9c-8bf4-4191-993b-9fa4ac08d989",
+          "name": "Hard Obstacle 24",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 3648,
+                "offsetY": -7032,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1

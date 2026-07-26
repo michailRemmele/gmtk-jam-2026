@@ -44,9 +44,9 @@
   position: absolute;
 
   left: max(15px, env(safe-area-inset-left));
+  right: max(15px, env(safe-area-inset-right));
   bottom: max(15px, env(safe-area-inset-bottom));
 
-  width: calc(50% - max(15px, env(safe-area-inset-left)));
   height: calc(70% - max(15px, env(safe-area-inset-bottom)));
 }
 

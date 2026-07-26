@@ -52,6 +52,21 @@ const wrapAngle = (angle: number): number => {
   return (wrapped < 0 ? wrapped + TWO_PI : wrapped) - Math.PI;
 };
 
+const STICK_DEADZONE = 0.1;
+
+const applyStickCurve = (value: number): number => {
+  const clamped = MathOps.clamp(value, -1, 1);
+  const abs = Math.abs(clamped);
+
+  if (abs <= STICK_DEADZONE) {
+    return 0;
+  }
+
+  const normalized = (abs - STICK_DEADZONE) / (1 - STICK_DEADZONE);
+
+  return Math.sign(clamped) * normalized;
+};
+
 @DefineBehavior({
   name: 'PlatformControl',
 })
@@ -207,8 +222,8 @@ export default class PlatformControl extends Behavior {
   };
 
   private handleControlStickInput = (event: ControlStickInputEvent): void => {
-    this.stickThrust = MathOps.clamp(-event.y, -1, 1);
-    this.stickRotate = MathOps.clamp(event.x, -1, 1);
+    this.stickThrust = applyStickCurve(-event.y);
+    this.stickRotate = applyStickCurve(event.x);
   };
 
   private handlePartsChanged = (): void => {
