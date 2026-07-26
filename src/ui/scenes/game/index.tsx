@@ -10,7 +10,12 @@ import { isMobileDevice } from '../../../utils/is-mobile-device';
 import { MAIN_MENU_ID } from '../../../consts/scenes';
 import { LEVELS } from '../../../consts/game';
 
-import { MoveControl, BuildPanel, PhaseBanner } from './components';
+import {
+  MoveControl,
+  BuildPanel,
+  PhaseBanner,
+  FinishProgress,
+} from './components';
 import './style.css';
 
 const ESCAPE_BANNER_DURATION = 2500;
@@ -99,6 +104,8 @@ export const Game: FC = () => {
       {isMobileDevice() && !isBuildPhase && (
         <MoveControl className="game__move-control" />
       )}
+
+      {!isBuildPhase && <FinishProgress />}
 
       <BuildPanel />
 

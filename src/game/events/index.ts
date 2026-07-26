@@ -21,6 +21,8 @@ export const GameOver = 'GameOver';
 
 export const TimerTick = 'TimerTick';
 
+export const FinishProgress = 'FinishProgress';
+
 export const BuildStart = 'BuildStart';
 export const BuildPhaseEnd = 'BuildPhaseEnd';
 export const BuildStateChanged = 'BuildStateChanged';
@@ -61,6 +63,8 @@ export type GameOverEvent = SceneEvent<{
 
 export type TimerTickEvent = SceneEvent<{ secondsLeft: number }>;
 
+export type FinishProgressEvent = SceneEvent<{ progress: number }>;
+
 declare module 'dacha' {
   export interface ActorEventMap {
     [ThrustInput]: ThrustInputEvent;
@@ -82,6 +86,7 @@ declare module 'dacha' {
     [ResetSaveState]: SceneEvent;
     [GameOver]: GameOverEvent;
     [TimerTick]: TimerTickEvent;
+    [FinishProgress]: FinishProgressEvent;
     [BuildStart]: SceneEvent;
     [BuildPhaseEnd]: SceneEvent;
     [BuildStateChanged]: SceneEvent;

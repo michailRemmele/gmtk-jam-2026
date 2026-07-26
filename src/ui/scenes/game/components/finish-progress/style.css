@@ -1,0 +1,36 @@
+.finish-progress {
+  position: fixed;
+  top: 50%;
+  right: calc(max(15px, env(safe-area-inset-right)) + 17px);
+  transform: translateY(-50%);
+
+  pointer-events: none;
+}
+
+.finish-progress--full {
+  height: 50%;
+}
+
+.finish-progress--compact {
+  height: 200px;
+}
+
+.finish-progress__track {
+  position: relative;
+
+  width: 10px;
+  height: 100%;
+
+  background-color: rgba(249, 194, 43, 0.3);
+}
+
+.finish-progress__thumb {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 20px;
+  height: 20px;
+
+  background-color: #f9c22b;
+}
