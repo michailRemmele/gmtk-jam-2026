@@ -1404,8 +1404,7 @@
               "config": {
                 "index": 0,
                 "escapeTime": 180,
-                "buildTime": 30,
-                "budget": 300
+                "buildTime": 30
               }
             }
           ],
@@ -17240,8 +17239,7 @@
           "name": "PlatformBlock",
           "config": {
             "mass": 0.1,
-            "type": "basic",
-            "cost": 0
+            "type": "basic"
           }
         },
         {
@@ -17784,8 +17782,7 @@
           "name": "PlatformBlock",
           "config": {
             "mass": 0.2,
-            "type": "ram",
-            "cost": 25
+            "type": "ram"
           }
         },
         {
@@ -18392,8 +18389,7 @@
           "name": "PlatformBlock",
           "config": {
             "mass": 0.1,
-            "type": "turret",
-            "cost": 50
+            "type": "turret"
           }
         },
         {
@@ -19082,8 +19078,7 @@
           "name": "PlatformBlock",
           "config": {
             "mass": 0.2,
-            "type": "storage",
-            "cost": 0
+            "type": "storage"
           }
         },
         {
@@ -19681,8 +19676,7 @@
           "config": {
             "mass": 0.1,
             "type": "booster",
-            "thrustBoost": 1,
-            "cost": 50
+            "thrustBoost": 1
           }
         },
         {

@@ -18,9 +18,9 @@ export interface CatalogEntry {
   type: BlockType;
   templateId: string;
   name: string;
-  cost: number;
   mass: number;
   health: number;
+  damage: number;
 }
 
 export interface SlotInfo {
@@ -34,7 +34,6 @@ export interface BuildAPIConfig {
   scene: Scene;
   world: World;
   actorSpawner: ActorSpawner;
-  budget: number;
   baseMass: number;
   mainThrust: number;
   minThrustToWeightRatio: number;
@@ -60,7 +59,6 @@ export class BuildAPI {
 
   private slots: SlotInfo[];
   private catalog: CatalogEntry[];
-  private budgetRemaining: number;
   private selectedType: BlockType | null;
 
   constructor(config: BuildAPIConfig) {
@@ -73,7 +71,6 @@ export class BuildAPI {
     this.mainThrust = config.mainThrust;
     this.minThrustToWeightRatio = config.minThrustToWeightRatio;
 
-    this.budgetRemaining = config.budget;
     this.selectedType = null;
 
     this.slots = this.platform.children
@@ -91,14 +88,15 @@ export class BuildAPI {
       const template = this.scene.templateCollection.get(templateId);
       const platformBlockConfig = getComponentConfig(template, 'PlatformBlock');
       const healthConfig = getComponentConfig(template, 'Health');
+      const collisionDamageConfig = getComponentConfig(template, 'CollisionDamage');
 
       return {
         type,
         templateId,
         name: template.name,
-        cost: (platformBlockConfig.cost as number | undefined) ?? 0,
         mass: (platformBlockConfig.mass as number | undefined) ?? 0,
         health: (healthConfig.points as number | undefined) ?? 0,
+        damage: (collisionDamageConfig.value as number | undefined) ?? 0,
       };
     });
   }
@@ -109,10 +107,6 @@ export class BuildAPI {
 
   getCatalog(): readonly CatalogEntry[] {
     return this.catalog;
-  }
-
-  getBudgetRemaining(): number {
-    return this.budgetRemaining;
   }
 
   selectType(type: BlockType | null): void {
@@ -170,7 +164,7 @@ export class BuildAPI {
     }
 
     const catalogEntry = this.catalog.find((entry) => entry.type === type);
-    if (!catalogEntry || catalogEntry.cost > this.budgetRemaining) {
+    if (!catalogEntry) {
       return false;
     }
 
@@ -184,7 +178,6 @@ export class BuildAPI {
     this.platform.appendChild(block);
 
     slot.occupiedBy = block;
-    this.budgetRemaining -= catalogEntry.cost;
 
     this.platform.dispatchEvent(EventType.PlatformPartsChanged);
     this.scene.dispatchEvent(EventType.BuildStateChanged);
@@ -199,12 +192,9 @@ export class BuildAPI {
       return false;
     }
 
-    const refund = blockActor.getComponent(PlatformBlock)?.cost ?? 0;
-
     this.platform.removeChild(blockActor);
 
     slot.occupiedBy = null;
-    this.budgetRemaining += refund;
 
     this.platform.dispatchEvent(EventType.PlatformPartsChanged);
     this.scene.dispatchEvent(EventType.BuildStateChanged);

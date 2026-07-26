@@ -97,13 +97,9 @@ export default class BuildPickable extends Behavior {
         return;
       }
 
-      const selectedType = buildApi.getSelectedType();
-      const catalogEntry = selectedType
-        ? buildApi.getCatalog().find((entry) => entry.type === selectedType)
-        : undefined;
-      const canAfford = !!catalogEntry && catalogEntry.cost <= buildApi.getBudgetRemaining();
+      const canPlace = !!buildApi.getSelectedType();
 
-      this.setTint(this.actor, 1, canAfford ? BUILDABLE_TINT : REMOVABLE_TINT);
+      this.setTint(this.actor, 1, canPlace ? BUILDABLE_TINT : REMOVABLE_TINT);
       return;
     }
 

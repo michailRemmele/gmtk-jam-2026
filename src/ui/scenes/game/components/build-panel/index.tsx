@@ -28,7 +28,6 @@ export const BuildPanel: FC<BuildPanelProps> = ({ className = '' }) => {
   const { world, scene } = useContext(EngineContext);
 
   const [catalog, setCatalog] = useState<readonly CatalogEntry[]>([]);
-  const [budgetRemaining, setBudgetRemaining] = useState(0);
   const [totalMass, setTotalMass] = useState(0);
   const [thrustMultiplier, setThrustMultiplier] = useState(1);
   const [thrustRatio, setThrustRatio] = useState(Infinity);
@@ -45,7 +44,6 @@ export const BuildPanel: FC<BuildPanelProps> = ({ className = '' }) => {
     const buildApi = world.systemApi.get(BuildAPI);
 
     setCatalog(buildApi.getCatalog());
-    setBudgetRemaining(buildApi.getBudgetRemaining());
     setTotalMass(buildApi.getTotalMass());
     setThrustMultiplier(buildApi.getThrustMultiplier());
     setThrustRatio(buildApi.getThrustToWeightRatio());
@@ -112,43 +110,37 @@ export const BuildPanel: FC<BuildPanelProps> = ({ className = '' }) => {
         >
           {`Thrust: x${thrustMultiplier.toFixed(2)}`}
         </span>
-        <span className="build-panel__stat">{`Budget: ${budgetRemaining}`}</span>
       </div>
 
       <div className="build-panel__cards">
-        {catalog.map((entry) => {
-          const disabled = entry.cost > budgetRemaining;
-
-          return (
-            <button
-              key={entry.type}
-              type="button"
-              className={[
-                'build-card',
-                selectedType === entry.type ? 'build-card--selected' : '',
-                disabled ? 'build-card--disabled' : '',
-              ]
-                .join(' ')
-                .trim()}
-              disabled={disabled}
-              onClick={(): void => handleSelect(entry.type)}
-            >
-              <span className="build-card__name">
-                {entry.name?.replace(' Block', '')}
-              </span>
-              <div
-                className="build-card__icon"
-                aria-hidden="true"
-                style={{
-                  maskImage: `url(${BLOCK_ICONS[entry.type]})`,
-                  WebkitMaskImage: `url(${BLOCK_ICONS[entry.type]})`,
-                }}
-              />
-              <span className="build-card__stat">{`Cost: ${entry.cost}`}</span>
-              <span className="build-card__stat">{`Mass: ${entry.mass}`}</span>
-            </button>
-          );
-        })}
+        {catalog.map((entry) => (
+          <button
+            key={entry.type}
+            type="button"
+            className={[
+              'build-card',
+              selectedType === entry.type ? 'build-card--selected' : '',
+            ]
+              .join(' ')
+              .trim()}
+            onClick={(): void => handleSelect(entry.type)}
+          >
+            <span className="build-card__name">
+              {entry.name?.replace(' Block', '')}
+            </span>
+            <div
+              className="build-card__icon"
+              aria-hidden="true"
+              style={{
+                maskImage: `url(${BLOCK_ICONS[entry.type]})`,
+                WebkitMaskImage: `url(${BLOCK_ICONS[entry.type]})`,
+              }}
+            />
+            <span className="build-card__stat">{`Mass: ${entry.mass}`}</span>
+            <span className="build-card__stat">{`HP: ${entry.health}`}</span>
+            <span className="build-card__stat">{`DMG: ${entry.damage}`}</span>
+          </button>
+        ))}
       </div>
 
       <div className="build-panel__side build-panel__side--right">

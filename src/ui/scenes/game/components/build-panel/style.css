@@ -71,13 +71,13 @@
   cursor: pointer;
 }
 
-.build-card:hover:not(.build-card--disabled) {
+.build-card:hover {
   border-color: #f9c22b;
   background: #f9c22b;
   color: var(--button-hover-text, #2b090d);
 }
 
-.build-card:active:not(.build-card--disabled) {
+.build-card:active {
   transform: scale(0.95);
 }
 
@@ -85,11 +85,6 @@
   border-color: #f9c22b;
   background: #f9c22b;
   color: var(--button-hover-text, #2b090d);
-}
-
-.build-card--disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
 }
 
 .build-card__name {

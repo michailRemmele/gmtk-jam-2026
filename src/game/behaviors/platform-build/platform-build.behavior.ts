@@ -7,9 +7,7 @@ import {
   TURRET_TEMPLATE_ID,
   BOOSTER_TEMPLATE_ID,
 } from '../../../consts/templates';
-import { MAIN_CAMERA_ACTOR_NAME } from '../../../consts/actors';
 import * as EventType from '../../events';
-import LevelInfo from '../../components/level-info/level-info.component';
 import Platform from '../../components/platform/platform.component';
 
 import { BuildAPI } from './build-api';
@@ -44,8 +42,6 @@ export default class PlatformBuild extends Behavior {
     this.minThrustToWeightRatio = options.minThrustToWeightRatio
       ?? DEFAULT_MIN_THRUST_TO_WEIGHT_RATIO;
 
-    const mainCamera = options.scene.findChildByName(MAIN_CAMERA_ACTOR_NAME);
-    const levelInfo = mainCamera?.getComponent(LevelInfo);
     const platformComponent = options.actor.getComponent(Platform);
 
     this.api = new BuildAPI({
@@ -53,7 +49,6 @@ export default class PlatformBuild extends Behavior {
       scene: options.scene,
       world: options.world,
       actorSpawner: options.actorSpawner,
-      budget: levelInfo?.budget ?? 0,
       baseMass: platformComponent?.baseMass ?? DEFAULT_BASE_MASS,
       mainThrust: platformComponent?.mainThrust ?? DEFAULT_MAIN_THRUST,
       minThrustToWeightRatio: this.minThrustToWeightRatio,

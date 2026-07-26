@@ -12,7 +12,6 @@ interface PlatformBlockConfig {
   mass: number;
   type: PlatformBlockType;
   thrustBoost?: number;
-  cost?: number;
 }
 
 @DefineComponent({
@@ -35,15 +34,11 @@ export default class PlatformBlock extends Component {
   })
   thrustBoost: number;
 
-  @DefineField({ initialValue: 0 })
-  cost: number;
-
   constructor(config: PlatformBlockConfig) {
     super();
 
     this.mass = config.mass;
     this.type = config.type;
     this.thrustBoost = config.thrustBoost ?? 0.2;
-    this.cost = config.cost ?? 0;
   }
 }

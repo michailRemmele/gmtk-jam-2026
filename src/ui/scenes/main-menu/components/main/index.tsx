@@ -5,8 +5,7 @@ import { LoadScene, ExitScene } from 'dacha/events';
 import { Button } from '../../../../components';
 import { EngineContext } from '../../../../providers';
 import { LEVEL_1_ID } from '../../../../../consts/scenes';
-import { SETTINGS_MENU, LEVEL_SELECT_MENU } from '../../consts';
-import type { SaveState } from '../../../../../game/systems/saver/types';
+import { SETTINGS_MENU } from '../../consts';
 
 import './style.css';
 
@@ -24,23 +23,13 @@ export const Main: FC<MainProps> = ({ openMenu }) => {
     });
   };
 
-  const handleOpenSelectLevel = (): void => openMenu(LEVEL_SELECT_MENU);
-
   const handleOpenSettings = (): void => openMenu(SETTINGS_MENU);
-
-  const saveState = world.data.saveState as SaveState;
 
   return (
     <div className="main-menu">
-      {!saveState.completedLevels.length ? (
-        <Button className="main-menu__button" onClick={handlePlay}>
-          Play
-        </Button>
-      ) : (
-        <Button className="main-menu__button" onClick={handleOpenSelectLevel}>
-          Select Level
-        </Button>
-      )}
+      <Button className="main-menu__button" onClick={handlePlay}>
+        Play
+      </Button>
       <Button className="main-menu__button" onClick={handleOpenSettings}>
         Settings
       </Button>
