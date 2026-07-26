@@ -16449,24 +16449,6 @@
               "children": []
             }
           ]
-        },
-        {
-          "id": "1ed32494-804f-4c6e-ae99-fb82c4ec5d58",
-          "templateId": "05b146aa-eb51-4bf9-9fdb-acbf121e3cca",
-          "name": "Hive Obstacle 21",
-          "components": [
-            {
-              "name": "Transform",
-              "config": {
-                "offsetX": -516,
-                "offsetY": 108,
-                "rotation": 0,
-                "scaleX": 1,
-                "scaleY": 1
-              }
-            }
-          ],
-          "children": []
         }
       ]
     }
