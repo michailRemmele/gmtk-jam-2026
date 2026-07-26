@@ -19850,7 +19850,9 @@
                 "name": "CreatureControl",
                 "options": {
                   "chaseSpeed": 60,
-                  "attachRange": 30
+                  "attachRange": 30,
+                  "damageInterval": 3,
+                  "damageAmount": 1
                 }
               }
             ]

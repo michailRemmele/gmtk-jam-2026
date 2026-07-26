@@ -3,6 +3,7 @@ import type {
   BehaviorOptions,
   BoxColliderShape,
   Scene,
+  Time,
   World,
 } from 'dacha';
 import { Behavior, CharacterBody, Collider, Transform } from 'dacha';
@@ -11,15 +12,20 @@ import { DefineBehavior, DefineField } from 'dacha-workbench/decorators';
 import { PLAYER_ACTOR_NAME } from '../../../consts/actors';
 import * as EventType from '../../events';
 import { CreatureAttachmentAPI } from '../../systems/creature-attachment/creature-attachment.api';
+import { GameStateAPI } from '../../systems/game-state/game-state.api';
 import PlatformBlock from '../../components/platform-block/platform-block.component';
 import CreatureComponent from '../../components/creature/creature.component';
 
 const DEFAULT_CHASE_SPEED = 60;
 const DEFAULT_ATTACH_RANGE = 30;
+const DEFAULT_DAMAGE_INTERVAL = 3;
+const DEFAULT_DAMAGE_AMOUNT = 1;
 
 interface CreatureControlOptions extends BehaviorOptions {
   chaseSpeed?: number;
   attachRange?: number;
+  damageInterval?: number;
+  damageAmount?: number;
 }
 
 @DefineBehavior({
@@ -32,15 +38,23 @@ export default class CreatureControl extends Behavior {
   @DefineField({ initialValue: DEFAULT_ATTACH_RANGE })
   attachRange: number;
 
+  @DefineField({ initialValue: DEFAULT_DAMAGE_INTERVAL })
+  damageInterval: number;
+
+  @DefineField({ initialValue: DEFAULT_DAMAGE_AMOUNT })
+  damageAmount: number;
+
   private actor: Actor;
   private world: World;
   private scene: Scene;
+  private time: Time;
 
   private platformActor: Actor | undefined;
   private targetBlock: Actor | undefined;
   private localOffsetX: number;
   private localOffsetY: number;
   private attached: boolean;
+  private damageTimer: number;
 
   constructor(options: CreatureControlOptions) {
     super();
@@ -48,13 +62,17 @@ export default class CreatureControl extends Behavior {
     this.actor = options.actor;
     this.world = options.world;
     this.scene = options.scene;
+    this.time = options.time;
 
     this.chaseSpeed = options.chaseSpeed ?? DEFAULT_CHASE_SPEED;
     this.attachRange = options.attachRange ?? DEFAULT_ATTACH_RANGE;
+    this.damageInterval = options.damageInterval ?? DEFAULT_DAMAGE_INTERVAL;
+    this.damageAmount = options.damageAmount ?? DEFAULT_DAMAGE_AMOUNT;
 
     this.localOffsetX = 0;
     this.localOffsetY = 0;
     this.attached = false;
+    this.damageTimer = 0;
 
     this.actor.addEventListener(EventType.Kill, this.handleKill);
   }
@@ -116,6 +134,7 @@ export default class CreatureControl extends Behavior {
 
     this.targetBlock = block;
     this.attached = true;
+    this.damageTimer = this.damageInterval;
 
     const characterBody = this.actor.getComponent(CharacterBody);
     if (characterBody) {
@@ -177,6 +196,32 @@ export default class CreatureControl extends Behavior {
 
     characterBody.velocity.x = (dx / distance) * this.chaseSpeed;
     characterBody.velocity.y = (dy / distance) * this.chaseSpeed;
+  }
+
+  private tickDamage(): void {
+    if (!this.attached || !this.targetBlock) {
+      return;
+    }
+
+    const { frozen } = this.world.systemApi.get(GameStateAPI);
+    if (frozen) {
+      return;
+    }
+
+    this.damageTimer -= this.time.deltaTime;
+    if (this.damageTimer > 0) {
+      return;
+    }
+
+    this.damageTimer = this.damageInterval;
+    this.targetBlock.dispatchEvent(EventType.Damage, {
+      value: this.damageAmount,
+      actor: this.actor,
+    });
+  }
+
+  update(): void {
+    this.tickDamage();
   }
 
   fixedUpdate(): void {
