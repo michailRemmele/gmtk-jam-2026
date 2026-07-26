@@ -1403,7 +1403,7 @@
               "name": "LevelInfo",
               "config": {
                 "index": 0,
-                "escapeTime": 180,
+                "escapeTime": 160,
                 "buildTime": 30
               }
             }
@@ -1489,7 +1489,7 @@
               "name": "Transform",
               "config": {
                 "offsetX": 1944,
-                "offsetY": -8592,
+                "offsetY": -8616,
                 "rotation": 0,
                 "scaleX": 1,
                 "scaleY": 1
@@ -16379,6 +16379,58 @@
             }
           ],
           "children": []
+        },
+        {
+          "id": "956cf795-1c53-4dcf-8f0e-8213fc9e5ab5",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground B 20",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 1512,
+                "offsetY": -8580,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "113d495a-b7d7-4d4a-aa44-63a07b7cf09c",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "c2dc898a-1e59-4338-b459-d89db25d6e1c",
+          "templateId": "32c4ea4b-42de-46ab-8e33-461f99c4694a",
+          "name": "Static Ground B 28",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": 2520,
+                "offsetY": -8580,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "3eff8834-759e-4e8d-b1e9-d71eae135656",
+              "templateId": "c4c638df-2a30-4bd9-b51d-e4b618b797f3",
+              "name": "Back",
+              "components": [],
+              "children": []
+            }
+          ]
         }
       ]
     }
