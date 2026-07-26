@@ -1,1 +1,2 @@
-export const CRITICAL_SECONDS_LEFT = 10;
+export const CRITICAL_SECONDS_LEFT = 15;
+export const CRITICAL_MUSIC_SECONDS_LEFT = 45;

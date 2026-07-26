@@ -1,14 +1,22 @@
-import type { Actor, Scene, BehaviorOptions } from 'dacha';
-import { Behavior, AudioSource } from 'dacha';
+import type { Actor, Scene, World, Time, BehaviorOptions } from 'dacha';
+import { Behavior, AudioSource, MathOps } from 'dacha';
 import { DefineBehavior, DefineField } from 'dacha-workbench/decorators';
 
 import * as EventType from '../../events';
 import type { GameOverEvent, TimerTickEvent } from '../../events';
-import { CRITICAL_SECONDS_LEFT } from '../../../consts/timer';
+import {
+  CRITICAL_SECONDS_LEFT,
+  CRITICAL_MUSIC_SECONDS_LEFT,
+} from '../../../consts/timer';
+import { GameStateAPI } from '../../systems/game-state/game-state.api';
+
+const ESCAPE_MUSIC_VOLUME = 0.6;
+const MUSIC_CROSSFADE_DURATION = 2.5;
 
 interface AudioManagerBehaviorOptions extends BehaviorOptions {
   buildMusic: string;
   escapeMusic: string;
+  escapeMusicCritical: string;
   impact: string;
   turretShot: string;
   blockPlaced: string;
@@ -30,12 +38,17 @@ interface AudioManagerBehaviorOptions extends BehaviorOptions {
 })
 export default class AudioManagerBehavior extends Behavior {
   private scene: Scene;
+  private world: World;
+  private time: Time;
 
   @DefineField({ type: 'string' })
   private buildMusic: string;
 
   @DefineField({ type: 'string' })
   private escapeMusic: string;
+
+  @DefineField({ type: 'string' })
+  private escapeMusicCritical: string;
 
   @DefineField({ type: 'string' })
   private impact: string;
@@ -81,6 +94,7 @@ export default class AudioManagerBehavior extends Behavior {
 
   private buildMusicSource?: AudioSource;
   private escapeMusicSource?: AudioSource;
+  private escapeMusicCriticalSource?: AudioSource;
   private impactSource?: AudioSource;
   private turretShotSource?: AudioSource;
   private blockPlacedSource?: AudioSource;
@@ -96,13 +110,20 @@ export default class AudioManagerBehavior extends Behavior {
   private winSource?: AudioSource;
   private loseSource?: AudioSource;
 
+  private musicCrossfading = false;
+  private musicCrossfadeElapsed = 0;
+  private escapeMusicCriticalActive = false;
+
   constructor(options: AudioManagerBehaviorOptions) {
     super();
 
     this.scene = options.scene;
+    this.world = options.world;
+    this.time = options.time;
 
     this.buildMusic = options.buildMusic;
     this.escapeMusic = options.escapeMusic;
+    this.escapeMusicCritical = options.escapeMusicCritical;
     this.impact = options.impact;
     this.turretShot = options.turretShot;
     this.blockPlaced = options.blockPlaced;
@@ -120,6 +141,7 @@ export default class AudioManagerBehavior extends Behavior {
 
     this.buildMusicSource = this.resolve(this.buildMusic);
     this.escapeMusicSource = this.resolve(this.escapeMusic);
+    this.escapeMusicCriticalSource = this.resolve(this.escapeMusicCritical);
     this.impactSource = this.resolve(this.impact);
     this.turretShotSource = this.resolve(this.turretShot);
     this.blockPlacedSource = this.resolve(this.blockPlaced);
@@ -226,13 +248,28 @@ export default class AudioManagerBehavior extends Behavior {
 
   private handleEscapeStart = (): void => {
     this.buildMusicSource?.stop();
+
+    if (this.escapeMusicSource) {
+      this.escapeMusicSource.volume = ESCAPE_MUSIC_VOLUME;
+    }
     this.escapeMusicSource?.play();
+
+    this.musicCrossfading = false;
+    this.musicCrossfadeElapsed = 0;
+    this.escapeMusicCriticalActive = false;
+
+    if (this.escapeMusicCriticalSource) {
+      this.escapeMusicCriticalSource.volume = 0;
+    }
+    this.escapeMusicCriticalSource?.stop();
   };
 
   private handleGameOver = (event: GameOverEvent): void => {
     this.buildMusicSource?.stop();
     this.escapeMusicSource?.stop();
+    this.escapeMusicCriticalSource?.stop();
     this.turbineSource?.stop();
+    this.musicCrossfading = false;
 
     if (event.isWin) {
       this.winSource?.play();
@@ -282,8 +319,29 @@ export default class AudioManagerBehavior extends Behavior {
   };
 
   private handleTimerTick = (event: TimerTickEvent): void => {
+    const { frozen } = this.world.systemApi.get(GameStateAPI);
+
+    if (frozen) {
+      return;
+    }
+
     if (event.secondsLeft > 0 && event.secondsLeft <= CRITICAL_SECONDS_LEFT) {
       this.countdownSource?.play();
+    }
+
+    if (
+      !this.escapeMusicCriticalActive &&
+      event.secondsLeft > 0 &&
+      event.secondsLeft <= CRITICAL_MUSIC_SECONDS_LEFT
+    ) {
+      this.escapeMusicCriticalActive = true;
+      this.musicCrossfading = true;
+      this.musicCrossfadeElapsed = 0;
+
+      if (this.escapeMusicCriticalSource) {
+        this.escapeMusicCriticalSource.volume = 0;
+      }
+      this.escapeMusicCriticalSource?.play();
     }
   };
 
@@ -294,4 +352,29 @@ export default class AudioManagerBehavior extends Behavior {
   private handleTurbinesStopped = (): void => {
     this.turbineSource?.stop();
   };
+
+  update(): void {
+    if (!this.musicCrossfading) {
+      return;
+    }
+
+    this.musicCrossfadeElapsed += this.time.deltaTime;
+    const progress = MathOps.clamp(
+      this.musicCrossfadeElapsed / MUSIC_CROSSFADE_DURATION,
+      0,
+      1,
+    );
+
+    if (this.escapeMusicSource) {
+      this.escapeMusicSource.volume = ESCAPE_MUSIC_VOLUME * (1 - progress);
+    }
+    if (this.escapeMusicCriticalSource) {
+      this.escapeMusicCriticalSource.volume = ESCAPE_MUSIC_VOLUME * progress;
+    }
+
+    if (progress >= 1) {
+      this.musicCrossfading = false;
+      this.escapeMusicSource?.stop();
+    }
+  }
 }

@@ -1403,7 +1403,7 @@
               "name": "LevelInfo",
               "config": {
                 "index": 0,
-                "escapeTime": 160,
+                "escapeTime": 150,
                 "buildTime": 30
               }
             }
@@ -1666,7 +1666,8 @@
                       "turbine": "a1f4084c-05af-441c-a699-cb1125ce7d86",
                       "win": "b593a4ff-8531-4a82-b362-4a32fb8d74ec",
                       "lose": "c1d28756-bbc2-4b2c-978e-3227f3a8bbac",
-                      "countdown": "85c7ac9d-df0e-467a-b99a-26c31c0f0022"
+                      "countdown": "85c7ac9d-df0e-467a-b99a-26c31c0f0022",
+                      "escapeMusicCritical": "44f163bd-8b18-479c-9e03-bc7d962c0b24"
                     }
                   }
                 ]
@@ -1941,6 +1942,23 @@
                     "looped": false,
                     "autoplay": false,
                     "group": "effects"
+                  }
+                }
+              ],
+              "children": []
+            },
+            {
+              "id": "44f163bd-8b18-479c-9e03-bc7d962c0b24",
+              "name": "Escape Music Critical",
+              "components": [
+                {
+                  "name": "AudioSource",
+                  "config": {
+                    "src": "audio/escape-music-critical.ogg",
+                    "volume": 0,
+                    "looped": true,
+                    "autoplay": false,
+                    "group": "music"
                   }
                 }
               ],
@@ -16431,6 +16449,24 @@
               "children": []
             }
           ]
+        },
+        {
+          "id": "1ed32494-804f-4c6e-ae99-fb82c4ec5d58",
+          "templateId": "05b146aa-eb51-4bf9-9fdb-acbf121e3cca",
+          "name": "Hive Obstacle 21",
+          "components": [
+            {
+              "name": "Transform",
+              "config": {
+                "offsetX": -516,
+                "offsetY": 108,
+                "rotation": 0,
+                "scaleX": 1,
+                "scaleY": 1
+              }
+            }
+          ],
+          "children": []
         }
       ]
     }
@@ -19754,7 +19790,7 @@
         {
           "name": "Health",
           "config": {
-            "points": 2
+            "points": 4
           }
         },
         {
@@ -19793,9 +19829,9 @@
                 "id": "1d8a3191-f47e-44e6-96e4-9baa8dcd8ab4",
                 "name": "CreatureControl",
                 "options": {
-                  "chaseSpeed": 60,
+                  "chaseSpeed": 90,
                   "attachRange": 30,
-                  "damageInterval": 3,
+                  "damageInterval": 2,
                   "damageAmount": 1
                 }
               }
