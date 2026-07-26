@@ -15,7 +15,7 @@ import * as EventType from '../../events';
 import type { TimerTickEvent } from '../../events';
 import { GameStateAPI } from '../../systems/game-state/game-state.api';
 
-const VIEWPORT_SIZE = 384;
+const VIEWPORT_SIZE = 408;
 const DEFAULT_SHAKE_STRENGTH = 8;
 const DEFAULT_MIN_SHAKE_STRENGTH = 2;
 const DEFAULT_MAX_SHAKE_STRENGTH = 3;

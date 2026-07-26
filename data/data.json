@@ -17852,7 +17852,7 @@
                 "sortingLayer": "units-2",
                 "blending": "normal",
                 "color": "#fff",
-                "opacity": 0.75,
+                "opacity": 0.85,
                 "disabled": true,
                 "material": {
                   "name": "DamageFlash",
@@ -18298,7 +18298,7 @@
                         },
                         {
                           "id": "a05a9bdb-23e7-443c-8586-33d906c0fec9",
-                          "name": "children.Damage.components.Mesh.disabled",
+                          "name": "children.Damage.components.Mesh.currentFrame",
                           "type": "number",
                           "value": 1
                         }
@@ -18520,7 +18520,7 @@
                 "sortingLayer": "units-2",
                 "blending": "normal",
                 "color": "#fff",
-                "opacity": 0.75,
+                "opacity": 0.85,
                 "disabled": true,
                 "material": {
                   "name": "DamageFlash",
@@ -19117,7 +19117,7 @@
                 "sortingLayer": "units-2",
                 "blending": "normal",
                 "color": "#fff",
-                "opacity": 0.75,
+                "opacity": 0.85,
                 "disabled": true,
                 "material": {
                   "name": "DamageFlash",
@@ -19746,7 +19746,7 @@
                 "sortingLayer": "units-2",
                 "blending": "normal",
                 "color": "#fff",
-                "opacity": 0.75,
+                "opacity": 0.85,
                 "disabled": true,
                 "material": {
                   "name": "DamageFlash",
